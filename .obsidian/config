@@ -20,23 +20,26 @@
     "direction": "vertical",
     "children": [
       {
-        "id": "cae1c9fc7b984af1",
+        "id": "6eb84af78b477816",
         "type": "leaf",
         "dimension": null,
         "active": true,
         "master": "",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "ES6.md",
+            "mode": "source"
+          }
         }
       }
     ]
   },
   "lastOpenFiles": [
+    "ES6.md",
+    "Untitled.md",
     "Untitled 2.md",
     "Master CSS 2018.md",
-    "Terminal.md",
-    "Untitled.md",
-    "Untitled 1.md"
+    "Terminal.md"
   ]
 }
