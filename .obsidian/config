@@ -20,23 +20,26 @@
     "direction": "vertical",
     "children": [
       {
-        "id": "cae1c9fc7b984af1",
+        "id": "0f76e7d08ef826bc",
         "type": "leaf",
         "dimension": null,
         "active": true,
         "master": "",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "Untitled 1.md",
+            "mode": "source"
+          }
         }
       }
     ]
   },
   "lastOpenFiles": [
-    "Untitled 2.md",
-    "Master CSS 2018.md",
-    "Terminal.md",
+    "Untitled 1.md",
     "Untitled.md",
-    "Untitled 1.md"
+    "UI Design 2018.md",
+    "Master CSS 2018.md",
+    "SCSS.md"
   ]
 }

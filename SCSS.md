@@ -86,3 +86,4 @@
 - để code một SCSS hiệu quả thì cần 1 server chạy HTML và SCSS.
 - npm browsersync + gulp.js tự động compile quá CSS
 - chia nhỏ web ra nhiều component, mỗi component là một layout của web.
+
