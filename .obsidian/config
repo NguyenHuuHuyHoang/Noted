@@ -14,13 +14,13 @@
   "isRightSidedockCollapsed": true,
   "lastOpenSidebarTab": "File explorer",
   "workspaceLayout": {
-    "id": "dd8f506ed4d7f155",
+    "id": "6ccefaf4c32e801b",
     "type": "split",
     "dimension": null,
     "direction": "vertical",
     "children": [
       {
-        "id": "0f76e7d08ef826bc",
+        "id": "ccd91fb75b177d80",
         "type": "leaf",
         "dimension": null,
         "active": true,
@@ -28,7 +28,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Untitled 1.md",
+            "file": "ES6 Project quản lý nhân viên.md",
             "mode": "source"
           }
         }
@@ -36,10 +36,10 @@
     ]
   },
   "lastOpenFiles": [
+    "ES6 Project quản lý nhân viên.md",
+    "PrtScr capture.jpg",
     "Untitled 1.md",
-    "Untitled.md",
-    "UI Design 2018.md",
-    "Master CSS 2018.md",
-    "SCSS.md"
+    "ES6.md",
+    "Master CSS 2018.md"
   ]
 }
