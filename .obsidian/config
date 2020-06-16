@@ -24,7 +24,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Tix layout.md",
+            "file": "ES6.md",
             "mode": "source"
           }
         }
@@ -33,11 +33,11 @@
     "direction": "vertical"
   },
   "lastOpenFiles": [
-    "Tix layout.md",
-    "Untitled 1.md",
+    "ES6.md",
+    "Bootstrap.md",
     "Untitled.md",
     "Untitled 2.md",
-    "ES6 Project quản lý nhân viên.md"
+    "Tix layout.md"
   ],
   "leftSidedock": {
     "id": "7e7efc5335542a93",
