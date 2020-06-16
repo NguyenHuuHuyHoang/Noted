@@ -16,30 +16,80 @@
   "workspaceLayout": {
     "id": "6ccefaf4c32e801b",
     "type": "split",
-    "dimension": null,
-    "direction": "vertical",
     "children": [
       {
         "id": "ccd91fb75b177d80",
         "type": "leaf",
-        "dimension": null,
         "active": true,
-        "master": "",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "ES6 Project quản lý nhân viên.md",
+            "file": "Tix layout.md",
             "mode": "source"
           }
         }
       }
-    ]
+    ],
+    "direction": "vertical"
   },
   "lastOpenFiles": [
-    "ES6 Project quản lý nhân viên.md",
-    "PrtScr capture.jpg",
+    "Tix layout.md",
     "Untitled 1.md",
-    "ES6.md",
-    "Master CSS 2018.md"
-  ]
+    "Untitled.md",
+    "Untitled 2.md",
+    "ES6 Project quản lý nhân viên.md"
+  ],
+  "leftSidedock": {
+    "id": "7e7efc5335542a93",
+    "type": "split",
+    "children": [
+      {
+        "id": "823b393243b56901",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fcce68c59f8a3134",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "a3606786fa872e1e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "rightSidedock": {
+    "id": "b88ab829e942cc13",
+    "type": "split",
+    "children": [
+      {
+        "id": "5438bdd58e1d2e7a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "48bd32a3799f2513",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  }
 }
