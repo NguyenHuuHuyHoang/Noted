@@ -4,3 +4,4 @@
 - fancy box library
 - Event Listener event touch, google event listener swipe left, right
 - Nếu muốn return nhiều giá trị thì phải bỏ giá trị vào object xong return object
+- ViewJS

@@ -35,26 +35,41 @@
 - let mangA = [1,2,3,4];
 - let mangB = mangA;
 - mangB.push = [5,6]; => console.log(mangA); Khi gán mảng b = mảng a, thì theo tính chất con trỏ trong lập trình thì vùng nhớ mảng b sẽ trỏ về mảng a, khi thay đổi mảng b thì thay đổi mảng a luôn và ngược lại. nếu dùng toán tử ba chấm để tạo mảng b từ mảng a thì thay đổi mảng b, mảng a không bị thay đổi theo.
-- cú pháp let tên biến mới = {...tên biến cần sao chép hoặc thêm vào}
+- cú pháp let tên biến mới = {...tên biến cần sao chép hoặc thêm vào} trường hợp trong object đã có key trùng với key thêm vào thì sẽ lấy giá trị của key thêm vào đè key đã có.
 - muốn thêm thuộc tính cho object thì clone object đó ra xong sử dụng toán tử ... để thêm đối tượng.
 ==Default Parameter==
-- Cho phép set giá trị mặc định tham số của hàm nếu như không có đối số truyền vào.
+- Cho phép set giá trị mặc định tham số của hàm nếu như không có đối số truyền vào. Nếu mình truyền thì sẽ lấy giá trị của mình, nếu mình không truyền sẽ lấy giá trị mặc định.
 - Nếu hàm 2 tham số mà truyền 1 tham số thì thay thế tham số 1 tham số 2 lấy mặc định, thế vào từ trái sang phải, nếu nó đã truyền vào thì thằng kế tiếp phải có tham số mặc định.
 - Tham số thứ 3 được sử dụng tham số của 2 tham số phía trước, nếu truyền vào thì lấy giá trị truyền vào nếu không truyền sẽ lấy giá trị a + b.
+==Template String==
+- Tạo một string vừa tĩnh vừa động.
+- String nằm trong dấu ``
+- Truyền giá trị động ${tên biến}
+==Object literals==
+- ES6 nâng cấp object chân phương, cho phép bạn khai báo tắt thuộc
+tính của object với biến cùng tên, và khai báo phương thức cho
+object.
+- Ngoài ra từ ES6 bạn cũng có thể khai báo thuộc tính cho object
+một cách linh động bằng cách sử dụng cú pháp [].
+- Trường hợp khai báo object có các key là tên biến đã có giá trị thì ra một obj có thuộc tính và giá trị như tên biến.
 ==For in for of==
-- For in duyệt mảng theo index, mỗi lần lặp sẽ trả về giá trị index tương ứng với vị trí của phần tử.
+- For in duyệt mảng theo index, mỗi lần lặp sẽ trả về giá trị index tương ứng với vị trí của phần tử. Dùng để duyệt các key của Object.
+- Firebase lưu trữ dữ liệu dưới dạng object, lưu trữ dưới dạng cấu trúc cây, Tree Node.
 - For of lấy về đối tượng của phần tử đó, trong trường hợp mảng object.
 ==OOP==
 - class HocSinh {} <=> function HocSinh () {}
 - VD class HocSinh { MaHS; HoTen; constructor (mahs, tenhs) { this.MaHS = mahs; this.HoTen = tenhs;} xuatThongTinHocSinh(){} (Các viết phương thức cho một lớp đối tượng trong ES6) tương đương xuatThongTinHocSinh = function () {}};
 ==OOP Extends==
+- Lớp con bắt buộc phải gọi lại contructor của lớp cha.
 - Super() đại diện cho lớp cha để gọi lại constructor hoặc phương thức.
+- JS có kế thừa nhưng không có đa hình, bản chất nó là đa hình.	
 - VD có class NhanVien thì class QuanLy extends NhanVien {} sẽ lấy tất cả những gì của cha xuống con cho, thằng con thêm những thuộc tính mới mà cha không có nên cần phải định nghĩa lại constructor sử dụng super() để lấy constructor ở cha cho những tham số cha đã có, phương thức cha cũng thể thay đổi bằng super.phương thức lớp cha, ở lớp cha có những tham số gì thì ở thằng con phải có. => tính đa hình
 ==OOP Import , Export ==
+- Trong HTML thẻ script phải để module
 - Trước đây JS để sử dụng nhiều file với nhau thì phải chèn vào HTML theo thứ tự.
-- Nếu export default khi ta import có thể đặt tên biến tùy ý
-- Nếu export không có từ khóa default, khi import ta phải đặt tên biến giống với tên đã export và có {}
-- Có thể export nhiều biến bằng cách export {....}
+- Nếu export default khi ta import có thể đặt tên biến tùy ý, dùng cho component
+- Nếu export không có từ khóa default, khi import ta phải đặt tên biến giống với tên đã export và có {} 
+- Có thể export nhiều biến bằng cách export {....} dùng cho đối tượng.
 - Có thể import một hằng số, 1 con số, 1 đối tượng. 
 ==Filter==
 - Trả về một mảng mới chứa các phần tử thỏa điều kiện kiểm tra.
@@ -88,3 +103,12 @@
 - tạo ra biến tạm lưu trữ giá trị của nó, nếu so sánh text thì phải lowercase để cho chính xác.
 - nếu sản phẩm tiếp theo > sản phẩm trước thì return 1 giữ nguyên, ngược lại thì -1,  không có gì thì return 1
 - trường hợp so sánh theo số thì return giá trị của thằng 2 - thằng 1, nếu số âm thì đảo vị trí.
+==Destructuring==
+https://blog.duyet.net/2016/05/cach-su-dung-destructuring-javascript-es6.html
+- bóc tách phần tử với object, bóc tách phần tử trong mảng.
+- let {tenthuoctinh} = object.thuoctinh;
+- Có thể dùng mảng để mô tả đối tượng thay vì dùng obj. Đôi lúc API trả dữ liệu về kiểu mảng chứ không phải là object
+- let sinhVienArr = [1, 'Nguyễn văn a'];
+- let [ma,ten, hienThiThongTIn] = [1, 'Nguyen van a', () => {console.log(1,'Nguyen Van A')}]; //Ánh xạ.
+- console.log(ten);
+- hienThiThongTin();

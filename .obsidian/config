@@ -10,21 +10,18 @@
     "Markdown format importer": true,
     "Word count": true
   },
-  "isSidebarCollapsed": false,
-  "isRightSidedockCollapsed": true,
-  "lastOpenSidebarTab": "File explorer",
   "workspaceLayout": {
-    "id": "6ccefaf4c32e801b",
+    "id": "ece7b53932ade769",
     "type": "split",
     "children": [
       {
-        "id": "ccd91fb75b177d80",
+        "id": "743a35f7b57d8257",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Thư viện animation phổ biến.md",
+            "file": "Animation library.md",
             "mode": "source"
           }
         }
@@ -32,23 +29,16 @@
     ],
     "direction": "vertical"
   },
-  "lastOpenFiles": [
-    "Thư viện animation phổ biến.md",
-    "Untitled 1.md",
-    "Tix layout.md",
-    "Untitled.md",
-    "Untitled 2.md"
-  ],
   "leftSidedock": {
-    "id": "7e7efc5335542a93",
+    "id": "6f9b3dcbcec97545",
     "type": "split",
     "children": [
       {
-        "id": "823b393243b56901",
+        "id": "b813a5992d6223b7",
         "type": "tabs",
         "children": [
           {
-            "id": "fcce68c59f8a3134",
+            "id": "b06d0a205d37e451",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -56,7 +46,7 @@
             }
           },
           {
-            "id": "a3606786fa872e1e",
+            "id": "e4ad9503563ed57e",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -70,15 +60,15 @@
     "width": 300
   },
   "rightSidedock": {
-    "id": "b88ab829e942cc13",
+    "id": "7983d6001ff9b4bc",
     "type": "split",
     "children": [
       {
-        "id": "5438bdd58e1d2e7a",
+        "id": "f9ab85f06f9dfa62",
         "type": "tabs",
         "children": [
           {
-            "id": "48bd32a3799f2513",
+            "id": "256f2417e20d0e82",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -91,5 +81,8 @@
     "direction": "horizontal",
     "width": 300,
     "collapsed": true
-  }
+  },
+  "lastOpenFiles": [
+    "Animation library.md"
+  ]
 }
