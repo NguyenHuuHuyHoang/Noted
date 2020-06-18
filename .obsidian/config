@@ -21,7 +21,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Untitled.md",
+            "file": "NodeJS Web server sử dụng framework Express.md",
             "mode": "source"
           }
         }
@@ -83,10 +83,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "NodeJS Web server sử dụng framework Express.md",
+    "GIT.md",
     "Untitled.md",
     "Untitled 2.md",
-    "Animation library.md",
-    "Bootstrap.md",
     "Untitled 1.md"
   ]
 }
