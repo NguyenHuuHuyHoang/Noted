@@ -15,15 +15,12 @@
     "type": "split",
     "children": [
       {
-        "id": "743a35f7b57d8257",
+        "id": "ae1b5ba46473b626",
         "type": "leaf",
         "active": true,
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "NodeJS Web server sử dụng framework Express.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -83,10 +80,11 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "Note linh tinh.md",
+    "Untitled.md",
     "NodeJS Web server sử dụng framework Express.md",
     "GIT.md",
-    "Untitled.md",
-    "Untitled 2.md",
-    "Untitled 1.md"
-  ]
+    "Untitled 2.md"
+  ],
+  "attachmentFolderPath": "FIle PDF"
 }

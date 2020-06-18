@@ -13,3 +13,4 @@ https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-autoprefixer
 Hover dropdowns: https://www.w3schools.com/howto/howto_css_dropdown.asp
 
 Click dropdowns: https://www.w3schools.com/howto/howto_js_dropdown.asp
+https://www.wintellect.com/data-binding-pure-javascript/

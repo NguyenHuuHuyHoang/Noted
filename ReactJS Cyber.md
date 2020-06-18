@@ -1,0 +1,11 @@
+- React là một thư viện của JS, hỗ trợ SPAs, tăng hiệu suất load trang. VD: FB - react, Youtube - angular, do chỉ load nội dung mà không load lại toàn bộ trang
+- React viết trên ngôn ngữ ES6
+- create-react-app [tên dự án]
+- node_modules:  Chứa các thư viện cài đặt cho ứng dụng
+- Đầu tiên trình duyệt sẽ đọc index.html và index.js sau đó sẽ index.js điều hướng về App.js, ghi toàn bộ nội dung của App lên html.
+- Những thẻ do react tạo ra gần giống như HTML. 
+==Component==
+- Là một thành phần của website, là một thẻ do mình định nghĩa.
+- Có hai loại component là class và functional (React Hook - Đầu 2019 ra), cả hai loại đều có hiệu suất ngang nhau, sử dụng loại nào cũng được. Class viết nội dung trong phương thức render , còn function thì viết nội dung không trong phương thức nào hết, nằm trong lệnh return.
+- Thẻ react bắt buộc phải viết hoa chữ đầu tiên
+- Component không được trùng tên trong dự án
