@@ -51,3 +51,7 @@ app.use(bodyParser.urlencoded({ extended: true}));`
 - Thông thường trong các Routers chỉ chứ file route còn các logic xử lý sẽ tách riêng ra, những cái liên quan request người dùng, trả ra như thế nào thì xử lý riêng.
 - Model - View(Là những file template) - Controller
 - Những callback function của Router sẽ tách riêng ra thành riêng một file user.controller.js, sau đó sẽ export file đó ra thành một module, những function trong file là một key, bên route sẽ gọi vào để sử dụng.
+==10 - Template layout==
+- Thêm các thư viện css vào trang của mình để đẹp hơn. Thường thì thẻ link bs thường để ở thẻ HEAD.
+- Trong pub có extends, chúng ta cần tạo file layout sẵn và extends ở các file cần thiết vd layout 2 cột, layout 3 cột, layout 1 cột.
+- Trong 1 file chỉ được extends 1 lần và trong file được extends có thể chứa nhiều block khác nhau.
