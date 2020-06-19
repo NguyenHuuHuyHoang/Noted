@@ -19,8 +19,11 @@
         "type": "leaf",
         "active": true,
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "NodeJS Web server sử dụng framework Express.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -80,9 +83,9 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "NodeJS Web server sử dụng framework Express.md",
     "Note linh tinh.md",
     "Untitled.md",
-    "NodeJS Web server sử dụng framework Express.md",
     "GIT.md",
     "Untitled 2.md"
   ],
