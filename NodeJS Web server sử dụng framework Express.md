@@ -89,4 +89,8 @@ app.use(bodyParser.urlencoded({ extended: true}));`
 ==17 - Signed Cookie==
 - Khi server gửi cookie về thì sẽ gửi kèm 1 signature để kiểm tra tính hợp lệ của cookie. nếu cookie thay đổi thì signature sẽ thay đổi theo.
 - res.cookie nhận vào tối đa 3 tham số, tham số thứ 3 có option signed để thêm signature vào trong cookie, để làm được việc này đòi hỏi cookie-parser phải chứ chuỗi secret. Khi sử dụng signed cookie thì ở đọc cookie phải chuyển thành signedCookies
-- 
+==18 - Environment Variables==
+- biến môi trường: trong thực tế thì khi dev trên máy hoặc deploy sử dụng những biến khác nhau vd đường dẫn lưu dữ liệu, db ... sẽ thay đổi giữa các môi trường làm việc vì vậy sử dụng environment variables. Trong app sẽ tham chiếu đến các biến đấy.
+- trong nodejs thì biến môi trường được lưu vào process.env (là một obj chứa key:value, nếu chúng ta truyền vào cái gì thì key:value là cái đó), để thêm biến vào trước khi chạy thì ở teriminal:
+- Cách 1: SESSION_SECRET=1223:123 APP_SECRET=dsadasfasdas npm start
+- Cách 2: dùng dotenv npm, và tạo 1 file .env vào chương trình, không commit folder .env (SECRET KEY hoặc SECRET API) lên github. Trong file .env chứ các cặp Key=value
