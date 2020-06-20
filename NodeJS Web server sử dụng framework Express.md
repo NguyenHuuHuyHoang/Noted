@@ -79,5 +79,10 @@ app.use(bodyParser.urlencoded({ extended: true}));`
 - Trong db sẽ chứa object có key là email và password, nếu đúng email và password sẽ trả về 1 cái gì đó thông qua POST req.
 - Để người dùng truy cập bất cứ trang nào mà chưa login thì sẽ redirect sang trang login bằng cách tạo một middleware trước tất cả các middleware, nó làm nhiệm vụ kiểm tra req gửi lên có cookie hay không, cái cookie này sẽ do thằng postLogin thêm vào trước khi redirect về trang users.
 - Trường hợp muốn đặt protect cho toàn bộ route users thì ở index.js require authMiddleware, sau đó đặt vào app.use('/users').
-- Tất cả các thứ bên phía browser đều có thể sửa đổi bởi người dùng, trong trường hợp đoán được value của người khác thì có thể sử dụng để đăng nhập vào.
-- Không bao giờ lưu trữ mật khẩu trong db dưới dạng RAW, có thể đọc được.
+- Tất cả các thứ bên phía browser đều có thể sửa đổi bởi người dùng, trong trường hợp đoán được userId của người khác thì có thể sử dụng để đăng nhập vào.
+- Không bao giờ lưu trữ mật khẩu trong db dưới dạng RAW, có thể đọc được, do không bảo mật.
+==16- md5==
+- Mã hóa password của người dùng thì chẳng may bị hack thì lộ db nhưng không lộ mật khẩu của người dùng.
+- MD5 là một hàm mã hóa, nó biến đổi mật khẩu thành 1 chuỗi ký tự nào đấy (Hash).
+- MD5 được dùng nhiều trong quá khứ giờ thì ít vì khi người dùng nhập mật khẩu vào thì tối đa khoảng 10 - 20 ký tự là max, giả sử có 1 hacker cho máy tính chạy tạo hash từ 0 -> FFFFFFFFFFF thì họ sẽ cho ra chuỗi rất nhiều mk khác nhau sau đó cho chạy md5 -> được tất cả mật khẩu, do hàm md5 tốc độ xử lý nhanh nên việc chạy như vậy là dễ dàng, do đó từ mk thì người ta có thể dịch ngược mã rất dễ dàng.
+- MD5 rainbow table -> những người đã làm và lưu trữ vào db, từ db đó có thể check mk mạnh hay yếu
