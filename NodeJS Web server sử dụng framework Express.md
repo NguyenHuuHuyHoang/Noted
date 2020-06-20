@@ -60,3 +60,5 @@ app.use(bodyParser.urlencoded({ extended: true}));`
 - Đầu tiên phải thiết lập route đến đường dẫn chứa file, sử dụng app.use(express.static('public')); //Khai báo sau app. Sau đó sử dụng đường dẫn tuyệt đối dưới dạng /folder con của public/file
 - Bài tập là sử dụng express để quản lý cái gì đó.
 ==12 - Server-side validation (Login)==
+- Khi cho lấy thông tin từ người dùng thì phải validate để tránh trường hợp người dùng thêm những dữ liệu không đúng.
+- Kiểm tra tạo 1 array rỗng để chứa các error, sau khi check hết, nếu array.length > 0 thì render lại trang create, truyền vào array errors để hiện thông báo alert, tạo một biến lưu trữ giá trị của req.body, trả kèm theo, sau đó dùng toán tử 3 ngôi để kiểm tra, nếu biến không có thì đặt input rỗng.

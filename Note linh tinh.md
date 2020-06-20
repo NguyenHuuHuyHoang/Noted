@@ -11,6 +11,6 @@ VS code có hỗ trợ thêm Vendor Prefix bằng extension:
 https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-autoprefixer
 Đối với submenu sẽ có 2 kiểu: hover vào hiện menu, click vào hiện menu. Các bạn tham khảo thêm các link bên dưới nha:
 Hover dropdowns: https://www.w3schools.com/howto/howto_css_dropdown.asp
-
 Click dropdowns: https://www.w3schools.com/howto/howto_js_dropdown.asp
 https://www.wintellect.com/data-binding-pure-javascript/
+- Tips for form: label chứa for="name" và input chứ id="name" thì khi click chuột vào label sẽ focus vào input
