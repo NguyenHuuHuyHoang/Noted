@@ -61,4 +61,23 @@ app.use(bodyParser.urlencoded({ extended: true}));`
 - Bài tập là sử dụng express để quản lý cái gì đó.
 ==12 - Server-side validation (Login)==
 - Khi cho lấy thông tin từ người dùng thì phải validate để tránh trường hợp người dùng thêm những dữ liệu không đúng.
-- Kiểm tra tạo 1 array rỗng để chứa các error, sau khi check hết, nếu array.length > 0 thì render lại trang create, truyền vào array errors để hiện thông báo alert, tạo một biến lưu trữ giá trị của req.body, trả kèm theo, sau đó dùng toán tử 3 ngôi để kiểm tra, nếu biến không có thì đặt input rỗng.
+- Kiểm tra tạo 1 array rỗng để chứa các error, sau khi check hết, nếu array.length > 0 thì render lại trang create, truyền vào array errors để hiện thông báo alert,   trả kèm theo req.body để không làm mất giá trị đã input, sau đó dùng toán tử 3 ngôi để kiểm tra, nếu biến không có thì đặt input rỗng
+==13 - Middleware==
+- Là một function nhận vào ba tham số, function(req, res, next), có thể dùng nhiều middleware cho một route
+- Theo thứ tự thằng nào khai báo trước thì được dùng trước. Turờng hợp thằng middleware trước sử dụng res.send thì sẽ kết thúc luồng chạy những thằng ở sau sẽ không được chạy.
+- Mục đích: tách riêng logic ra vd như: validation ra một file, không thực hiện validation trong controler chính. Đặt module.exports.postCreate (vì validation xong sẽ trả data về postCreate). Sau khi thực hiện hết logic nếu chưa trả res thì phải có next() nếu không trang sẽ reload mãi mãi tới khi hết timeout sẽ báo lỗi.
+- Để sử dụng thì require vào trang route.
+- Khi client gửi 1 req thì sẽ đi qua nhiều middleware khác nhau và cuối cùng sẽ tới thằng xử lý logic chính sau đó trả về thông qua res.render
+- có thể sử dụng res.locals để chuyển giá trị từ middleware trước cho middleware sau.
+==14 - Cookie==
+- Là một khái niệm trong lập trình web nói chung, không riêng gì bất cứ ngôn ngữ gì.
+- Cách thức hoạt động: Ở bất kỳ req mà client gửi lên, server có thể trả về cookie hoặc không (Set-cookie: giá trị mà mình muốn set). Client nhận được res có chứa set-cookie thì nó sẽ lưu lại ở trình duyệt, sau đấy từ các lần gửi tiếp theo nó sẽ gửi kèm theo cookie nằm trên trình duyệt, khi nào server bảo xóa đi thì nó xóa đi.
+- Nếu client đã có cookie thì khi gửi req sẽ có kèm cookie, để bắt được thì sử dụng req.cookie, để đọc được cookie thì phải sử dụng một middleware là cookie-parser, sau đó require nó và sử dụng app.use(cookieParser()); 
+- Ứng dụng khi login vào trang thì server sẽ gửi 1 cookie là session phiên làm việc của người dùng đó, khi logout sẽ gửi lệnh để xóa đi, thường server sẽ gửi cookie có một thời gian tồn tại xác định để tránh tình trạng bị hack. Có thể lưu cookie ở nhiều vị trí khác nhau như ổ đĩa, ram, db,.... thường thì sẽ lưu ở db để khi client gửi req lên những server khác nhau thì vẫn truy cập được.
+==15 - Authentication (Login)==
+- Tạo controller auth, page login, require route vào index.js, sử dụng app.use để link tới autoRoute đã require ở trên.
+- Trong db sẽ chứa object có key là email và password, nếu đúng email và password sẽ trả về 1 cái gì đó thông qua POST req.
+- Để người dùng truy cập bất cứ trang nào mà chưa login thì sẽ redirect sang trang login bằng cách tạo một middleware trước tất cả các middleware, nó làm nhiệm vụ kiểm tra req gửi lên có cookie hay không, cái cookie này sẽ do thằng postLogin thêm vào trước khi redirect về trang users.
+- Trường hợp muốn đặt protect cho toàn bộ route users thì ở index.js require authMiddleware, sau đó đặt vào app.use('/users').
+- Tất cả các thứ bên phía browser đều có thể sửa đổi bởi người dùng, trong trường hợp đoán được value của người khác thì có thể sử dụng để đăng nhập vào.
+- Không bao giờ lưu trữ mật khẩu trong db dưới dạng RAW, có thể đọc được.
