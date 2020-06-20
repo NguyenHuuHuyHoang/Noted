@@ -86,3 +86,7 @@ app.use(bodyParser.urlencoded({ extended: true}));`
 - MD5 là một hàm mã hóa, nó biến đổi mật khẩu thành 1 chuỗi ký tự nào đấy (Hash).
 - MD5 được dùng nhiều trong quá khứ giờ thì ít vì khi người dùng nhập mật khẩu vào thì tối đa khoảng 10 - 20 ký tự là max, giả sử có 1 hacker cho máy tính chạy tạo hash từ 0 -> FFFFFFFFFFF thì họ sẽ cho ra chuỗi rất nhiều mk khác nhau sau đó cho chạy md5 -> được tất cả mật khẩu, do hàm md5 tốc độ xử lý nhanh nên việc chạy như vậy là dễ dàng, do đó từ mk thì người ta có thể dịch ngược mã rất dễ dàng.
 - MD5 rainbow table -> những người đã làm và lưu trữ vào db, từ db đó có thể check mk mạnh hay yếu
+==17 - Signed Cookie==
+- Khi server gửi cookie về thì sẽ gửi kèm 1 signature để kiểm tra tính hợp lệ của cookie. nếu cookie thay đổi thì signature sẽ thay đổi theo.
+- res.cookie nhận vào tối đa 3 tham số, tham số thứ 3 có option signed để thêm signature vào trong cookie, để làm được việc này đòi hỏi cookie-parser phải chứ chuỗi secret. Khi sử dụng signed cookie thì ở đọc cookie phải chuyển thành signedCookies
+- 
