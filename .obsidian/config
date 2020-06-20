@@ -15,7 +15,7 @@
     "type": "split",
     "children": [
       {
-        "id": "ae1b5ba46473b626",
+        "id": "5051dce6dfbeba6a",
         "type": "leaf",
         "active": true,
         "state": {
@@ -84,10 +84,10 @@
   },
   "lastOpenFiles": [
     "NodeJS Web server sử dụng framework Express.md",
+    "ReactJS Cyber.md",
+    "Dynamic web server của các ngôn ngữ khác nhau.md",
     "Note linh tinh.md",
-    "Untitled.md",
-    "GIT.md",
-    "Untitled 2.md"
+    "Untitled.md"
   ],
   "attachmentFolderPath": "FIle PDF"
 }

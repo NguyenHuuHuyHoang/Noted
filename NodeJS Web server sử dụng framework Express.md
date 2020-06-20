@@ -55,3 +55,8 @@ app.use(bodyParser.urlencoded({ extended: true}));`
 - Thêm các thư viện css vào trang của mình để đẹp hơn. Thường thì thẻ link bs thường để ở thẻ HEAD.
 - Trong pub có extends, chúng ta cần tạo file layout sẵn và extends ở các file cần thiết vd layout 2 cột, layout 3 cột, layout 1 cột.
 - Trong 1 file chỉ được extends 1 lần và trong file được extends có thể chứa nhiều block khác nhau.
+==11 - Static files==
+- Thiết lập đường dẫn tĩnh cho files như: images, css files, fonts, js files, other documents
+- Đầu tiên phải thiết lập route đến đường dẫn chứa file, sử dụng app.use(express.static('public')); //Khai báo sau app. Sau đó sử dụng đường dẫn tuyệt đối dưới dạng /folder con của public/file
+- Bài tập là sử dụng express để quản lý cái gì đó.
+==12 - Server-side validation (Login)==
