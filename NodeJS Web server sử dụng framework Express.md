@@ -94,3 +94,16 @@ app.use(bodyParser.urlencoded({ extended: true}));`
 - trong nodejs thì biến môi trường được lưu vào process.env (là một obj chứa key:value, nếu chúng ta truyền vào cái gì thì key:value là cái đó), để thêm biến vào trước khi chạy thì ở teriminal:
 - Cách 1: SESSION_SECRET=1223:123 APP_SECRET=dsadasfasdas npm start
 - Cách 2: dùng dotenv npm, và tạo 1 file .env vào chương trình, không commit folder .env (SECRET KEY hoặc SECRET API) lên github. Trong file .env chứ các cặp Key=value
+==19 - Debug nodejs app ==
+- Nếu dùng nodemon thì có thể debug bằng cách sửa thông tin nodemon trong package.json bằng cách thêm --inspect ở  giữa nodemon và index.js sau đó npm start để chạy app, sử dụng chorme để debug
+==20 - Pagination (Phân trang)==
+- trong lập trình web sử dụng rất là nhiều hoặc ứng dụng show ra rất nhiều sản phẩm. Thường đường link có dạng /products?page=2, nếu có 1 array n sản phẩm, nếu muốn hiển thị x sản phẩm 1 trang thì begin = (n-1)*x, end=(n-1)*x + x, sử dụng method slice => items = array.slice(begin, end).
+- Để tạo dữ liệu nhanh chóng sử dụng mockaroo.com
+- lowdb được xây dựng trên thư viện lodash, do đó nó có phương thức drop(n) bỏ n phần tử của mảng, take(n) lấy ra n phần tử của mảng.
+- tạo pagination: Trường hợp người dùng input vào nếu là trang 1 thì chạy lặp 1 -> max pages per pagination, nếu là trang maxPage thì sẽ lặp từ 0 -> 2 và dùng page - giá trị lặp. nếu khác 2 điều kiện trên sẽ lặp từ -1 -> 1 nếu 3 page per pagination.
+==21 - File Upload==
+- Data được gửi lên server dưới dạng test thông qua method POST, mặc định form không gửi dữ liệu lên server dưới dạng boudnary mà gửi theo dạng text, vì vậy input file sẽ có giá trị là tên của file đính kèm. Muốn upload file thì phải chuyển form sang một dạng encoding khác là enctype="multipart/form-data" (thuộc tính của form) điều này là bắt buộc, method bắt buộc phải là POST
+- bodyParser không hỗ trợ multipart/form-data nên sẽ gặp lỗi nếu input file nằm chung với input text. Do đó cần sử dụng middleware multer.
+- Trong route cần require multer sau đó tạo một biến chứa đường dẫn thư mục sẽ chứa file var upload = multer({dest: './public/uploads/'})
+- Trong phần route post cần phải add middleware upload.single('name input file') trước các middleware khác. Dữ liệu về file sẽ được lưu trong req.file, còn các thông tin khác dạng text của form sẽ được lưu trong req.body
+- req.file.path => trả về đường dẫn của file, reg.file.filename => trả  về tên file đã được lưu trong uploads.
