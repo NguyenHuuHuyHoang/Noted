@@ -107,3 +107,6 @@ app.use(bodyParser.urlencoded({ extended: true}));`
 - Trong route cần require multer sau đó tạo một biến chứa đường dẫn thư mục sẽ chứa file var upload = multer({dest: './public/uploads/'})
 - Trong phần route post cần phải add middleware upload.single('name input file') trước các middleware khác. Dữ liệu về file sẽ được lưu trong req.file, còn các thông tin khác dạng text của form sẽ được lưu trong req.body
 - req.file.path => trả về đường dẫn của file, reg.file.filename => trả  về tên file đã được lưu trong uploads.
+==22 - Session==
+- Session là một phiên làm việc của người dùng, nó dùng cookie.
+- Trên thực tế, những app mua bán hàng thì người dùng không đăng nhập vẫn lưu dữ liệu mua hàng -> sử dụng session.
