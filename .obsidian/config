@@ -8,20 +8,21 @@
     "Backlinks": true,
     "Command palette": true,
     "Markdown format importer": true,
-    "Word count": true
+    "Word count": true,
+    "Custom CSS": true
   },
   "workspaceLayout": {
     "id": "ece7b53932ade769",
     "type": "split",
     "children": [
       {
-        "id": "5051dce6dfbeba6a",
+        "id": "a82224c8ca317d29",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "NodeJS Web server sử dụng framework Express.md",
+            "file": "ReactJS Cyber.md",
             "mode": "source"
           }
         }
@@ -83,11 +84,14 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "ReactJS Cyber.md",
     "NodeJS Web server sử dụng framework Express.md",
-    "Note linh tinh.md",
-    "Untitled.md",
+    "UI Design 2018.md",
     "ES6.md",
-    "Master CSS 2018.md"
+    "Bootstrap.md"
   ],
-  "attachmentFolderPath": "FIle PDF"
+  "attachmentFolderPath": "FIle PDF",
+  "isSidebarCollapsed": false,
+  "isRightSidedockCollapsed": true,
+  "lastOpenSidebarTab": "File explorer"
 }
