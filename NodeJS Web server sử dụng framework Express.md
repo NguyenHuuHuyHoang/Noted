@@ -110,3 +110,21 @@ app.use(bodyParser.urlencoded({ extended: true}));`
 ==22 - Session==
 - Session là một phiên làm việc của người dùng, nó dùng cookie.
 - Trên thực tế, những app mua bán hàng thì người dùng không đăng nhập vẫn lưu dữ liệu mua hàng -> sử dụng session.
+==23 - CSRF Attack==
+- Cross-site request forgery.
+- Thường tấn công vào trang chuyển tiền hay những trang mà thay đổi dữ liệu qua form hoặc đường link
+- nạn nhân login vào tk khoản, trong app đó có chức năng chuyển tiền, attacker sẽ giả mạo cái form đấy ở trên trang web của nó và sẽ gửi cho nạn nhân link tới trang web của nó, khi ấn vào thì vô hình là không biết và submit cái form ẩn đó và attacker sẽ lợi dụng cookie trên máy nạn nhân để có thể submit form đó.
+- Để tránh thì thêm vào form 1 token, nếu gửi đi phải có token nếu không có thì không cho gửi đi. Token dưới dạng signed, sử dụng phương thức để mã hóa xem token có hợp lệ hay không.
+- sử dụng npm csurf, nó là một hàm trả về 1 middleware, khi sử dụng thì sẽ tạo một method mới cho req. Trong form post thêm 1 input type="hidden" name ="_csrf", value=csrfToken.b phải đặt sau cookie-parser trong app.use, cho phép sử dụng cookie để gửi token cùng. app.use(csurf({cookie: true}))
+==24 - Install MongoDB==
+- Cài MongoDB Server, bản community server là bản miễn phí
+- show databases để xem trên terminal hoặc sử dụng robomongodb để xem trên giao diện
+- Mặc định server nằm ở trên localhost:27017
+- Trong mongoDB có các collection tương ứng với mỗi array , document tương ứng object
+- Mongo không sử dụng id mà tự tạo 1 field _id ra
+- terminal : mongo -> truy cập mongo, show databases -> xem tất cả db đang có, use [tên db] -> chuyển sang db, show collections -> xem tất cả collection đang có, db.[tên collections].find() -> lấy tất cả dữ liệu trong collection
+==25 - Giới thiệu Mongoose==
+- Tutorialspoint.com để học mongodb
+- sử dụng mongoose npm để tương tác với mongodb dễ hơn.  var mongoose = require('mongoose') -> mongoose.connect('mongodb://[host]/[db]'). Địa chỉ mongodb nên đặt trong file .env để đảm bảo tính bảo mật của server db.
+- mongoose là một thư viện dùng để object modeling, chuyển js object sang các collection, document trong db. Đó đó để sử dụng phải tạo một cái schema sau đó tạo model. tạo một thư mục models -> tạo file model vd user.model.js, phải require mongoose vào để dùng các class bên trong -> tạo schema: var userSchema = new mongoose.Schema(Object chứa các key và value vd email:String, password: String, name: String, avatar: String, phone: String), schema dùng để khai báo các field có trong object -> khai báo model var User = mongoose.model('User', userSchema, 'users') trường hợp muốn truyền vào collections nào thì truyền vào ở tham số thứ 3 -> module.exports = User.
+- Sau đó có thể dùng User ở các chỗ khác. require module, sử dụng Model.find() để truy xuất dữ liệu, nó trả về 1 promise nên phải dùng .then hoặc đặt trong một async - await function.
