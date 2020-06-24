@@ -115,7 +115,8 @@ app.use(bodyParser.urlencoded({ extended: true}));`
 - Thường tấn công vào trang chuyển tiền hay những trang mà thay đổi dữ liệu qua form hoặc đường link
 - nạn nhân login vào tk khoản, trong app đó có chức năng chuyển tiền, attacker sẽ giả mạo cái form đấy ở trên trang web của nó và sẽ gửi cho nạn nhân link tới trang web của nó, khi ấn vào thì vô hình là không biết và submit cái form ẩn đó và attacker sẽ lợi dụng cookie trên máy nạn nhân để có thể submit form đó.
 - Để tránh thì thêm vào form 1 token, nếu gửi đi phải có token nếu không có thì không cho gửi đi. Token dưới dạng signed, sử dụng phương thức để mã hóa xem token có hợp lệ hay không.
-- sử dụng npm csurf, nó là một hàm trả về 1 middleware, khi sử dụng thì sẽ tạo một method mới cho req. Trong form post thêm 1 input type="hidden" name ="_csrf", value=csrfToken.b phải đặt sau cookie-parser trong app.use, cho phép sử dụng cookie để gửi token cùng. app.use(csurf({cookie: true}))
+- sử dụng npm csurf, nó là một hàm trả về 1 middleware, khi sử dụng thì sẽ tạo một method mới cho req. là req.csfrToken() trả về một string nào đấy dùng để tạo token. Trong form post thêm 1 input type="hidden" name ="_csrf", value=csrfToken , cho phép sử dụng cookie để gửi token cùng. app.use(csurf({cookie: true})), phải đặt sau cookie-parser trong app.use
+- Để chèn token vào form thì phải gửi token từ controller ra form
 ==24 - Install MongoDB==
 - Cài MongoDB Server, bản community server là bản miễn phí
 - show databases để xem trên terminal hoặc sử dụng robomongodb để xem trên giao diện
@@ -128,3 +129,41 @@ app.use(bodyParser.urlencoded({ extended: true}));`
 - sử dụng mongoose npm để tương tác với mongodb dễ hơn.  var mongoose = require('mongoose') -> mongoose.connect('mongodb://[host]/[db]'). Địa chỉ mongodb nên đặt trong file .env để đảm bảo tính bảo mật của server db.
 - mongoose là một thư viện dùng để object modeling, chuyển js object sang các collection, document trong db. Đó đó để sử dụng phải tạo một cái schema sau đó tạo model. tạo một thư mục models -> tạo file model vd user.model.js, phải require mongoose vào để dùng các class bên trong -> tạo schema: var userSchema = new mongoose.Schema(Object chứa các key và value vd email:String, password: String, name: String, avatar: String, phone: String), schema dùng để khai báo các field có trong object -> khai báo model var User = mongoose.model('User', userSchema, 'users') trường hợp muốn truyền vào collections nào thì truyền vào ở tham số thứ 3 -> module.exports = User.
 - Sau đó có thể dùng User ở các chỗ khác. require module, sử dụng Model.find() để truy xuất dữ liệu, nó trả về 1 promise nên phải dùng .then hoặc đặt trong một async - await function.
+- Model.find() trả về mảng tất cả các document của collection Model, nếu cần tìm kiếm thì cần phải truyền vào find() một object có giá trị { key (field cần tìm) : value (giá trị cần tìm)} => trả ra một mảng các object có giá trị phù hợp với giá trị cần tìm. Trường hợp cần tìm theo _id thì sử dụng findById(id cần tìm) sẽ trả ra 1 obj (do id là duy nhất)
+- Để lưu giá trị vào mongoDB thì sử dụng new Model.save({object các giá trị cần ghi}) hoặc tạo một document mới var product = await Product.create(req.body);
+==HTTP API==
+- HTTP là một giao thức qua internet, API là Application programming interface là giao tiếp giữa ứng dụng với ứng dụng, GUI là Graphic User Interface - giao diện đồ họa người dùng, giao tiếp giữa người dùng với ứng dụng, CLI là Command line interface giao diện dòng lệnh.
+- HTTP API sẽ cung cấp cho các ứng dụng khác một số endpoint, các endpoint này không trả về http mà trả về dữ liệu vì HTTP chỉ dùng cho browser còn các mobile app hay hệ thống IOT thì không quan tâm đến HTTP mà quan tâm đến dữ liệu mà thôi, có thể trả về 2 dạng chính XML và JSON (ajax)
+- Công cụ postman giúp test các API.
+- Về thiết lập thì tương tự như bt, nhưng thay về trả về res.render thì trả về res.json(object hoặc array) => trả về json của dữ liệu
+==REST API==
+- Cũng sử dụng giao thức http như http api, có một số quy chuẩn như:
++ GET /products -> Get all products []
++ GET /products/:id -> Get one product {}
++ POST /products -> Create product
++ PUT /products/:id -> Replace/Create product nếu không có
++ PATCH /products/:id -> Update product
++ DELETE /products/:id -> Delete a product
+- REST API không phải là thư viện mà là một quy chuẩn. Khi viết một REST API thì sẽ không dùng cookie để authentication mà sẽ dùng một authentication header (JWT) nào đấy có cái name là authentication, tùy vào kiểu authentication mà có mã khác nhau.
+- products được xem như là một Resource (thường là số nhiều), thường kèm theo các query parameter để phân trang, filter ...
+==28 - Error Handling==
+- Là kỹ thuật bắt lỗi, sử dụng throw new Error('Thông báo lỗi'), nếu gặp lỗi thì sẽ quăng thông báo lỗi ra và phần mềm sẽ dừng lại. sử dụng try {phương thức có thể xảy ra lỗi} - catch (error) {console.log(error)}để bắt lỗi nhưng phần mềm vẫn tiếp tục chạy, sau đó kết quả là vẫn nhận được lỗi để biết nhưng phần mềm không bị gián đoạn.
+- Cách 2 thì sử dụng trong Promise(function(resolve, reject)) {reject(new Error('Promise error'))} reject().catch(function(error){console.log('Has error', error.message)});
+- try { toàn bộ code nghi có lỗi } catch (error) { next(error)} thằng next sẽ gửi sang thằng middleware error handler (mặc định có) => khi chạy hết tới cuối chương trình thì sẽ hiển thị ra lỗi.
+==29 - Deploy to Heroku==
+- Trước khi deploy lên Heroku :
++ Sửa biến port sử dụng env
++ Kiểm tra lại package.json
++ Không lưu uploaded files trên Heroku (có thể dùng dịch vụ khác để up ảnh lên VD Cloudinary do cung cấp các API để chúng ta có thể upload lên và miễn phí nhiều)
++ Thay thế code khi sử dụng lowdb, dùng MongoDB
++ Heroku chỉ lưu source code
+- firebase hosting chỉ lưu được các code tĩnh html, css , js còn code server side thì phải deploy lên các dịch vụ khác, heroku là một thằng miễn phí, không cần phải quản lý server.
+- Để sử dụng heroku git thì phải cài heroku CLI => sau khi push project lên heroku
+- heroku logs để xem tình trạng server, cần phải điều chỉnh một số thứ
+- nodemon là khi sử dụng dev mới được cài đặt còn trên server sẽ không có nên phải chỉnh sửa lại "dev" -> chạy có nodemon, "start" -> chạy node index.js bình thường. sau này để chạy trên máy bản thân thì sử dụng npm run dev, start là câu lệnh đặc biệt, nên không cần phải run start
+- trên server sẽ không có MONGO_URL -> vào mục resources -> thêm add-on mlab MongoDB (cần phải nhập tài khoản thẻ tín dụng vào > account settings)
+- Vào settings -> config vars nó chính là env variables, tất cả cái biến ở trong đây sẽ được dùng trong process.env -> thêm biến SECRET, nên để khác với biến đặt trên local để không bị đoán.
+- Khi start server ở trên heroku, thì heroku sẽ tạo ra một biến môi trường tên là PORT, var port = process.env.PORT || 3000 ; nếu trên local không có biến PORT thì sẽ sử dụng 3000
+- Gói miễn phí của heroku chỉ cho một ngày chạy xx tiếng không chạy 24/24, nếu không có res nào lên server trong vòng bao nhiêu lâu thì nó sẽ chuyển sang trạng thái nghỉ, nếu trong trạng thái nghỉ mà nhận được res thì phải mất 1x giây để start server, do đó chỉ dùng thích hợp cho test thôi.
+==NOTE==
+- có thể học các framework của các ngôn ngữ khác như codeigniter hoặc laravel của PHP, Play framework của Java, Python thì có django

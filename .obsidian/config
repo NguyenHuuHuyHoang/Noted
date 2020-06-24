@@ -16,15 +16,12 @@
     "type": "split",
     "children": [
       {
-        "id": "a82224c8ca317d29",
+        "id": "929349fc31788627",
         "type": "leaf",
         "active": true,
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "ReactJS Cyber.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -84,11 +81,11 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "ReactJS Cyber.md",
     "NodeJS Web server sử dụng framework Express.md",
+    "GIT.md",
+    "ReactJS Cyber.md",
     "UI Design 2018.md",
-    "ES6.md",
-    "Bootstrap.md"
+    "ES6.md"
   ],
   "attachmentFolderPath": "FIle PDF",
   "isSidebarCollapsed": false,
