@@ -20,8 +20,11 @@
         "type": "leaf",
         "active": true,
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "React 2018.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -81,11 +84,11 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "Untitled.md",
+    "JavaScript Advanced 2018.md",
     "NodeJS Web server sử dụng framework Express.md",
     "GIT.md",
-    "ReactJS Cyber.md",
-    "UI Design 2018.md",
-    "ES6.md"
+    "ReactJS Cyber.md"
   ],
   "attachmentFolderPath": "FIle PDF",
   "isSidebarCollapsed": false,
