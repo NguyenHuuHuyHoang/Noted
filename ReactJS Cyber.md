@@ -47,6 +47,7 @@
 - Gọi hàm tại thẻ body để giao diện render ra các thẻ mới tại đó.
 - Ngoài ra chúng ta có thể viết phương thức render dưới dạng hàm map() hoặc viết trực tiếp trên giao diện code render trên giao diện.
 ==Truyền dữ liệu trong reactjs==
+- Props là viết tắt của property (thuộc tính của đối tượng)
 - Props (Truyền dữ liệu từ component cha sang con)
 - Props là thuộc tính của thẻ (Ta có thể hiểu prop là property của thẻ). Ví dụ thẻ input bên dưới ta có các props ClassName, type, placeholder
 - Props đối với component :
