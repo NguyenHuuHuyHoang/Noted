@@ -14,3 +14,14 @@
 - tạo script JS,  tạo element bằng React.createElement('div', null (không có thuộc tính), 'nội dung').
 - dom tới root bằng documet.getElementById('root');
 - render element mới vừa tạo vào root bằng ReactDOM.render(element cần render, root);
+==3 - React.createElement==
+- Khi lập trình thì code app thì chia nhỏ ra thành nhiều component.
+- React.createElement dùng React API tạo ra các react Element.
+- nhận vào 1, 2 hoặc nhiều tham số, tham số 1 là kiểu element HTML, tham số thứ 2 là một object chứa props (thuộc tính) vd className, src,... , nếu không có gì thì để null, tham số thứ 3 là children (các thằng con của nó), nếu không có con thì sẽ không ghi tham số thứ 3.
+- React sẽ tạo ra các React component sau đó ReactDOM sẽ map 1 : 1 sang HTML DOM tương ứng. Xây dựng các thư viện component xong lắp ráp lại.
+==4 - JSX==
+- Babeljs.io : Chuyển code JSX thành JS, dùng để dịch các chuẩn JS mới hơn về chuẩn cũ hơn.
+- Để sử dụng code JSX thì cần phải add link cdn của Babel vào html và  thêm type="text/babel" vào tag script chứa code.
+- Babel sẽ không chạy đoạn code trong script mà sẽ biên dịch code thành code reactjs và bỏ vào một tag script do nó tạo đặt ở trên cùng thẻ HTML.
+==5 - Create React App==
+- công cụ create react app. Nếu đang sử dụng node 8 hoặc 10 -> npx create-react-app 3-create-react-app <- Tên project sẽ tạo

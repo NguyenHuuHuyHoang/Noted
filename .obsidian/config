@@ -16,13 +16,13 @@
     "type": "split",
     "children": [
       {
-        "id": "929349fc31788627",
+        "id": "94d874740e1c7219",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "React 2018.md",
+            "file": "NodeJS Web server sử dụng framework Express.md",
             "mode": "source"
           }
         }
@@ -84,11 +84,11 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "React 2018.md",
-    "Untitled.md",
-    "JavaScript Advanced 2018.md",
     "NodeJS Web server sử dụng framework Express.md",
-    "GIT.md"
+    "Các deploy build lên Firebase.md",
+    "Dynamic web server của các ngôn ngữ khác nhau.md",
+    "Untitled.md",
+    "ES6.md"
   ],
   "attachmentFolderPath": "FIle PDF",
   "isSidebarCollapsed": false,
