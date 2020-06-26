@@ -22,7 +22,11 @@
         "state": {
           "type": "markdown",
           "state": {
+<<<<<<< HEAD
             "file": "NodeJS Web server sử dụng framework Express.md",
+=======
+            "file": "ReactJS Cyber.md",
+>>>>>>> 147ec8628d98c42deab12ac9630da92651b0ab97
             "mode": "source"
           }
         }
@@ -84,11 +88,19 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+<<<<<<< HEAD
     "NodeJS Web server sử dụng framework Express.md",
     "Các deploy build lên Firebase.md",
     "Dynamic web server của các ngôn ngữ khác nhau.md",
     "Untitled.md",
     "ES6.md"
+=======
+    "ReactJS Cyber.md",
+    "React 2018.md",
+    "Untitled.md",
+    "JavaScript Advanced 2018.md",
+    "NodeJS Web server sử dụng framework Express.md"
+>>>>>>> 147ec8628d98c42deab12ac9630da92651b0ab97
   ],
   "attachmentFolderPath": "FIle PDF",
   "isSidebarCollapsed": false,
