@@ -8,25 +8,20 @@
     "Backlinks": true,
     "Command palette": true,
     "Markdown format importer": true,
-    "Word count": true,
-    "Custom CSS": true
+    "Word count": true
   },
   "workspaceLayout": {
-    "id": "ece7b53932ade769",
+    "id": "df4ed2e3b5138f88",
     "type": "split",
     "children": [
       {
-        "id": "94d874740e1c7219",
+        "id": "0b74100e0c9b9ff9",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
-<<<<<<< HEAD
-            "file": "NodeJS Web server sử dụng framework Express.md",
-=======
-            "file": "ReactJS Cyber.md",
->>>>>>> 147ec8628d98c42deab12ac9630da92651b0ab97
+            "file": "React 2018.md",
             "mode": "source"
           }
         }
@@ -35,15 +30,15 @@
     "direction": "vertical"
   },
   "leftSidedock": {
-    "id": "6f9b3dcbcec97545",
+    "id": "404107dd66ea198e",
     "type": "split",
     "children": [
       {
-        "id": "b813a5992d6223b7",
+        "id": "bcc3113ed4f4d1ee",
         "type": "tabs",
         "children": [
           {
-            "id": "b06d0a205d37e451",
+            "id": "10fe4ee98ec58d13",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -51,7 +46,7 @@
             }
           },
           {
-            "id": "e4ad9503563ed57e",
+            "id": "fb76ac7730ffdb36",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,15 +60,15 @@
     "width": 300
   },
   "rightSidedock": {
-    "id": "7983d6001ff9b4bc",
+    "id": "5153391931523435",
     "type": "split",
     "children": [
       {
-        "id": "f9ab85f06f9dfa62",
+        "id": "ceb92382410cddf4",
         "type": "tabs",
         "children": [
           {
-            "id": "256f2417e20d0e82",
+            "id": "1e21250f7da6cc85",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -88,22 +83,6 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-<<<<<<< HEAD
-    "NodeJS Web server sử dụng framework Express.md",
-    "Các deploy build lên Firebase.md",
-    "Dynamic web server của các ngôn ngữ khác nhau.md",
-    "Untitled.md",
-    "ES6.md"
-=======
-    "ReactJS Cyber.md",
-    "React 2018.md",
-    "Untitled.md",
-    "JavaScript Advanced 2018.md",
-    "NodeJS Web server sử dụng framework Express.md"
->>>>>>> 147ec8628d98c42deab12ac9630da92651b0ab97
-  ],
-  "attachmentFolderPath": "FIle PDF",
-  "isSidebarCollapsed": false,
-  "isRightSidedockCollapsed": true,
-  "lastOpenSidebarTab": "File explorer"
+    "React 2018.md"
+  ]
 }

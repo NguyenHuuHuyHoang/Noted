@@ -25,3 +25,21 @@
 - Babel sẽ không chạy đoạn code trong script mà sẽ biên dịch code thành code reactjs và bỏ vào một tag script do nó tạo đặt ở trên cùng thẻ HTML.
 ==5 - Create React App==
 - công cụ create react app. Nếu đang sử dụng node 8 hoặc 10 -> npx create-react-app 3-create-react-app <- Tên project sẽ tạo
+==6 - Component==
+- Cách tạo component trong react app. Component được sinh ra để viết UI kết hợp nhiều thẻ khác nhau.
+- Để tạo 1 component thì phải tạo 1 folder component trong thư mục src. Trong thư mục component tạo file [tên component].js, trong file này chúng ta `import React, { Component } from 'react'`, sau đó tạo class [tên component] extends Component {}, tạo một method render() bên trong class, method này sẽ được gọi khi ta render component, render này sẽ return những element mà ta muốn sử dụng.
+- Muốn dùng component trong app thì phải import component nó vào app, để import được thì component phải export, nên ở cuối component phải export default [tên component]
+- Component hay ở cái là có thể nhóm nhiều thứ bên trong, có thể compound nhiều component lại với nhau thành component nhỏ, nhiều component nhỏ thành component lớn
+- Component là một cách để tái sử dụng UI trong dự án.
+==7 - Props==
+- Các component có thể nhận vào các props khác nhau.  Các truyền props vào component <Tên component [biến]=[giá trị truyền] />, các giá trị truyền vào sẽ được lưu trong biến props, có thể truy xuất qua biến this.props.[tên biến đã truyền].
+- Có thể truyền bất cứ giá trị gì cho props, nếu muốn truyền 1 object phải có {object muốn truyền vào}
+==8 - Render a list==
+- Lưu dữ liệu ở constructor function của component (trường hợp class component), trường hợp function component thì khai báo biến. Sử dụng map để biến 1 object thành một mảng các JSX component
+- Khi sử dụng hàm map để render thì react yêu cầu phải có key để xác định đối tượng (sử dụng cho việc làm animation), callback function của map có thể nhận 1 tham số hoặc 2 tham số, nếu 2 tham số thì tham số thứ 2 là index của value => sử dụng key = {index} để thiết lập key cho object.
+==9 - React Developer Tools==
+- Giúp debug app react dễ dàng hơn, cài plugin React Developer Tools dành cho chorme, hoặc firefox
+- Nó sẽ có thêm 1 tab react ở chorme develop tool
+==10 - Dynamic class names==
+- Thêm nhiều class một cách linh hoạt cho các component. Cách 1 đặt 1 biến tên className, nếu có sự thay đổi giá trị truyền vào thì biến đó sẽ + thêm string class tương ứng giá trị truyền vào.
+- Ngoài ra còn có cách là sử dung classnames npm
