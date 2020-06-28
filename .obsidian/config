@@ -21,7 +21,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "React 2018.md",
+            "file": "ES6 Project quản lý nhân viên.md",
             "mode": "source"
           }
         }
@@ -83,6 +83,9 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "ES6 Project quản lý nhân viên.md",
+    "Animation library.md",
+    "Note linh tinh.md",
     "React 2018.md"
   ]
 }
