@@ -10,3 +10,5 @@
 ==Sửa thông tin nhân viên==
 - Sau khi click vào icon thì những thông tin từ input phải được lấy ra từ nhân viên trong danh sách nhân viên, khi click cập nhật thì những thông tin sửa sẽ được cập nhật và hiển thị ra màn hình.
 - Trường hợp value là select box thì muốn gán lại giá trị phải sử dụng selectedIndex, và thay chức vụ của nhân viên = số theo thứ tự giá trị VD 1 - sếp, 2 - trưởng phòng, 3 - nhân viên
+==Tìm nhân viên theo tên==
+- Gán 1 eventlistener vào input search với event là 'keyup'
