@@ -56,3 +56,7 @@
 + Đối với stateful và stateless component có các cách sử dụng props khác nhau. 
 - Do stateless component là một function nên truyền props vào dưới dạng tham số, sử dụng bằng cách props.[thuộc tính của component cha] (nằm ngoài render) và export để có thể gọi ở các component khác.
 - Đối với stateful component, thì props là thuộc tính mặc định của class, nên không cần truyền tham số. Chí cần gọi this.props
+- Ngoài ra còn có thể truyền function qua props.
+- Sau khi xây dựng layout xong => xác định những nguồn dữ liệu nào khi người dùng thao tác sẽ thay đổi và nguồn dữ liệu nào thay đổi, nếu thay đổi thì để trong state (Trường hợp đặt ngoài state thì code vẫn chạy nhưng sai converstion, khó quản lý do đó quy định thay đổi mới đặt trong state), nếu không thay đổi thì để ngoài state => cuối cùng sẽ xử lý chức năng liên quan đến người (event vd: click, hover,...)
+- Khi nào truyền props function: Xác định state đặt ở component nào ? Nguyên tắc đặt state chứa  là ở giao diện binding ra trực tiếp hoặc gián tiếp, chứa nút xử lý trực tiếp hoặc gián tiếp. VD: Đặt ở App.js => PhoneList.js thông qua props => PhoneItem.js thông qua props. Các function tác động đến giá trị state thì lưu tại state, nút xử lý ở đâu thì truyền props tới đó.
+- Những giá trị nào mà tính toán được sẽ không đưa vào lưu trữ
