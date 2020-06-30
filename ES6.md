@@ -104,6 +104,13 @@ một cách linh động bằng cách sử dụng cú pháp [].
 - nếu sản phẩm tiếp theo > sản phẩm trước thì return 1 giữ nguyên, ngược lại thì -1,  không có gì thì return 1
 - trường hợp so sánh theo số thì return giá trị của thằng 2 - thằng 1, nếu số âm thì đảo vị trí.
 ==Destructuring==
+- Destructuring cho phép lấy ra các phần tử từ array, object và đặt tên cho nó. Rất tiện khu xử lý dữ liệu JSON, các đối tượng lồng nhau, giúp chúng ta rút gọn code.
+- ![[Pasted image.png]]
+1. Hoán đổi phần tử. ![[Pasted image 2.png]] => Không phải tạo biến temp, ngoài ra còn có thể hoán đổi nhiều số cho nhau nữa [a, b, c] = [b, c, a]
+2. Lấy thuộc tính lồng nhau và gán giá trị mặc định. ![[Pasted image 3.png]]
+3. Đặt lại tên khác. ![[Pasted image 4.png]]
+4. Với array ![[Pasted image 5.png]]
+5. Sử dụng computed với destructuring ![[Pasted image 6.png]]
 https://blog.duyet.net/2016/05/cach-su-dung-destructuring-javascript-es6.html
 - bóc tách phần tử với object, bóc tách phần tử trong mảng.
 - let {tenthuoctinh} = object.thuoctinh;

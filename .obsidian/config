@@ -21,7 +21,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "ES6 Project quản lý nhân viên.md",
+            "file": "Animation library.md",
             "mode": "source"
           }
         }
@@ -83,9 +83,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "ES6 Project quản lý nhân viên.md",
     "Animation library.md",
-    "Note linh tinh.md",
-    "React 2018.md"
+    "Tix layout.md",
+    "Pasted image.png",
+    "Pasted image 6.png",
+    "Dynamic web server của các ngôn ngữ khác nhau.md"
   ]
 }
