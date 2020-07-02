@@ -21,7 +21,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "React 2018.md",
+            "file": "ReactJS Cyber.md",
             "mode": "source"
           }
         }
@@ -83,10 +83,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "ReactJS Cyber.md",
     "React 2018.md",
     "ES6 Project quản lý nhân viên.md",
     "ES6.md",
-    "JavaScript Advanced 2018.md",
-    "NodeJS Web server sử dụng framework Express.md"
+    "JavaScript Advanced 2018.md"
   ]
 }

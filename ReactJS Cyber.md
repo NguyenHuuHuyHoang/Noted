@@ -60,3 +60,14 @@
 - Sau khi xây dựng layout xong => xác định những nguồn dữ liệu nào khi người dùng thao tác sẽ thay đổi và nguồn dữ liệu nào thay đổi, nếu thay đổi thì để trong state (Trường hợp đặt ngoài state thì code vẫn chạy nhưng sai converstion, khó quản lý do đó quy định thay đổi mới đặt trong state), nếu không thay đổi thì để ngoài state => cuối cùng sẽ xử lý chức năng liên quan đến người (event vd: click, hover,...)
 - Khi nào truyền props function: Xác định state đặt ở component nào ? Nguyên tắc đặt state chứa  là ở giao diện binding ra trực tiếp hoặc gián tiếp, chứa nút xử lý trực tiếp hoặc gián tiếp. VD: Đặt ở App.js => PhoneList.js thông qua props => PhoneItem.js thông qua props. Các function tác động đến giá trị state thì lưu tại state, nút xử lý ở đâu thì truyền props tới đó.
 - Những giá trị nào mà tính toán được sẽ không đưa vào lưu trữ
+- Trường hợp truyền function là truyền props từ con lên cha nghĩa là khi con gọi function sẽ truyền dữ liệu lên cha và tác động vào function đã được khai báo ở cha.
+==Redux==
+- Tạo store ở file index.js => tạo thư mục reducer ở trong src => Tạo file rootReducer.js `Đây là thằng sẽ quản lý những reducer nhỏ` => trong rootReducer.js sẽ import combineReduces từ redux
+- Trong một hàm reducer có 2 cái, 1 là default state chứa giá trị mặc định và function để xử lý nó, 1 hàm reducer nhận vào 2 tham số, tham số 1 là default state, tham số thứ 2 là action (trong action có một type, sử dụng switch case để so sánh type truyền tới so sánh trong đó có hay không). Cuối cùng là export default function reducer => Sau đó quay lại rootReducer để import nó vào.
+- Để componet connect được redux phải import thư viện react-redux, nó có nhiệm vụ kết nối tới store và lấy dữ liệu về cho component. Khai báo mapStateToProps fucntion, hàm này return một object chứa key value, key là tên của biến chứa dữ liệu, value là state.todosReducer.todoList.
+- thay thế export default cũ (export default TodoApp) bằng export default connect(mapStateToProps) (TodoApp)
+- Các action bản chất là một function và trả về một object, trong action sẽ có type, thường sẽ viết hoa toàn bộ vì nó là một const
+- Redux quy định khi return 1 state mới thì phải là một object mới hoàn toàn, do trong hàm redux có một hàm supprise sẽ phát hiện sự thay đổi giữa state cũ và state mới. => return {...state, todoList} thay vì return state. Do nó so sánh địa chỉ vùng nhớ, có thay đổi địa chỉ vùng nhớ thì nó mới thay đổi => tăng tốc độ xử lý. default return state để khi có một action nào đó không dính vào case thì vẫn không render lại.
+- Khi làm việc với obj hoặc array thì mình phải clone nó.
+- Để sử dụng action cần phải sử dụng môt connect khác là mapDispatchToProps (khai báo trong TodoApp)
+- Trong file action phải export action ra để reducer truy cập vào
