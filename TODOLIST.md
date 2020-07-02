@@ -1,5 +1,0 @@
-- Làm lại bài phone list
-- fix lại tính tổng tiền hiển thị trong modal
-- Làm function Xóa và sửa hiển thị sản phẩm trong số đơn hàng.
-- Làm + và - sản phẩm trong modal
-- 
