@@ -44,4 +44,4 @@
 - Thêm nhiều class một cách linh hoạt cho các component. Cách 1 đặt 1 biến tên className, nếu có sự thay đổi giá trị truyền vào thì biến đó sẽ + thêm string class tương ứng giá trị truyền vào.
 - Ngoài ra còn có cách là sử dung classnames npm
 ==11 - Conditional rendering==
-- 
+- Cách render các element dựa vào các điều kiện khác nhau.
