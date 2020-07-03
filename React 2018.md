@@ -45,3 +45,4 @@
 - Ngoài ra còn có cách là sử dung classnames npm
 ==11 - Conditional rendering==
 - Cách render các element dựa vào các điều kiện khác nhau.
+- Sử dụng toán tử && để check điều kiện falsy && anything => false, truly && anything => anything.
