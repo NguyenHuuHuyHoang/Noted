@@ -52,3 +52,11 @@
 ==13 - Handling events==
 - Trong HTML DOM để xử lý sự kiện thì sẽ thêm vào onClick, nó sẽ nhận vào một hàm, khi nào người dùng click vào ui thì những gì trong onClick sẽ được gọi như một hàm, onClick mặc định sẽ nhận một biến event.
 - onClick={this.function} => báo lỗi do khi onClick chạy thì this.function sẽ chạy như một hàm => mất this. để xử lý thì sử dụng arrow function onClick= {()=> {this.function}} hoặc khai báo trong constructor () { this.function = this.function.bind(this)}. Không được truyền function() vì nó sẽ truyền vào giá trị trả về của hàm vào trong onClick
+==14 - Immutability== 
+- Immuatability : Bất biến - Trong lập trình thì là khả năng không thay đổi trạng thái của object nào đó. mutate (v) : thay đổi trạng thái bên trong VD a = {a : 1} => a = {a : 2} => a bị mutate. mutable object => nghĩa là object có thể thay đổi được. mutability => khả năng có thể thay đổi trạng thái bên trong, ngược lại immutability không có khả năng thay đổi trạng thái bên trong.
+- Nắm vững thì sẽ điều khiển được app, tăng performance, vd có 2 function cùng nhận vào một biến a, 1 trong 2 function hoặc cả 2 làm mutate biến a => làm khó theo dõi kết quả, đôi khi bug không biết lỗi ở đâu.
+- VD a = [2, 1, 3], a.sort => [1,2,3] = có thể nói a đã bị mutate thay đổi trạng thái bên trong
+- Method thay đổi chính nó => làm cho chương trình khó đoán kết quả hơn.
+- Để thay đổi các property trong 1 object và trả về một object khác object ban đầu. VD: Array thì có method như concat hoặc c = [...b, 4] hoặc [4,...b] hoặc c = b.slice(), chèn 4 vào giữa c = [...b.slice(0,2),4,...b.slice(2)]=> tạo ra một array mới
+- Object thì sử dụng Object.assign({}, obj) hoặc c = {...obj} => vấn đề là cả 2 phương thức này chỉ là shallow copy. Để giải quyết vấn đề thì sử dụng 2 hoặc nhiều toán tử speard, mỗi toán tử phụ trách một obj vd obj cha, obj hoặc array con
+- Giá trị kiểu Primitive (String, boolean, number,...) bản thân là immutable rồi
