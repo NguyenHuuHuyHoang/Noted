@@ -46,3 +46,9 @@
 ==11 - Conditional rendering==
 - Cách render các element dựa vào các điều kiện khác nhau.
 - Sử dụng toán tử && để check điều kiện falsy && anything => false, truly && anything => anything.
+==12 - State==
+- State là trạng thái nội tại bên trong một component
+- Khi state thay đổi thì render sẽ thay đổi cho nên cần chú ý.
+==13 - Handling events==
+- Trong HTML DOM để xử lý sự kiện thì sẽ thêm vào onClick, nó sẽ nhận vào một hàm, khi nào người dùng click vào ui thì những gì trong onClick sẽ được gọi như một hàm, onClick mặc định sẽ nhận một biến event.
+- onClick={this.function} => báo lỗi do khi onClick chạy thì this.function sẽ chạy như một hàm => mất this. để xử lý thì sử dụng arrow function onClick= {()=> {this.function}} hoặc khai báo trong constructor () { this.function = this.function.bind(this)}. Không được truyền function() vì nó sẽ truyền vào giá trị trả về của hàm vào trong onClick
