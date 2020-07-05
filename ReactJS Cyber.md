@@ -1,3 +1,4 @@
+
 - React là một thư viện của JS, hỗ trợ SPAs, tăng hiệu suất load trang. VD: FB - react, Youtube - angular, do chỉ load nội dung mà không load lại toàn bộ trang
 - React viết trên ngôn ngữ ES6
 - create-react-app [tên dự án]
@@ -6,13 +7,22 @@
 - App.js chính la component gốc của toàn ứng dụng.
 - Những thẻ do react tạo ra gần giống như HTML. 
 ==Component==
+- Component thật ra là một thành phần UI + data:
++ Chia sao để tái sử dụng
++ Bao gồm code HTML
++ Bao gồm code JS có thể đan xen HTML
++ Có file css cho component
+- Luồng đi: Từ file HTML => JS => ReactDom => Hàm render
+- App.js là component chính
 - Component biểu diễn giao diện UI (file.html)
 - Là một thành phần của website, là một thẻ do mình định nghĩa, trong thẻ đó chứa các nội dung html do mình biên soạn
 - Có hai loại component là class (stateful component) và functional  - stateless component(React Hook - Đầu 2019 ra), cả hai loại đều có hiệu suất ngang nhau, sử dụng loại nào cũng được. Class viết nội dung trong phương thức render , còn function thì viết nội dung không trong phương thức nào hết, nằm trong lệnh return.
 - stateless component thực chất chỉ là một function, return về một đoạn mã HTML để hiển thị ra giao diện, không thể sử dụng được state và component lifecycle.
-- stateful component (class component) thực chất chỉ là một class, có phương thức là render(), khi component được gọi, render() sẽ chạy và trả về đoạn mã HTML, có thể sử dụng được state và component lifecycle.
+- stateful component (class component) thực chất chỉ là một class, kế thừa từ lớp component, có phương thức là render(), khi component được gọi, render() sẽ chạy và trả về đoạn mã HTML, có thể sử dụng được state và component lifecycle. 
 - Thẻ react bắt buộc phải viết hoa chữ đầu tiên
 - Component không được trùng tên trong dự án
+==React lifecycle==
+- React lifecycle mô tả vòng đời của một component. Bào gồm thứ tự các hàm chạy ở các mốc thời điểm của component
 ==Cấu trúc JSX==
 - Đoạn mã được return trong component tương đố giống HTML nhưng thực chất đó là jsx cho phép chúng ta kết hợp HTML và JS trên một source.
 - class -> className, các thẻ khuyết đóng phải đúng cú pháp, bắt buộc phải có "/" VD: <img />
@@ -23,6 +33,19 @@
 - Ở folder src sẽ chứa: 
 + Components: để chứa các component nhỏ lẻ cấu hình nên 1 trang: header, footer,...
 + Containers: chứa các component ở mức độ trang.
+==Event Binding==
+- Nghĩa là các phương thức trong lớp
+- Khi gọi sự kiện :
++ Không có tham số : 
+1. Sử dụng con trỏ this.<Tên phương thức của lớp>
+2. Nếu sử dụng phương thức có gọi this bên trong -> this.<tên phương thức của lớp>.bind(this)
++ Không có tham số -> this.<tên phương thức của lớp>.bind(this, <tham số 1>,...)
+- Chú ý phương thức render:
++ Đây là phương thức đặc biệt, có code gì trong đó thì nó hiển thị ra trình duyệt cả
++ Nó phụ thuộc thêm thứ nữa là state (Trạng thái, có nghĩa là có sự thay đổi)
+==Xử lý if else, vòng lặp trong jsx==
+- Để xử lý nội dung được render ra giao diện hay không ta sử dụng phép toán điều kiện 3 ngôi.
+- Để render nội dung jsx ra giao diện dưới dạng mảng ta dùng các hàm hỗ trợ của es như map, filter,...
 ==Databinding reactjs==
 - JSX cho phép ta lồng js vào HTML thông qua dấu { a }
 - jsx cho phép chúng ta có thể render biến chuỗi hàm,... tại phần nội dung miễn kết quả trả về là một đoạn jsx
@@ -56,12 +79,22 @@
 + Đối với stateful và stateless component có các cách sử dụng props khác nhau. 
 - Do stateless component là một function nên truyền props vào dưới dạng tham số, sử dụng bằng cách props.[thuộc tính của component cha] (nằm ngoài render) và export để có thể gọi ở các component khác.
 - Đối với stateful component, thì props là thuộc tính mặc định của class, nên không cần truyền tham số. Chí cần gọi this.props
+- Ở react để lấy giá trị từ một sự kiện bên trong component con ta sẽ truyền 1 call back qua props, component con sử dụng callback ấy gắn vào sự kiện để mỗi lần event thực thi tại component con sẽ gửi giá tri đến component cha nơi truyền callback
 - Ngoài ra còn có thể truyền function qua props.
 - Sau khi xây dựng layout xong => xác định những nguồn dữ liệu nào khi người dùng thao tác sẽ thay đổi và nguồn dữ liệu nào thay đổi, nếu thay đổi thì để trong state (Trường hợp đặt ngoài state thì code vẫn chạy nhưng sai converstion, khó quản lý do đó quy định thay đổi mới đặt trong state), nếu không thay đổi thì để ngoài state => cuối cùng sẽ xử lý chức năng liên quan đến người (event vd: click, hover,...)
 - Khi nào truyền props function: Xác định state đặt ở component nào ? Nguyên tắc đặt state chứa  là ở giao diện binding ra trực tiếp hoặc gián tiếp, chứa nút xử lý trực tiếp hoặc gián tiếp. VD: Đặt ở App.js => PhoneList.js thông qua props => PhoneItem.js thông qua props. Các function tác động đến giá trị state thì lưu tại state, nút xử lý ở đâu thì truyền props tới đó.
 - Những giá trị nào mà tính toán được sẽ không đưa vào lưu trữ
 - Trường hợp truyền function là truyền props từ con lên cha nghĩa là khi con gọi function sẽ truyền dữ liệu lên cha và tác động vào function đã được khai báo ở cha.
 ==Redux==
+- Bản chất làm việc với React là việc truyền dữ liệu giữa các component và thay đổi state để re-render lại giao diện component
+- Redux là thư viện cung cấp cho ta một store trung tâm, lưu trữ tất cả các state, từ component muốn thay đổi state chỉ cần truy cập tới store để thay đổi.
+- Redux gồm 3 thành phần chính :
+1. Action: Là nơi mang các thông tin dùng để gửi từ ứng dụng đến Store. Nói dễ hiểu, từ 1 component, ta muốn thay đổi state trên store, ta phải gửi action, là một object để miêu tả muốn làm gì.
+2. Reducer: Nơi tiếp nhận action và thay đổi state
+3. Store: Nơi quản lý và lưu trữ state.
+- Phương thức chính của Redux:
++ mapStateToProps: phương thức lấy giá trị state từ store về tạo thành 1 thuộc tính của component
++ mapDispatchToPróp: phương thức tạo ra sự kiện để đưa giá trị từ component lên store thông qua action.
 - Tạo store ở file index.js => tạo thư mục reducer ở trong src => Tạo file rootReducer.js `Đây là thằng sẽ quản lý những reducer nhỏ` => trong rootReducer.js sẽ import combineReduces từ redux
 - Trong một hàm reducer có 2 cái, 1 là default state chứa giá trị mặc định và function để xử lý nó, 1 hàm reducer nhận vào 2 tham số, tham số 1 là default state, tham số thứ 2 là action (trong action có một type, sử dụng switch case để so sánh type truyền tới so sánh trong đó có hay không). Cuối cùng là export default function reducer => Sau đó quay lại rootReducer để import nó vào.
 - Để componet connect được redux phải import thư viện react-redux, nó có nhiệm vụ kết nối tới store và lấy dữ liệu về cho component. Khai báo mapStateToProps fucntion, hàm này return một object chứa key value, key là tên của biến chứa dữ liệu, value là state.todosReducer.todoList.
@@ -71,3 +104,20 @@
 - Khi làm việc với obj hoặc array thì mình phải clone nó.
 - Để sử dụng action cần phải sử dụng môt connect khác là mapDispatchToProps (khai báo trong TodoApp)
 - Trong file action phải export action ra để reducer truy cập vào
+==Routing (react-router-dom)==
+- Routing là cơ chế trong SPA giúp ta chuyển đổi qua lại các trang mà không làm các trang đó load lại tòa
+- Các thành phần trong routing:
++ BrowserRouter, Route, Switch: Các thành phần định nghĩa route
++ NavLink, Link: Dùng để chuyển đổi link qua lại giữa các component (giống thẻ a nhưng không reload lại trang)
++ History (push, replace): cung cấp các phương thức chuyển đổi route
++ Match: Cung cấp một số thuộc tính hỗ trợ path hiện tại, trong đó bao gồm việc giúp lấy tham số từ url
++ Redirect: Giúp điều hướng từ path này đến path khác tương tự history nhưng có thể định nghĩa được trong phần render(JSX)
++ Prompt: Cho phép người dùng xác định trạng thái có được phép rời khỏi component đó hay không
+==Hook==
+- là khá niệm dùng để thay thế react lifecycle trong react class component dành cho react functional component. Giúp code ngắn hơn clean nhanh hơn. Giảm bớt các khái niệm về hướng đối tượng, thuộc tính, phương thức.
+- Một số hook cơ bản:
++ UseState: Dùng thay thế state và setState react class component
++ UseEffect: Hàm thay thế react lifecycle componentDidmount, Didupdate, WillUnmount
++ UseCallBack: Hàm tương tự lifecycle shouldComponentUpdate trong pureComponent trong react class component
++ UseMemo: Tương tự useCallBack nhưng kết quả trả về là 1 giá trị
++ UseContext: Tương đương contextprovider
