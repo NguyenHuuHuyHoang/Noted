@@ -11,8 +11,9 @@
 - package.json: chứa những thư viện mà cài đặt trong dự án
 - Quan trọng nhất là thư mục public: chứa các file như sau: favicon.ico chứa logo react, index.html - trong ứng dụng react chỉ duy nhất một file index.html (body chỉ chứa duy nhất 1 thẻ div#root), không còn 1 file html nào khác (SPA), load trang, chuyển trang đều xử lý bằng react, manifest.json chứa các thông tin định nghĩa của dự án vd: short name, name,.. thường được dùng để config trên app vì react có thể được chạy trên app (react native). 
 - index.js là 1 file chạy gắn liền với file index.html, làm nhiệm vụ là DOM đến #root, nó sẽ đưa vào 1 tag App (component gốc của ứng dụng, toàn bộ nội dung của html sẽ được load ra từ tag đó, nó là tập hợp nhiều tag div để tạo nên 1 component), nó sử dụng bộ thư viện của react là reactDOM.render để đưa nội dung App vào thẻ div#root
-- Tất cả mọi thứ đều chứa trong thẻ App.js
+- App.js chính là component gốc của toàn ứng dụng
 ==Component==
+- Là tập hợp các thẻ div, input,.... để đóng gói thành một thẻ component, muốn đặt tên gì cũng được và tái sử dụng thẻ nhiều lần.
 - Component thật ra là một thành phần UI + data:
 + Chia sao để tái sử dụng
 + Bao gồm code HTML
@@ -27,6 +28,10 @@
 - stateful component (class component) thực chất chỉ là một class, kế thừa từ lớp component, có phương thức là render(), khi component được gọi, render() sẽ chạy và trả về đoạn mã HTML, có thể sử dụng được state và component lifecycle. 
 - Thẻ react bắt buộc phải viết hoa chữ đầu tiên
 - Component không được trùng tên trong dự án
+==React Functional Component==
+- snippet rfc
+- return về 1 đoạn nội dung bao gồm rất nhiều thẻ, nội dung luôn luôn được bao phủ trong 1 thẻ, nếu có 2 thẻ trở lên sẽ báo lỗi.
+- Muốn sử dụng thẻ component thì chèn vô App.js, do component export default nên khi import sẽ không có {}, dù bên component export là gì nhưng khi Import thì phải viết hoa chữ cái đầu tiên để phân biệt với các tag html
 ==React lifecycle==
 - React lifecycle mô tả vòng đời của một component. Bào gồm thứ tự các hàm chạy ở các mốc thời điểm của component
 ==Cấu trúc JSX==
