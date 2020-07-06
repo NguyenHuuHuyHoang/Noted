@@ -6,6 +6,12 @@
 - Đầu tiên trình duyệt sẽ đọc index.html và index.js sau đó sẽ index.js, trong file nãy ReactDOM sẽ được sử dụng để render nội dung của app component ra div root ở ngoài HTML thông qua điều hướng về App.js, ghi toàn bộ nội dung của App lên html.
 - App.js chính la component gốc của toàn ứng dụng.
 - Những thẻ do react tạo ra gần giống như HTML. 
+==Cấu trúc dự án==
+- node_modules: chứa những thư viện mà dự án sẽ đóng gói
+- package.json: chứa những thư viện mà cài đặt trong dự án
+- Quan trọng nhất là thư mục public: chứa các file như sau: favicon.ico chứa logo react, index.html - trong ứng dụng react chỉ duy nhất một file index.html (body chỉ chứa duy nhất 1 thẻ div#root), không còn 1 file html nào khác (SPA), load trang, chuyển trang đều xử lý bằng react, manifest.json chứa các thông tin định nghĩa của dự án vd: short name, name,.. thường được dùng để config trên app vì react có thể được chạy trên app (react native). 
+- index.js là 1 file chạy gắn liền với file index.html, làm nhiệm vụ là DOM đến #root, nó sẽ đưa vào 1 tag App (component gốc của ứng dụng, toàn bộ nội dung của html sẽ được load ra từ tag đó, nó là tập hợp nhiều tag div để tạo nên 1 component), nó sử dụng bộ thư viện của react là reactDOM.render để đưa nội dung App vào thẻ div#root
+- Tất cả mọi thứ đều chứa trong thẻ App.js
 ==Component==
 - Component thật ra là một thành phần UI + data:
 + Chia sao để tái sử dụng
