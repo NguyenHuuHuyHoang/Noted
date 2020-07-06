@@ -30,7 +30,7 @@
 - Component không được trùng tên trong dự án
 ==React Functional Component==
 - snippet rfc
-- là một function bình thường return về 1 đoạn nội dung bao gồm rất nhiều thẻ, nội dung luôn luôn được bao phủ trong 1 thẻ, nếu có 2 thẻ trở lên sẽ báo lỗi.
+- là một function bình thường return về 1 đoạn nội dung bao gồm rất nhiều thẻ, nội dung luôn luôn được bao phủ trong 1 thẻ, nếu có 2 thẻ đồng cấp trở lên sẽ báo lỗi.
 - Muốn sử dụng thẻ component thì chèn vô App.js, do component export default nên khi import sẽ không có {}, dù bên component export là gì nhưng khi Import thì phải viết hoa chữ cái đầu tiên để phân biệt với các tag html
 ==React Class Component==
 - sinppet rcc
@@ -63,10 +63,12 @@
 - Để xử lý nội dung được render ra giao diện hay không ta sử dụng phép toán điều kiện 3 ngôi.
 - Để render nội dung jsx ra giao diện dưới dạng mảng ta dùng các hàm hỗ trợ của es như map, filter,...
 ==Databinding reactjs==
-- JSX cho phép ta lồng js vào HTML thông qua dấu { a }
+- JSX là những đối tượng HTML, khi react biên dịch đến các đối tượng này thì sẽ tạo ra các thẻ HTML
+- JSX cho phép ta lồng js trực tiếp vào HTML thông qua dấu { a }
+- Để truy xuất thuộc tính trong phạm vi class thì sử dụng con trỏ this
 - jsx cho phép chúng ta có thể render biến chuỗi hàm,... tại phần nội dung miễn kết quả trả về là một đoạn jsx
 - js sẽ được parse và hiển thị chung với html.
-==Xử lý sự kiện trong REACT==
+- Nếu khai báo 1 thuộc tính thì phạm vi hoạt động trên tất cả các hàm trong class, nếu khai báo như một biến trong render() thì phạm vi hoạt động trong function
 - Các sự kiện onClick, onChange, onSubmit... trong js đều có thể sử dụng trong react. Tuy nhiên sẽ có những khác biệt về cú pháp.
 - Cú pháp suKien={callbackfunction} => sự kiện là các sự kiện nêu trên, callback function là một function để xử lý cho sự kiện đó, lưu ý: callback function gán vào không có 2 dấu ().
 - Trường hợp muốn truyền 1 callback function xử lý sự kiện có tham số : suKien={() => callbackfunction(param)} ta sẽ viết dưới dạng truyền 1 callbackfunction nặc danh và function đó sẽ trả về 1 function có tham số khi thực thi => Khi gọi function đó.
