@@ -30,8 +30,13 @@
 - Component không được trùng tên trong dự án
 ==React Functional Component==
 - snippet rfc
-- return về 1 đoạn nội dung bao gồm rất nhiều thẻ, nội dung luôn luôn được bao phủ trong 1 thẻ, nếu có 2 thẻ trở lên sẽ báo lỗi.
+- là một function bình thường return về 1 đoạn nội dung bao gồm rất nhiều thẻ, nội dung luôn luôn được bao phủ trong 1 thẻ, nếu có 2 thẻ trở lên sẽ báo lỗi.
 - Muốn sử dụng thẻ component thì chèn vô App.js, do component export default nên khi import sẽ không có {}, dù bên component export là gì nhưng khi Import thì phải viết hoa chữ cái đầu tiên để phân biệt với các tag html
+==React Class Component==
+- sinppet rcc
+- Là một lớp đối tượng do đó có 2 thành phần là thuộc tính và phương thức, có thể định nghĩa thêm nhiều thuộc tính và phương thức, còn functional chỉ có biến.
+- nó có phương thức render() để render giao diện, nội dung sẽ chứa trong return của render(). 
+- Sử dụng thì giống như functional.
 ==React lifecycle==
 - React lifecycle mô tả vòng đời của một component. Bào gồm thứ tự các hàm chạy ở các mốc thời điểm của component
 ==Cấu trúc JSX==
