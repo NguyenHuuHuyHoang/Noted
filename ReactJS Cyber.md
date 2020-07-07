@@ -59,6 +59,11 @@
 - Chú ý phương thức render:
 + Đây là phương thức đặc biệt, có code gì trong đó thì nó hiển thị ra trình duyệt cả
 + Nó phụ thuộc thêm thứ nữa là state (Trạng thái, có nghĩa là có sự thay đổi)
+- Các sự kiện onClick, onChange, onSubmit... trong js đều có thể sử dụng trong react. Tuy nhiên sẽ có những khác biệt về cú pháp.
+- Cú pháp suKien={callbackfunction} => sự kiện là các sự kiện nêu trên, callback function là một function để xử lý cho sự kiện đó, lưu ý: callback function gán vào không có 2 dấu ().
+- Trường hợp muốn truyền 1 callback function xử lý sự kiện có tham số : suKien={() => callbackfunction(param)} ta sẽ viết dưới dạng truyền 1 callbackfunction  và function đó sẽ trả về 1 function có tham số khi thực thi => Khi gọi function đó.
+- Event Binding -> hay còn gọi là handle Event
+- Những hàm xử lý sự kiện sử dụng arrow function.
 ==Xử lý if else, vòng lặp trong jsx==
 - Để xử lý nội dung được render ra giao diện hay không ta sử dụng phép toán điều kiện 3 ngôi.
 - Để render nội dung jsx ra giao diện dưới dạng mảng ta dùng các hàm hỗ trợ của es như map, filter,...
@@ -69,11 +74,6 @@
 - jsx cho phép chúng ta có thể render biến chuỗi hàm,... tại phần nội dung miễn kết quả trả về là một đoạn jsx
 - js sẽ được parse và hiển thị chung với html.
 - Nếu khai báo 1 thuộc tính thì phạm vi hoạt động trên tất cả các hàm trong class, nếu khai báo như một biến trong render() thì phạm vi hoạt động trong function
-- Các sự kiện onClick, onChange, onSubmit... trong js đều có thể sử dụng trong react. Tuy nhiên sẽ có những khác biệt về cú pháp.
-- Cú pháp suKien={callbackfunction} => sự kiện là các sự kiện nêu trên, callback function là một function để xử lý cho sự kiện đó, lưu ý: callback function gán vào không có 2 dấu ().
-- Trường hợp muốn truyền 1 callback function xử lý sự kiện có tham số : suKien={() => callbackfunction(param)} ta sẽ viết dưới dạng truyền 1 callbackfunction nặc danh và function đó sẽ trả về 1 function có tham số khi thực thi => Khi gọi function đó.
-- Event Binding -> hay còn gọi là handle Event
-- Những hàm xử lý sự kiện sử dụng arrow function.
 ==Lệnh điều kiện trong jsx==
 - Kết hợp if else và hàm để xác định nội dung cần hiển thị trong react.
 - Bằng cách xây dựng một hàm bên trong sử dụng lệnh if else để tùy biến nội dung jsx được render ra giao diện. Ngoài ra mình có thể sử dụng toán tử 3 ngôi để xá định phần nội dung hiển thị trực tiếp trên hàm render.
@@ -118,7 +118,7 @@
 - Để componet connect được redux phải import thư viện react-redux, nó có nhiệm vụ kết nối tới store và lấy dữ liệu về cho component. Khai báo mapStateToProps fucntion, hàm này return một object chứa key value, key là tên của biến chứa dữ liệu, value là state.todosReducer.todoList.
 - thay thế export default cũ (export default TodoApp) bằng export default connect(mapStateToProps) (TodoApp)
 - Các action bản chất là một function và trả về một object, trong action sẽ có type, thường sẽ viết hoa toàn bộ vì nó là một const
-- Redux quy định khi return 1 state mới thì phải là một object mới hoàn toàn, do trong hàm redux có một hàm supprise sẽ phát hiện sự thay đổi giữa state cũ và state mới. => return {...state, todoList} thay vì return state. Do nó so sánh địa chỉ vùng nhớ, có thay đổi địa chỉ vùng nhớ thì nó mới thay đổi => tăng tốc độ xử lý. default return state để khi có một action nào đó không dính vào case thì vẫn không render lại.
+- Redux quy định khi return 1 state mới thì phải là một object mới hoàn toàn, do trong hàm redux có một hàm  sẽ phát hiện sự thay đổi giữa state cũ và state mới. => return {...state, todoList} thay vì return state. Do nó so sánh địa chỉ vùng nhớ, có thay đổi địa chỉ vùng nhớ thì nó mới thay đổi => tăng tốc độ xử lý. default return state để khi có một action nào đó không dính vào case thì vẫn không render lại.
 - Khi làm việc với obj hoặc array thì mình phải clone nó.
 - Để sử dụng action cần phải sử dụng môt connect khác là mapDispatchToProps (khai báo trong TodoApp)
 - Trong file action phải export action ra để reducer truy cập vào
