@@ -139,3 +139,11 @@
 + UseCallBack: Hàm tương tự lifecycle shouldComponentUpdate trong pureComponent trong react class component
 + UseMemo: Tương tự useCallBack nhưng kết quả trả về là 1 giá trị
 + UseContext: Tương đương contextprovider
+==Thư mục selector==
+- chứa các file js chứa logic lặp đi lặp lại của dự án nhằm tái sử dụng code trong dự án. Chú ý phải export cho các function trong file js để import vào component
+==React Form - validation==
+- Luồng là state thay đổi thì view thay đổi
+- Có 4 input thì tạo 1 state gồm 4 thuộc tính. 
+- input chứa value = this.state.[key tương ứng], và onChange={evt=>this.state({[key] : evt.target.value})} nếu không có thì sẽ không nhập được vào ô input.
+- [evt.target.name] nếu đặt trong ngoặc vuông thì sẽ hiểu ở trong là một biến và lấy giá trị biến thành key thay vì kiểu string. (ES6)
+- Chặn submit khi chưa điền đầy đủ các ô hoặc focus vào 1 input mà không điền vào gì hết mà nhảy ra sẽ báo lỗi.
