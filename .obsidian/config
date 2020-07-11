@@ -9,5 +9,78 @@
     "Command palette": true,
     "Markdown format importer": true,
     "Word count": true
-  }
+  },
+  "workspaceLayout": {
+    "id": "d4c19131c8f365ee",
+    "type": "split",
+    "children": [
+      {
+        "id": "7f6a3723158eb97b",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "empty",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "leftSidedock": {
+    "id": "e559c63f0fc02c8a",
+    "type": "split",
+    "children": [
+      {
+        "id": "53b2a7a00ae0de6c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4cde23584427282f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "02f2d57deed93061",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "rightSidedock": {
+    "id": "f157a48a1c9723b5",
+    "type": "split",
+    "children": [
+      {
+        "id": "ce7d5420d37efb11",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a600f07bd3a067e2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "PrtScr capture.jpg.md",
+    "ES6.md"
+  ]
 }
