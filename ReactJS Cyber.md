@@ -148,3 +148,5 @@
 - [evt.target.name] nếu đặt trong ngoặc vuông thì sẽ hiểu ở trong là một biến và lấy giá trị biến thành key thay vì kiểu string. (ES6)
 - Chặn submit khi chưa điền đầy đủ các ô hoặc focus vào 1 input mà không điền vào gì hết mà nhảy ra sẽ báo lỗi.
 - Do this.setState là hàm chạy bất đồng bộ nên sẽ xảy ra lỗi khi chạy nhiều lần do vậy sử dụng function trong this.setState(state => {}) khi truyền state vậy thì state luôn luôn là mới nhất, nếu đặt ở ngoài thì không đảm bảo state là mới nhất => sai lệch dữ liệu
+==Life cycle getDerivedStaeteFromProps==
+- 
