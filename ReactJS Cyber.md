@@ -149,4 +149,6 @@
 - Chặn submit khi chưa điền đầy đủ các ô hoặc focus vào 1 input mà không điền vào gì hết mà nhảy ra sẽ báo lỗi.
 - Do this.setState là hàm chạy bất đồng bộ nên sẽ xảy ra lỗi khi chạy nhiều lần do vậy sử dụng function trong this.setState(state => {}) khi truyền state vậy thì state luôn luôn là mới nhất, nếu đặt ở ngoài thì không đảm bảo state là mới nhất => sai lệch dữ liệu
 ==Life cycle getDerivedStaeteFromProps==
-- 
+- Mỗi lần component được render lại thì hàm getDerivedStaeteFromProps sẽ chạy lại, nó nhận lại 2 tham số là nextProps và prevState, trong đó nextProps là props và prevState là state
+- Hàm return trả về một state mới. Dùng khi muốn props thay đổi thì cập nhập lại state tương ứng. 
+- dùng điều kiện if để điều khiển việc cập nhật, vd khi nào thay đổi user name thì mới set lại state còn nếu không thay đổi thì chạy tiếp.
