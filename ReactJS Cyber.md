@@ -148,9 +148,20 @@
 - [evt.target.name] nếu đặt trong ngoặc vuông thì sẽ hiểu ở trong là một biến và lấy giá trị biến thành key thay vì kiểu string. (ES6)
 - Chặn submit khi chưa điền đầy đủ các ô hoặc focus vào 1 input mà không điền vào gì hết mà nhảy ra sẽ báo lỗi.
 - Do this.setState là hàm chạy bất đồng bộ nên sẽ xảy ra lỗi khi chạy nhiều lần do vậy sử dụng function trong this.setState(state => {}) khi truyền state vậy thì state luôn luôn là mới nhất, nếu đặt ở ngoài thì không đảm bảo state là mới nhất => sai lệch dữ liệu
-==Life cycle getDerivedStaeteFromProps==
-- Mỗi lần component được render lại thì hàm getDerivedStaeteFromProps sẽ chạy lại, nó nhận lại 2 tham số là nextProps và prevState, trong đó nextProps là props và prevState là state
+==Life cycle getDerivedStateFromProps==
+- Mỗi lần component được render lại thì hàm getDerivedStateFromProps sẽ chạy lại, nó nhận lại 2 tham số là nextProps và prevState, trong đó nextProps là props và prevState là state
 - Hàm return trả về một state mới. Dùng khi muốn props thay đổi thì cập nhập lại state tương ứng. 
 - dùng điều kiện if để điều khiển việc cập nhật, vd khi nào thay đổi user name thì mới set lại state còn nếu không thay đổi thì chạy tiếp.
 ==Life cycle component==
 - componentDidMount(): được chạy duy nhất một lần sau khi render chạy xong, thường trong đây sẽ thực hiện các tác vụ như gọi API, tương tác DOM, setTimeOut, setInterval,... (Nói chung những hoạt động liên quan đến site effect)
+- componentWillMount(): được chạy một lần trước khi hàm render được gọi (react 16.4++ sẽ không sử dụng) nếu được sử dụng sẽ có UNSAFE_componentWillMount(). Ngày xưa được dùng để setState trước khi render sẽ tiết kiệm 1 lần render, cũng ít được sử dụng
+- khi state thay đổi => render chạy lại => chạy componentDidUpdate(), trong đây cũng làm những việc như setState, gọi API,... tương tự như DidMount khi nhận được prop mới, khác với DidMount chạy một lần thì DidUpdate chạy nhiều lần. *Chú ý* cần có điều kiện dừng nếu không sẽ lặp đi lặp lại do state thay đổi, điều kiện dừng là if, nếu thỏa mãn điều gì đó thì mới setState cho nó.
+- UNSAFE_componentWillUpdate(): được chạy sau khi state hoặc props thay đổi nhưng chạy trước render, được bỏ đi từ phiên bản react 17
+- shouldComponentUpdate(): dùng để tăng performent, nó nhận vào 2 tham số nextProps, nextState. Trường hợp hàm trả về giá trị true thì hàm render sẽ được chạy, nếu trả false thì render sẽ không được chạy. Chạy sau khi state hoặc props thay đổi và chạy trước render. Nếu chạy sai sẽ block hàm render.
+- UNSAFE_componentWillReceiveProps(nextProps): Chạy lại sau khi props thay đổi và chạy trước shouldComponentUpdate, trước khi sử dụng để khi nhận được props mới sẽ setState trong này.
+- static getDerivedStateFromProps(nextProps, prevState): Nếu return về null thì không thay đổi gì hết, nếu return 1 object thì state của nó sẽ mang giá trị object đó, tương đương như setState. Phải có điều kiện if nếu không sẽ chạy lặp lại liên tục. Nó thay thế cho componentWillReceiveProps, chạy sau khi props thay đổi và chạy trước shouldComponentUpdate. Ít sử dụng. Case Study: Trong todoApp khi nhận được props mới thì dùng filter để props todolist và props user để return về state mới
+- componentWillUnmount(): Chạy trước khi component bị hủy đi, thường sẽ sử dụng để clearTimeoue, clearInterval, removeAddEventListener,.. dùng để giải phóng vùng nhớ - rò rỉ vùng nhớ.
+- forceUpdate(): render lại khi gọi, hiếm khi xài, thường được sử dụng để vẽ canvas, vẽ chart
+- Extends PureComponent, tác dụng của nó là tự handle shouldComponentUpdate (không gọi nó trong PureComponent được vì bản thân nó đã có). Sẽ sử dụng shallow compare các giá trị primitive (string,number, boolean), nó tự so sánh props cũ, props mới nếu khác sẽ chạy render nếu không khác sẽ không chạy lại render, không nên lạm dụng sử dụng PureComponent vì khi nó handle shouldComponentUpdate thì sẽ tốn thời gian xử lý, nếu props là Array, Object thì không nên sử dụng, chỉ sử dụng khi props truyền vào là Primitive
+==File constants==
+- Trong cấu trúc redux có file constants. Khi sử dụng những biến const ở nhiều nơi thì sử dụng file để có sửa thì chỉ cần sửa ở một nơi mà thôi.
