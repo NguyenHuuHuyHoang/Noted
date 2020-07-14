@@ -152,3 +152,5 @@
 - Mỗi lần component được render lại thì hàm getDerivedStaeteFromProps sẽ chạy lại, nó nhận lại 2 tham số là nextProps và prevState, trong đó nextProps là props và prevState là state
 - Hàm return trả về một state mới. Dùng khi muốn props thay đổi thì cập nhập lại state tương ứng. 
 - dùng điều kiện if để điều khiển việc cập nhật, vd khi nào thay đổi user name thì mới set lại state còn nếu không thay đổi thì chạy tiếp.
+==Life cycle component==
+- componentDidMount(): được chạy duy nhất một lần sau khi render chạy xong, thường trong đây sẽ thực hiện các tác vụ như gọi API, tương tác DOM, setTimeOut, setInterval,... (Nói chung những hoạt động liên quan đến site effect)
