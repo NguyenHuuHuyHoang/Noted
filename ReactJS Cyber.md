@@ -165,3 +165,7 @@
 - Extends PureComponent, tác dụng của nó là tự handle shouldComponentUpdate (không gọi nó trong PureComponent được vì bản thân nó đã có). Sẽ sử dụng shallow compare các giá trị primitive (string,number, boolean), nó tự so sánh props cũ, props mới nếu khác sẽ chạy render nếu không khác sẽ không chạy lại render, không nên lạm dụng sử dụng PureComponent vì khi nó handle shouldComponentUpdate thì sẽ tốn thời gian xử lý, nếu props là Array, Object thì không nên sử dụng, chỉ sử dụng khi props truyền vào là Primitive
 ==File constants==
 - Trong cấu trúc redux có file constants. Khi sử dụng những biến const ở nhiều nơi thì sử dụng file để có sửa thì chỉ cần sửa ở một nơi mà thôi.
+==Middlewares==
+- có 3 thư viện middleware thông dụng là redux-thunk, redux-saga và redux observable
+- setup redux-thunk:  index.js => import thunk from redux-thunk , applyMiddleware from redux. trong createStore nhận vào 2 tham số, tham số 1 là store, tham số 2 là applyMiddleware
+- thư viện compose của redux gom tất cả các thư viện vào thành một cục để vừa sử dụng middleware vừa sử dụng redux dev tool. 
