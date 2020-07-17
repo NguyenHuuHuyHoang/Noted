@@ -166,6 +166,11 @@
 ==File constants==
 - Trong cấu trúc redux có file constants. Khi sử dụng những biến const ở nhiều nơi thì sử dụng file để có sửa thì chỉ cần sửa ở một nơi mà thôi.
 ==Middlewares==
+- Để giải quyết vấn đề nhiều component cùng gọi 1 API, tránh phải viết nhiều lần code API ở từng component thì chúng ta sử dụng middleware.
+- Middleware có thể xem như là lớp ngăn cách giữa component và reducer
+- Action được dispatch lên reducer phải đi qua middleware.
+- Ta có thể sử dụng middleware để đảm bảo rằng khi tới được reducer, response từ server đã được trả về.
 - có 3 thư viện middleware thông dụng là redux-thunk, redux-saga và redux observable
 - setup redux-thunk:  index.js => import thunk from redux-thunk , applyMiddleware from redux. trong createStore nhận vào 2 tham số, tham số 1 là store, tham số 2 là applyMiddleware
 - thư viện compose của redux gom tất cả các thư viện vào thành một cục để vừa sử dụng middleware vừa sử dụng redux dev tool. 
+- 
