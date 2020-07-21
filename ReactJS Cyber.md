@@ -173,4 +173,18 @@
 - có 3 thư viện middleware thông dụng là redux-thunk, redux-saga và redux observable
 - setup redux-thunk:  index.js => import thunk from redux-thunk , applyMiddleware from redux. trong createStore nhận vào 2 tham số, tham số 1 là store, tham số 2 là applyMiddleware
 - thư viện compose của redux gom tất cả các thư viện vào thành một cục để vừa sử dụng middleware vừa sử dụng redux dev tool. 
-- 
+==Routing==
+- cần sử dụng thư viện react-router-dom
+- import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+- Dùng tag BrowserRouter để bọc các component trong App.js
+- Sử dụng Switch - Route để điều khiển luồng, trường hợp trang home thì sử dụng exact path = "/"
+- <Route exact path="/" component={Home}/> Component trong 1 Route sẽ tự động có 3 props là history, map, location
+- Có 2 cách chuyển trang. Sử dụng Link to và this.props.history.push=("/"). Chú ý history.push sẽ giữ lại lịch sử điều hướng, khác với push thằng replace thì lịch sử của trang đó sẽ thay thế bằng trang replace. Thông thường sẽ sử dụng push là chủ yếu, replace trong một số trường hợp đặc biệt.
+- Trường hợp sử dụng render={(routerProps) => {return <SignUp {...routerProps} />;}} thì không có props phải gắn bằng tay, trường hợp vừa khai báo component vừa render thì sẽ nhận component
+- Khi sử dụng component chỉ được nhét tên của component còn sử dụng render thì có thể chứa các component => root không cần layout thì sử dụng component, root nào cần layout thì sử dụng render
+- Trong react tất cả các component sẽ có 1 props là children. this.props.children
+==Cấu trúc một app cơ bản==
+- components: chứa các component nhỏ thường sử dụng như navbar, header, loading,...
+- pages: chứa các trang của app
+- actions, constants, reducer (nễu sử dụng redux)
+- utils: những function chung chung dành cho toàn ứng dụng
