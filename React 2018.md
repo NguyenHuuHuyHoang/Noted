@@ -60,3 +60,5 @@
 - Để thay đổi các property trong 1 object và trả về một object khác object ban đầu. VD: Array thì có method như concat hoặc c = [...b, 4] hoặc [4,...b] hoặc c = b.slice(), chèn 4 vào giữa c = [...b.slice(0,2),4,...b.slice(2)]=> tạo ra một array mới
 - Object thì sử dụng Object.assign({}, obj) hoặc c = {...obj} => vấn đề là cả 2 phương thức này chỉ là shallow copy. Để giải quyết vấn đề thì sử dụng 2 hoặc nhiều toán tử spread, mỗi toán tử phụ trách một obj vd obj cha, obj hoặc array con hoặc chuyển nguyên obj sang JSON xong chuyển ngược lại.
 - Giá trị kiểu Primitive (String, boolean, number,...) bản thân là immutable rồi
+==Thêm ảnh vào react== 
+- sử dụng import [tên ảnh] from 'path'
