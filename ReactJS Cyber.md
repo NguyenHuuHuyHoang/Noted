@@ -188,3 +188,18 @@
 - pages: chứa các trang của app
 - actions, constants, reducer (nễu sử dụng redux)
 - utils: những function chung chung dành cho toàn ứng dụng
+==HOC - Higher Order Component==
+- là 1 function nhận vào 1 component và return 1 component mới.
+- Dùng để tái sử dụng code, 
+- file HOC bắt đầu bằng with VD withForm.js
+==HOOK trong Function Component==
+- Muốn dùng state phải  import React, {useState} from 'react'
+- useState trả về 2 tham số: const [count, setCount] = useState()
+- useEffect nhận vào 2 tham số, tham số 1 là 1 callback function, tham số 2 nếu [] rỗng thì sẽ chạy 1 lần duy nhất sau khi render tương đương với componentDidMount. Trong function component có thể sử dụng n useEffect. nếu để [count] thì sẽ chạy mỗi khi biến count thay đổi và chạy sau render tương đương componentDidUpdate nhưng khác DidUpdate xíu là lần đầu tiên vẫn chạy chứ không phải chỉ chạy khi state với props thay đổi, không chạy lần đầu tiên.
+- Trường hợp không truyền tham số 2 thì sẽ tự động chạy lại mỗi khi props hoặc state thay đổi => không nên xài. 
+- Không thể sử dụng so sánh Array và Object
+- memo dùng để khắc phục tình trạng componet cha thay đổi props thì thằng con tự thay đổi theo khi thằng con sử dụng useEffect mà không có tham số 2. Tương tự PureComponent, tuy nhiên memo chỉ kiểm tra được sự thay đổi props chứ không được state. Trường hợp props là một function thì sẽ luôn luôn render lại do không kiểm tra được object.
+- sử dụng dùng memo bọc function memo(Hello (){}) hoặc sử dụng export default memo(Hello)
+- useMemo, nhận vào tham số 1 là callback function , tham số 2 là array set khi nào chạy như useEffect. Catched lại giá trị cũ, khi nào thay đổi state thì mới sử chạy vào. Nếu phép tính phức tạp hơn useMemo thì sử dụng còn không phức tạp thì không nên sử dụng do tốn bộ nhớ để chứa function, lưu giá trị cũ, thời gian xử lý do đó cần phải cân nhắc khi sử dụng.
+- useCallback dùng để ngăn chặn việc render lại khi truyền vào 1 function do dùng memo ở component con không thể so sánh props là function, khi component bị render lại hàm handleShowMessage sẽ bị chạy lại => component con sẽ bị render lại, dùng useCallback để đảm bảo khi state message thay đổi thì hàm handleShowMessage mới chạy lại, các state khác thay đổi sẽ không làm render lại component Hello, sử dụng như useMemo.
+- useMemo và useCallback dùng để tăng performance của app
