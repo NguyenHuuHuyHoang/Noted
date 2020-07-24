@@ -61,4 +61,41 @@
 - Object thì sử dụng Object.assign({}, obj) hoặc c = {...obj} => vấn đề là cả 2 phương thức này chỉ là shallow copy. Để giải quyết vấn đề thì sử dụng 2 hoặc nhiều toán tử spread, mỗi toán tử phụ trách một obj vd obj cha, obj hoặc array con hoặc chuyển nguyên obj sang JSON xong chuyển ngược lại.
 - Giá trị kiểu Primitive (String, boolean, number,...) bản thân là immutable rồi
 ==Thêm ảnh vào react== 
-- sử dụng import [tên ảnh] from 'path'
+- import [tên ảnh Path] from 'path'
+==18 - props.children==
+- props.children là một cách dùng để viết code dễ nhìn hơn.
+- Chèn Component theo kiểu thẻ đóng, thẻ mở thì giữa 2 tab đóng mở là childern, bất kì thứ gì nằm ở giữa hai thẻ đó sẽ là props.children của Component
+==19 - propTypes==
+- propTypes để validate các props của Component. Để sử dụng thì cần phải cài đặt thư viện prop-types
+- là một thuộc tính của các component trong React, Componet.propTypes = { onClick: PropTypes.fucn, item: PropTypes.shape({isComplete: PropTypes.bool, title: PropTypes.string})}. nếu props truyền vào khác với những gì đã khai báo trong PropTypes sẽ báo lỗi.
+- Giúp cho nhìn vào sẽ biết Component sẽ cần gì, những thuộc tính nào bắt buộc phải có vd: tile:PropTypes.string.isRequired.
+- Có thể xem thêm trong ReactJS => Typechecking with propTypes
+==20 - React.createRef()==
+- React.createRef() để điều khiển DOM trong những trường hợp cần thiết
+- Khi code 1 app react thì phải luôn suy nghĩ cấu trúc data trong app, chia state, props như thế nào. chứ không phảilàm việc với DOM là phải thay đổi các element trong trang như thế nào. Các element trong trang sẽ phản ánh data trong app là tư duy theo react => hạn chế truy cập DOM API. 
+- Trong một vài trường hợp cần phải sử dụng một số API vd khi vào trang thì tự động con trỏ chuột nhảy vào ô input.
+- DOM có API focus() để focus vào input.
+- Trước hết cần phải tạo một tham chiếu ở trong contructor bằng React.createRef(), sau đó ở element muốn điều khiến, gán ref = tham chiếu đã tạo. Sử dụng this.[ref].current.API vd: this.inputRef.current.focus()
+==debugger==
+- Thêm dòng code debugger để dừng lại code trên chorme
+==21 - Component Lifecycles==
+- React có 2 DOM 1 DOM thực và 1 DOM ảo. DOM ảo sẽ được tạo ra trước sau đó sử dụng API trong thư viện để biến đổi thành DOM thực để trình duyệt đọc và hiển thị.
+- Vòng đời của component.
+- thứ tự chạy của Component là contructor => componentDidMount => render
+- componentDidMount : sẽ được gọi lần đầu tiên khi Component được khởi tạo và gắn vào DOM, chỉ được gọi một lần duy nhất. Thường sử dụng để gọi API 
+- componentDidUpdate: sẽ được gọi ngay sau khi render được gọi, VD khi props hoặc state thay đổi thì => render thay đổi => gọi componenDidUpdate. Không được gọi ở lần render đầu tiên khi Component được Mount vào DOM
+- componentWillUnmount: sẽ được gọi trước khi Component Unmount khỏi DOM. Dùng để remove listener hoặc các setTimeout, setInterval,... tránh memory leak.
+- shouldComponentUpdate: là một method có thể overdrive được, mặc định sẽ trả về true. nếu trả về false sẽ không bao giờ render lại. Nhận vào 2 tham số nextProps và nextState. so sánh this.state.count === nextState.count => return false
+==22 - React + Bootstrap==
+- reactstrap là một bộ công cụ viết lại boosstrap theo cách react.
+- cài đặt bootstrap sau đó cài reactstrap
+- Import Component mà mình muốn sử dụng vào sau đó sử dụng.
+==23 - Storybook==
+- Tạo ra một thư viện các component mà đã phát triển trong dự án.
+- Vừa có tác dụng là documentation vừa có tác dụng chia sẻ cho người khác.
+- storybook.js.org
+- cài đặt npm i --save-dev @storybook/react babel-core babel-loader
+- trong file package.json thêm vào key scripts dòng "storybook": "start-storybook -p 9001 -c .storybook"
+- tạo 1 config file trong thư mục .storybook/config.js chứa nội dung: import {configure } from '@storybook/react' 
+- function loadStories() { require('../stories/index.js')}
+- configure(loadStories, module)
