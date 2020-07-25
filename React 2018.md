@@ -70,6 +70,9 @@
 - là một thuộc tính của các component trong React, Componet.propTypes = { onClick: PropTypes.fucn, item: PropTypes.shape({isComplete: PropTypes.bool, title: PropTypes.string})}. nếu props truyền vào khác với những gì đã khai báo trong PropTypes sẽ báo lỗi.
 - Giúp cho nhìn vào sẽ biết Component sẽ cần gì, những thuộc tính nào bắt buộc phải có vd: tile:PropTypes.string.isRequired.
 - Có thể xem thêm trong ReactJS => Typechecking with propTypes
+- default Props là giá trị mặc định nếu không truyền vào VD: Greeting.defaultProps = {
+  name: 'Stranger'
+};
 ==20 - React.createRef()==
 - React.createRef() để điều khiển DOM trong những trường hợp cần thiết
 - Khi code 1 app react thì phải luôn suy nghĩ cấu trúc data trong app, chia state, props như thế nào. chứ không phảilàm việc với DOM là phải thay đổi các element trong trang như thế nào. Các element trong trang sẽ phản ánh data trong app là tư duy theo react => hạn chế truy cập DOM API. 
@@ -96,6 +99,11 @@
 - storybook.js.org
 - cài đặt npm i --save-dev @storybook/react babel-core babel-loader
 - trong file package.json thêm vào key scripts dòng "storybook": "start-storybook -p 9001 -c .storybook"
-- tạo 1 config file trong thư mục .storybook/config.js chứa nội dung: import {configure } from '@storybook/react' 
-- function loadStories() { require('../stories/index.js')}
-- configure(loadStories, module)
+- tạo 1 config file trong thư mục .storybook/config.js chứa nội dung:
+import {configure } from '@storybook/react' 
+function loadStories() { require('../stories/index.js')}
+configure(loadStories, module)
+- tạo một thư mục stories tương đối với file config.js 1 thư mục để chứa các file js Component. Trong thư mục này chúng ta để 1 file index.js import các file js của các component trong stories
+- Tạo folder Component trong src và đặt các component trong đó kèm file css của component đó. file js nào import css của file đó. Trong file js chứa code JSX (nhớ sử dụng prop-types khi viết documentation)
+- Trong file js tương ứng với Component ở trong thư mục stories chúng ta sẽ import file js trong component. sau đó viết storiesOf('tên component', module).add(default, () => (Gọi component ra và truyền props cho nó))
+- Để hiển thị show info thì cần phải cài add on info => npm i -D @storybook/addon-info. Cách sử dụng là thêm addDecorator(withInfo) vào file config.js hoặc .addDecorator(withInfo) trước khi .add trong file truyền props vào componet
