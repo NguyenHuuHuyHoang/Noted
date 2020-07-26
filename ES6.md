@@ -103,6 +103,15 @@ một cách linh động bằng cách sử dụng cú pháp [].
 - tạo ra biến tạm lưu trữ giá trị của nó, nếu so sánh text thì phải lowercase để cho chính xác.
 - nếu sản phẩm tiếp theo > sản phẩm trước thì return 1 giữ nguyên, ngược lại thì -1,  không có gì thì return 1
 - trường hợp so sánh theo số thì return giá trị của thằng 2 - thằng 1, nếu số âm thì đảo vị trí.
+==Some==
+- Không làm thay đổi mảng ban đầu, trả ra giá trị true nếu trong mảng có chứa 1 phần tử thỏa điều kiện.
+- Truyền vào 1 callback function, return giá trị muốn kiểm tra.
+==Every==
+- Không làm thay đổi ban đầu, trả ra giá trị true nếu tất cả phần tử trong mảng thỏa điều kiện.
+- Truyền vào 1 callback function, return giá trị kiểm tra.
+==Includes==
+- Kiểm tra phần tử đã cho có tồn tại trong mảng hay không
+- Nhận vào 2 tham số, tham số 1 là giá trị kiểm tra, tham số 2 là index bắt đầu kiểm tra. Nếu index > index mảng thì sẽ cho ra kết quả false. nếu Index  là số âm, computed index sẽ được dùng làm vị trí bắt đầu để tìm kiếm valueToFind. Nếu computed index nhỏ hơn hoặc bằng -1 * array.length, phần tử đã cho sẽ được tìm kiếm trong toàn bộ mảng (tương tự như fromIndex bằng 0).
 ==Destructuring==
 - Destructuring cho phép lấy ra các phần tử từ array, object và đặt tên cho nó. Rất tiện khu xử lý dữ liệu JSON, các đối tượng lồng nhau, giúp chúng ta rút gọn code.
 - ![[Pasted image.png]]
