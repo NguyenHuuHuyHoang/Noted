@@ -107,3 +107,8 @@ configure(loadStories, module)
 - Tạo folder Component trong src và đặt các component trong đó kèm file css của component đó. file js nào import css của file đó. Trong file js chứa code JSX (nhớ sử dụng prop-types khi viết documentation)
 - Trong file js tương ứng với Component ở trong thư mục stories chúng ta sẽ import file js trong component. sau đó viết storiesOf('tên component', module).add(default, () => (Gọi component ra và truyền props cho nó))
 - Để hiển thị show info thì cần phải cài add on info => npm i -D @storybook/addon-info. Cách sử dụng là thêm addDecorator(withInfo) vào file config.js hoặc .addDecorator(withInfo) trước khi .add trong file truyền props vào componet
+- Để start thì npm run storybook
+==25 - Functional Stateless Component==
+- Functional không có state, không có life cyle, nhận giá trị từ props thay vì this.props
+- Do không chứa state, khi sử dụng khi sử dụng các thư viện state management khác như redux
+- Dễ test hơn class do không chứa state trong đó nên không ảnh hưởng đến kết quả đầu ra, dễ viết. Trường hợp không nên xài là muốn sử dụng life cycle để tăng performent cho app.
