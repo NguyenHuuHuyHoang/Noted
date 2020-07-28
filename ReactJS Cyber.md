@@ -113,7 +113,10 @@
 - Phương thức chính của Redux:
 + mapStateToProps: phương thức lấy giá trị state từ store về tạo thành 1 thuộc tính của component
 + mapDispatchToPróp: phương thức tạo ra sự kiện để đưa giá trị từ component lên store thông qua action.
-- Tạo store ở file index.js => tạo thư mục reducer ở trong src => Tạo file rootReducer.js `Đây là thằng sẽ quản lý những reducer nhỏ` => trong rootReducer.js sẽ import combineReduces từ redux
+- Tạo store ở file index.js. import {Provider} from 'react-redux'; import {createStore} from 'redux'  ,import {Provider} from 'react-redux', const store = createStore(rootReducer)
+<Provider store={store}>
+    <App />
+  </Provider>, => tạo thư mục reducer ở trong src => Tạo file rootReducer.js `Đây là thằng sẽ quản lý những reducer nhỏ` => trong rootReducer.js sẽ import combineReduces từ redux
 - Trong một hàm reducer có 2 cái, 1 là default state chứa giá trị mặc định và function để xử lý nó, 1 hàm reducer nhận vào 2 tham số, tham số 1 là default state, tham số thứ 2 là action (trong action có một type, sử dụng switch case để so sánh type truyền tới so sánh trong đó có hay không). Cuối cùng là export default function reducer => Sau đó quay lại rootReducer để import nó vào.
 - Để componet connect được redux phải import thư viện react-redux, nó có nhiệm vụ kết nối tới store và lấy dữ liệu về cho component. Khai báo mapStateToProps fucntion, hàm này return một object chứa key value, key là tên của biến chứa dữ liệu, value là state.todosReducer.todoList.
 - thay thế export default cũ (export default TodoApp) bằng export default connect(mapStateToProps) (TodoApp)
@@ -171,7 +174,7 @@
 - Action được dispatch lên reducer phải đi qua middleware.
 - Ta có thể sử dụng middleware để đảm bảo rằng khi tới được reducer, response từ server đã được trả về.
 - có 3 thư viện middleware thông dụng là redux-thunk, redux-saga và redux observable
-- setup redux-thunk:  index.js => import thunk from redux-thunk , applyMiddleware from redux. trong createStore nhận vào 2 tham số, tham số 1 là store, tham số 2 là applyMiddleware
+- setup redux-thunk:  index.js => import thunk from redux-thunk , import {createStore, applyMiddleware} from redux. trong createStore nhận vào 2 tham số, tham số 1 là store, tham số 2 là applyMiddleware, const store = createStore(rootReducer, applyMiddleware(thunk))
 - thư viện compose của redux gom tất cả các thư viện vào thành một cục để vừa sử dụng middleware vừa sử dụng redux dev tool. 
 ==Routing==
 - cần sử dụng thư viện react-router-dom
@@ -190,7 +193,7 @@
 - utils: những function chung chung dành cho toàn ứng dụng
 ==HOC - Higher Order Component==
 - là 1 function nhận vào 1 component và return 1 component mới.
-- Dùng để tái sử dụng code, 
+- Dùng để tái sử dụng logic trong Component.
 - file HOC bắt đầu bằng with VD withForm.js
 ==HOOK trong Function Component==
 - Muốn dùng state phải  import React, {useState} from 'react'
@@ -203,3 +206,5 @@
 - useMemo, nhận vào tham số 1 là callback function , tham số 2 là array set khi nào chạy như useEffect. Catched lại giá trị cũ, khi nào thay đổi state thì mới sử chạy vào. Nếu phép tính phức tạp hơn useMemo thì sử dụng còn không phức tạp thì không nên sử dụng do tốn bộ nhớ để chứa function, lưu giá trị cũ, thời gian xử lý do đó cần phải cân nhắc khi sử dụng.
 - useCallback dùng để ngăn chặn việc render lại khi truyền vào 1 function do dùng memo ở component con không thể so sánh props là function, khi component bị render lại hàm handleShowMessage sẽ bị chạy lại => component con sẽ bị render lại, dùng useCallback để đảm bảo khi state message thay đổi thì hàm handleShowMessage mới chạy lại, các state khác thay đổi sẽ không làm render lại component Hello, sử dụng như useMemo.
 - useMemo và useCallback dùng để tăng performance của app
+- Custom HOOK tương đương với HOC. Khi đặt tên cho custom HOOK thì bắt đầu bằng use. Thông thường HOOK sẽ trả về giao diện, còn custom HOOK thì trả về array các giá trị. trong file cần sử dụng chỉ cần import và sử dụng thông qua các biến.import useCounter from './useCounter' => const [count1, increase, decrease] = useCounter(0); . Nếu return về array thì cái tên biến không cần trùng với tên nhưng cần phải để ý vị trí, khai báo bằng const [], nếu return về object phải khai báo biến giống tên và khai báo bằng const {}, không cần quan tâm vị trí.
+- sử dụng HOOK để lấy dữ liệu từ store redux bằng useSelector, import {useSelector} from 'react-redux' => const {danhSachKhoaHoc} = useSelector(state => state.khoaHocReducer)
