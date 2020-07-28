@@ -112,3 +112,8 @@ configure(loadStories, module)
 - Functional không có state, không có life cyle, nhận giá trị từ props thay vì this.props
 - Do không chứa state, khi sử dụng khi sử dụng các thư viện state management khác như redux
 - Dễ test hơn class do không chứa state trong đó nên không ảnh hưởng đến kết quả đầu ra, dễ viết. Trường hợp không nên xài là muốn sử dụng life cycle để tăng performent cho app.
+==26 - React router==
+- Routing system : Hệ thống chuyển trang
+- Sử dụng thư viện react-router-dom
+- Thay vì sử dụng thẻ a thì sử dụng thẻ Link.
+- 
