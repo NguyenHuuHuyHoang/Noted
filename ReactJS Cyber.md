@@ -181,11 +181,15 @@
 - import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 - Dùng tag BrowserRouter để bọc các component trong App.js
 - Sử dụng Switch - Route để điều khiển luồng, trường hợp trang home thì sử dụng exact path = "/"
-- <Route exact path="/" component={Home}/> Component trong 1 Route sẽ tự động có 3 props là history, map, location
+- <Route exact path="/" component={Home}/> Component trong 1 Route sẽ tự động có 3 props là history, match, location
+- History: Quay lại componet Link, ta sử dụng nó để khi click vào thẻ có thể chuyển route hiện component tương ứng. Trong trường hợp ta có một chức năng đăng nhập, ta chờ sau khi đăng nhập thành công, mới chuyển component Đăng nhập sang component Trang chủ, tả khôgn thể dùng Link được vì đây là code js => đối tượng history được thêm vào để giải quyết điều này, nó cung cấp các phương thức để chuyển đổi route.
 - Có 2 cách chuyển trang. Sử dụng Link to và this.props.history.push=("/"). Chú ý history.push sẽ giữ lại lịch sử điều hướng, khác với push thằng replace thì lịch sử của trang đó sẽ thay thế bằng trang replace. Thông thường sẽ sử dụng push là chủ yếu, replace trong một số trường hợp đặc biệt.
+- Match: đối tượng match cung cấp một số thuộc tính hỗ trợ: path hiện tại, tham số được truyền qua url (params)
+- Redirect: Component Redirect được cung cấp bởi react-router-dom hỗ trợ ta điều hướng từ path này tới path khác.
 - Trường hợp sử dụng render={(routerProps) => {return <SignUp {...routerProps} />;}} thì không có props phải gắn bằng tay, trường hợp vừa khai báo component vừa render thì sẽ nhận component
 - Khi sử dụng component chỉ được nhét tên của component còn sử dụng render thì có thể chứa các component => root không cần layout thì sử dụng component, root nào cần layout thì sử dụng render
 - Trong react tất cả các component sẽ có 1 props là children. this.props.children
+- Cơ chế Guard (bảo vệ route trong React): Để bảo vệ route tránh cho sinh viên truy cập vào trong trường hợp không đủ điều kiện. VD: khi tài khoản là sinh viên nhưng muốn truy cập vào route admin,... hoặc sinh viên chưa có tài khoản,chưa đăng nhập thì không được truy cập vào một số route. Guard bằng cách sử dụng một component Auth HOC để bọc Route.
 ==Cấu trúc một app cơ bản==
 - components: chứa các component nhỏ thường sử dụng như navbar, header, loading,...
 - pages: chứa các trang của app
