@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "ReactJS Cyber.md",
+            "file": "Bootstrap.md",
             "mode": "source"
           }
         }
@@ -72,10 +72,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "Bootstrap.md",
     "ReactJS Cyber.md",
     "React 2018.md",
     "ES6.md",
-    "Note linh tinh.md",
-    "Pasted image 3.png"
+    "Note linh tinh.md"
   ]
 }

@@ -10,3 +10,5 @@ Nếu không ưng thì có thể xây dựng các theme cho bootstrap.
 ==Bootstrap solo project==
 - Sử dụng Bootstrap và các kiến thức về HTML, CSS, JS đã học để copy 1 giao diện web bất kỳ trên themeforest
 - Sử dụng git để quản lý project, cố gắng gói 1 component trong 1 commit
+==Offset==
+- col-8.offset-4 => thụt lùi 4 đơn vị xong tới phần show
