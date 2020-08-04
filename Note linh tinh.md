@@ -16,3 +16,4 @@ https://www.wintellect.com/data-binding-pure-javascript/
 - Tips for form: label chứa for="name" và input chứ id="name" thì khi click chuột vào label sẽ focus vào input
 - Các file thường bỏ vào gitignore: node_modules, db.json, .env
 - https://techmaster.vn/posts/35336/top-10-project-ve-javascript
+- IIFE function: là 1 function sẽ được định nghĩa và chạy ngay tại thời điểm đó.
