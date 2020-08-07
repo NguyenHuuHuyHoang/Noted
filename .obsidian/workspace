@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Note linh tinh.md",
+            "file": "Angular.md",
             "mode": "source"
           }
         }
@@ -72,10 +72,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "Note linh tinh.md",
-    "Lưu.md",
     "Untitled.md",
-    "Bootstrap.md",
-    "ReactJS Cyber.md"
+    "ReactJS Cyber.md",
+    "React 2018.md",
+    "Note linh tinh.md",
+    "Lưu.md"
   ]
 }
