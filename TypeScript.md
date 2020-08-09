@@ -16,13 +16,13 @@
  => Không sử dụng var trong mọi trường hợp.
  - Hằng số: Không hỗ trợ hoistring,  bắt buộc phải gán giá trị lúc khai báo, không thể gán lại giá trị, hằng số là object thì không thể new object nhưng có thể gán lại giá trị của object. khai báo bằng từ khóa const.
  ==Các kiểu dữ liệu trong typescript==
- - Boolean
- - Number
- - String
- - Array
- - Tuple
- - Enum
- - Any
- - Void
- - Null
- - Undefined
+ - Boolean: Mang một trong hai giá trị là true hoặc false.
+ - Number: Kiểu dữ liệu mang giá trị là số
+ - String: Kiểu dữ liệu mang giá trị là một chuỗi.
+ - Array: Kiểu dữ liệu mang giá trị là một mảng
+ - Tuple: Kiểu dữ liệu mang giá trị là một mảng hỗn hợp
+ - Enum: Kiểu dữ liệu mang các giá trị liệt kê
+ - Any: Kiểu dữ liệu bất kỳ
+ - Void: Kiểu dữ liệu giống như một hàm không trả về giá trị nào cả.
+ - Null: Kiểu dữ liệu mang giá trị null
+ - Undefined: kiểu dữ liệu mang giá trị undefined.
