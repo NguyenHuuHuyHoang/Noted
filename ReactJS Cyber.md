@@ -212,3 +212,5 @@
 - useMemo và useCallback dùng để tăng performance của app
 - Custom HOOK tương đương với HOC. Khi đặt tên cho custom HOOK thì bắt đầu bằng use. Thông thường HOOK sẽ trả về giao diện, còn custom HOOK thì trả về array các giá trị. trong file cần sử dụng chỉ cần import và sử dụng thông qua các biến.import useCounter from './useCounter' => const [count1, increase, decrease] = useCounter(0); . Nếu return về array thì cái tên biến không cần trùng với tên nhưng cần phải để ý vị trí, khai báo bằng const [], nếu return về object phải khai báo biến giống tên và khai báo bằng const {}, không cần quan tâm vị trí.
 - sử dụng HOOK để lấy dữ liệu từ store redux bằng useSelector, import {useSelector} from 'react-redux' => const {danhSachKhoaHoc} = useSelector(state => state.khoaHocReducer)
+==Note==
+- React.Fragment để trả về 2 thẻ div mà không cần phải bọc trong 1 thẻ div. ngoài ra có thể viết tắt <> div div </>. 
