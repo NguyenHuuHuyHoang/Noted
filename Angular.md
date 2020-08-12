@@ -7,13 +7,14 @@
 - tsconfig.base.json => baseUrl: Nguồn ứng dụng bắt đầu từ đâu
 - angular có những thẻ <app-root> </app-root> =>div id ="root"
 - Trong file main.ts => có bootstrapModule => cho biết Module nguồn của toàn bộ ứng dụng là cái nào.
-- Module.
-- Trong angular 1 component có 3 file: html, scss ,ts
+- Module: Cấp cao nhất trong ứng dụng, dùng để đóng gói một chức năng cụ thể trong ứng dụng, 1 module có thể chứa nhiều module hoặc componet, có nhiều loại module: do dev tự định nghĩa, các module được angular định nghĩa sẵn.
+- Trong angular 1 component bao gồm: HTML, css, selector (tên thẻ component để gắn vào html), class để xử lý logic. Component dùng để biểu diễn UI và logic.
 - SCSS của component nào thì chỉ sử dụng cho mình component đó không sử dụng cho component khác.
 - component luôn có tên app đăng trước vd demo => app-demo
 - tạo component: ng g c [tên không dấu viết thường], nó sẽ tự import vào module gần nhất
 - tạo module: ng g m [tên module] không tự import, phải tự import vào app module.
 - Mặc định các component đang được quản lý trong module nào thì chỉ được sử dụng trong module đó. Để sử dụng ở những module khác thì cần phải exports: [Mảng các module] trong module quản lý.
+- Mối quan hệ giữa module và component: module giống như 1 group của component quản lý các component. 1 Module có thể quản lý nhiều component và mỗi component phải được quản lý bởi module nào đó.
 ==Cài đặt bootstrap vào angular==
 - cài npm i bootstrap jquery proper.js
 - Trong angular.json, dòng gắn file bootstrap vào styles: "node_modules/bootstrap/dist/css/bootstrap.min.css", scripts gắn các file js thư viện ở ngoài. "node_modules/jquery/dist/jquery.min.js","node_modules/popper.js/dist/umd/popper.min.js","node_modules/bootstrap/dist/js/bootstrap.min.js"
