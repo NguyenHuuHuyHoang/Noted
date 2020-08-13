@@ -32,3 +32,8 @@
 + Angular không cho 2 directive trong cùng một template, vì vậy cần sử dụng ng-container để chứa directives.
 + ngTemplateOutlet="templateA" Dùng để gọi template code được lặp đi lặp lại nhiều lần.
 + ng-content <=> children trong react.  Tuy nhiên trong react chỉ có 1 children, nhưng trong angualar có thể có nhiều children.
++ [ng-class] (phải bọc trong []) = "{key:value}" => key: tên class, value là điều kiện. nếu 
++ ng g d [hightlight]: tạo directives custom cho riêng mình, bên trong directive cần import thư viện ElementRef. Thuờng sử dụng trong truờng hợp logic xử lý lặp đi lặp lại nhiều lần.
+==Giao tiếp giữa các component==
+- @input: tương tự như việc truyền props trong react. Dùng để truyền dữ liệu từ cha sang con. Ở con để nhận dữ liệu từ cha truyền xuống thì cần phải import Input vào.
+- @output dùng để đẩy dữ liệu ra cha. Cần import thư viện Output và EventEmitter để tạo ra giả lập sự kiện.
