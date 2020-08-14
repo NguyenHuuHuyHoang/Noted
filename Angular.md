@@ -1,8 +1,51 @@
-- Cách new 1 propject angular: ng new [tên project]
+==Introduction==
 - Angular khác với React ở hướng tiếp cận là componet, module trong khi React chỉ là component.
 - App Module <=> App.js
 - 1 Module có thể quản lý 1 module hoặc 1 component
 - Gom những Component có cùng chức năng vào 1 module, component không thể tự đứng một mình mà phải có module quản lý.
+- Các khái niệm trong Angular: 
++ Module
++ Components
++ Phân tách module (Nhóm component) - ShareModule
++ Databinding
++ Directives
++ Input, Output, ViewChild, View Children
++ Hướng dẫn angular Masterial
++ Template - Routing
++ Form - Validation
++ Pipes
++ Service - Observable - Object - HTTP
++ Get Post Put Delete (http service)
++ Hướng dẫn xây dựng dự án
++ Guard
++ RXJS DOM
++ Animation
+==Cài đặt Angular==
+- npm install -g @angular/cli
+- Cách new 1 propject angular: ng new [tên project]
+==Giới thiệu về cấu trúc thư mục và tập tin==
+- package.json: Chứa thông tin của ứng dụng
+- tsconfig.json: Dùng để cấu hình biên dịch cú pháp typescript => js
+- e2e: Thư mục này dùng để chức các tập tin cho testing
+- node_modules: Chức các module cần thiết cho ứng dụng
+- src: Đây là thư mục sẽ chứa toàn bộ source code của ứng dụng.
+- .editorconfig: Chức các cấu hình liên quan đến phần
+- .gitignore: chứa thông tin những tập tin hoặc thư mục sẽ bị ignore không được commit lên git repo.
+- angular.json: tập tin chứa cấu hình cho Angular CLI, giúp build ứng dụng Angular.
+- browserslist: điều chỉnh CSS và JS để hỗ trợ cho nhiều trình duyệt đặc biệt (IE9-11, Edge 16..)
+-  karma.conf.js: Tập tin cấu hình cho karma, liên quan nhiều đến phần testing
+-  package-lock.json: Dùng để lock version cho các module dêpndencies.
+-  README.md: hiển thị thông tin về Git repository
+-  tslint.json: Tập tin cấu hình để kiểm tra lỗi cho các tập tin .ts (TypeScript) trong Angular project.
+-  App: Đây là thư mục sẽ chứa toàn bộ code của ứng dụng Angular.
+-  Assets: Thư mục này sẽ chứa các file ảnh, CSS, custom JavaScript của ứng dụng Angular.
+-  Environments: Thư mục giúp chúng ta định nghĩa các tập tin cấu hình cho những môi trường khác nhau đó.
+-  Index.html: Trang chủ của ứng dụng Angular
+-  main.ts: Chứa code bootstrapping cho ứng dụng Angular.
+-  polyfill.ts: định nghĩa các chuẩn giúp ứng dụng có thể chạy được trên mọi trình duyệt.
+-  style.css: Định nghĩa style CSS cho ứng dụng Angular.
+-  test.ts: Code để chạy test
+-  tsconfig.json: Tập tin định nghĩa việc compile cho TypeScript.
 ==Cấu trúc project==
 - tsconfig.base.json => baseUrl: Nguồn ứng dụng bắt đầu từ đâu
 - angular có những thẻ <app-root> </app-root> =>div id ="root"
