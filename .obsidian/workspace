@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Angular.md",
+            "file": "Note CSS.md",
             "mode": "source"
           }
         }
@@ -72,10 +72,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "Angular.md",
-    "TypeScript.md",
-    "Untitled.md",
-    "ReactJS Cyber.md",
-    "React 2018.md"
+    "Note CSS.md",
+    "NodeJS Web server sử dụng framework Express.md",
+    "Master CSS 2018.md",
+    "Lưu.md",
+    "Bootstrap.md"
   ]
 }

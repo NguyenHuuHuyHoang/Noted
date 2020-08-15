@@ -9,5 +9,6 @@
     "Command palette": true,
     "Markdown format importer": true,
     "Word count": true
-  }
+  },
+  "promptDelete": false
 }
