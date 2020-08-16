@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Note CSS.md",
+            "file": "Animation library.md",
             "mode": "source"
           }
         }
@@ -72,10 +72,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "Note CSS.md",
-    "NodeJS Web server sử dụng framework Express.md",
-    "Master CSS 2018.md",
-    "Lưu.md",
-    "Bootstrap.md"
+    "Animation library.md",
+    "Các deploy build lên Firebase.md",
+    "SCSS.md",
+    "Terminal.md",
+    "Tix layout.md"
   ]
 }
