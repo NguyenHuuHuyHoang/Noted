@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Animation library.md",
+            "file": "Các thuật ngữ animation web.md",
             "mode": "source"
           }
         }
@@ -72,10 +72,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "Untitled.md",
     "Animation library.md",
     "Các deploy build lên Firebase.md",
     "SCSS.md",
-    "Terminal.md",
-    "Tix layout.md"
+    "Terminal.md"
   ]
 }
