@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Free API.md",
+            "file": "Note CSS.md",
             "mode": "source"
           }
         }
@@ -72,10 +72,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "Note CSS.md",
+    "Master CSS 2018.md",
+    "Free API.md",
     "Untitled.md",
-    "Các thuật ngữ animation web.md",
-    "Animation library.md",
-    "Các deploy build lên Firebase.md",
-    "SCSS.md"
+    "Các thuật ngữ animation web.md"
   ]
 }
