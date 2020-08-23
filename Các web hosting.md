@@ -1,0 +1,6 @@
+- https://vn.000webhost.com/
+- heroku - su dung cron-job de danh thuc https://cron-job.org/en/, huong dan: https://medium.com/better-programming/keeping-my-heroku-app-alive-b19f3a8c3a82
+- firebase
+- amazon web service
+- Azure
+- https://surge.sh/

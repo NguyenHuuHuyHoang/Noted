@@ -25,3 +25,5 @@
 ==resize==
 - cho phép người dùng có thể thay đổi kích thước thẻ div cả chiều cao và chiều dọc.
 - resize: both; overflow: auto;
+==Thay doi hinh dang chuot ==
+https://css-tricks.com/simulating-mouse-movement/

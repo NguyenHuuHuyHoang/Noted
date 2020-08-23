@@ -61,7 +61,9 @@
             "type": "leaf",
             "state": {
               "type": "backlink",
-              "state": {}
+              "state": {
+                "file": "Note CSS.md"
+              }
             }
           }
         ]
@@ -73,9 +75,9 @@
   },
   "lastOpenFiles": [
     "Note CSS.md",
-    "Master CSS 2018.md",
-    "Free API.md",
-    "Untitled.md",
-    "Các thuật ngữ animation web.md"
+    "Các deploy build lên Firebase.md",
+    "Các thuật ngữ animation web.md",
+    "Dynamic web server của các ngôn ngữ khác nhau.md",
+    "Component by CSS.md"
   ]
 }
