@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Note CSS.md",
+            "file": "Note linh tinh.md",
             "mode": "source"
           }
         }
@@ -62,7 +62,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Note CSS.md"
+                "file": "Note linh tinh.md"
               }
             }
           }
@@ -74,10 +74,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "Note CSS.md",
-    "Các deploy build lên Firebase.md",
+    "Note linh tinh.md",
+    "Pasted image.png",
+    "Component by CSS.md",
     "Các thuật ngữ animation web.md",
-    "Dynamic web server của các ngôn ngữ khác nhau.md",
-    "Component by CSS.md"
+    "Các web hosting.md"
   ]
 }
