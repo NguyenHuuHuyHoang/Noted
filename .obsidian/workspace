@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Note linh tinh.md",
+            "file": "Emmet.md",
             "mode": "source"
           }
         }
@@ -62,7 +62,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Note linh tinh.md"
+                "file": "Emmet.md"
               }
             }
           }
@@ -74,10 +74,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "Untitled.md",
     "Note linh tinh.md",
     "Pasted image.png",
     "Component by CSS.md",
-    "Các thuật ngữ animation web.md",
-    "Các web hosting.md"
+    "Các thuật ngữ animation web.md"
   ]
 }
