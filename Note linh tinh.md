@@ -18,3 +18,4 @@ https://www.wintellect.com/data-binding-pure-javascript/
 - https://techmaster.vn/posts/35336/top-10-project-ve-javascript
 - IIFE function: là 1 function sẽ được định nghĩa và chạy ngay tại thời điểm đó.
 - Search suggestions,Autocomplete Suggestions,auto suggest
+- html og description: hiển thị description trong kết quả tìm kiếm
