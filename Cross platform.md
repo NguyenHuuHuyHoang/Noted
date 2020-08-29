@@ -1,0 +1,6 @@
+- Hiệu năng ở mức chấp nhận được chứ hiệu năng không bằng native được.
+- Ưu điểm: Tốc độ phát triển ứng dụng nhanh, 1 codebase có thể build 1 ứng dụng chạy cả andriod và iOS => toàn bộ quá trình phát triển được tăng lên với số lượng lập trình viên 1 nửa, FE có thể qua làm cross platform.
+- Nhược điểm: Hiệu năng với các ứng dụng đòi hỏi logic phức tạp can thiệp sau hoặc điều khiển phần cứng của hệ thống VD: bluetooth, camera,... , tốc độ update với các công nghệ, SDK của các platform thường chậm hơn so với Native, những tính năng mới cần phải đợi fb hoặc google đưa vào SDK mới sử dụng được. Bug khó xử lý hơn do framework đã che bớt đôi khi phải sử dụng *Xcode và VS studio * để debug
+- Phỏng vấn thuyết phục tốt nhất là làm 1 demo sản phẩm, các câu hỏi phỏng vấn là kiến thức nền tảng, thể hiện điểm mạnh ở khả năng học hỏi, khả năng giao tiếp,..
+- Kỹ năng cần có: Kiến thức cơ bản về lập trình (biến, hàm, câu lệnh điều kiện, vòng lặp, OOP,...), tư duy lập trình, giải quyết bài toán, sử dụng IDE lập trình (quan trọng để debug, để kết nối device, ....); GIT / Subversion, Debug, test là kỹ thuật hơi khó hơn trên web do phải test trên cả ios và andriod, đôi khi thư việc này chạy trên ios nhưng andriod bị lỗi hoặc chạy bt nhưng máy xiaomi bị lỗi,..., làm việc nhóm,....
+- 
