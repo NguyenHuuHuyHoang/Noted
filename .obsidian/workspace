@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Cross platform.md",
+            "file": "Note linh tinh.md",
             "mode": "source"
           }
         }
@@ -62,7 +62,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cross platform.md"
+                "file": "Note linh tinh.md"
               }
             }
           }
@@ -74,10 +74,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "Untitled.md",
     "Note linh tinh.md",
+    "Cross platform.md",
+    "Untitled.md",
     "Note CSS.md",
-    "Emmet.md",
-    "Pasted image.png"
+    "Emmet.md"
   ]
 }
