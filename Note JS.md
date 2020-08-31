@@ -1,0 +1,2 @@
+- HTML canvas drawImage(): Chuyển ảnh img thành canvas.
+- 
