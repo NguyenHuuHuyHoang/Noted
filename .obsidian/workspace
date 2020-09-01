@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Note JS.md",
+            "file": "Phân tích dự án.md",
             "mode": "source"
           }
         }
@@ -74,8 +74,8 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "Note JS.md",
     "Untitled.md",
+    "Note JS.md",
     "Note linh tinh.md",
     "Cross platform.md",
     "Note CSS.md"
