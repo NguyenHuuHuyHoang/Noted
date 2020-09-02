@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "0b74100e0c9b9ff9",
+        "id": "09103e0c284b0104",
         "type": "leaf",
         "active": true,
         "state": {
@@ -70,14 +70,13 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "lastOpenFiles": [
     "TypeScript.md",
-    "Note JS.md",
-    "Phân tích dự án.md",
-    "Untitled.md",
-    "Note linh tinh.md"
+    "Pasted image 9.png.md",
+    "Pasted image 9.png",
+    "Pasted image 8.png",
+    "Pasted image 7.png"
   ]
 }

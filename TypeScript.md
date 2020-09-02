@@ -56,3 +56,30 @@
 ==Duyệt Object==
 - Để duyệt một object là một mảng hay chuỗi ta có thể chọn 1 trong 2 kiểu duyệt là for...in lấy ra tên key/index của object và for...of: lấy ra giá trị của từ key trong object (được sử dụng nhiều).
 - for (let index/item in/of mảng/object)
+==Định nghĩa class==
+- Class thực chất là function nhưng không hỗ trợ hoisting, có nghĩa là new 1 lần trên 1 biến không làm được 2 lần (bản chất là prototype trong JS để tạo các lớp đối tượng).
+- cú pháp: class NguoiDung {public HoTen:string; public MatKhau:string; public TaiKhoan:string; constructor(hoTen:string, matKhau:string, taiKhoan:string) {this.HoTen=hoTen; this.MatKhau=matKhau; this.TaiKhoan=taiKhoan}}.
+- public/private/protected là từ khóa dùng để chỉ phạm vi hoạt động của thuộc tính, HoTen là thuộc tính. 
+- public là ở bất kỳ đâu cũng có thể truy xuất để lấy ra các thuộc tính này hết.
+- private thì từ bên ngoài không thể truy xuất đến thuộc tính HoTen được, để truy xuất đến HoTen thì cần xây dựng phương thức public getHoTen và setHoTen vd public getHoTen(){return this.HoTen} để tránh việc ở bên ngoài có thể truy xuất trực tiếp đến biến HoTen và sửa nó. 
+==Định nghĩa phương thức khởi tạo và phương thức tĩnh==
+- constructor là hàm khởi tạo, khi nào class được gọi thì phương thức khởi tạo sẽ được chạy đầu tiên.
+- để thiết lập một phương thức thành phương thức tĩnh thì ta sử dụng từ khóa static ở đầu VD: static say() {alert('Xin Chao')}. Khi set phương thức say này là phương thức tĩnh thì mặc định tất cả mọi đối tượng được sinh ra điều có phương thức say ngoài ra chúng ta có thể gọi phương thức thông qua lớp đối tượng VD NguoiDung.say(), phương thức tĩnh cũng là phương thức của lớp đối tượng luôn.
+==Kế thừa class==
+- Tương tự JS, TS cũng có kế thừa. Đối với hàm tạo nếu class con muốn kế thừa bắt buộc phải có từ khóa super([thamso_HamCha]), đối với các phương thức thì tùy, ta có thể dùng từ khóa super để kế thừa xử lý từ hàm cha hoặc không cần.
+- Chúng ta gom tất cả các thuộc tính xài chung thành một class cha và những class con sẽ kế thừa thằng cha này. 
+- Ở lớp con thì constructor phải truyền tham số = số lượng tham số của lớp cha và tham số thêm của chính nó. sử dụng từ khóa super(truyền tham số là những thuộc tính của cha) gọi lại contructor của lớp cha, sau đó phải tự gán cái tham số thêm của lớp con. Trường hợp ở lớp con overriding phương thức của lớp cha thì khai báo lại chính tên phương thức đó, trường hợp muốn gọi lại phương thức của lớp cha ở bên trong thì sử dụng super.tên phương thức.
+- ![[Pasted image 7.png]]
+==Interfaces==
+- Interfaces là lớp trừu tượng định nghĩa các phương thức và các thuộc tính nhưng không xử lý, mà để cho các lớp con kế thừa bắt buộc phải xây dựng phương thức xử lý cho nó. (implements)
+- Hay nói cách khác interfaces là cái bản mẫu, chúng ta tạo ra những class phải tuân theo bản mẫu đó, nó bắt buộc phải có những phương thức và thuộc tính như bản mẫu (Không thiếu cái nào hết).
+- ![[Pasted image 8.png]]
+- ?: => có thể có hoặc không cũng được không quan trọng.
+- Bắt gặp cái interface và cái implements rất nhiều trong project angular.
+==DOM trong TS==
+- Khi DOM bằng TS sẽ bị ràng buộc bởi kiểu dữ liệu cho nên cần phải thêm kiểu dữ liệu và trước phương thức getElement
+- let btnGet = <HTMLButtonElement'>document.getElementById('btnGetEmail'); => Cho TS thấy rõ rằng cái chúng ta đang DOM tới là một cái Button Element. 
+- let email = (<HTMLInputElement'>document.getElementById('txtEmail')).value; Nếu không có HTMLInputEle thì sẽ báo lỗi do TS nhận ra rằng đang DOM tới HTML Element mà nó thì không có value nên không . được.
+==BT Thực hành==
+- Đề ![[Pasted image 9.png]]
+- Tạo Class NhanVien (phải export Class ra để có thể sử dụng Class NhanVien ở các file khác, file khác muốn xài phải import NhanVien từ file NhanVien => Tạo Class DanhSachNhanVien là một mảng đối tượng nhân viên.
