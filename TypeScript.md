@@ -50,3 +50,9 @@
 - Destructuring Assignments đơn giản chỉ là cách tách các phần tử của Array hoặc Object thành nhiều biến chỉ bằng một đoạn code duy nhất.
 - VD let date = [10,03,2016], let [d,m,y] = date => d = 10, m = 03, y = 2016. let [,,y] = date => y = 2016.
 - VD: let hocSinh = { ten: 'hieu', tuoi:12, diem:20}, let {ten,tuoi,dem} = hocSinh => ten= 'hieu'
+==String template==
+- String template được bắt đầu bằng `'`. Cũng giống như chuỗi nhưng string template hỗ trợ chúng ta đưa tham số vào dễ dàng hơn. Đối với một cấu trúc chuỗi cần đưa vào nhiều tham số thì ta định nghĩa bằng string template code sẽ rõ ràng và dễ hiểu hơn.
+- `welcome to ${biến cần lấy giá trị}`
+==Duyệt Object==
+- Để duyệt một object là một mảng hay chuỗi ta có thể chọn 1 trong 2 kiểu duyệt là for...in lấy ra tên key/index của object và for...of: lấy ra giá trị của từ key trong object (được sử dụng nhiều).
+- for (let index/item in/of mảng/object)
