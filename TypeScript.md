@@ -41,4 +41,12 @@
 - Cú pháp function(...[thamso]:[kiểu dữ liệu]). Đối số truyền vào là các biến có cùng kiểu dữ liệu với [kiểu dữ liệu] của tham số.
 - Nó sẽ gộp tất cả các tham số vào một mảng và chúng ta truy xuất tham số theo thứ tự truyền vào bằng index.
 ==Spread Operator (Truyền tham số là mảng)==
-- 
+- Về cú pháp tương tự rest parameter, tuy nhiên cả hai có ý nghĩa khác nhau. Rest parameter được sử dụng khi khai báo hàm, để người dùng truyền tham số vô một cách tùy ý, gộp tham số đầu vào thành một mảng để xử lý, ngược lại spread operator được sử dụng trong các câu lệnh, biểu thức hoặc khi gọi hàm, nó có thể dùng với mảng, có thể dùng với object.
+- let mang3 = [...mang1,...mang2] => dùng để nối mảng.
+- let hocSinh3 = {...hocSinh1} => clone ra hocSinh3 có các giá trị như object hocSinh1. ngoài ra cũng có thể sử dụng để nối object như nối mảng.
+- Làm việc với hàm. VD function tinhTong4So(a,b,c,d) {}, var thamSo = [1,2,3,4]; tinhTong4So(...thamSo) => khi đó nó sẽ lấy từng giá trị của từng phần tử trong mảng bỏ vào các thứ tự a,b,c,d trong hàm.
+==Truy xuất phần tử từng mảng,Object==
+- Destructuring Array (Bóc tách phần tử trong mảng)
+- Destructuring Assignments đơn giản chỉ là cách tách các phần tử của Array hoặc Object thành nhiều biến chỉ bằng một đoạn code duy nhất.
+- VD let date = [10,03,2016], let [d,m,y] = date => d = 10, m = 03, y = 2016. let [,,y] = date => y = 2016.
+- VD: let hocSinh = { ten: 'hieu', tuoi:12, diem:20}, let {ten,tuoi,dem} = hocSinh => ten= 'hieu'
