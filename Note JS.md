@@ -1,2 +1,3 @@
 - HTML canvas drawImage(): Chuyển ảnh img thành canvas.
-- 
+- biến argument trong function tạo theo cách không phải arrow function, nó là một mảng chứa toàn bộ các biến truyền vào function, có thể truy xuất vào index và  length như một mảng bình thường tuy nhiên nó không thể sử dụng các method của array.
+- Infinity: là giá trị vô cực, thường được sử dụng làm flag đầu tiên để tìm giá trị lớn nhất hoặc giá trị nhỏ nhất trong mảng.

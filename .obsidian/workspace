@@ -42,8 +42,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -76,9 +75,9 @@
   },
   "lastOpenFiles": [
     "TypeScript.md",
+    "Note JS.md",
     "Phân tích dự án.md",
     "Untitled.md",
-    "Note JS.md",
     "Note linh tinh.md"
   ]
 }
