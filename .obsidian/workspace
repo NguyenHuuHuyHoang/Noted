@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Phân tích dự án.md",
+            "file": "TypeScript.md",
             "mode": "source"
           }
         }
@@ -42,7 +42,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -62,7 +63,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Note JS.md"
+                "file": "TypeScript.md"
               }
             }
           }
@@ -74,10 +75,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "TypeScript.md",
+    "Phân tích dự án.md",
     "Untitled.md",
     "Note JS.md",
-    "Note linh tinh.md",
-    "Cross platform.md",
-    "Note CSS.md"
+    "Note linh tinh.md"
   ]
 }
