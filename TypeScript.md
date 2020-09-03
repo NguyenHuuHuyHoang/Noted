@@ -1,5 +1,4 @@
 ==Introduction==
-
 - Có thể sử dụng để phát triển các ứng dụng chạy ở client-side (Angular2) và server side (NodeJS).
 - TypeScript là một dụ án mã nguồn mở được phát triển bởi Microsoft. TypeScipt là một phiên bản nâng cao của JS, nhưng có lai C# (Do phát triển bởi MicroSoft nên nó sẽ giống rất nhiều với C#, nó có các kiểu dữ liệu, lớp đối tượng, những class, interfaces giống như một ngôn ngữ lập trình hoàn thiện hơn không dễ dãi như ở JS).
 - TypeScript bổ sung tùy chọn kiểu tĩnh (Kiểu dữ liệu) và lớp hướng đối tượng.

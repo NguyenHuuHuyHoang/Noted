@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "TypeScript.md",
+            "file": "ReactJS Codepro.md",
             "mode": "source"
           }
         }
@@ -62,7 +62,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TypeScript.md"
+                "file": "ReactJS Codepro.md"
               }
             }
           }
@@ -70,13 +70,14 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "lastOpenFiles": [
-    "TypeScript.md",
-    "Pasted image 9.png.md",
-    "Pasted image 9.png",
-    "Pasted image 8.png",
-    "Pasted image 7.png"
+    "ReactJS Codepro.md",
+    "ReactJS Cyber.md",
+    "Untitled.md",
+    "Angular.md",
+    "TypeScript.md"
   ]
 }

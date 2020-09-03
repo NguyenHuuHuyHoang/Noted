@@ -1,4 +1,3 @@
-
 - React là một thư viện của JS, hỗ trợ SPAs, tăng hiệu suất load trang. VD: FB - react, Youtube - angular, do chỉ load nội dung mà không load lại toàn bộ trang
 - React viết trên ngôn ngữ ES6
 - create-react-app [tên dự án]
