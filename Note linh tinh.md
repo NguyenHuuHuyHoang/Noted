@@ -21,3 +21,6 @@ https://www.wintellect.com/data-binding-pure-javascript/
 - html og description: hiển thị description trong kết quả tìm kiếm
 - Viết nhanh JS: https://www.sitepoint.com/shorthand-javascript-techniques/
 - Formik + Yub validation : https://codesandbox.io/s/formik-fieldarray-with-yup-validation-xziy0
+- Vendor prefix là cách hỗ trợ các phiên bản cũ của các trình duyệt hiểu được thuộc tính mới của CSS3. Cách này sẽ thêm tiền tố vào trước thuộc tính CSS3, cụ thể cách thêm trong link bên dưới.
+VS code có hỗ trợ thêm Vendor Prefix bằng extension:
+https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-autoprefixer

@@ -120,3 +120,89 @@
 Lưu ý: Không được set lại state theo cách: this.state.thuocTinh = giá trị. Ta set giá trị của state thông qua phương thức setState. this.setState({thuocTinh: giá trị mới}), sau khi setState thì component sẽ được render lại.
 - Trong class component sẽ luôn có constructor(props) { super(props); this.state = {}} - Đây là thuộc tính có sẵn của component, nó chứa các thuộc tính có khả năng thay đổi bới một sự kiện nào đó của component, cái nào có khả năng thay đổi mới đưa vô. Truy cập bằng cách this.state.tên thuộc tính.
 - setState là phương thức có được kế thừa từ class component, nó giúp thay đổi giá trị state và gọi hàm render lại giao diện. Đây là phương thức bất đồng bộ, khi gọi cái hàm sẽ mất một khoảng thời gian để xử lý.
+==Render giao diện với mảng dữ liệu dùng vòng lặp==
+- Để tạo ra các tag html (jsx trong react) thì ta có rất nhiều cách thực hiện, dùng các hàm như for, foreach, map.... tạo nội dung. Khi sử dụng cần phải return về một mảng hoặc đối tượng JSX thì mới render ra nội dung được.
+- Khi tạo dữ liệu động dựa vào các tag JSX thì cần phải đặt key, để react quản lý các đối tượng JSX được tạo ra từ vòng lặp.
+- Mục đích của vòng lặp là từ một mảng dữ liệu, tạo ra các thẻ JSX tương ứng để hiển thị ra giao diện.
+- Hàm map trả về 1 mảng, do đó có thể sử dụng hàm map để tạo ra một mảng các JSX mang giá trị của mảng data cũ.
+- Khi return nếu không có () thì phải đặt JSX ngay sau return không được xuống dòng, nếu return ( thì xuống dòng thoải mái)
+- source bt: github.com/khaitruong1301/react_video
+==React Props==
+- một cái tag HTML là một object, vì vậy nó có thuộc tính và phương thức, thay đổi giá trị thuộc tính -> giao diện thay đổi.
+- 1 component là một thẻ đặc biệt do mình tạo ra, nó cũng chứa thuộc tính và phương thức
+- Props là thuộc tính của thẻ (Ta có thể hiểu prop là property của thẻ).
+- Props là thuộc tính mặc định của component để nhận dữ liệu từ các giá trị component cha truyền vào => Để binding dữ liệu ra component con tại html tương ứng.
+- Props của component chỉ nhận các thuộc tính được truyền vào từ component cha của nó và không thể bị chỉnh sửa bên trong component.
+- Đối với stateful và stateless component có các cách sử dụng props khác nhau.
+- truyền prop từ cha sang con bằng cách title={giá trị truyền}, ở con thì gọi ra bằng cách this.props.title để lấy giá trị được truyền từ cha, đổi với react functional thì nó sẽ nhận props thông qua tham số truyền vào, trường hợp nếu biết được tên thuộc tính truyền vào có thể sử dụng restParam vd function Phim_RFC({phim_input,...restParam}) => khi đó không cần đặt tên biến đế lấy dữ liệu từ props mà có thể sử dụng luôn.
+- this.props là biến toàn cục cho nên gọi ở đâu cũng được.
+==React Prop Callback Function==
+- Thay vì truyền mảng hay object thì chúng ta truyền một function, nhằm mục đích truyền dữ liệu từ con sang cha.
+- Xác định dữ liệu thay đổi + Dữ liệu đó sẽ thay đổi khi nào => Đặt dữ liệu đó ở đâu
+==Redux==
+- Bản chất làm việc với React là việc truyền dữ liệu giữa các component và thay đổi state để re-render lại giao diện component
+- Redux là thư viện cung cấp cho ta một store trung tâm, lưu trữ tất cả các state, từ component muốn thay đổi state chỉ cần truy cập tới store để thay đổi.
+- Cấu trúc của redux: 
++ Action: là nơi mang các thông tin dùng để gửi từ ứng dụng đến store. Các thông tin này là một object mô tả những gì đã xảy ra. Nói dễ hiểu, từ 1 component, ta muốn thay đổi state trên store, ta phải gửi action, là một object để miêu tả muốn làm gì.
++ Reducer: Nơi tiếp nhận action và thay đổi state gồm 2 loại:
+	+ Root Reducer: là Boss, quản lý tất cả reducer con
+	+ Child Reducer: như đã biết về state, state là một object có nhiều thuộc tính, mỗi child reducer chịu trách nhiệm thay đổi 1 thuộc tính trong state.
++ Store: Nơi quản lý và lưu trữ state (Chính là Big Boss).
+==Setup Redux==
+- npm i redux 
+- npm i react-redux - dùng để kết nối redux store với react
+- src -> redux -> reducers -> rootReducer.jsx :
++ import {combineReducers} from 'redux';
++ export const rootReducer = combineReducer ({
++  nơi sẽ chứa các reducer cho nghiệp vụ (store con)
++ })
+- index.js :
++ import {Provider} from 'react-redux'
++ import {createStore} from 'redux'
++ import {rootReducer} from './redux/reducers/rootReducer'
++ const store = createStore(rootReducer)
++ Bọc App component trong Provider component, trong Provider component có thuộc tính store={store}
+- tạo reducer con:
++ const stateGioHang = {
++ giá trị ban đầu theo dạng key: value
++ }
++ export const GioHangReducer = (state=stateGioHang, action) => {
++ return {...state}
++ }
++ ở rootReducer import và khai báo vào trong thân GioHangReducer:GioHangReducer
+- Trong component cần lấy dữ liệu từ redux:
++ import {connect} from 'react-redux'
++ Xóa export default của component
++ const mapStateToProps = (state) => { //state: là store tổng => truy xuất đến GioHangReducer => biến state trên GioHangReducer
++ return {  
++ gioHang: state.GioHangReducer.gioHang
++ }
++ }
++ export default connect(mapStateToProps, null)(Tên component hiện tại)
++ Như vậy trong component sẽ có thuộc tính this.props.gioHang là thuộc tính nhận từ redux
+- Để thay đổi dữ liệu trên store:
++ import {connect} from 'react-redux'
++ Xóa export default của component
++ const mapDispatchToProps = (dispatch) => {
+	+ return {
+		+ themGioHang: (sanPham) => { // Tạo ra props component là function để đưa dữ liệu lên store
+			+ const spGioHang = {
+				+ maSP: sanPham.maSP,
+			+ }
+			+ const action = { //Tạo action đưa dữ liệu lên reducer
+				+ type: 'THEM_GIO_HANG, //bắt buộc đặt type
+				+ spGioHang: spGioHang //Nội dung gửi lên reducer
+			+ }
+			+ dispatch(action) //Dùng hàm dispatch đưa dữ liệu action lên reducer.
+		+ }
+	+ }
++ }
++ export default connect(null, mapDispatchToProps)(tên component)
++ Để sử dụng ta gán this.props.themGioHang vào nút thêm giỏ hàng
++ Action sẽ được dispatch lên toàn bộ reducer trên store tổng.
++ Trong file reducer GioHang xử lý switch dựa trên loại action dispatch lên, trong case xử lý xong phải return về một state mới 
+==Redux Dev Tools==
+- phải cài addon redux dev tool trên chorme hoặc firefox để xem
+- window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+- copy đoạn trên vào createStore thành
+- const store = createStore(rootReducer,  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
