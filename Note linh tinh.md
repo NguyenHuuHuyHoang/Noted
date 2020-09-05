@@ -24,3 +24,5 @@ https://www.wintellect.com/data-binding-pure-javascript/
 - Vendor prefix là cách hỗ trợ các phiên bản cũ của các trình duyệt hiểu được thuộc tính mới của CSS3. Cách này sẽ thêm tiền tố vào trước thuộc tính CSS3, cụ thể cách thêm trong link bên dưới.
 VS code có hỗ trợ thêm Vendor Prefix bằng extension:
 https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-autoprefixer
+- Các thư viện animation: https://viblo.asia/p/12-thu-vien-va-plugin-de-thuc-hien-animation-len-homepage-maGK7E3Dlj2
+- https://viblo.asia/p/9-thu-vien-animation-cho-designer-6J3ZgDORlmB

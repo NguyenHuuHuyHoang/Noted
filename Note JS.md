@@ -2,3 +2,5 @@
 - biến argument trong function tạo theo cách không phải arrow function, nó là một mảng chứa toàn bộ các biến truyền vào function, có thể truy xuất vào index và  length như một mảng bình thường tuy nhiên nó không thể sử dụng các method của array.
 - Infinity: là giá trị vô cực, thường được sử dụng làm flag đầu tiên để tìm giá trị lớn nhất hoặc giá trị nhỏ nhất trong mảng.
 - phim.mota.length>100 ? phim.mota.substr(0,100) + '...': phim.mota - Nếu dài hơn 100 ký tự thì cắt chỉ chừa 100 ký tự và ...
+- Dùng object lưu trữ dữ liệu sẽ nhanh hơn rất nhiều so với dùng mảng lưu trữ object, nếu lưu trữ mảng sẽ dài -> code dài hơn lưu trữ object, object lấy ra xài luôn, còn mảng phải truy xuất.
+- Một số kỹ thuật đọc object sẽ nhanh hơn rất nhiều so với dùng mảng lưu trữ. VD for in duyệt object sẽ cho ra những cái key, ngoài ra còn có thể sử dụng hàm Object.entries () nó sẽ bóc tách đối tượng thành những mảng con, VD 1 object có 3 thuộc tính => 1 mảng lớn chứa 3 cái mảng con => sử dụng map để duyệt thành một array JSX. Chú ý nếu bóc tách thì sử dụng destructor array VD: Object.entries(burger).map(([propsBurger, value], index) => { console.log(propsBurger, value)})
