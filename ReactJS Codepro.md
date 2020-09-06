@@ -260,7 +260,7 @@ Font sử dụng: Pony
 ==Axios==
 - npm i axios --save => import Axios from 'axios';
 - Gọi axios trong componentDidMount. mà componentDidMount là hàm chạy sau render -> sau khi render xong rồi mới lấy dữ liệu về, dữ liệu lấy về cũng không sử dụng được do đã render xong -> xử lý cho component render lại.
-- hàm axios nhận vào 1 object chứa, method: 'GET' và url: đường dẫn do BE cung cấp. Trả ra 1 promise giống như Ajax trong jquery để chúng ta handle khi nào dữ liệu trả về. 
+- hàm axios nhận vào 1 object chứa, method: 'GET' và url: đường dẫn do BE cung cấp. Trả ra 1 promise giống như Ajax trong jquery để chúng ta handle khi nào dữ liệu trả về. Trường hợp gửi dữ liệu lên server thì có thêm thuộc tính là data là dữ liệu đẩy lên server.
 - .then khi server trả về dữ liệu thành công, hàm .catch trả về khi server trả về thất bại. cả 2 cái này điều nhận vào 1 hàm.
 - các loại method là: 
 	+ GET: lấy dữ liệu về
@@ -292,3 +292,60 @@ Font sử dụng: Pony
 })
 	- trong formik cũng cấp 1 cái thuộc tính là validationSchema={signupUserSchema}, trước khi chạy submit nó sẽ check cái validationSchema này trước, nó hợp lệ nó mới gọi hàm chạy.
 	- Để show message ra màn hình thì formik cung cấp 1 component là ErrorMessage. Mình sẽ đặt nó ở dưới cái Field, khi Field bị lỗi thì cái ErrorMessage component có tên tương ứng với tên Field sẽ in ra lỗi, nó cũng sẽ check nếu người dùng đụng vào input mà bị lỗi mới hiện. Ngoài ra ErrorMessage còn nhận vào một thuộc tính là component, mình tự config 1 component lỗi rồi truyền cho nó. Hoặc nếu muốn config giao diện thì ở giữa đóng mở component viết 1 function và truyền vô, với giá trị nhận vào là msg là biến hiện lỗi.
+==Nâng cấp Axios==
+- Trường hợp 1 API gọi ở nhiều nơi khác nhau => giảm thiểu code ta xây dựng service chứa những API đó. Thường service sẽ chứa API liên quan tới object hoặc schema để validate object
+- Trong folder services tạo file user.js tạo 1 class UserService chứa các phương thức (nhớ import các thư viện mà sử dụng vd axios vào) và file index.js dùng để new cái class mình đã tạo ra:
+- class UserService {
+	signUp(data) {
+		return Axios({
+			method: "POST",
+			url: "path tới API",
+			data //Trùng với tên data trên sử dụng ES6
+		})
+	}
+}
+export default UserService;
+- index.js: import UserService from './user';
+export const userService = new UserService() => ở chỗ nào cần sử dụng chỉ cần import userService vào dùng, do export không có default nên khi import cần bỏ trong ngoặc và đúng tên
+- trong một file vừa có thể export default vừa có thể export bình thường, cái nào chính thì export default.
+==Nâng cấp action creator==
+- Folder tên Actions chứa 1 file index.js công dụng nó là trả về một action.
+- export const createAtion = (type, payload) => ({
+type,
+payload,
+}).
+- Tạo 1 file type.js, trong đây chứa export const Biến = tên type (nhằm mục đích tránh sai sót trong quá trình gọi type ở reducer và ở action) ngoài ra lúc sửa thì chỉ cần sửa một chỗ thì sẽ sửa hết luôn.
+==Middleware - Redux-thunk ==
+- Bình thường luồng đi thì từ componet -> server để fetch data về, khi nhận được data thì component dispatch data to store, trường hợp trong khi đợi server trả data về mà ta đổi sang một component khác (Redirect), thì lúc đó data về sẽ không được hứng và dispatch sang store.
+- Nếu trong trường hợp ban đầu gửi 2 request tới server và store, khi data từ server về sẽ đi thẳng theo đường resquest lên store như vậy thì quãng đường đi lên store sẽ ngắn hơn, trường hợp component bị hủy thì data vẫn sẽ lên store thông qua middleware.
+- trong Folder action chứa 1 file user.js, trong file này sẽ tạo nên 1 async action (nhớ export ra), thông qua việc tạo ra 1 function mà return về 1 hàm khác nhận vào tham số là dispatch, trong hàm này chúng ta sẽ code các logic bất đồng bộ VD như axios. ở trang home sẽ dispatch async action này.
+- do hàm axios là bất đồng bộ và dispatch cũng là bất đồng bộ, cho nên không có gì đảm bảo rằng khi lên store rồi thì server trả data về hay chưa, nếu lên store mà không có gì xảy ra hết thì sẽ bị lỗi => yêu cần cần phải sử dụng middleware.
+- middleware là một lớp chắn ngang giữa action và store, bất kỳ cái gì lên store cũng phải đi qua nó. Nó đảm bảo tất cả các code bất đồng bộ chạy xong hết rồi thì mới cho lên store, nó đợi server trả về dữ liệu nó mới cho phép tiếp tục đi lên store.
+- có nhiều loại middleware: Redux-thunk, redux-saga, redux-observable
+- nhược điểm redux-thunk: ![[Pasted image 14.png]]
+- ưu-nhược redux-saga: ![[Pasted image 15.png]]
+- Bài toán đơn giản, it xử lý side Effect thì sử dụng thunk, phức tạp thì dùng saga hoặc observable.
+- npm i redux-thunk --save, import thunk from 'redux-thunk' và import applyMiddleware from 'redux'
+- import vào nơi khởi tạo store, disable redux dev tool, sau đó applyMiddleware(thunk) trường hợp muốn sử dụng song song redux dev tool và redux-thunk thì vào redux-dev-tool vào advanced setup để setup.
+==Routing==
+- Routing là cơ chế chuyển đổi qua lại giữa các component trong React.
+- npm i react-router-dom --save.
+- ở trang App component, import {BrowserRouter, Route} from 'react-router-dom'
+- Bọc toàn bộ các component tron App component trong BrowserRouter -> để nó biết rằng đang sử dụng cơ chế routing.
+- Thay vì gọi React component như bt thì chúng ta gọi thông qua Route component, ở thuộc tính path truyền vào đường dẫn tới component, ở thuộc tính component truyền vào component sẽ truy xuất nếu đúng đường dẫn đó, thuộc tính exact để tùy chỉnh so sánh đúng chính xác prefix thì mới vào được component tương ứng tránh trường hợp vô trang con nhưng vẫn dính trang home do '/'.
+- Ngoài sử dụng exact thì còn cách là bọc các Route bằng Switch, nếu nó vào 1 path rồi thì nó sẽ không check xuống dưới nữa. route rỗng phải nằm ở cuối cùng nếu không nó sẽ vào route rỗng và dừng lại.
+==Chuyển trang với Link và Navlink==
+- nếu sử dụng href bình thường thì khi chuyển trang, web sẽ load lại -> vi phạm nguyên tắc SPA, import {Link, NavLink} from 'react-router-dom'
+- Thay vì dùng thẻ a thì sử dụng Link, thuộc tính to chỉ path đến componet tương ứng.
+- NavLink khác link ở chỗ có thêm thuộc tính activeClassName hoặc activeStyle, các sử dụng tương tự Link, khi sử dụng cần phải thêm thuộc tính exact.
+- Trường hợp không muốn nhấn nút thay đổi trạng thái hay gì hết thì dùng Link
+==Truyền parameter thông qua URL==
+- ở phần Router tới component cần nhận parameter chúng ta set đường dẫn thêm /:tên parameter nhằm mục đích yêu cầu đường dẫn truy xuất tới component phải chứa thêm parameter. có dấu : thì nó sẽ hiểu là phần sau dấu : là tham số được truyền vô url
+- khi gắn react component với Route component thông qua thuộc tính component thì mặc định nó có 3 props là  history, location và match. Để lấy dữ liệu từ param ra chúng ta lấy thông qua match.params.(tên parameter mà chúng ta truyền)
+==Xử lý thông tin đăng nhập==
+- sau khi login thành công thì ngoài lưu thông tin trên store còn cần phải lưu trên localStorage nữa. Lưu trên store để Header có thể kiểm tra trên store sau đó đổi hình avatar và không có nút đăng nhập nữa. Lưu trên localStorage để khi người ta đóng trình duyệt mà không logout thì lần sau vào lại sẽ tự động đăng nhập.
+- tạo một store chứa thông tin đăng nhập của user với key name là credentials với giá trị init là null.
+- accessToken là mã định danh, chứa những thông tin về tài khoản, email, loại người dùng. Khi chúng ta call dữ liệu từ server thì có một số dữ liệu không được quyền call hoặc làm vd thêm sửa xóa.
+- Khi call API cần accessToken thì server sẽ yêu cầu gửi accessToken kèm theo lên thì server mới trả dữ liệu. 
+- Chú ý khi lưu data xuống localStorage thì cần phải JSON.stringify dữ liệu.
+- ở App component, lần đầu tiên được gọi nó sẽ lấy thông tin từ localStore trong componentDidMount và dispatch to store.
