@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "ReactJS Codepro.md",
+            "file": "AngularCodePro.md",
             "mode": "source"
           }
         }
@@ -62,7 +62,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ReactJS Codepro.md"
+                "file": "AngularCodePro.md"
               }
             }
           }
@@ -74,10 +74,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "ReactJS Codepro.md",
-    "ReactJS Note.md",
-    "ReactJS Cyber.md",
-    "Note linh tinh.md",
-    "Note CSS.md"
+    "AngularCodePro.md",
+    "Pasted image 26.png",
+    "Angular Note.md",
+    "Animation library.md",
+    "Pasted image 18.png"
   ]
 }

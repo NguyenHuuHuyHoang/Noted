@@ -13,5 +13,5 @@
   "promptDelete": false,
   "autoPairBrackets": true,
   "autoPairMarkdown": true,
-  "smartIndentList": false
+  "smartIndentList": true
 }

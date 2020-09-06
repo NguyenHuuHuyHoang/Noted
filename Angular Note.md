@@ -1,0 +1,4 @@
+- ở trong tag html nếu đặt #tên thì lúc đó tên đại diện cho tag đó, nó là một object, nó không phải là id hay một selector nào cả.
+- nếu muốn truy xuất Attribute của một tag html thì thông qua tên.getAttribute("tên thuộc tính cần truy xuất"), còn nếu truy xuất giá trị của tag đó thì tên."tên thuộc tính VD: value"
+- Để sử dụng các thư viện có jquery trong angular ngoài việc import trong file angular.json thì cần phải import trong component sử dụng ![[Pasted image 25.png]]. Sau khi component được gọi thì ngOnInit sẽ được chạy.
+- ngOnInit: là khi khởi tạo component thì nó sẽ chạy. Trường hợp ở component con có sử dụng ngOnInit để xử lý logic từ dữ liệu component cha truyền xuống mà thằng init nó chạy xong trước khi data truyền xuống thì sẽ lỗi -> sử dụng AfterViewInit thay cho ngOnInit, ngAfterViewInit sẽ được chạy sau khi toàn bộ view đã được khởi tạo xong có nghĩa là html đã chạy xong rồi, thì code mới chạy.
