@@ -92,7 +92,7 @@ một cách linh động bằng cách sử dụng cú pháp [].
 - VD dùng để tính tổng giá các sản phẩm có trong giỏ hàng. 
 - Nhận vào tham số là giá trị đầu ra, tham số thứ 2 là item, tham số thứ 3 là index, tham số thứ 4 là mảng nhưng ít xài.
 - Ngoài tính tổng tiền nó có thể tạo ra giá trị mới vd như tạo một mảng.
-- Menu đa cấp thì thường xử dụng reduce rất nhiều.![[PrtScr capture.jpg]]
+- Menu đa cấp thì thường xử dụng reduce rất nhiều.
 - Ngoài ra còn có hàm reduceRight duyệt ngược mảng.
 ==Reverse==
 - giúp đảo ngược một mảng, thường dùng trong thuật toán sắp xếp, khi đã sắp xếp rồi thì dùng hàm để lật ngược mảng mà không cần phải viết thuật toán duyệt ngược lại.

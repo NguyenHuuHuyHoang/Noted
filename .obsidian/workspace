@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "09103e0c284b0104",
+        "id": "0813e85adc56b02d",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "AngularCodePro.md",
+            "file": "PrtScr capture.jpg.md",
             "mode": "source"
           }
         }
@@ -62,7 +62,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AngularCodePro.md"
+                "file": "PrtScr capture.jpg.md"
               }
             }
           }
@@ -74,10 +74,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "AngularCodePro.md",
-    "Pasted image 26.png",
-    "Angular Note.md",
-    "Animation library.md",
-    "Pasted image 18.png"
+    "PrtScr capture.jpg.md",
+    "ES6.md",
+    "Image saved/Pasted image 4.png",
+    "Pasted image 2.png",
+    "Image saved/Pasted image.png"
   ]
 }

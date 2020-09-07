@@ -101,9 +101,72 @@
 - ![[Pasted image 23.png]] - elementRef.nativeElement đại diện cho tag được gắn atttribute.
 - sử dụng HostListener của @angular/core để thực hiện các sự kiện đối với attribute directive ![[Pasted image 24.png]]
 ==Input==
-- là lấy giá trị của cha truyền cho con, @Input đặt ở con. ở html cha truyền dữ liệu thông qua việc binding dữ liệu vào biến nằm ở model con.
+- là lấy giá trị của cha truyền cho con, @Input đặt ở con. ở html cha truyền dữ liệu thông qua việc binding dữ liệu vào biến nằm ở model con. ![[Pasted image 27.png]]
+- Ngoài ra ta có thể dùng input thông qua bí danh (Alias). ![[Pasted image 28.png]]
+==Output==
+- Là đẩy dữ liệu con ra ngoài component cho component cha xài thông qua sử dụng Output kết hợp với EventEmitter (được import từ @angular/core) tạo ra một event ảo. ![[Pasted image 29.png]] => khi đó ở bất kỳ component cha nào mà mình gắn cái component này thì có thể lấy dữ liệu ra thông qua event Binding với event là tên của cái emit event mà ta đã tạo và gọi function trong component cha với tham số truyền vào là $event (bắt buộc của angular).
+- Mục đích của Output nhằm truyền dữ liệu từ component con sang component Cha. ![[Pasted image 30.png]]
+==View Child==
+- là kỹ thuật DOM.
+- DOM đến component con => lấy ra được các thuộc tính và phương thức của nó![[Pasted image 31.png]] 
+- ![[Pasted image 32.png]]
+- DOM đến tag HTML thông qua local reference![[Pasted image 33.png]]
 ==Routing==
 - Routing trong Angular 2 là cơ chế chuyển đổi qua lại giữa các component, đồng thời tạo ra các url cho component đó => Đây là 1 kỹ thuật giúp vừa load nhanh các thành phần của trang vừa đảm bảo được url (tốt cho SEO google có thể index được)
 - import {Routes, RouterModule} from '@angular/router';
 - ![[Pasted image 26.png]]
 - nếu sử dụng children thì ở trong component cha, phải đặt router-outlet, nhớ trong file module quản lý của cha phải import RouterModule
+==Parameter (tham số trên URL)==
+- Parameter dùng để truyền nhận giá trị thông qua link (Url). Từ đó ta có thể dựa trên giá trị tham số đó để truy vấn trích xuất dữ liệu.
+- Có 2 loại truyền nhận dữ liệu thông qua link (routerlink) và sự kiện:
+	-  truyền 1 tham số.
+	-  truyền nhiều tham số.
+- Truyền 1 tham số : bằng cách sử dụng property binding dữ liệu vào thuộc tính routerLink với giá trị là mảng, tham số đầu tiên là path tham số tiếp theo là param, ở trang đặt Route chúng ta đặt path: 'đường dẫn/:param', để lấy tham số trên URL xuống cần thông qua phương thức params của 1 service là ActivetedRoute import từ @angular/router. Nó trả về 1 observable, giá trị trả ra là một object vì vậy cần truy xuất dữ liệu thông qua tên biến.
+==Lifecycle trong Angular==
+- thực chất là những hàm sẽ tự động chạy theo thời điểm, các hàm này muốn sử dụng thì phải implements.
+- Thứ tự chạy: Constructor => ngOnInit => ngAfterViewInit => ngOnDestroy
+- Ít khi nào code trong Contructor.
+- ngOnInit(): Chạy sau khi component được gọi, trong đây sẽ viết những đoạn code sẽ được chạy ngay khi component load lên vd như việc lên server lấy danh sách về và hiển thị ra.
+- ngAfterViewInit: Chạy sau khi toàn bộ view đã được khởi tạo (HTML của component đã được load). 
+- ngOnDestroy: Lúc component bị hủy thì sẽ gọi VD đang ở component a mình chuyển hướng sang component b bằng route thì khi đó a sẽ bị hủy => chạy ngOnDestroy
+- ngDoCheck: sẽ chạy lần đầu tiên sau init và trước afterviewinit sau đó mỗi khi thay đổi cái gì đó, vd giao diện, biến, thuộc tính nào đó trong class nó sẽ chạy lại.
+- ngOnChange: sẽ chạy sẽ chạy lần đầu tiên khi giá trị input được truyền vào và sau đó khi giá trị Input thay đổi.
+==Form==
+- Trong angular hỗ trợ 1 module dành cho việc nhập liệu Form và kiểm tra giá trị đó là FormsModule. Khi nhấn submit dữ liệu đi thì angular sẽ làm việc và lấy ra giá trị form, dữ liệu người dùng nhập vào tạo ra 1 object.
+- Import FormsModule từ @angular/form vào module quản lý component chứa form (Import ở trên lẫn ở dưới luôn)
+- ở tag form chúng ta phải khai báo 1 local reference (thẻ #) = "ngForm". Dùng event binding cho form là (ngSubmit)="Phương thức (#form đã khai báo ở trên . value)".
+- Trong form có những ô cần lấy dữ liệu những ô không cần, chúng ta cần phải cho angular biết cần phải lấy dữ liệu ở những input nào bằng cách thêm ngModel ở input cần lấy giá trị và thuộc tính name => object có dạng name:value
+- ở trong file ts của component khai báo phương thức xử lý giá trị lấy được từ form.
+==Form validation==
+- Trạng thái của giá trị đầu vào thẻ input:
+	- untouched: Trường này chưa được chạm vào.
+	- touched: Trường này đã được chạm vào.
+	- pristine: Trường này chưa được thay đổi
+	- dirty: Trường này đã được thay đổi
+	- invalid: Trường có nội dung không hợp lệ
+	- valid: Trường có nội dung hợp lệ.
+- Giá trị trả lại khi ta kiểm tra các trạng thái sẽ là true. Nếu ngược lại thì sẽ là false.
+- Kiểm tra rỗng với required![[Pasted image 34.png]]
+- Kiểm tra min-max length ![[Pasted image 35.png]]
+- Kiểm tra họ tên tiếng việt ![[Pasted image 36.png]]
+- Custom thông báo lỗi thông qua css ![[Pasted image 37.png]]
+==Pipe==
+- là một filter của angular giúp format định dạng dữ liệu hiển thị. ![[Pasted image 38.png]]
+- DatePipe được xài rất là nhiều, để định dạng ngày tháng năm.
+- DomSanitizer để khai báo với angular là đường dẫn an toàn thông qua phương thức bypassSecurityTrustResourceUrl(khi import link trailer youtube)
+==Angular Material==
+- Thư viện UI đã được xây dựng sẵn trong Angular
+==Object Class==
+- Object Class (TS đã học) là prototype
+- cú pháp tạo class ng g class tên-class
+==Observable==
+- là 1 tính năng mới của ES7. Nó tương tự như promise trong ES6 nhưng promise nhận giá trị tại 1 thời điểm là thành công nhảy vào hàm thành công làm trả ra kết quả hoặc thất bại cũng vậy.
+- Observable nó lấy nhiều giá trị tại nhiều thời điểm. Ngoài ra request được gửi đi ở observable thì có thể hủy được.
+==Service - Observable - Object - HTTPService==
+- Service là chứa các phương thức tương tác với BE để lấy hoặc upload dữ liệu từ BE về thông qua các phương thức như GET, POST, PUT, DELETE và thư viện hỗ trợ từ angular 2 gọi là Observable để đổ vào đối tượng (Object).
+- Nói nôm na service chứa các hàm gọi ajax để lấy dữ liệu về.
+- ng g service tên-service
+==HTTP module==
+- HTTP module cung cấp cho chúng ta service http dùng để giao tiếp với BE thông qua một số phương thức như get, post ,put ,delete,..
+- Để dùng được HTTP service ta cần import httpModule vào toàn ứng dụng thông qua app module.
+- 
