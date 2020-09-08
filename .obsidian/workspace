@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "0813e85adc56b02d",
+        "id": "504e1ccd4bc79ba1",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "PrtScr capture.jpg.md",
+            "file": "ReactJS Note.md",
             "mode": "source"
           }
         }
@@ -62,7 +62,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PrtScr capture.jpg.md"
+                "file": "ReactJS Note.md"
               }
             }
           }
@@ -74,10 +74,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "ReactJS Note.md",
+    "Untitled.md",
     "PrtScr capture.jpg.md",
     "ES6.md",
-    "Image saved/Pasted image 4.png",
-    "Pasted image 2.png",
-    "Image saved/Pasted image.png"
+    "Image saved/Pasted image 4.png"
   ]
 }
