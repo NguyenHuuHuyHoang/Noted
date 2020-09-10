@@ -27,3 +27,48 @@
 - resize: both; overflow: auto;
 ==Thay doi hinh dang chuot ==
 https://css-tricks.com/simulating-mouse-movement/
+==flex-shrink==
+- Mặc định giá trị trong flex-shrink là 1 nghĩa là cho phép các phần tử co lại khi độ rộng container giảm xuống. nếu 0 thì sẽ không co giãn và lúc này nó sẽ lấy giá trị của thuộc tính width.
+- VD 1 phần tử có flex-shrink = 0. Khi co giãn tới ngưỡng độ rộng width của nó thì nó vẫn sẽ giữ độ rộng đó chứ không co lại, hơn nữa như các phần tử flex-shrink = 1.
+- Cũng như flex-grow thì các phần tử cũng tỷ lệ với nhau. thằng nào lớn hơn sẽ mất nhiều px hơn khi container bị nhỏ lại.
+==flex-grow==
+- Cho phép các phần tử giãn theo độ rộng của container. Mặc định giá trị của flex-grow là 0, các phần tử sẽ không tự động co giãn kích thước khi chiều rộng của container bao ngoài thay đổi. Nếu set tất cả các phần tử con cùng 1 giá trị flex-grow thì khi container bao ngoài thay đổi thì các phần tử con sẽ bị co giãn giống nhau, nếu 1 phần tử set khác thì tỷ lệ co giãn sẽ khác.
+- VD có 6 phần tử với giá trị flex-grow là 1 thì container sẽ chia điều cho 6. nếu tăng 1 ô lên 2 thì container sẽ chia cho 7, ô tăng lên 2 sẽ chiếm 2/7 width container.
+- khi dùng với flex-column thì flex-grow sẽ co giãn theo chiều dọc và lúc này nó sẽ ăn theo height.
+==flex-basis==
+- Set chiều rộng hoặc chiều cao của phần tử dựa vào flex-direction row hoặc column. Mặc định là flex-direction row cho nên lúc này flex-basis sẽ tương ứng với thuộc tính width của phần tử và khi flex-direction column thì lúc này flex-basis sẽ là height của phần tử.
+- Thuộc tính flex-basis sẽ đè lên thuộc tính width hoặc height của phần tử tùy thuộc vào giá trị của flex-direction.
+==flex==
+- là viết tắt của 3 thuộc tính flex-grow, flex-shrink và flex-basis. Nó như thế này: flex: flex-grow flex-shrink flex-basis. Mặc định grow-0, shrink-1 và basis-auto.
+- khi giảm container sẽ tính theo flex-shrink, tăng thì tính theo flex-grow.
+==flex-direction: column-reverse==
+==flex-direction: row-reverse==
+==flex-wrap==
+- cho phép các items tự động xuống hàng hoặc vẫn luôn nằm trên cùng một hàng khi kích thước container thay đổi.
+- Flex-wrap có 3 giá trị là wrap, nowrap và wrap-reverse
+- mặc định là nowrap, khi resize trình duyệt lại thì các item sẽ tự động co lại chứ không xuống hàng, điều này dễ làm cho content bên trong (nếu có) bị ép lại có thể gây xấu giao diện.
+- wrap thì ngược lại với nowrap. Khi kích thước container thay đổi và tổng chiều rộng các items cộng lại lớn hơn chiều rộng của container bọc ngoài thì nó sẽ rớt xuống.
+- wrap-revese thì ngược lại wrap thay vì rớt xuống thì rớt lên.
+- flex-flow:row wrap: thuộc tính này viết để gộp hai thuộc tính là flex-direction và flex-wrap. VD flex-flow: flex-direction flex-wrap. Ứng với flex-direction và flex-wrap là các giá trị tương ứng.
+==justify-content==
+- Thuộc tính này cho phép căn chỉnh các phần tử theo chiều ngang hoặc chiều dọc tùy thuộc vào thuộc tính flex-direction. 
+- có 5 giá trị là flex-start (mặc định), flex-end, center, space-between và space-around.
+- flex-start: sát lề trái (row), trên cùng (column)
+- flex-end: sát lề phải (row), dưới cùng (column) khác với row-reverse là đổi hướng hiển thị.
+- center: nằm giữa
+- space-between: Tạo khoảng cách giữa các phần tử bằng nhau, phần tử đầu tiên sát lề trái, phần tử cuối cùng sát lề phải, container sẽ tự động canh khoảng cách giữa các phần tử với nhau sao cho luôn bằng nhau. column thì trên cùng và dưới cùng, những cái ở giữa sẽ bằng nhau.
+- space-around: gần giống between nhưng khoảng cách 2 bên và giữa các phần tử bằng nhau. (Khoảng trống ở giữa các phần tử sẽ gấp đôi vì do 2 ô gộp lại), column cũng vậy nhưng theo chiều dọc.
+=> justify-content là áp dụng cho content của container cụ thể là căn chỉnh các phần tử trong container.
+==Order==
+- Cho phép đổi vị trí hiển thị của các phần tử. VD khi xuống mobile muốn đưa hình lên trên nội dung hay đưa xuống dưới.
+- Mặc định giá trị của thuộc tính order là 0.  VD có 3 thẻ mà thẻ thứ 2 order = 1, 2 thẻ khác vẫn default thì thẻ thứ 2 sẽ nhảy xuống hiển thị ở 3. Thẻ 3 sẽ nhảy lên 2.
+==align-items==
+- Ngược lại với thuộc tính justify-content thì mặc định align-items canh các phần tử theo chiều dọc thay vì chiều ngang như justify-content. Tuy nhiên nếu đổi flex-direction sang column thì align-items sẽ canh theo chiều ngang.
+- align-items có 5 giá trị là flex-start, flex-end, center, stretch (mặc định), baseline (typography)
+- Mặc định trong align-items là stretch, nếu các phần tử height:auto thì sẽ cao full hết container chứa nó, nếu height cố định thì sẽ đè lên thuộc tính stretch này.
+- baseline thì sẽ canh các phần tử với nhau dựa vào chữ bên trong (Dòng chữ đầu tiên)
+- Baseline là định nghĩa trong typography.
+- Trường hợp khi làm việc với column: các phần tử sẽ canh theo chiều ngang, riêng baseline không có tác dụng.
+==align-self==
+- tương tự align-items nhưng khác nhau ở chỗ là áp dụng riêng lẻ cho các phần tử.
+- VD nếu các phần tử align-items: flex-start nhưng muốn 1 thẻ nằm ở giữa thì swr dụng align-self:center

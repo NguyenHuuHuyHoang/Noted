@@ -1,2 +1,13 @@
-^: tạo tag cùng cấp với tag ở ngoài
-Emmet :  Wrap => wrap nhiều element
+- ^ : tạo tag cùng cấp với tag ở ngoài
+- Bôi đen những phần tử cần bọc => ctrl shift p => Emmet :  Wrap individual lines with abbreviation => wrap nhiều element => ul.menu__list> li*.menu__item>a.menu__link (khi gõ dấu sao thì nó sẽ bọc các phần tử). Muốn nhanh hơn thì có thể cài extension htmltagwrap => chạy bằng alt + w
+- dùng item$ => tạo item từ 1 - 5
+- item.item$ => item item1 -> 5
+- nhấn chọn 1 chữ => ctrl + d thì sẽ chọn những cái giống nhau, mỗi lần nhấn sẽ chọn 1 cái.
+- xóa luôn là ctrl shift k
+- copy nhanh 1 dòng y chang dòng trên là shift alt + mũi tên lên hoặc xuống để hiện chỗ copy, muốn 1 đống luôn thì bôi đen và thực hiện
+- select nhanh nguyên 1 div thì để chuột ở tag => ctrl shift p => emmet outward => chọn hết toàn bộ nội dung của tag đó, nếu chọn inward thì chỉ chọn những thẻ con bên trong không chọn thẻ bọc.
+- sử dụng extension HTML to CSS autocompletion để khi gõ bên css sẽ tự hiện những class đã đặt bên html
+- w100 tab => width: 100px
+- để thay đổi giá trị mà không sửa thì chọn chuột vào nơi cần sửa => ctrl shift p => emmet increment 10 , 0.1 , 1 => thay đổi giá trị tương ứng
+- khi copy code về bị lỗi mà format không được => bôi đen => ctrl shift p => emmet => merge lines => đưa về 1 hàng.
+- Để tránh phải ctrl shift p nhiều lần ta có thể sử dụng shortcut => vào setting => keyboard shortcut => hiển thị toàn bộ shortcut mà vscode đang có cũng như là emmet đang có.

@@ -1,0 +1,3 @@
+- Responsive là việc làm cho website hiển thị tốt trên các thiết bị khác nhau
+- Các khái niệm media query, mobile first, desktop first, các breakpoint hay gặp.
+- 

@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "ReactJS Note.md",
+            "file": "Note CSS.md",
             "mode": "source"
           }
         }
@@ -64,7 +64,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ReactJS Note.md"
+                "file": "Note CSS.md"
               }
             }
           }
@@ -76,10 +76,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "ReactJS Note.md",
-    "Untitled.md",
-    "PrtScr capture.jpg.md",
-    "ES6.md",
-    "Image saved/Pasted image 4.png"
+    "Note CSS.md",
+    "Untitled 1.md",
+    "Emmet.md",
+    "English.md",
+    "ReactJS Note.md"
   ]
 }
