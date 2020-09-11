@@ -1,0 +1,4 @@
+- Sử dụng extension SCSS IntelliSense: Khi gõ tên biến thì sẽ gợi ý tên biến ra
+- Trong mixin có thể thiết lập giá trị mặt định cho tham số, có thể sử dụng if để tăng logic cho mixin.
+- Ngoài ra còn 1 số thứ nâng cao như function, vòng lặp.
+- 

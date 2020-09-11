@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Note CSS.md",
+            "file": "Responsive Note.md",
             "mode": "source"
           }
         }
@@ -64,7 +64,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Note CSS.md"
+                "file": "Responsive Note.md"
               }
             }
           }
@@ -76,10 +76,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "Note CSS.md",
+    "Responsive Note.md",
+    "SCSS Note.md",
     "Untitled 1.md",
-    "Emmet.md",
-    "English.md",
-    "ReactJS Note.md"
+    "SCSS.md",
+    "Master CSS 2018.md"
   ]
 }

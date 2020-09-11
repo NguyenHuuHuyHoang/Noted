@@ -1,0 +1,6 @@
+- Để sử dụng responsive thì cần phải khai báo thẻ meta name="viewport" content="width=device-width" initial-scale=1.0 (không scale, mặc định)
+- Mobile first: nghĩa khi bắt đầu làm thì làm trên điện thoại trước. sử dụng @media screen and (min-width). Khi chúng ta code là đã giao diện điện thoại rồi, khi lên màn hình lớn hơn thì sẽ làm những việc gì đó. Thứ tự media là từ breakpoint nhỏ đến lớn.
+- Desktop first: bắt đầu làm trên desktop trước, do designer cung cấp giao diện màn hình desktop trước, sau đó ta mới code mobile hoặc tablet. sử dụng @media screen and (max-width)
+- 1024px++ => desktop
+- Các mốc breakpoint cơ bản 1440 1366 1280 1024 768 480 320
+- 
