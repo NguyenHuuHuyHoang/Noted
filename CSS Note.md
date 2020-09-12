@@ -72,3 +72,10 @@ https://css-tricks.com/simulating-mouse-movement/
 ==align-self==
 - tương tự align-items nhưng khác nhau ở chỗ là áp dụng riêng lẻ cho các phần tử.
 - VD nếu các phần tử align-items: flex-start nhưng muốn 1 thẻ nằm ở giữa thì swr dụng align-self:center
+==z-index==
+- Giá trị mặc định là auto và z-index chỉ hoạt động khi đi kèm với thuộc tính position.
+==Selector==
+- :nth-child(even) hoặc :nth-child(odd) : chọn những div con chẵn hoặc lẻ.
+- :before hoặc :after : 
+	- Để sử dụng thì bắt buộc phải có thuộc tính content. Nếu để trống content thì có thể làm những việc như backgroudn phủ lên toàn bộ layer, hiệu ứng background chạy qua chạy lại(nhớ sử dụng z-index nếu không sẽ đè chữ),... Thường khi sử dụng before hoặc after thì phần tử đang làm nên sử dụng position relative hoặc absolute. Sau đó trong before hay after sử dụng absolute và các thuộc tính top, right, bottom, left để căn chỉnh vị trí.
+	- Tạo ribbon hình tam giác: sử dụng 3 thuộc tính border-top: 10px solid #eee;, border-right và border-left. với right và left thì chỉnh transparent còn top thì chỉnh màu trùng với màu nền. các thông số còn lại giống nhau.
