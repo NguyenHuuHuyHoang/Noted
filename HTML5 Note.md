@@ -1,0 +1,2 @@
+-  Khai báo chiều rộng và chiều cao hình ảnh, nó sẽ làm trang web không bị nhấp nháy vì trình duyệt có thể dự trữ không gian cho hình ảnh trước khi tải.
+-  Viết thường tên thư mục.
