@@ -1,2 +1,8 @@
 -  Khai báo chiều rộng và chiều cao hình ảnh, nó sẽ làm trang web không bị nhấp nháy vì trình duyệt có thể dự trữ không gian cho hình ảnh trước khi tải.
 -  Viết thường tên thư mục.
+- Trong 1 trang web chỉ có một thẻ h1. Thường áp dụng cho tiêu đề bự, với tên thuộc tính là heading VD banner__heading, banner__title, banner_header
+- những dòng mô tả gọi là description
+- Nội dung bên trong 1 block thường đặt là header__inner
+- Những component sử dụng chung thì không đặt tên section vào để tái sử dụng.
+- Logo nếu là chữ kết hợp 2 màu thì sử dụng thẻ span để định dạng màu chữ.
+- navbar header có thể theo dạng header__menu > ul.header__menu-list>li.header__menu-item>a.header__menu-link

@@ -1,3 +1,20 @@
+==setup file scss==
+ html {
+	 font-size: 62.5%;
+ }
+*,
+*:before,
+*:after {
+	 box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+img {
+	 display: block;
+	 max-width: 100%;
+}
+==em và rem==
+- em phụ thuộc vào font-size của chính nó hoặc phần tử cha chứa nó
+- rem phụ thuộc vào font-size của htmt
 ==outline==
 - none: dùng để khi click không hiển thị hình vuông bao quanh
 ==appearance==
@@ -81,3 +98,8 @@ https://css-tricks.com/simulating-mouse-movement/
 	- Tạo ribbon hình tam giác: sử dụng 3 thuộc tính border-top: 10px solid #eee;, border-right và border-left. với right và left thì chỉnh transparent còn top thì chỉnh màu trùng với màu nền. các thông số còn lại giống nhau.
 - .card:hover ~ .card: The sibling combinator. Chọn toàn bộ thẻ card khi thẻ card đang được hover. Ứng dụng trong việc hover 1 item, các item còn lại sẽ thay đổi.
 - li + a: chọn a đầu tiên sau thẻ li
+==Dark mode in one line==
+- Áp dụng lên tag html khi thêm class dark mode vào.
+1. filter: invert(1) hue-rotate(180deg); - tag html
+2. chỉnh toàn bộ img : filter: invert(1) hue-rotate(180deg); - tag html img
+3. chỉnh: transition: color 300ms, background-color 300ms; - tag html

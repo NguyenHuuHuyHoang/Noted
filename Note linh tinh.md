@@ -26,3 +26,4 @@ VS code có hỗ trợ thêm Vendor Prefix bằng extension:
 https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-autoprefixer
 - Các thư viện animation: https://viblo.asia/p/12-thu-vien-va-plugin-de-thuc-hien-animation-len-homepage-maGK7E3Dlj2
 - https://viblo.asia/p/9-thu-vien-animation-cho-designer-6J3ZgDORlmB
+- Trang web để lấy hình: Usplash
