@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "SCSS Note.md",
+            "file": "CSS Note.md",
             "mode": "source"
           }
         }
@@ -64,7 +64,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SCSS Note.md"
+                "file": "CSS Note.md"
               }
             }
           }
@@ -76,15 +76,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "SCSS Note.md",
-    "HTML5 Note.md",
     "CSS Note.md",
+    "SCSS Note.md",
+    "SCSS.md",
+    "English.md",
+    "Untitled.md",
+    "HTML5 Note.md",
     "Angular Cyber.md",
     "Angular Note.md",
     "AngularCodePro.md",
-    "Animation library.md",
-    "Bootstrap.md",
-    "Các deploy build lên Firebase.md",
-    "Các thuật ngữ animation web.md"
+    "Animation library.md"
   ]
 }

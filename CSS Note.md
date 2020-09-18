@@ -36,7 +36,7 @@ img {
 - user-select: none => không click tô chọn chữ được, không click đúp vào chữ và highlight được, không select text được.
 ==overflow==
 - overflow: scroll: tạo thanh scroll khi nội dung tràn ra ngoài vùng chứa, sẽ hiện cả scroll ngang và dọc ngay cả khi tràn chỉ dọc hoặc ngang.
-- overflow: hidden: ẩn nội dung
+- overflow: hidden: ẩn nội dung, thường kết hợp với white-space: nowrap.
 - overflow: auto: chỉ tạo thanh scroll ở vùng tràn ra ngoài.
 - overflow: visible (default): phần tràn ra ngoài vùng chứa vẫn sẽ được hiển thị.
 ==resize==
@@ -81,7 +81,7 @@ https://css-tricks.com/simulating-mouse-movement/
 - Mặc định giá trị của thuộc tính order là 0.  VD có 3 thẻ mà thẻ thứ 2 order = 1, 2 thẻ khác vẫn default thì thẻ thứ 2 sẽ nhảy xuống hiển thị ở 3. Thẻ 3 sẽ nhảy lên 2.
 ==align-items==
 - Ngược lại với thuộc tính justify-content thì mặc định align-items canh các phần tử theo chiều dọc thay vì chiều ngang như justify-content. Tuy nhiên nếu đổi flex-direction sang column thì align-items sẽ canh theo chiều ngang.
-- align-items có 5 giá trị là flex-start, flex-end, center, stretch (mặc định), baseline (typography)
+- align-items có 5 giá trị là flex-start, flex-end, center, stretch (mặc định thường dùng để canh các phần tử trong 1 div cao bằng nhau), baseline (typography)
 - Mặc định trong align-items là stretch, nếu các phần tử height:auto thì sẽ cao full hết container chứa nó, nếu height cố định thì sẽ đè lên thuộc tính stretch này.
 - baseline thì sẽ canh các phần tử với nhau dựa vào chữ bên trong (Dòng chữ đầu tiên)
 - Baseline là định nghĩa trong typography.
@@ -98,8 +98,33 @@ https://css-tricks.com/simulating-mouse-movement/
 	- Tạo ribbon hình tam giác: sử dụng 3 thuộc tính border-top: 10px solid #eee;, border-right và border-left. với right và left thì chỉnh transparent còn top thì chỉnh màu trùng với màu nền. các thông số còn lại giống nhau.
 - .card:hover ~ .card: The sibling combinator. Chọn toàn bộ thẻ card khi thẻ card đang được hover. Ứng dụng trong việc hover 1 item, các item còn lại sẽ thay đổi.
 - li + a: chọn a đầu tiên sau thẻ li
+- :first-child: chọn thằng con đầu tiên
+- :last-child: chọn thằng con cuối cùng
+- :nth-child(2): chọn thằng thứ 2 từ trên xuống.
+- :nth-last-child(2): chọn thằng thứ 2 từ thằng cuối đếm lên.
 ==Dark mode in one line==
 - Áp dụng lên tag html khi thêm class dark mode vào.
 1. filter: invert(1) hue-rotate(180deg); - tag html
 2. chỉnh toàn bộ img : filter: invert(1) hue-rotate(180deg); - tag html img
 3. chỉnh: transition: color 300ms, background-color 300ms; - tag html
+==Button==
+- Các thuộc tính cơ bản như con trỏ chuột, outline: none, background-color: transparent, border: none
+==Cách chia căn điều các item trong flex==
+- VD: có 4 item, mà muốn mỗi item có độ dài bằng nhau và cách nhau 30px (3 khoảng trống) => width = calc( 25% - 22.5px), 30px x 3 / 4 = 22.5px.
+==white-space==
+- white-space: nowrap để xử lý việc 1 trong các item cùng hàng có nhiều ký tự hơn 1 dòng => nhảy dòng so với các item còn lại làm bể design, nó giúp cho không nhảy dòng.
+==text-overflow==
+- text-overflow: ellipsis nếu dài quá mức thì sẽ hiển thị ... thường kết hợp với white-space và overflow: hidden nếu muốn 1 dòng.
+==margin==
+- margin-top: auto => sẽ đẩy content xuống dưới cùng, tránh trường hợp có khoảng trống ở dưới cùng item.
+==Xử lý icon Font-awesome==
+- Để chỉnh màu nền của icon trùng với màu của icon.
+- Mặc định font awesome sử dụng thẻ before cho nên muốn xử lý gì thì chỉ có thể sử dụng after.
+- setting after với thuộc tính height = width = 100%, background-color: currentColor, border-radius: inherit, position:absolute, top:0, left:0, opacity: 0.25.
+==Lưu ý==
+- Những giá trị trong form như: input, checkbox, button, select option, text-area sẽ lấy css theo trình duyệt chứ không lấy theo body vd: font-family, font-size,... , do đó phải set riêng
+==a tag==
+- nếu 1 div chứa nhiều thẻ a, muốn xuống dòng thì chỉnh display:block, cần xử lý thêm width: fit-content để tránh trường hợp click khoảng trắng mà vẫn dính thẻ a
+==box-shadow==
+- nhận vào 4 giá trị là x y blur scale và màu.
+- x dương thì sẽ đổ sang phải, y dương sẽ đổ xuống dưới.
