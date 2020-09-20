@@ -12,6 +12,17 @@ img {
 	 display: block;
 	 max-width: 100%;
 }
+==Biến trong CSS==
+:root {
+	--primary: giá trị màu;
+}
+sử dụng 
+var(--primary)
+==Border-radius==
+- border-radius: 4px 4px 0 0 => trên trái và phải có, ở dưới không có.
+==Tạo tam giác==
+- Thực chất tam giác là một phần của hình vuông, bốn cái tam giác tạo thành hình vuông
+- tam giác đứng thì border left và right là transparent, border bottom sẽ có màu.
 ==em và rem==
 - em phụ thuộc vào font-size của chính nó hoặc phần tử cha chứa nó
 - rem phụ thuộc vào font-size của htmt
@@ -128,3 +139,7 @@ https://css-tricks.com/simulating-mouse-movement/
 ==box-shadow==
 - nhận vào 4 giá trị là x y blur scale và màu.
 - x dương thì sẽ đổ sang phải, y dương sẽ đổ xuống dưới.
+
+==Hướng dẫn code giao diện dropdown==
+- fa fa-caret-down => icon
+- 
