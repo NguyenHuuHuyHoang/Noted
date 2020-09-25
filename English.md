@@ -101,3 +101,7 @@ Lưu ý: Một số trạng từ đặc biệt không theo quy luật đó: good
 Vị trí của động từ trong câu rất dễ nhận biết vì nó thường đặt sau chủ ngữ
 VD: My family has six people.
 She is a doctor
+==Từ vựng==
+- For instance : ví dụ
+- young: trẻ
+- 

@@ -5,5 +5,4 @@
 - Azure
 - https://surge.sh/
 - Github
-- free000
 - netlify

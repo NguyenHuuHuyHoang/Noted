@@ -33,3 +33,5 @@ _ Thêm map của google vào website (có thể áp dụng cách này cho video
 https://mobirise.com/help/how-to-add-google-map-to-website-781.html
 
 - thư viện sweetalert
+
+tạo thẻ card flip https://michael-panik.com/blog/pure-css-card-flip-hover-effect/

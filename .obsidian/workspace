@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "CSS Note.md",
+            "file": "English.md",
             "mode": "source"
           }
         }
@@ -64,7 +64,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CSS Note.md"
+                "file": "English.md"
               }
             }
           }
@@ -76,15 +76,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "CSS Note.md",
-    "Tips trick.md",
-    "Untitled 1.md",
-    "SCSS Note.md",
-    "SCSS.md",
     "English.md",
     "Untitled.md",
-    "HTML5 Note.md",
-    "Angular Cyber.md",
-    "Angular Note.md"
+    "Untitled 1.md",
+    "CSS Note.md",
+    "Animation library.md",
+    "SCSS Note.md",
+    "Các web hosting.md",
+    "Mô hình cơ sở dữ liệu.md",
+    "Tips trick.md",
+    "SCSS.md"
   ]
 }

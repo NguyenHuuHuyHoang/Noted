@@ -25,7 +25,7 @@ var(--primary)
 - tam giác đứng thì border left và right là transparent, border bottom sẽ có màu.
 ==em và rem==
 - em phụ thuộc vào font-size của chính nó hoặc phần tử cha chứa nó
-- rem phụ thuộc vào font-size của htmt
+- rem phụ thuộc vào font-size của root (html)
 ==outline==
 - none: dùng để khi click không hiển thị hình vuông bao quanh
 ==appearance==
@@ -108,9 +108,12 @@ https://css-tricks.com/simulating-mouse-movement/
 	- Để sử dụng thì bắt buộc phải có thuộc tính content. Nếu để trống content thì có thể làm những việc như backgroudn phủ lên toàn bộ layer, hiệu ứng background chạy qua chạy lại(nhớ sử dụng z-index nếu không sẽ đè chữ),... Thường khi sử dụng before hoặc after thì phần tử đang làm nên sử dụng position relative hoặc absolute. Sau đó trong before hay after sử dụng absolute và các thuộc tính top, right, bottom, left để căn chỉnh vị trí.
 	- Tạo ribbon hình tam giác: sử dụng 3 thuộc tính border-top: 10px solid #eee;, border-right và border-left. với right và left thì chỉnh transparent còn top thì chỉnh màu trùng với màu nền. các thông số còn lại giống nhau.
 - .card:hover ~ .card: The sibling combinator. Chọn toàn bộ thẻ card khi thẻ card đang được hover. Ứng dụng trong việc hover 1 item, các item còn lại sẽ thay đổi.
-- li + a: chọn a đầu tiên sau thẻ li
-- :first-child: chọn thằng con đầu tiên
-- :last-child: chọn thằng con cuối cùng
+- The element1+element2 selector is used to select elements that is placed immediately after (not inside) the first specified element. Chọn chỉ thằng element2 ngay sau thằng element1.
+- The element1~element2 selector matches occurrences of element2 that are preceded by element1. Chọn tất cả element2 đặt sau element1
+- The element1>element2 selector is used to select elements with a specific parent. Chọn thằng element2 là thẻ con trực tiếp của element1.
+- The element1 element2 selector is used to select elements2 inside elements1. là chọn những thằng element2 nằm trong element1.
+- tag:first-child: chọn tag con đầu tiên của phần tử cha chứa nó.
+- tag:last-child: chọn tag con cuối cùng của phần tử cha chứa nó.
 - :nth-child(2): chọn thằng thứ 2 từ trên xuống.
 - :nth-last-child(2): chọn thằng thứ 2 từ thằng cuối đếm lên.
 ==Dark mode in one line==
@@ -139,7 +142,10 @@ https://css-tricks.com/simulating-mouse-movement/
 ==box-shadow==
 - nhận vào 4 giá trị là x y blur scale và màu.
 - x dương thì sẽ đổ sang phải, y dương sẽ đổ xuống dưới.
-
 ==Hướng dẫn code giao diện dropdown==
 - fa fa-caret-down => icon
-- 
+- .dropdown>.dropdown__select>span.dropdown__selected+i.fa.fa-caret-down^ul.dropdown__list>li.dropdown__item>dropdown__text+i.fa.fa-plus-circle.dropdown__icon
+- dropdown: có w100% và max-width
+- dropdown__select: có w100%
+==Lưu ý khi sử dụng d-none==
+- khi sử dụng d-none thì sẽ không sử dụng được thuộc tính transition được, do đó cần thay bằng visibility và opacity.
