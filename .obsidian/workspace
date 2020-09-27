@@ -8,11 +8,8 @@
         "type": "leaf",
         "active": true,
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "English.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -48,7 +45,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 450.0036334991455
   },
   "right": {
     "id": "5153391931523435",
@@ -63,9 +60,7 @@
             "type": "leaf",
             "state": {
               "type": "backlink",
-              "state": {
-                "file": "English.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -76,15 +71,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "English.md",
     "Untitled.md",
+    "Note linh tinh.md",
+    "NodeJS Web server sử dụng framework Express.md",
+    "English.md",
     "Untitled 1.md",
     "CSS Note.md",
     "Animation library.md",
     "SCSS Note.md",
     "Các web hosting.md",
-    "Mô hình cơ sở dữ liệu.md",
-    "Tips trick.md",
-    "SCSS.md"
+    "Mô hình cơ sở dữ liệu.md"
   ]
 }

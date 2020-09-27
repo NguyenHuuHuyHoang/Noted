@@ -1,3 +1,4 @@
+- Firecode chứa font === !===
 - Code.org là một web site học lập trình free
 - CSS tricks pseudo elements
 - Khi code thì sẽ bắt đầu code những component nhỏ trước, component là những cái có thể dùng đi dùng lại trên web. có 2 dạng layout là layout toàn cục ngoài ra bên trong mỗi component cũng có những layout nhỏ riêng của nó. Khi code xong các component nhỏ thì ghép lại vào layout toàn cục.

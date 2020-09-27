@@ -104,4 +104,7 @@ She is a doctor
 ==Từ vựng==
 - For instance : ví dụ
 - young: trẻ
-- 
+- phrase: cum tu
+- necessary: can thiet
+- advertisement: quang cao
+- with pleasure: rat han hanh
