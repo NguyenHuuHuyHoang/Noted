@@ -1,6 +1,12 @@
 ==Different vs Difference==
 - Different (adj): thường dùng để chỉ sự khác nhau về tính cách hoặc chất lượng
 - Difference (n): Thường dùng để chỉ trạng thái hoặc mối quan hệ của sự khác nhau.
+==in vs at ==
+- in như là một giới từ nơi chốn, nó thường được sử dụng để nói về vị trí của một người hoặc một vật trong những nơi lớn như thành phố lớn, đất nước, lục địa VD: She grew up in New Zealand.
+- In, như một giới từ chỉ thời gian, thường được sử dụng khi nói về các phần trong ngày. VD: I'll see you in the morning, in the evening, in the afternoon.
+- at như một giới từ của địa điểm, thường được sử dụng để nói về vị trị của một người nào đó hoặc một cái nào đó trong những nơi nhỏ và không quan trọng như làng mạc, thị trấn nhỏ. VD: I'lll meet you at the pub.
+- At cũng thường được sử dụng với các tên riêng như tòa nhà hoặc tổ chức. VD: I first met her at Harrods. She works at the bank.
+- At, như một giới từ chỉ thời gian, thường được sử dụng với thời gian đồng hồ. VD: My train leaves at 6.30 am.
 ==Nhận biết n - adj - adv - v ==
 Danh từ (nouns)
 Danh thường được đặt tại những vị trí sau
@@ -108,3 +114,6 @@ She is a doctor
 - necessary: can thiet
 - advertisement: quang cao
 - with pleasure: rat han hanh
+- institute: hoc vien
+- independent: doc lap
+- 

@@ -8,8 +8,11 @@
         "type": "leaf",
         "active": true,
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "English.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -60,7 +63,9 @@
             "type": "leaf",
             "state": {
               "type": "backlink",
-              "state": {}
+              "state": {
+                "file": "English.md"
+              }
             }
           }
         ]
@@ -71,15 +76,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "English.md",
+    "CSS Master 2018.md",
+    "Component by CSS.md",
+    "Các web hosting.md",
+    "Angular Note.md",
     "Untitled.md",
     "Note linh tinh.md",
     "NodeJS Web server sử dụng framework Express.md",
-    "English.md",
     "Untitled 1.md",
-    "CSS Note.md",
-    "Animation library.md",
-    "SCSS Note.md",
-    "Các web hosting.md",
-    "Mô hình cơ sở dữ liệu.md"
+    "CSS Note.md"
   ]
 }
