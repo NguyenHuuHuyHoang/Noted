@@ -10,7 +10,11 @@
         "state": {
           "type": "markdown",
           "state": {
+<<<<<<< HEAD
             "file": "English.md",
+=======
+            "file": "Emmet.md",
+>>>>>>> ff14b6ad28cf30c0e47bcb213556c56e5c9323b4
             "mode": "source"
           }
         }
@@ -64,7 +68,11 @@
             "state": {
               "type": "backlink",
               "state": {
+<<<<<<< HEAD
                 "file": "English.md"
+=======
+                "file": "Emmet.md"
+>>>>>>> ff14b6ad28cf30c0e47bcb213556c56e5c9323b4
               }
             }
           }
@@ -76,15 +84,26 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+<<<<<<< HEAD
     "English.md",
     "CSS Master 2018.md",
     "Component by CSS.md",
     "Các web hosting.md",
     "Angular Note.md",
+=======
+    "Emmet.md",
+    "Khóa FE Free note.md",
+>>>>>>> ff14b6ad28cf30c0e47bcb213556c56e5c9323b4
     "Untitled.md",
     "Note linh tinh.md",
     "NodeJS Web server sử dụng framework Express.md",
     "Untitled 1.md",
+<<<<<<< HEAD
     "CSS Note.md"
+=======
+    "CSS Note.md",
+    "Animation library.md",
+    "SCSS Note.md"
+>>>>>>> ff14b6ad28cf30c0e47bcb213556c56e5c9323b4
   ]
 }
