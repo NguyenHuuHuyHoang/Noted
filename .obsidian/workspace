@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Khóa FE Free note.md",
+            "file": "Emmet.md",
             "mode": "source"
           }
         }
@@ -64,7 +64,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Khóa FE Free note.md"
+                "file": "Emmet.md"
               }
             }
           }
@@ -76,6 +76,7 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "Emmet.md",
     "Khóa FE Free note.md",
     "Untitled.md",
     "Note linh tinh.md",
@@ -84,7 +85,6 @@
     "Untitled 1.md",
     "CSS Note.md",
     "Animation library.md",
-    "SCSS Note.md",
-    "Các web hosting.md"
+    "SCSS Note.md"
   ]
 }
