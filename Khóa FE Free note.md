@@ -37,4 +37,26 @@
 - thẻ a là thẻ link liên kết tới những đường dẫn ngoài trang web có thể sử dụng với các thuộc tính mailto, tel, ...
 - p là thẻ đoạn văn.
 - thuộc tính của một thẻ: Attribute: Đặc Tính, Property: Thuộc Tính. Định nghĩa chung thì 2 thằng này cũng tương đương là thuộc tính, attribute thực chất là đặc tính còn property là thuộc tính, chỉ có HTML mới có attribute còn mọi thứ trên đời điều là property hết. Về khác nhau thì property nghĩa rộng hơn attribute. vd 1 thẻ tạo có 2 attribute thì chỉ được xài 2 thôi không thể sử dụng hơn, còn property thì rộng hơn, một đối tượng có nhiều property, mình có quyền định nghĩa tạo thêm property. Tổng quát thì một cái có giới hạn còn một cái không có giới hạn
-
+==CSS==
+- CSS mà không sử dụng hai cặp thẻ div và thẻ span thì rất khó viết. Đặc tính của hai cặp thẻ này là thẻ vô nghĩa, nó rõng tất cả, thằng div là hiển thị kiểu block, thằng span hiển thị kiểu inline. Người ta tạo 2 thẻ này để chia component, vì nó không có css bên trong, các phần tử bên trong sẽ không bị ảnh hưởng. Thẻ span dùng để css các chi tiết nhỏ bên trong.
+- CSS không phải là ngôn ngữ lập trình, có 3 cách viết:
+	- Cách 1 là viết bằng attribute (inline style)
+	- Cách 2 là viết bằng link (external css), tạo 1 file css nằm trong assets (tất cả các trang nằm ở ngoài còn bao nhiêu thứ điều đặt trong assets), sau đó link đặt trong HTML link tới style.css
+	- Cách thứ 3 là style (cặp thẻ internal css)
+- Độ ưu tiên của css :
+	- ****** attr
+	- ***** id
+	- **** selector càng dài
+	- *** last line
+	- 
+- id: trong một html chỉ có một id.
+- class: có thể đặt nhiều class.
+- Thẻ ul , li phân biệt cấp cha cấp con. ul luôn luôn đi với li. nếu trong li có 1 ul nữa thì nó phân biệt cấp 1 cấp 2.
+- css selector: 
+	- p : chọn tất cả các thẻ p trong web
+	- p.intro: chọn tất cả thẻ p có tên class là intro.
+	- p,div: chọn 2 tag
+	- div p: 
+	- div > p: nó lấy từng bậc, chỉ áp dụng với thẻ p con của div
+	- 
+	
