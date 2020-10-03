@@ -1,20 +1,16 @@
 {
   "main": {
-    "id": "df4ed2e3b5138f88",
+    "id": "6fa0db082a9ad7b1",
     "type": "split",
     "children": [
       {
-        "id": "dc6f774ae4b01a02",
+        "id": "1821115a7e37c0ed",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
-<<<<<<< HEAD
-            "file": "English.md",
-=======
-            "file": "Emmet.md",
->>>>>>> ff14b6ad28cf30c0e47bcb213556c56e5c9323b4
+            "file": "Khóa FE Free note.md",
             "mode": "source"
           }
         }
@@ -23,15 +19,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "404107dd66ea198e",
+    "id": "3c3d9d953b62d8e5",
     "type": "split",
     "children": [
       {
-        "id": "bcc3113ed4f4d1ee",
+        "id": "f54624cf317449aa",
         "type": "tabs",
         "children": [
           {
-            "id": "10fe4ee98ec58d13",
+            "id": "044275ce28109735",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -39,7 +35,7 @@
             }
           },
           {
-            "id": "fb76ac7730ffdb36",
+            "id": "a3b0dceab397879a",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -52,27 +48,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 450.0036334991455
+    "width": 300
   },
   "right": {
-    "id": "5153391931523435",
+    "id": "5152ca8e997ec753",
     "type": "split",
     "children": [
       {
-        "id": "ceb92382410cddf4",
+        "id": "4251cacd24a90415",
         "type": "tabs",
         "children": [
           {
-            "id": "1e21250f7da6cc85",
+            "id": "cb1a236cb4160e87",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-<<<<<<< HEAD
-                "file": "English.md"
-=======
-                "file": "Emmet.md"
->>>>>>> ff14b6ad28cf30c0e47bcb213556c56e5c9323b4
+                "file": "Khóa FE Free note.md"
               }
             }
           }
@@ -84,26 +76,14 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-<<<<<<< HEAD
-    "English.md",
-    "CSS Master 2018.md",
-    "Component by CSS.md",
-    "Các web hosting.md",
-    "Angular Note.md",
-=======
-    "Emmet.md",
     "Khóa FE Free note.md",
->>>>>>> ff14b6ad28cf30c0e47bcb213556c56e5c9323b4
-    "Untitled.md",
-    "Note linh tinh.md",
+    "English.md",
+    "HTML5 Note.md",
     "NodeJS Web server sử dụng framework Express.md",
-    "Untitled 1.md",
-<<<<<<< HEAD
-    "CSS Note.md"
-=======
-    "CSS Note.md",
-    "Animation library.md",
-    "SCSS Note.md"
->>>>>>> ff14b6ad28cf30c0e47bcb213556c56e5c9323b4
+    "Note linh tinh.md",
+    "Mô hình cơ sở dữ liệu.md",
+    "Responsive Note.md",
+    "SCSS.md",
+    "Tips trick.md"
   ]
 }

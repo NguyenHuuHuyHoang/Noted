@@ -116,4 +116,5 @@ She is a doctor
 - with pleasure: rat han hanh
 - institute: hoc vien
 - independent: doc lap
-- 
+- I am all ears: toi lang nghe cham chu
+-  tongue: cai luoi
