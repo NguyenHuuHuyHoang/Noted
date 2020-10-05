@@ -149,3 +149,7 @@ https://css-tricks.com/simulating-mouse-movement/
 - dropdown__select: có w100%
 ==Lưu ý khi sử dụng d-none==
 - khi sử dụng d-none thì sẽ không sử dụng được thuộc tính transition được, do đó cần thay bằng visibility và opacity.
+==Background-origin và background-position==
+- background-position: là vị trí hình nền mình muốn hiện, ví dụ ưu tiên hiện center thì nó hiện center, nếu không xét thì mặc định sẽ ưu tiên top và left của hình nền.
+- còn background-origin: là vùng phủ của hình nền. 1 thẻ HTML sẽ có các vùng content, padding, border, nếu cho bg-origin: padding-box thì nó sẽ chỉ phủ đến padding mà không thèm phủ border.
+- 

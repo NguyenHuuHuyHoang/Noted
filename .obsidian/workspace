@@ -4,15 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "8eea0efd81be253a",
+        "id": "841c06377ab7750b",
         "type": "leaf",
         "active": true,
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Khóa FE Free note.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -63,9 +60,7 @@
             "type": "leaf",
             "state": {
               "type": "backlink",
-              "state": {
-                "file": "Khóa FE Free note.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -76,9 +71,9 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "CSS Note.md",
     "Khóa FE Free note.md",
     "Khóa FE Free sửa bài tập.md",
-    "CSS Note.md",
     "Untitled.md",
     "GIT.md"
   ]
