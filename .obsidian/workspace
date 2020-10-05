@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "GIT.md",
+            "file": "Khóa FE Free note.md",
             "mode": "source"
           }
         }
@@ -64,7 +64,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "GIT.md"
+                "file": "Khóa FE Free note.md"
               }
             }
           }
@@ -76,6 +76,10 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "Khóa FE Free note.md",
+    "Khóa FE Free sửa bài tập.md",
+    "CSS Note.md",
+    "Untitled.md",
     "GIT.md"
   ]
 }

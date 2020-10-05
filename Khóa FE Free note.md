@@ -58,5 +58,15 @@
 	- p,div: chọn 2 tag
 	- div p: 
 	- div > p: nó lấy từng bậc, chỉ áp dụng với thẻ p con của div
-	- 
+==margin, padding==
+- margin là khoảng cách giữa các đối tượng với nhau, padding là khoảng cách từ border vào bên trong box. Tuy nhiên khi xài padding sẽ làm thay đổi độ lớn của box do vậy cần phải giải quyết bằng cách sử dụng box-sizing: border-box;
+- box-sizing: border-box là thuộc tính hỗ trợ cho margin và padding.
+- thuộc tính này nên áp dụng cho toàn bộ các element của HTML thông qua select refer: * (lấy hết tất cả của các phần tử HTML của mình).
+- padding: 0, margin: 0 -> trả lại đồ thị về 0. Khi nào tạo file ra cần phải có sẵn 3 thằng này.
+- trường hợp có scroll thì vẫn tính vào thằng body.
+- margin: 0 auto, canh giữa đối tượng so với div cha
+==Sidebar==
+- nguyên tắc tổ chức là ul li và thẻ a.  những cái nào đặt chung các thẻ thì đặt, còn class là setting riêng vd ul li thì có list-type:none.
+- Nếu muốn đẹp thì nên đặt padding thằng a, khi ta chuyển thằng a thành d:block thì khi user click ở bất kỳ đâu điều click vào thẻ a được.
+- Quan trọng nhất trong web là cần phải tổ chức, khi làm xong thì làm gì cũng được. 
 	
