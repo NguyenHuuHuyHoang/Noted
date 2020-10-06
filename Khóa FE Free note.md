@@ -69,4 +69,5 @@
 - nguyên tắc tổ chức là ul li và thẻ a.  những cái nào đặt chung các thẻ thì đặt, còn class là setting riêng vd ul li thì có list-type:none.
 - Nếu muốn đẹp thì nên đặt padding thằng a, khi ta chuyển thằng a thành d:block thì khi user click ở bất kỳ đâu điều click vào thẻ a được.
 - Quan trọng nhất trong web là cần phải tổ chức, khi làm xong thì làm gì cũng được. 
-	
+==line-height==
+- nên sử dụng line-height thay vì height vì nó có thể co dãn được, khi font chữ thay đổi thì nó sẽ không bị bể layout.

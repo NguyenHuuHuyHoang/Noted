@@ -152,4 +152,70 @@ https://css-tricks.com/simulating-mouse-movement/
 ==Background-origin và background-position==
 - background-position: là vị trí hình nền mình muốn hiện, ví dụ ưu tiên hiện center thì nó hiện center, nếu không xét thì mặc định sẽ ưu tiên top và left của hình nền.
 - còn background-origin: là vùng phủ của hình nền. 1 thẻ HTML sẽ có các vùng content, padding, border, nếu cho bg-origin: padding-box thì nó sẽ chỉ phủ đến padding mà không thèm phủ border.
-- 
+==font-size==
+- Cùng 1 font size nhưng khác font-family sẽ tạo ra các phần tử có chiều cao khác nhau
+- Cách font chữ hoạt động:
+	- Một font định nghĩa em-square (units per em) của nó, một dạng ô chứa các ký tự được vẽ ra. Ô vuông này sử dụng các đơn vị tương đối và thông thường có giá trị 1000 đơn vị. Nhưng nó cũng có thể có các giá trị khác
+	- Dựa trên đơn vị tương đối của nó, các chỉ số của font chữ (font metrics) sẽ được xác định (ascender, descender, capital height, x-height,...). Chú ý là một số giá trị có thể tràn ra ngoài em-square.
+	- Trên trình duyệt, các đơn vị tương đối có thể được co giãn để vừa với font-size mong muốn.
+	- VD :
+		- font Catamaran trong FontForge có các chỉ số:
+			- em-square là 1000
+			- ascender là 1100 và descender là 540. Capital Height là 680 và X height là 485.
+		- Điều đó có nghĩa là font catamaran sử dụng 1100 + 540 đơn vị trên 1000 đơn vị em-square, kết quả là 164px khi thiết lập giá trị fz100px. Chiều cao được tính toán (computed height) này định nghĩa content-area của một phần tử. Có thể xem content-area là vùng mà thuộc tính bg được áp dụng (không hoàn toàn chính xác lắm)
+		- Chúng ta có thể dự đoán được độ cao của các chữ cái in hoa là 68px (680 đơn vị) và các chữ cái in thường (x-height) là 49px (485 đơn vị). kết quả là 1ex = 49px và 1em = 100px, không phải 164px (em là giá trị dựa trên fz, không phải chiều cao được tính toán).
+		- Khi một phần tử p được hiển thị trên màn hình, nó có thể được tạo bởi nhiều dòng, dựa vào đột rộng của nó. Một dòng được tạo bởi một hay nhiều phần tử inline (thẻ HTML hay các phần tử inline vô danh như text) và mỗi dòng này được gọi là một line-box. Chiều cao của một line-box dựa trên chiều cao của các phần tử con của nó. Do đó trình duyệt sẽ tính toán chiều cao của mỗi phần tử inline, từ đó tính ra chiều cao của line-box (từ điểm cao nhất đến điểm thấp nhất của các phần tử con). Kết quả là một line-box luôn đủ cao để có thể chứa tất cả các phần tử con của nó. ![[Pasted image 20201006134134.png]]
+		- *Mỗi phần tử HTML thực ra là một chồng các line-box. Nếu biết chiều cao của mỗi line-box, sẽ biết được chiều cao của phần tử đó.*
+		- Trong 1 thẻ span, chứa 1 đoạn chữ, ở giữa đoạn chữ chứa 3 thẻ span. thì nó sẽ sinh ra 3 line-box. line-box đầu tiên và cuối cùng chứa một phần tử inline vô danh (text), line-box thứ 2 chứa 2 phần tử inline vô danh và 3 thẻ span.
+		- ![[Pasted image 20201006134817.png]] Một thẻ p (đường viền đen) đường tạo thành từ các line-box (đường viền trắng) chứa các phần tử inline (đường viền trơn) và các phần tử inline vô danh (đường viền nét đứt).
+		- Chúng ta thấy rõ ràng line-box thứ 2 cao hơn các line-box khác, do content-area của các phần tử con của nó, và chính xác hơn là phần tử sử dụng font Catamaran.
+		- Phần khó trong việc tạo thành line-box là chúng ta không thực sự nhìn thấy hay kiểm soát được nó bằng CSS. Ngay cả việc áp dụng thuộc tính background vào ::first-line cũng không cho chúng ta một dấu hiệu trực quan về chiều cao của line-box đầu tiên.
+==line-height==
+- nên sử dụng line-height thay vì height vì nó có thể co dãn được, khi font chữ thay đổi thì nó sẽ không bị bể layout.
+- Chiều cao của một line-box được tính toán dựa trên chiều cao của các phần tử con của nó chứ không được tính toán dựa trên chiều cao của content-area của các phần tử con của nó.
+- Một phần tử inline có 2 chiều cao khác nhau: chiều cao content-area và chiều cao virtual-area (chiều cao mà chúng ta nhìn thấy được). ![[Pasted image 20201006135511.png]] Các phần tử inline có chiều cao khác nhau.
+	- Chiều cao content-area được định nghĩa bởi các chỉ số của font.
+	- Chiều cao virtual-area là line-height, nó là chiều cao được dùng để tính toán chiều cao của line-box.
+- Quan niệm thông thường là line-height là khoảng cách giữa ác baseline. Trong CSS thì không như vậy.![[Pasted image 20201006135616.png]]
+- Chiều cao khác nhau giữa virtual-area và content-area được gọi là leading. Một nửa leading được cộng thêm vào phía trên của content-area, nửa còn lại được cộng thêm vào phía dưới. Do đó content-area luôn ở giữa của virtual-area.
+- Dựa trên các giá trị được tính toán, line-height (virtual-area) có thể bằng, cao hơn hoặc thấp hơn content-area. Trong trường hợp virtual-area thấp hơn, leading sẽ âm và một line-box trông sẽ thấp hơn các phần tử con của nó.
+- Các loại phần tử inline khác:
+	- Các phần tử inline thay thế (img, input, svg,...)
+	- inline-block và tất cả các phần tử inline-*
+	- các phần tử inline xuất hiện trong một bối cảnh định dạng riêng biệt (ví dụ như trong một phần tử flexbox, tất cả các flex item là blocksified).
+- Với các phần tử inline riêng biệt này, chiều cao được tính dựa trên các thuộc tính height, margin và border của chúng. Nếu height là auto thì line-height được sử dụng và content-area sẽ bằng với line-height. ![[Pasted image 20201006140323.png]]
+- Các phần tử inline thay thế, inline-block/inline-* và blocksified có content-area bằng với chiều cao, hay line-height, của chúng.
+- Vấn đề đặt ra là giá trị normal của line-height là bao nhiêu ? Như việc tính toán chiều cao content-area, được tìm thấy trong các chỉ số của font.
+- em-square của font Catamaran là 1000, nhưng chúng ta thấy nhiều giá trị ascender/descender khác nhau:
+	- ascent/descent thông thường: ascender là 770 và descender là 230. Được sử dụng để vẽ ký tự (bảng "OS/2")
+	- các chỉ số Ascent/Descent: ascender là 1100 và descender là 540. Được sử dụng để tính chiều cao content-area (bảng "hhea" và bảng "OS/2")
+	- chỉ số Line Gap. Được sử dụng cho line-height: normal, bằng cách cộng thêm giá trị này vào các chỉ số ascent/descent (bảng "hhea")
+- trong trường hợp font catamaran định nghĩa line gap với giá trị là 0, nên line-height: normal sẽ bằng với content-area, tức là 1640 đơn vị, hay 1.64
+- để so sánh, font arial định nghĩa em-square với giá trị 2048 đơn vị, ascender = 1854, descender = 434 và line gap = 67. Nghĩa là với fz100px thì content-area sẽ là 112px (1117 đơn vị) và line-height: normal là 115px (1150 đơn vị hay 1.15). Tất cả các chỉ số này là của riêng font và được thiết lập bởi người thiết kế font.
+- Do đó hiển nhiên việc đặt line-height: 1 là một cách làm xấu. Các giá trị không có đơn vị tính tương đối với fz, không tương đối với content-area, và trường hợp virtual-area thấp hơn content-area là nguồn gốc của rất nhiều vấn đề. ![[Pasted image 20201006145220.png]]
+*Với các phần tử inline, padding và border làm tăng vùng background, nhưng không làm tăng chiều cao content-area (cũng như chiều cao của line-box). Do đó content-area không phải lúc nào cũng là thứ bạn nhìn thấy trên màn hình. margin-top và margin-bottom không có tác dụng*
+*Với các phần tử inline thay thế, inline-block và blocksified: padding, margin và border làm tăng height nên làm tăng chiều cao content-area và line-box*
+==Các phương pháp căn giữa bằng mẹo==
++ Sử dụng line-height:
+	+ Chúng ta cần gán giá trị line-height của phần tử chứa chữ bằng với giá trị chiều cao của phần tử đó. Mặc định, khoảng trống phía trên và bên dưới chữ có chiều cao bằng nhau nên chữ sẽ được căn giữa theo chiều dọc. line-height = height = 120px.
+	+ Hạn chế là chỉ tác dụng với một dòng chữ, với nhiều dòng thì không.
++ Sử dụng absolute bên trong relative position.
+	+ Phương pháp này dựa trên thuộc tính margin:auto được dùng để căn giữa một phần tử bên trong phần tử cha của nó. Tuy nhiên độ rộng và chiều cao của phần tử con cần được xác định cụ thể.
+	+ position: absolute, width: 64px, height: 64px; left: 0; top:0; right:0 ; bottom: 0; margin: auto;
+	+ Phương pháp này có thể áp dụng cho các hộp thoại có độ rộng cố định.
++ Sử dụng padding và margin:
+	+ Phương pháp này chỉ ổn với các nội dung tĩnh, có rất nhiều vấn đề với nội dung động. Hơn nữa, khai báo kích thước bằng pixel quá nhiều sẽ gây ra những vấn đề nghiêm trọng với thiết kế responsive do một pixel không phải một pixel trên các thiết bị di động.
++ Căn giữa sử dụng display table:
+	+ Ở thời HTML4 thì phương pháp dàn trang chủ yếu là table. Chỉ có một thứ hoạt động tốt là: việc căn chỉnh theo chiều dọc. Khi thế giới cuối cùng cũng đã chuyển sang sử dụng HTML5, một việc được mong đợi từ lâu, và bắt đầu sử dụng các phương pháp dàn trang tốt hơn thì đột nhiên phát hiện tính năng căng chỉnh theo chiều dọc này bị thiếu mất. Tuy vậy, chúng ta có thể sử dụng ba thuộc tính display của CSS là table, table-row và table-cell, với 3 thuộc tính này thì bất kỳ phần tử HTML nào cũng có thể hoạt động như table, row, cell.
+	+ Trên thực tế việc giả lập dàn trang bằng table trên HTML5 và CSS3 còn tốt hơn dàn trang bằng table gốc. Đầu tiên, không cần thiết phải phụ thuộc vào toàn bộ cấu trúc của table: table chứa các row, row chứa các cell. Bạn có thể dùng row nếu muốn, nhưng hoàn toàn có thể đặt table-cell trực tiếp bên trong table. Tuy nhiên vẫn cần tới table.
+	+ do vậy để căn giữa nội dung bên trong div, chúng ta có thể hiển thị div đó như table và bao nội dung của div đó bên trong một phần tử nữa, vd span, và phần tử đó được hiển thị như là một table-cell
+	+ div - display:table, span - display:table-cell - text-align: center - vertical-align: middle.
+	+ Ưu điểm của phương pháp này khi so sánh với các mẹo bên trên là nó rõ ràng. Nó đơn giản, phổ biến và có thể sử dụng với bất cứ phần tử bao đóng và được bao đóng nào. Không cần biết trước nội dung, không cần phải xử lý với các kích thước cố định
+	+ Nhược điểm: đầu tiên, cần phải chèn thêm một phần tử vào cấu trúc DOM. Trong một số trường hợp cụ thể, điều này sẽ khiến số lượng code tăng lên đáng kể. Thứ hai, ở mức khái niẹm thì chúng ta đang sử dụng mẫu dàn trang dựa vào table đã lỗi thời, điều này không được tốt lắm.
++ Căn giữa sử dụng Flexible box layout model
+	+ Phương pháp căn chỉnh dựa trên table ở trên nhìn về quá khứ, trong khi phương pháp sử dụng flexible box thì hướng tới tương lai. Được phát minh vào năm 2009.
+	+ Flexible box model cung cấp một khái niệm tự mô tả mới và đặc biệt là cung cấp những sự nhìn nhận mới về các khái niệm alignment và justification. thuộc tính justify-content định nghĩa cách các phần tử được đặt dọc theo trục cắt.
+	+ Trục chính và trục cắt phụ thuộc vào giá trị của thuộc tính flex-direction, giá trị có thể là row (mặc định), reverse-row, column, hoặc reserve-column. Với hai giá trị đầu, trục chính nằm ngang và trục cắt nằm dọc, và ngược lại, với hai giá trị cuối thì ngược lại.
+	+ Để sử dụng flexible box với mục đích căn giữa các phần tử, bạn có thể sử dụng quy tắc sau: justify horizontally, align vertically.
+	+ Phương pháp này đơn giản, code rất ngắn và rõ ràng, không cần thêm phần tử và kết quả thậm chí chính xác hơn. Tuy nhiên cần phải tùy thuộc vào tính tương thích.
+	+ Theo thông tin trên trang  Can I Use, display table được hỗ trợ đầy đủ bởi hầu hết các trình duyệt trên mọi nền tảng. Flex box thì thiếu đầy đủ hơn, IE10 chỉ hỗ trợ một phần và yêu cầu sử dụng vendor prefix, safari cũng yêu cầu dùng vendor prefix và cuối cùng opera mini vẫn chưa hỗ trợ.
