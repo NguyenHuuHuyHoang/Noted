@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "GIT.md",
+            "file": "English.md",
             "mode": "source"
           }
         }
@@ -64,7 +64,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "GIT.md"
+                "file": "English.md"
               }
             }
           }
@@ -76,6 +76,9 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "GIT.md"
+    "English.md",
+    "Khóa FE Free note.md",
+    "GIT.md",
+    "Selenium.md"
   ]
 }

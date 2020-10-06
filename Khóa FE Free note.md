@@ -44,11 +44,11 @@
 	- Cách 2 là viết bằng link (external css), tạo 1 file css nằm trong assets (tất cả các trang nằm ở ngoài còn bao nhiêu thứ điều đặt trong assets), sau đó link đặt trong HTML link tới style.css
 	- Cách thứ 3 là style (cặp thẻ internal css)
 - Độ ưu tiên của css :
+	- ******* !important
 	- ****** attr
 	- ***** id
 	- **** selector càng dài
 	- *** last line
-	- 
 - id: trong một html chỉ có một id.
 - class: có thể đặt nhiều class.
 - Thẻ ul , li phân biệt cấp cha cấp con. ul luôn luôn đi với li. nếu trong li có 1 ul nữa thì nó phân biệt cấp 1 cấp 2.
