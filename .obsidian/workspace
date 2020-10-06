@@ -4,15 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "8eea0efd81be253a",
+        "id": "841c06377ab7750b",
         "type": "leaf",
         "active": true,
         "state": {
+<<<<<<< HEAD
           "type": "markdown",
           "state": {
             "file": "English.md",
             "mode": "source"
           }
+=======
+          "type": "empty",
+          "state": {}
+>>>>>>> e31fb82aec056fbb97b42b88c23d6ca561b8204a
         }
       }
     ],
@@ -63,9 +68,13 @@
             "type": "leaf",
             "state": {
               "type": "backlink",
+<<<<<<< HEAD
               "state": {
                 "file": "English.md"
               }
+=======
+              "state": {}
+>>>>>>> e31fb82aec056fbb97b42b88c23d6ca561b8204a
             }
           }
         ]
@@ -76,9 +85,17 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+<<<<<<< HEAD
     "English.md",
     "Khóa FE Free note.md",
     "GIT.md",
     "Selenium.md"
+=======
+    "CSS Note.md",
+    "Khóa FE Free note.md",
+    "Khóa FE Free sửa bài tập.md",
+    "Untitled.md",
+    "GIT.md"
+>>>>>>> e31fb82aec056fbb97b42b88c23d6ca561b8204a
   ]
 }
