@@ -195,6 +195,59 @@ https://css-tricks.com/simulating-mouse-movement/
 - Do đó hiển nhiên việc đặt line-height: 1 là một cách làm xấu. Các giá trị không có đơn vị tính tương đối với fz, không tương đối với content-area, và trường hợp virtual-area thấp hơn content-area là nguồn gốc của rất nhiều vấn đề. ![[Pasted image 20201006145220.png]]
 *Với các phần tử inline, padding và border làm tăng vùng background, nhưng không làm tăng chiều cao content-area (cũng như chiều cao của line-box). Do đó content-area không phải lúc nào cũng là thứ bạn nhìn thấy trên màn hình. margin-top và margin-bottom không có tác dụng*
 *Với các phần tử inline thay thế, inline-block và blocksified: padding, margin và border làm tăng height nên làm tăng chiều cao content-area và line-box*
+==Vertical-align==
+- Vertical-align cũng là một nhân tố cần thiết để tính chiều cao của line-box. Thậm chí có thể nói rằng vertical-align có vai trò chủ đạo trong inline formatting context.
+- Giá trị mặc định của vertical-align là baseline, các chỉ số ascender và descender của font xác định vị trí của baseline, cũng như tỉ lệ. Do tỉ lệ giữa ascender và descender hiếm khi nào là 50/50, nhiều vấn đề sẽ phát sinh ví dụ như các phần tử sibling.
+- Xét trường hợp một tag p chứa 2 tag span cùng chứa 1 ký tự. 
+	+ Trường hợp 2 thẻ span sibling kết thừa font-family, fz và line-height cố định, các baseline sẽ trùng với nhau và chiều cao của line-box sẽ bằng với line-height.
+	+ Nếu ở phần tử thứ 2 có fz nhỏ hơn thì sao ?. Sự căn chỉnh baseline mặc định có thể sinh ra một line-box cao hơn ![[Pasted image 20201006185128.png]]. Chiều cao của line-box được tính toán từ điểm cao nhất tới điểm thấp nhất của các phần tử con của nó.
+- Xét trường hợp một tag p với line-height: 200px, chứa một tag span kế thừa line-height.
+	+ Chiều cao của line-box là bao nhiêu ? Chúng ta mong muốn một giá trị là 200px, nhưng không phải. Vấn đề ở đây là thẻ p có font-family riêng biệt (mặc định là serif). Các baseline của thẻ p và thẻ span có thể khác nhau, do vậy chiều cao của line-box sẽ cao hơn dự kiến. Điều này xảy ra do trình duyệt thực hiện việc tính toán với việc coi mỗi line-box bắt đầu với một ký tự có độ rộng bằng 0, đặc tả gọi ký tự đó là strut (Một ký tự vô hình nhưng tác động hữu hình)
+	+ Chúng ta vẫn gặp vấn đề giống như với trường hợp các phần tử sibling. ![[Pasted image 20201006185825.png]]
+- Việc căn chỉnh baseline đã bị rối loạn, vậy thì dùng vertical-align: middle để giải quyết thì sao ? Như đặc tả mô tả, middle căn chỉnh điểm giữa của chiều dọc của box với baseline của box cha cộng với 1 nửa x-height của phần tử cha. Tỉ lệ của các baseline khác nhau, cũng như tỷ lệ của x-height, do vậy căn chỉnh với middle cũng không ổn. Tệ nhất là, tỏng hầu hết các trường hợp, middle không thực sự là ở giữa. Có quá nhiều yếu tố tham gia vào việc tính toán mà không thể kiểm soát bằng CSS (x-height, tỷ lệ ascender , descender,..)
+- Cần chú ý, có 4 giá trị khác ![[Pasted image 20201006191259.png]] có thể hữu ích trong một số trường hợp:
+	- vertical-align: top/bottom: căn chỉnh về phía đỉnh hoặc đáy của line-box
+	- vertical-align: text-top/text-bottom: căn chỉnh về phía đỉnh hoặc đáy của content-area.
+- Tuy nhiên trong tất cả trường hợp việc căn chỉnh được thực hiện dựa trên virtual-area, tức là trên một chiều cao vô hình, do đó cần cẩn thận VD: ![[Pasted image 20201006192115.png]]
+- vertical-align cũng nhận các giá trị số giúp nâng cao hay hạ thấp box theo baseline. Tùy chọn này có thể sẽ có ích trong một số trường hợp.
+==font-metrics==
+- liệu font-metrics có thể kiểm soát được bằng CSS ? Không. Font metrics là các hằng số nên có thể làm được gì đó.
+- Sẽ ra sao nếu chúng ta muốn một đoạn văn bản sử dụng font cataraman và chiều cao của các chữ cái viết hoa đúng bằng 100px.
+	- Đầu tiên chúng ta gán giá trị cho các font metrics bằng css, sau đó tính font-size để các chữ cái viết hoa có được chiều cao là 100px. ![[Pasted image 20201006193913.png]]
+- Trường hợp chữ được hiển thị ở giữa để phần khoảng trống còn lại được chia đều ở phía trên và phía dưới chữ "B" thì sao ? để làm được điều đó cần phải tính vertical-align dựa trên tỉ lệ ascender/descender.
+	-	Đầu tiên tính chiều cao của line-height: normal và content-area:
+		-	p {--lineheightNormal: (var(--fm-ascender) + var(--fm-descender) + var(--fm-linegap)); --contentArea: (var(--lineheightNormal) * var(--computedFontSize)); }
+	- Tiếp theo cần: khoảng cách từ đáy của chữ cái với cạnh dưới của box, khoảng cách từ đỉnh của chữ cái với cạnh trên của box.
+		- p {--distanceBottom: (var(--fm-descender)); --distanceTop: (var(--fm-ascender) - var(--fm-capitalHeight));}
+	- Giờ chúng ta có thể tính vertical-align bằng hiệu của các khoảng cách nhân với font-size được tính toán (chúng ta phải áp dụng giá trị này vào một phần tử con inline)
+		- p {--valign: ((var(--distanceBottom) - var(distanceTop)) * var(--computedFontSize)) }
+		- span {vertical-align: calc(var(--valign) * -1px)};
+	- Cuối cùng, chúng ta gán giá trị line-height mong muốn và tính toán nó trong khi vẫn giữ được trạng thái căn chỉnh theo chiều dọc: ![[Pasted image 20201006201521.png]]
+		- p {--line-height:3; line-height: calc(((var(--line-height) * var(--capital-height)) - var(--valign)) * 1px)};
+	- Thêm một biểu tượng với chiều cao bằng với chữ cái "B" giờ khá dễ dàng: ![[Pasted image 20201006203452.png]]
+		- span::before {
+			+ content: '';
+			+ display: inline-block;
+			+ width: calc(1px * var(--capital-height));
+			+ height: calc(1px * var(--capital-height));
+			+ margin-right: 10px;
+			+ background: url('https://cnd.pbrd.co/images/yBAKn5bbv.png');
+			+ background-size: cover;
+		- }
+	- Ví dụ chỉ dùng cho mục đích diễn giải. Không nên phụ thuộc vào nó vì:
+		- font metrics là các hằng số nhưng các tính toán trên trình duyệt thì không.
+		- nếu font không tải được, font dự phòng được dùng nhưng có thể có font metrics khác, do vậy xử lý các giá trị font metrics của nhiều font sẽ trở nên rất khó khăn.
+==Tổng kết==
++ inline formatting context rất khó hiểu
++ tất cả các phần tử inline đều có 2 chiều cao:
+	+ content-area (dựa trên font metrics)
+	+ virtual-area (line-height)
+	+ cả 2 chiều cao này đều không được xác định một cách rõ ràng.
++ line-height: normal được tính dựa trên font metrics
++ line-height: n có thể tạo ra virtual-area nhỏ hơn content-area.
++ vertical-: không đáng tin cậy
++ chiều cao của một line-box được tính toán dựa trên các thuộc tính line-height và vertical-align của các phần tử con của nó.
++ chúng ta không thể lấy/gán font metrics một cách dễ dàng bằng CSS.
 ==Các phương pháp căn giữa bằng mẹo==
 + Sử dụng line-height:
 	+ Chúng ta cần gán giá trị line-height của phần tử chứa chữ bằng với giá trị chiều cao của phần tử đó. Mặc định, khoảng trống phía trên và bên dưới chữ có chiều cao bằng nhau nên chữ sẽ được căn giữa theo chiều dọc. line-height = height = 120px.
@@ -219,3 +272,26 @@ https://css-tricks.com/simulating-mouse-movement/
 	+ Để sử dụng flexible box với mục đích căn giữa các phần tử, bạn có thể sử dụng quy tắc sau: justify horizontally, align vertically.
 	+ Phương pháp này đơn giản, code rất ngắn và rõ ràng, không cần thêm phần tử và kết quả thậm chí chính xác hơn. Tuy nhiên cần phải tùy thuộc vào tính tương thích.
 	+ Theo thông tin trên trang  Can I Use, display table được hỗ trợ đầy đủ bởi hầu hết các trình duyệt trên mọi nền tảng. Flex box thì thiếu đầy đủ hơn, IE10 chỉ hỗ trợ một phần và yêu cầu sử dụng vendor prefix, safari cũng yêu cầu dùng vendor prefix và cuối cùng opera mini vẫn chưa hỗ trợ.
++ Các trường hợp căn giữa thông thường: 
+	+ Căn giữa textbox chứa ảnh được bao quanh bởi chữ:
+		+ Chúng ta cần căn giữa một ô chứa chữ và ảnh nằm bên trong ô đó. Ô được hiển thị dạng inline-block với độ rộng cố định.
+		+ Để căn giữa ô này bên trong một phần tử khác, ví dụ như một div, chúng ta có thể sử dụng cách căn chỉnh bằng table: hiển thị phần tử chứa như table cộng với một thẻ span hiển thị như một table-cell bên trong nó, thẻ span bọc toàn bộ nội dung hiển thị VD thẻ card
+			+ thẻ cha d:table, thẻ span con bọc sử dụng d:table-cell, text-align: center, vertical-align: middle.
+		+ Trường hợp căn giữa bằng flexible box model, chúng ta cần làm là gán giá trị flex cho thuộc tính display của phần tử chứa và giá trị center cho các thuộc tính justify-content và align-items.
+	+ Nút với ảnh và chữ được căn giữa
+		+ Để tạo ra một nút với chữ đẹp, 2 thành phần này cần phải được căn chỉnh một cách hợp lý so với nhau. Để đạt được mục tiêu này bằng cách sử dụng căn chỉnh bằng bảng, chúng ta phải tách chúng ra các ô riêng biệt. Do vậy HTML sẽ có dạng thẻ cha (a tag) chứa 2 span, mỗi span chứa 1 phần tử. 1 cái là hình 1 cái là chữ
+			+ Trong CSS, gán giá trị d:table cho nút, sau đó thêm class cho các ô và ảnh, ảnh cần phải có thuộc tính float left
+			+ thẻ span có thuộc tính d:table-cell và vertical-align: middle (để cân bằng 2 thẻ span với nhau)
+			+ img có thuộc tính float left và mr để cách ra với chữ.
+		+ Với flexible box thì cả ảnh và chữ đều có thể được đặt trực tiếp bên trong nút và không cần float vì cách căn giữa của flexible model đã tự căn chỉnh để cho ra kết quả đẹp. Do nút không có chiều cao cụ thể, thuộc tính display nên gán giá trị là inline-flex.
+	+ Menu với ảnh và chữ được căn giữa:
+		+ Menu được tạo nên bởi danh sách không sắp xếp thứ tự (ul). Ở đây chúng ta sẽ tạo ra một menu hiển thị theo chiều dọc chứa chữ và ảnh. Menu hiển thị theo chiều ngang thì cũng tương tự như chiều dọc.
+			+ Sử dụng cách căn chỉnh bằng table, chúng ta sẽ căn giữa nội dung của các mục của menu theo cùng một cách mà chúng ta sử dụng để căn giữa nội dung của nút, tức là đặt ảnh và nhãn của các mục vào các ô riêng biệt.
+			+ Sử dụng flexible model: 
+				+ Trong ul: inline-block, list-style: none
+				+ li : flex, align-items:center.
+	+ Các thẻ input với nhãn được căn giữa.
+		+ Trường hợp căn giữa nhãn của các input như checkbox, radio button, text box,...Nói chung thứ căn giữa là gì cũng không quan trọng, vậy nên checkbox hay radio button không khác so với ảnh.
+			+ Sử dụng table ![[Pasted image 20201006183915.png]]
+			+ Sử dụng flex ![[Pasted image 20201006184000.png]]
+- Kết luận có 2 phương pháp tốt căn giữa các phần tử HTML là căn chỉnh bằng table và flex box, phương pháp đầu đáng tin cậy hơn ở khía cạnh tương thích, trong khi phương pháp thứ hai đơn giản hơn, chính xác hơn và cho phép viết code ngắn gọn hơn.
