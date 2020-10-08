@@ -8,10 +8,13 @@
     "backlink": true,
     "command-palette": true,
     "markdown-importer": false,
-    "word-count": true
+    "word-count": true,
+    "custom-css": true
   },
-  "promptDelete": false,
+  "promptDelete": true,
   "autoPairBrackets": true,
   "autoPairMarkdown": true,
-  "smartIndentList": true
+  "smartIndentList": true,
+  "attachmentFolderPath": "Image saved",
+  "alwaysUpdateLinks": true
 }
