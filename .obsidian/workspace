@@ -4,15 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "f96ed6b6fbb716a0",
+        "id": "35062867064e9157",
         "type": "leaf",
         "active": true,
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "JS Tips, Trick.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -48,7 +45,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 493
+    "width": 493,
+    "collapsed": true
   },
   "right": {
     "id": "9ea3f91c759d5669",
@@ -63,9 +61,7 @@
             "type": "leaf",
             "state": {
               "type": "backlink",
-              "state": {
-                "file": "JS Tips, Trick.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -76,6 +72,8 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "Khóa FE Free note.md",
+    "Component by CSS.md",
     "JS Tips, Trick.md",
     "Pasted image 20201006134134.png",
     "Pasted image 20201008121804.png",
@@ -83,8 +81,6 @@
     "JS Note.md",
     "CSS Note.md",
     "Pasted image 20201006183908.png",
-    "Pasted image 20201006183915.png",
-    "Pasted image 20201006183913.png",
-    "Khóa FE Free note.md"
+    "Pasted image 20201006183915.png"
   ]
 }

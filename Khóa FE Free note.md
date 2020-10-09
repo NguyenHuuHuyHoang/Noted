@@ -71,3 +71,16 @@
 - Quan trọng nhất trong web là cần phải tổ chức, khi làm xong thì làm gì cũng được. 
 ==line-height==
 - nên sử dụng line-height thay vì height vì nó có thể co dãn được, khi font chữ thay đổi thì nó sẽ không bị bể layout.
+==Thuộc tính==
+- Là cốt lõi bên trong website, những dự án lớn có từ lâu rồi thì đôi khi người ta không update css, chủ yếu sử dụng và update JS. Do đó cần nắm rõ thuộc tính để xử lý web.
+	==Float==
+		- xem video how to float css, trên youtube.
+		- web site chỉ nhìn trên màn hình máy tính là nó mặt phẳng nhưng thực tế browser là khối lập phương. Những gì mình làm sẽ nằm ở bên dưới mặt đáy.
+		- khi sử dụng thuộc tính float thì item sẽ nổi lên trên cùng, có 2 thuộc tính là float left và float right, float left là chạy qua bên trái và chạy lên, right thì ngược lại.
+		- khi một phần tử nổi lên, thì khi đó nó tạo khoảng trống những thằng phía sau sẽ bị dồn lên chỗ trống đó, do đó để tránh trình trạng vậy thì cần sử dụng thuộc tính clear để tạo ra 1 khoảng trống ảo, những thằng sau sẽ không chen vào chỗ trống đó được. thông thường người ta sử dụng clear:both.
+	==Note==
+	- Khi code web cần phải xác định layout, cần phải nhìn có những layout nào chính, VD trang tiki, có header => layout menu, sidebar left, main.
+	- Phải làm được layout, mới code FE và BE được vì BE chia theo layout component.
+	- Website hiện tại về phương diện làm thuần rất ít, hộ kinh doanh nhỏ, vừa, lớn hoặc các website nước ngoài thường làm bằng wordpress thì nó mạnh về SEO, muốn làm được thì phải nhìn được layout. Thiết kế thuần hầu như rất ít.
+	- FE đưa cho BE layout, BE cắt ra từng file để chạy render theo mô hình MVC.
+	
