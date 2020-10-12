@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Các deploy build lên Firebase.md",
+            "file": "Khóa FE Free note.md",
             "mode": "source"
           }
         }
@@ -64,7 +64,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Các deploy build lên Firebase.md"
+                "file": "Khóa FE Free note.md"
               }
             }
           }
@@ -76,15 +76,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "Khóa FE Free note.md",
+    "Free API.md",
     "Các deploy build lên Firebase.md",
     "Các web hosting.md",
     "Component by CSS.md",
     "CSS Note.md",
-    "Khóa FE Free note.md",
     "JS Tips, Trick.md",
     "Pasted image 20201006134134.png",
     "Pasted image 20201008121804.png",
-    "Untitled.md",
-    "JS Note.md"
+    "Untitled.md"
   ]
 }

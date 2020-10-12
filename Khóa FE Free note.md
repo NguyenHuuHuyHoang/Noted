@@ -57,7 +57,7 @@
 	- p.intro: chọn tất cả thẻ p có tên class là intro.
 	- p,div: chọn 2 tag
 	- div p: 
-	- div > p: nó lấy từng bậc, chỉ áp dụng với thẻ p con của div
+	- div > p: nó lấy từng bậc, chỉ áp dụng với thẻ p con của div, chỉ lấy 1 cấp con trực tiếp, không ảnh hưởng các cấp con ở sau.
 ==margin, padding==
 - margin là khoảng cách giữa các đối tượng với nhau, padding là khoảng cách từ border vào bên trong box. Tuy nhiên khi xài padding sẽ làm thay đổi độ lớn của box do vậy cần phải giải quyết bằng cách sử dụng box-sizing: border-box;
 - box-sizing: border-box là thuộc tính hỗ trợ cho margin và padding.
@@ -78,9 +78,23 @@
 		- web site chỉ nhìn trên màn hình máy tính là nó mặt phẳng nhưng thực tế browser là khối lập phương. Những gì mình làm sẽ nằm ở bên dưới mặt đáy.
 		- khi sử dụng thuộc tính float thì item sẽ nổi lên trên cùng, có 2 thuộc tính là float left và float right, float left là chạy qua bên trái và chạy lên, right thì ngược lại.
 		- khi một phần tử nổi lên, thì khi đó nó tạo khoảng trống những thằng phía sau sẽ bị dồn lên chỗ trống đó, do đó để tránh trình trạng vậy thì cần sử dụng thuộc tính clear để tạo ra 1 khoảng trống ảo, những thằng sau sẽ không chen vào chỗ trống đó được. thông thường người ta sử dụng clear:both.
+		- Khi float mà không có width với height sẽ bị lỗi. Khi làm dự án không để height vô được. Để height thì web sẽ bị cứng. Tùy trường hợp scroll thì có thể height được do đã xử lý rồi. Còn nếu 4 sản phẩm thì không để height vào được, vì nếu admin thêm 2 dòng chữ sẽ bị bể layout.
 	==Note==
 	- Khi code web cần phải xác định layout, cần phải nhìn có những layout nào chính, VD trang tiki, có header => layout menu, sidebar left, main.
 	- Phải làm được layout, mới code FE và BE được vì BE chia theo layout component.
 	- Website hiện tại về phương diện làm thuần rất ít, hộ kinh doanh nhỏ, vừa, lớn hoặc các website nước ngoài thường làm bằng wordpress thì nó mạnh về SEO, muốn làm được thì phải nhìn được layout. Thiết kế thuần hầu như rất ít.
 	- FE đưa cho BE layout, BE cắt ra từng file để chạy render theo mô hình MVC.
-	
+	==Position==
+	- Nó tương tự với float, khi có thuộc tính position thì mặc định nó sẽ trôi nổi, nhưng nó không biết sẽ trôi về bên nào cho nên cần 4 thuộc tính top, left, right, bottom để điều chỉnh vị trí cho nó. 
+	- position: relative là thuộc tính dành cho thằng cha. Thực tế ta có thể thấy ai cha ai con nhưng nguyên lý bên trong thì nó không biết ai là cha do đó cần thuộc tính position relative để bật chế độ cha lên cho box cha, box con thì sử dụng thuộc tính position: absolute.
+	- Khi đó chúng ta chỉnh vị trí cho thằng con bằng các thuộc tính top, left, right, bottom
+	- Mặc định thằng con có absolute sẽ theo thằng cha gần nhất có relative.
+	- static thì trôi nổi nhưng không có gì xảy ra cả.
+	- fixed: thì mặc định sẽ ổn định lại, xài top, left, right hay gì cũng được, có hoặc không.
+	- sticky: ý nghĩa là miếng note dán vô tường, khi dán cần phải xác định vị trí dán ở đâu, nó cần phải thiết lập top, left, right, ..
+	- thuộc tính đi chung với position là z-index
+	- Thường absolute, sticky, fixed thường bị đè cho nên cần z-index để tránh bị đè.
+	- Khi set absolute: sẽ bị mất width với height. Không có height thì một khối không hoàn chỉnh được. Cho nên khi làm cần phải kiểm tra code lại xem nó có ăn height không.
+	- Display: block với display: none không sử dụng với position được.
+		==Tạo navbar - submenu ==
+			- Khi đụng vào text thì chuyển thành inline-block để dễ xử lý với thuộc tính position. Nếu không sẽ rất khó xử lý, inline-block sẽ khóa đứng vị trí, không bị trôi nổi, không ảnh hưởng tới các item khác, do đó rất dễ xử lý.
