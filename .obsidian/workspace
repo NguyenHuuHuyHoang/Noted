@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Khóa FE Free note.md",
+            "file": "Animation library.md",
             "mode": "source"
           }
         }
@@ -64,7 +64,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Khóa FE Free note.md"
+                "file": "Animation library.md"
               }
             }
           }
@@ -76,15 +76,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "Khóa FE Free note.md",
-    "Free API.md",
-    "Các deploy build lên Firebase.md",
-    "Các web hosting.md",
-    "Component by CSS.md",
+    "Animation library.md",
+    "Tips trick.md",
+    "Tix layout.md",
+    "Emmet.md",
+    "AngularCodePro.md",
+    "Angular Note.md",
+    "SCSS Note.md",
+    "Responsive Note.md",
     "CSS Note.md",
-    "JS Tips, Trick.md",
-    "Pasted image 20201006134134.png",
-    "Pasted image 20201008121804.png",
-    "Untitled.md"
+    "Khóa FE Free note.md"
   ]
 }

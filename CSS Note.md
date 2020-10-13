@@ -1,3 +1,5 @@
+==Link game luyện selector==
+https://flukeout.github.io
 ==setup file scss==
  html {
 	 font-size: 62.5%;
