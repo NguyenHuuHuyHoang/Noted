@@ -109,15 +109,21 @@ https://css-tricks.com/simulating-mouse-movement/
 - :before hoặc :after : 
 	- Để sử dụng thì bắt buộc phải có thuộc tính content. Nếu để trống content thì có thể làm những việc như backgroudn phủ lên toàn bộ layer, hiệu ứng background chạy qua chạy lại(nhớ sử dụng z-index nếu không sẽ đè chữ),... Thường khi sử dụng before hoặc after thì phần tử đang làm nên sử dụng position relative hoặc absolute. Sau đó trong before hay after sử dụng absolute và các thuộc tính top, right, bottom, left để căn chỉnh vị trí.
 	- Tạo ribbon hình tam giác: sử dụng 3 thuộc tính border-top: 10px solid #eee;, border-right và border-left. với right và left thì chỉnh transparent còn top thì chỉnh màu trùng với màu nền. các thông số còn lại giống nhau.
-- .card:hover ~ .card: The sibling combinator. Chọn toàn bộ thẻ card khi thẻ card đang được hover. Ứng dụng trong việc hover 1 item, các item còn lại sẽ thay đổi.
-- The element1+element2 selector is used to select elements that is placed immediately after (not inside) the first specified element. Chọn chỉ thằng element2 ngay sau thằng element1.
-- The element1~element2 selector matches occurrences of element2 that are preceded by element1. Chọn tất cả element2 đặt sau element1
+- .card:hover ~ .card: The sibling combinator . Chọn toàn bộ thẻ card khi thẻ card đang được hover. Ứng dụng trong việc hover 1 item, các item còn lại sẽ thay đổi. div ~ p: chọn tất cả các tag b được đặt sau tag div (cùng cấp)
+- The element1+element2 selector is used to select elements that is placed immediately after (not inside) the first specified element. Chọn chỉ thằng element2 ngay sau thằng element1. div + p: chọn 1 tag nằm ngay sau tag div (cùng cấp).
 - The element1>element2 selector is used to select elements with a specific parent. Chọn thằng element2 là thẻ con trực tiếp của element1.
 - The element1 element2 selector is used to select elements2 inside elements1. là chọn những thằng element2 nằm trong element1.
 - tag:first-child: chọn tag con đầu tiên của phần tử cha chứa nó.
 - tag:last-child: chọn tag con cuối cùng của phần tử cha chứa nó.
 - :nth-child(2): chọn thằng thứ 2 từ trên xuống.
 - :nth-last-child(2): chọn thằng thứ 2 từ thằng cuối đếm lên.
+- element[attribute="value"] vd div[class="demo"] chọn tất cả các thẻ div có thuộc tính class="demo".
+- :active: chọn liên kết đang được kích hoạt.
+- :link: chọn tất cả các liên kết chưa kích hoạt.
+- :visited: chọn tất cả các liên kết đã kích hoạt.
+- :hover: chọn tag đang được rê chuột vào
+- :focus: chọn tag đang có trỏ chuột.
+- 
 ==Dark mode in one line==
 - Áp dụng lên tag html khi thêm class dark mode vào.
 1. filter: invert(1) hue-rotate(180deg); - tag html

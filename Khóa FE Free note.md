@@ -98,3 +98,6 @@
 	- Display: block với display: none không sử dụng với position được.
 		==Tạo navbar - submenu ==
 			- Khi đụng vào text thì chuyển thành inline-block để dễ xử lý với thuộc tính position. Nếu không sẽ rất khó xử lý, inline-block sẽ khóa đứng vị trí, không bị trôi nổi, không ảnh hưởng tới các item khác, do đó rất dễ xử lý.
+==Buổi 6: Chia lưới theo kiểu bootrap==
+	- Chia cột theo công thức ((100%/(số cột tối đa)/số cột chiếm) - 2%(padding))
+	- sử dụng class col-số cột, mỗi cột sẽ có width được tính theo công thức, có float và padding theo tỷ lệ.

@@ -5,4 +5,4 @@
 	- Cover muốn sử dụng thì phải luôn luôn lớn hơn khu vực chứa, nếu nhỏ hơn khung thì sẽ bị bể, vd div 500px thì kiếm hình 600px-700px. Quan trọng ở khối bọc nó, cần phải xem xét tới tỷ lệ của hình gần tương đương với div bọc.
 	- text-align: center, sẽ canh giữa item với thằng cha của nó, chỉ áp dụng với d:block, không áp dụng với img (thẻ inline) do thẻ inline là xài bao nhiêu chiếm bao nhiêu nên nó không biết được vị trí của nó nằm ở đâu mà canh center. trường hợp này thì xài cho thằng div cha thì nó sẽ ra ngoài giữa.
 	- tái sử dụng code bằng cách sử dụng selector , selector { code css}
-	- 
+	- thẻ img nên đặt ở trong 1 div, để dễ canh chỉnh do mặc định thẻ img là inline, thẻ inline sẽ không thể set width và height. thẻ img nên set width và height 100%, display: block. để hình phủ đều tất cả các cạnh của div bọc, nhìn đẹp hơn.

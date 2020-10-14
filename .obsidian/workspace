@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Animation library.md",
+            "file": "CSS Note.md",
             "mode": "source"
           }
         }
@@ -64,7 +64,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Animation library.md"
+                "file": "CSS Note.md"
               }
             }
           }
@@ -76,15 +76,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
-    "Animation library.md",
-    "Tips trick.md",
-    "Tix layout.md",
-    "Emmet.md",
-    "AngularCodePro.md",
-    "Angular Note.md",
-    "SCSS Note.md",
-    "Responsive Note.md",
     "CSS Note.md",
-    "Khóa FE Free note.md"
+    "CSS Master 2018.md",
+    "Các deploy build lên Firebase.md",
+    "Angular Note.md",
+    "Component by CSS.md",
+    "Animation library.md",
+    "Các web hosting.md",
+    "Khóa FE Free note.md",
+    "Khóa FE Free sửa bài tập.md",
+    "Tips trick.md"
   ]
 }

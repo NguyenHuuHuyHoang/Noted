@@ -5,6 +5,13 @@
 5 - thêm thư mục vào public firebase
 6 - firebase deploy
 
+==Cài đặt==
+- npm install -g firebase-tools
+- firebase login, không sử dụng git base để chạy được, phải sử dụng window cmd
+- firebase projects:list để kiểm tra các dự án đang có trên account firebase
+- firebase init để cài đặt firebase project.
+- 
+
 ==Deploy từ Github project==
 - Apps are developed on local developer machines
 - Pushed to GitHub
