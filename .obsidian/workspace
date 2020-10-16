@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Khóa FE Free note.md",
+            "file": "JS Note.md",
             "mode": "source"
           }
         }
@@ -64,7 +64,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Khóa FE Free note.md"
+                "file": "JS Note.md"
               }
             }
           }
@@ -76,15 +76,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "JS Note.md",
+    "Free API.md",
+    "Dynamic web server của các ngôn ngữ khác nhau.md",
     "Khóa FE Free note.md",
     "CSS Note.md",
     "CSS Master 2018.md",
     "Các deploy build lên Firebase.md",
     "Angular Note.md",
     "Component by CSS.md",
-    "Animation library.md",
-    "Các web hosting.md",
-    "Khóa FE Free sửa bài tập.md",
-    "Tips trick.md"
+    "Animation library.md"
   ]
 }
