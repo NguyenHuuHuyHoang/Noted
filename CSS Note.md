@@ -123,7 +123,6 @@ https://css-tricks.com/simulating-mouse-movement/
 - :visited: chọn tất cả các liên kết đã kích hoạt.
 - :hover: chọn tag đang được rê chuột vào
 - :focus: chọn tag đang có trỏ chuột.
-- 
 ==Dark mode in one line==
 - Áp dụng lên tag html khi thêm class dark mode vào.
 1. filter: invert(1) hue-rotate(180deg); - tag html
@@ -145,6 +144,7 @@ https://css-tricks.com/simulating-mouse-movement/
 - setting after với thuộc tính height = width = 100%, background-color: currentColor, border-radius: inherit, position:absolute, top:0, left:0, opacity: 0.25.
 ==Lưu ý==
 - Những giá trị trong form như: input, checkbox, button, select option, text-area sẽ lấy css theo trình duyệt chứ không lấy theo body vd: font-family, font-size,... , do đó phải set riêng
+- input là dạng thẻ inline, thuộc tính for của label sẽ trỏ tới id của input tương ứng.
 ==a tag==
 - nếu 1 div chứa nhiều thẻ a, muốn xuống dòng thì chỉnh display:block, cần xử lý thêm width: fit-content để tránh trường hợp click khoảng trắng mà vẫn dính thẻ a
 ==box-shadow==
