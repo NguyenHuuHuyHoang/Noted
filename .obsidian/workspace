@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "JS Note.md",
+            "file": "Workshop cách làm CV và Deal lương.md",
             "mode": "source"
           }
         }
@@ -64,7 +64,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "JS Note.md"
+                "file": "Workshop cách làm CV và Deal lương.md"
               }
             }
           }
@@ -76,6 +76,7 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "Untitled.md",
     "JS Note.md",
     "Free API.md",
     "Dynamic web server của các ngôn ngữ khác nhau.md",
@@ -84,7 +85,6 @@
     "CSS Master 2018.md",
     "Các deploy build lên Firebase.md",
     "Angular Note.md",
-    "Component by CSS.md",
-    "Animation library.md"
+    "Component by CSS.md"
   ]
 }
