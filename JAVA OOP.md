@@ -1,0 +1,10 @@
+- OOP giúp scale chương trình thông qua việc quản lý các phương thức thông qua class, có thể thay đổi hoặc thêm các thuộc tính cho các class con một cách nhanh chóng.
+- Trước năm 2000 các phần mềm phát triển theo hướng functional, tiếp cận theo hướng chức năng, cần gì thì thêm vào thôi, sửa 1 chức năng đôi khi cần phải sửa đổi các chức năng khác liên quan, do đó dẫn đến việc bảo trì rất cao, bây giờ sử dụng OOP dễ mở rộng phần mềm. Tránh hiệu ứng domino, xử lý chỗ này thì cần phải xử lý n chỗ khác, và nhiều khi còn ảnh hưởng đến hoạt động của hệ thống.
+- Đưa các thông tin của đối tượng vào trong lập trình, đối tượng có các thông tin về thuộc tính và phương thức của đối tượng đó.
+- Visual paradigm hoặc draw.io
+- Cần phân tích các lớp đối tượng của chương trình. Thường các đối tượng có mối liên hệ với nhau. VD LopHoc có chứa giaoVienDungLop, dsHocSinh.
+- Cấu trúc file trong JAVA, quản lý theo package, tên package được đặt chữ thường, thường đặt theo doman.
+- Trường hợp từ package này truy cập package khác thì cần phải có thuộc tính public mới truy cập được thuộc tính, nó quy định ở nơi nào được access vào thuộc tính đó.
+- Khi tạo một biến sẽ lưu trên stack, còn new thì sẽ lưu trên heap. biến = new object thì biến trên stack sẽ trỏ tới địa chỉ object được new trên heap. Trường hợp tạo biến = new object mà sau đó trỏ biến đó tới ô vùng nhớ khác, bỏ vùng nhớ đã tạo => object đã tạo sẽ không được link tới, sẽ bị JAVA kill thông qua garbage collection.
+- 
+- 
