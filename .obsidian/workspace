@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "JAVA OOP.md",
+            "file": "Khóa FE Free note.md",
             "mode": "source"
           }
         }
@@ -64,7 +64,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "JAVA OOP.md"
+                "file": "Khóa FE Free note.md"
               }
             }
           }
@@ -76,15 +76,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "Khóa FE Free note.md",
+    "English.md",
+    "JAVA OOP.md",
     "Untitled.md",
     "Workshop cách làm CV và Deal lương.md",
     "JS Note.md",
     "Free API.md",
     "Dynamic web server của các ngôn ngữ khác nhau.md",
-    "Khóa FE Free note.md",
     "CSS Note.md",
-    "CSS Master 2018.md",
-    "Các deploy build lên Firebase.md",
-    "Angular Note.md"
+    "CSS Master 2018.md"
   ]
 }

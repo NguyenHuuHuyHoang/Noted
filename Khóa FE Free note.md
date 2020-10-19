@@ -67,6 +67,7 @@
 - margin: 0 auto, canh giữa đối tượng so với div cha
 ==Sidebar==
 - nguyên tắc tổ chức là ul li và thẻ a.  những cái nào đặt chung các thẻ thì đặt, còn class là setting riêng vd ul li thì có list-type:none.
+- Trường hợp cần dàn lên 1 hàng ngang thì sử dụng inline-block cho thẻ li.
 - Nếu muốn đẹp thì nên đặt padding thằng a, khi ta chuyển thằng a thành d:block thì khi user click ở bất kỳ đâu điều click vào thẻ a được.
 - Quan trọng nhất trong web là cần phải tổ chức, khi làm xong thì làm gì cũng được. 
 ==line-height==
@@ -74,6 +75,7 @@
 ==Thuộc tính==
 - Là cốt lõi bên trong website, những dự án lớn có từ lâu rồi thì đôi khi người ta không update css, chủ yếu sử dụng và update JS. Do đó cần nắm rõ thuộc tính để xử lý web.
 	==Float==
+		- thằng con float thì thằng cha phải float theo. khi đó thằng con nó mới nằm trên thằng cha, nếu không thằng con sẽ che thằng cha.
 		- xem video how to float css, trên youtube.
 		- web site chỉ nhìn trên màn hình máy tính là nó mặt phẳng nhưng thực tế browser là khối lập phương. Những gì mình làm sẽ nằm ở bên dưới mặt đáy.
 		- khi sử dụng thuộc tính float thì item sẽ nổi lên trên cùng, có 2 thuộc tính là float left và float right, float left là chạy qua bên trái và chạy lên, right thì ngược lại.
@@ -101,10 +103,13 @@
 ==Buổi 6: Chia lưới theo kiểu bootrap==
 	- Chia cột theo công thức ((100%/(số cột tối đa)/số cột chiếm) - 2%(padding))
 	- sử dụng class col-số cột, mỗi cột sẽ có width được tính theo công thức, có float và padding theo tỷ lệ.
+	- Col chỉ để dàn layout chứ không để css trên đó.''
 ==Buổi 7 Responsive==
 	- Khi làm responsive thì dòng @media giống như if. max-width thì sẽ là responsive từ desktop xuống, min-width thì sẽ là responsive từ mobile lên. Tốt nhất thì nên xài max-width, vì khi code lập trình thì lúc nào cũng code từ desktop trước, do đó sử dụng max-width sẽ thuận tiện hơn. Khi làm việc trong công ty sẽ có màn hình dọc thì lúc đó code mobile first sẽ thuận tiện hơn.
 	- 3 quy tắc responsive:
 		+ Chỉ responsive theo trình duyệt nào mà google nó yêu cầu, nó có bao nhiêu màn hình thì test nhiêu đó (inspect) hay là test từng thiết bị hỗ trợ. VD Iphone6, ipad, ...
 		+ Dòng code responsive luôn luôn lúc nào cũng đặt ở cuối cùng code CSS, để nó lấy được độ ưu tiên.
 		+ Phải xác định desktop first hay mobile first. Xác định cột mốc responsive ở vị trí số mấy. Kinh nghiệm thường đặt một dòng max-width 768px.
-	- Vẽ dấu cộng bằng before và after thay thế việc đặt tag, nhưng khi chúng ta sử dụng before after thì nó cần phải đi chung với position. Khi sử dụng before, after bắt buộc phải có một thuộc tính là content, chúng ta phải set width và height, nếu không se không hiện gì cả do tính chất của postition. 
+	- Vẽ dấu cộng bằng before và after thay thế việc đặt tag, nhưng khi chúng ta sử dụng before after thì nó cần phải đi chung với position. Khi sử dụng before, after bắt buộc phải có một thuộc tính là content, chúng ta phải set width và height, nếu không se không hiện gì cả do tính chất của postition.
+==Form==
+-	những thẻ input, button phải đặt trong thẻ form. có thể dùng div bọc form rồi input và button trong đó. Dù thẻ form là thẻ block, nhưng để tránh vấn đề xử lý của BE đối với các thẻ form.
