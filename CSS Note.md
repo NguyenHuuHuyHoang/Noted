@@ -1,5 +1,7 @@
 ==Link game luyện selector==
 https://flukeout.github.io
+==font-face==
+- cú pháp @font-face {font-family: tên đặt cho font; src: url(đường dẫn đến font)};
 ==setup file scss==
  html {
 	 font-size: 62.5%;

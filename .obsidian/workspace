@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "35062867064e9157",
+        "id": "a8a345cf2c991509",
         "type": "leaf",
         "active": true,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Khóa FE Free note.md",
+            "file": "CSS Tips.md",
             "mode": "source"
           }
         }
@@ -64,7 +64,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Khóa FE Free note.md"
+                "file": "CSS Tips.md"
               }
             }
           }
@@ -76,15 +76,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "CSS Tips.md",
+    "JS Tips, Trick.md",
+    "CSS Note.md",
+    "Tips trick.md",
     "Khóa FE Free note.md",
     "English.md",
     "JAVA OOP.md",
     "Untitled.md",
     "Workshop cách làm CV và Deal lương.md",
-    "JS Note.md",
-    "Free API.md",
-    "Dynamic web server của các ngôn ngữ khác nhau.md",
-    "CSS Note.md",
-    "CSS Master 2018.md"
+    "JS Note.md"
   ]
 }

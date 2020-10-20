@@ -1,0 +1,6 @@
+- Đặt tên font-face theo dạng main-font, title-font
+- cho main-font vào font-family của *
+- đặt class .title chứa font dành riêng cho title nếu có
+- sử dụng [class*="col-"] {} để select tất cả class name col-
+- muốn thẻ input và button cùng chiều cao thì nên set cho height = div chứa = 100%, set inline block cho cả 2 và set vertical-align giống nhau.
+- vertical-align chỉ tác dụng lên thẻ inline block.
