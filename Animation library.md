@@ -19,7 +19,11 @@ _Slick: http://kenwheeler.github.io/slick/Demo: https://codepen.io/WinTran19/pen
 
 Popup:
 https://getbootstrap.com/docs/4.0/components/modal/
+_LightSpeedBox:
 https://www.jqueryscript.net/lightbox/Tiny-Responsive-Image-Lightbox-Gallery-Plugin-LightSpeedBox.html
+Do hướng dẫn của thư viện này chưa được cập nhật, các bạn xem thêm demo để sử dụng cho đúng:
+https://codepen.io/WinTran19/pen/RwNrxaM
+
 https://getbootstrap.com/docs/4.4/components/modal/
 https://dimsemenov.com/plugins/magnific-popup/
 
@@ -40,13 +44,11 @@ _ Thư viện cho nút back to top:
 https://codyhouse.co/gem/back-to-top/
 _ Thêm map của google vào website (có thể áp dụng cách này cho video từ youtube)
 https://mobirise.com/help/how-to-add-google-map-to-website-781.html
-
 - thư viện sweetalert
+- https://sweetalert.js.org/guides/
+- Tạo thẻ card flip https://michael-panik.com/blog/pure-css-card-flip-hover-effect/
 
-tạo thẻ card flip https://michael-panik.com/blog/pure-css-card-flip-hover-effect/
 
-
-_ 
 +https://stackoverflow.com/questions/31224192/owl-carousel-making-custom-navigation
 _Slick: http://kenwheeler.github.io/slick/Demo: https://codepen.io/WinTran19/pen/PowLzgq
 _Responsiveslides:
@@ -63,19 +65,8 @@ _BS4 (Bootstrap): https://getbootstrap.com/docs/4.5/components/modal/#scrolling-
 (Khi dùng bootstrap thì sử dụng thư viện jquery-3.5.1.min.js như trên lớp không nên dùng slim.min.js)
 Demo: https://codepen.io/WinTran19/pen/JjdBgZQ
 
-Popup ở phần Portfolio:
-_LightSpeedBox:
-https://www.jqueryscript.net/lightbox/Tiny-Responsive-Image-Lightbox-Gallery-Plugin-LightSpeedBox.html
-https://www.jqueryscript.net/.../Tiny-Responsive-Image...
-Do hướng dẫn của thư viện này chưa được cập nhật, các bạn xem thêm demo để sử dụng cho đúng:
-https://codepen.io/WinTran19/pen/RwNrxaM
+Waypoint: Dùng để khi scroll chuột tới id nào thì sẽ trigger js để thay đổi navbar tương ứng
+http://imakewebthings.com/waypoints/guides/getting-started/
 
-Popup Video:
-MFP: Khi dùng phải chạy bằng live server
-_https://dimsemenov.com/plugins/magnific-popup/documentation.html#iframe-type
-_https://dimsemenov.com/plugins/magnific-popup/
-_https://codepen.io/collection/nLcqo
-
-Hiệu ứng scroll mượt:
-_http://iamdustan.com/smoothscroll/
-_https://codyhouse.co/gem/back-to-top/
+fullPage.js: Dùng để khi scroll 1 lần thì sẽ scroll nguyên trang luôn. Cần phải thiết lập cho các div có độ cao là 100%
+https://alvarotrigo.com/fullPage/#page4

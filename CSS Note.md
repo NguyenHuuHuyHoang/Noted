@@ -305,3 +305,6 @@ https://css-tricks.com/simulating-mouse-movement/
 			+ Sử dụng table ![[Pasted image 20201006183915.png]]
 			+ Sử dụng flex ![[Pasted image 20201006184000.png]]
 - Kết luận có 2 phương pháp tốt căn giữa các phần tử HTML là căn chỉnh bằng table và flex box, phương pháp đầu đáng tin cậy hơn ở khía cạnh tương thích, trong khi phương pháp thứ hai đơn giản hơn, chính xác hơn và cho phép viết code ngắn gọn hơn.
+==Animation==
+- cú pháp @keyframes. trong đây chúng ta sẽ khai báo 1 chu kỳ chuyển động thông qua các mốc như 0%,25%,50%,75%,100%. ở mức 0% nếu không có thay đổi gì thì để rỗng.
+- Cách sử dụng thì cần khai báo ở phần css của các tag cần sử dụng thông qua từ khóa animation.

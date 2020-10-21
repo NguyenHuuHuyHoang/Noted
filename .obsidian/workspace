@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "CSS Tips.md",
+            "file": "JAVA OOP.md",
             "mode": "source"
           }
         }
@@ -48,7 +48,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 493
+    "width": 243
   },
   "right": {
     "id": "9ea3f91c759d5669",
@@ -64,7 +64,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CSS Tips.md"
+                "file": "JAVA OOP.md"
               }
             }
           }
@@ -76,15 +76,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "JAVA OOP.md",
+    "Animation library.md",
     "CSS Tips.md",
-    "JS Tips, Trick.md",
     "CSS Note.md",
+    "Untitled.md",
+    "JS Tips, Trick.md",
     "Tips trick.md",
     "Khóa FE Free note.md",
     "English.md",
-    "JAVA OOP.md",
-    "Untitled.md",
-    "Workshop cách làm CV và Deal lương.md",
-    "JS Note.md"
+    "Workshop cách làm CV và Deal lương.md"
   ]
 }

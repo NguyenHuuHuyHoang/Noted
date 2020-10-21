@@ -6,5 +6,18 @@
 - Cấu trúc file trong JAVA, quản lý theo package, tên package được đặt chữ thường, thường đặt theo doman.
 - Trường hợp từ package này truy cập package khác thì cần phải có thuộc tính public mới truy cập được thuộc tính, nó quy định ở nơi nào được access vào thuộc tính đó.
 - Khi tạo một biến sẽ lưu trên stack, còn new thì sẽ lưu trên heap. biến = new object thì biến trên stack sẽ trỏ tới địa chỉ object được new trên heap. Trường hợp tạo biến = new object mà sau đó trỏ biến đó tới ô vùng nhớ khác, bỏ vùng nhớ đã tạo => object đã tạo sẽ không được link tới, sẽ bị JAVA kill thông qua garbage collection.
-- 
-- 
+- Nguyên tắc SOLID, KISS, DRY. 
+- Bảo trì là người ta cần nhiều chức năng nên cập nhật lên, sau đó gặp lỗi thì cần phải fix lỗi gọi là bảo trì. 
+==Tính đóng gói==
+- Đem những data, những function vào chung 1 đơn vị. Đây là tính quan trọng nhất, bình thường function muốn chạy thì cần phải truyền param vào, trường hợp đối tượng có 100 thuộc tính, nếu mà truyền nhiều param dễ xảy ra lỗi, do nếu truyền không đúng thứ tự hoặc truyền thiếu sẽ lỗi.
+- Phương thức của object không cần truyền tham số mà sẽ nhận giá trị các thuộc tính của bản thân object đó.
+- Contructors: là hàm khởi tạo, khởi tạo giá trị ban đầu cho các thuộc tính của object. Có thể viết nhiều hàm khởi tạo cho cùng 1 đối tượng, các hàm khởi tạo này phải khác nhau về tham số truyền vào (khác nhau về kiểu dữ liệu truyền vào). Từ khóa this đại diện cho đối tượng đang làm.
+- Các loại access modifier: công dụng là quy định việc truy cập đến các thuộc tính và phương thức của đối tượng thông qua các từ khóa public, protected, private, default
+	- public: ở đâu cũng truy cập được.
+	- private: chỉ ở trong nội bộ lớp mới truy cập được.
+	- protected: chỉ ở trong cùng package và các lớp kế thừa.
+	- default: là mặc định, bỏ trắng không điền, chỉ ở trong cùng package và các lớp kế thừa.
+	- Lưu ý: protected và default có thể truy cập ở trong classPath khi thực hiện test.
+- Dùng các phương thức getter và setter để tránh việc truy xuất trực tiếp vào các thuộc tính của object.
+- Tính toán entropy (tính toán được sự hỗn loạn), password càng hỗn loạn thì mật khẩu càng tốt.
+- Phần mềm lớn sẽ cập nhật document, sau đó mới cập nhật chương trình.

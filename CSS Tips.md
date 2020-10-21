@@ -4,3 +4,11 @@
 - sử dụng [class*="col-"] {} để select tất cả class name col-
 - muốn thẻ input và button cùng chiều cao thì nên set cho height = div chứa = 100%, set inline block cho cả 2 và set vertical-align giống nhau.
 - vertical-align chỉ tác dụng lên thẻ inline block.
+- đối với margin và padding của trong cùng 1 thẻ text nên xài em để nó ăn theo fz của thẻ text, còn đối với các div thì nên xài rem.
+- Trường hợp nếu lấy hình từ api thì cần phải kiểm tra dữ liệu đổ về hết rồi mới render ra block HTML. Keyword search ContentLoaded.
+- box-shadow có giá trị inset để đổ bóng vào bên trong.
+- breadcum là đường dẫn cho phép user biết mình đang ở trang nào, vd Top products/Disk/Bach
+- text wrap around image, thằng chữ float left, thằng hình float right.
+- chỉ những thuộc tính bằng số mới bị tác động bởi transition
+- Animation là chuyển động không cần tác động gì. Thường các keyframe sẽ được đặt ở cuối file css.
+- Thuộc tính transform có thể áp dụng nhiều loại trên cùng một dòng.
