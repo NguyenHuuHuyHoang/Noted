@@ -1,23 +1,23 @@
 - OOP giúp scale chương trình thông qua việc quản lý các phương thức thông qua class, có thể thay đổi hoặc thêm các thuộc tính cho các class con một cách nhanh chóng.
-- Trước năm 2000 các phần mềm phát triển theo hướng functional, tiếp cận theo hướng chức năng, cần gì thì thêm vào thôi, sửa 1 chức năng đôi khi cần phải sửa đổi các chức năng khác liên quan, do đó dẫn đến việc bảo trì rất cao, bây giờ sử dụng OOP dễ mở rộng phần mềm. Tránh hiệu ứng domino, xử lý chỗ này thì cần phải xử lý n chỗ khác, và nhiều khi còn ảnh hưởng đến hoạt động của hệ thống.
+- Trước đây các phần mềm phát triển theo hướng functional, tiếp cận theo hướng chức năng, cần gì thì thêm vào thôi, sửa 1 chức năng đôi khi cần phải sửa đổi các chức năng khác liên quan, do đó dẫn đến việc bảo trì rất cao, bây giờ sử dụng OOP dễ mở rộng phần mềm. Tránh hiệu ứng domino, xử lý chỗ này thì cần phải xử lý n chỗ khác, và nhiều khi còn ảnh hưởng đến hoạt động của hệ thống.
 - Đưa các thông tin của đối tượng vào trong lập trình, đối tượng có các thông tin về thuộc tính và phương thức của đối tượng đó.
-- Visual paradigm hoặc draw.io
+- Sử dụng Visual paradigm hoặc draw.io để mô tả các lớp đối tượng trước khi xây dựng chương trình.
 - Cần phân tích các lớp đối tượng của chương trình. Thường các đối tượng có mối liên hệ với nhau. VD LopHoc có chứa giaoVienDungLop, dsHocSinh.
 - Cấu trúc file trong JAVA, quản lý theo package, tên package được đặt chữ thường, thường đặt theo doman.
 - Trường hợp từ package này truy cập package khác thì cần phải có thuộc tính public mới truy cập được thuộc tính, nó quy định ở nơi nào được access vào thuộc tính đó.
-- Khi tạo một biến sẽ lưu trên stack, còn new thì sẽ lưu trên heap. biến = new object thì biến trên stack sẽ trỏ tới địa chỉ object được new trên heap. Trường hợp tạo biến = new object mà sau đó trỏ biến đó tới ô vùng nhớ khác, bỏ vùng nhớ đã tạo => object đã tạo sẽ không được link tới, sẽ bị JAVA kill thông qua garbage collection.
+- Khi tạo một biến thì biến sẽ lưu trên stack, còn object được new thì sẽ lưu trên heap. biến = new object thì biến trên stack sẽ trỏ tới địa chỉ vùng nhớ chứa object được new trên heap. Trường hợp tạo biến = new object mà sau đó trỏ biến đó tới ô vùng nhớ khác => object đã tạo sẽ không được link tới, sẽ bị JAVA kill thông qua garbage collection.
 - Nguyên tắc SOLID, KISS, DRY. 
 - Bảo trì là người ta cần nhiều chức năng nên cập nhật lên, sau đó gặp lỗi thì cần phải fix lỗi gọi là bảo trì. 
 ==Tính đóng gói==
-- Đem những data, những function vào chung 1 đơn vị. Đây là tính quan trọng nhất, bình thường function muốn chạy thì cần phải truyền param vào, trường hợp đối tượng có 100 thuộc tính, nếu mà truyền nhiều param dễ xảy ra lỗi, do nếu truyền không đúng thứ tự hoặc truyền thiếu sẽ lỗi.
+- Đem những data, những function vào chung 1 đơn vị. Đây là tính quan trọng nhất, bình thường function muốn chạy thì cần phải truyền param vào, trường hợp đối tượng có 100 thuộc tính thì có thể truyền tới 100 params, nếu mà truyền nhiều param dễ xảy ra lỗi, do nếu truyền không đúng thứ tự hoặc truyền thiếu sẽ lỗi.
 - Phương thức của object không cần truyền tham số mà sẽ nhận giá trị các thuộc tính của bản thân object đó.
-- Contructors: là hàm khởi tạo, khởi tạo giá trị ban đầu cho các thuộc tính của object. Có thể viết nhiều hàm khởi tạo cho cùng 1 đối tượng, các hàm khởi tạo này phải khác nhau về tham số truyền vào (khác nhau về kiểu dữ liệu truyền vào). Từ khóa this đại diện cho đối tượng đang làm.
+- Contructors: là hàm khởi tạo, khởi tạo giá trị ban đầu cho các thuộc tính của object. Có thể viết nhiều hàm khởi tạo cho cùng 1 đối tượng, các hàm khởi tạo này phải khác nhau về tham số truyền vào (khác nhau về kiểu dữ liệu truyền vào). Từ khóa this đại diện cho chính đối tượng đó.
 - Các loại access modifier: công dụng là quy định việc truy cập đến các thuộc tính và phương thức của đối tượng thông qua các từ khóa public, protected, private, default
 	- public: ở đâu cũng truy cập được.
 	- private: chỉ ở trong nội bộ lớp mới truy cập được.
 	- protected: chỉ ở trong cùng package và các lớp kế thừa.
 	- default: là mặc định, bỏ trắng không điền, chỉ ở trong cùng package và các lớp kế thừa.
 	- Lưu ý: protected và default có thể truy cập ở trong classPath khi thực hiện test.
-- Dùng các phương thức getter và setter để tránh việc truy xuất trực tiếp vào các thuộc tính của object.
+- Dùng các phương thức getter và setter để tránh việc truy xuất trực tiếp vào các thuộc tính của object. Giúp validate trước giá trị thuộc tính object nhằm tăng tính bảo mật và sự ổn định.
 - Tính toán entropy (tính toán được sự hỗn loạn), password càng hỗn loạn thì mật khẩu càng tốt.
-- Phần mềm lớn sẽ cập nhật document, sau đó mới cập nhật chương trình.
+- Các phần mềm lớn sẽ cập nhật document, sau đó mới cập nhật chương trình.
