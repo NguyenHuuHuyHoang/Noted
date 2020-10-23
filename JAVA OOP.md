@@ -9,7 +9,7 @@
 - Nguyên tắc SOLID, KISS, DRY. 
 - Bảo trì là người ta cần nhiều chức năng nên cập nhật lên, sau đó gặp lỗi thì cần phải fix lỗi gọi là bảo trì. 
 ==Tính đóng gói==
-- Đem những data, những function vào chung 1 đơn vị. Đây là tính quan trọng nhất, bình thường function muốn chạy thì cần phải truyền param vào, trường hợp đối tượng có 100 thuộc tính thì có thể truyền tới 100 params, nếu mà truyền nhiều param dễ xảy ra lỗi, do nếu truyền không đúng thứ tự hoặc truyền thiếu sẽ lỗi.
+- Đem những data, những function vào chung 1 đơn vị. Đây là tính chất quan trọng nhất của tính đóng gói, bình thường function muốn chạy thì cần phải truyền param vào, trường hợp đối tượng có 100 thuộc tính thì có thể truyền tới 100 params, nếu mà truyền nhiều param dễ xảy ra lỗi (do nếu truyền không đúng thứ tự hoặc truyền thiếu sẽ lỗi).
 - Phương thức của object không cần truyền tham số mà sẽ nhận giá trị các thuộc tính của bản thân object đó.
 - Contructors: là hàm khởi tạo, khởi tạo giá trị ban đầu cho các thuộc tính của object. Có thể viết nhiều hàm khởi tạo cho cùng 1 đối tượng, các hàm khởi tạo này phải khác nhau về tham số truyền vào (khác nhau về kiểu dữ liệu truyền vào). Từ khóa this đại diện cho chính đối tượng đó.
 - Các loại access modifier: công dụng là quy định việc truy cập đến các thuộc tính và phương thức của đối tượng thông qua các từ khóa public, protected, private, default
@@ -18,6 +18,6 @@
 	- protected: chỉ ở trong cùng package và các lớp kế thừa.
 	- default: là mặc định, bỏ trắng không điền, chỉ ở trong cùng package và các lớp kế thừa.
 	- Lưu ý: protected và default có thể truy cập ở trong classPath khi thực hiện test.
-- Dùng các phương thức getter và setter để tránh việc truy xuất trực tiếp vào các thuộc tính của object. Giúp validate trước giá trị thuộc tính object nhằm tăng tính bảo mật và sự ổn định.
+- Dùng các phương thức getter và setter để tránh việc truy xuất trực tiếp vào các thuộc tính của object. Giúp tăng tính bảo mật và sự ổn định cho chương trình. Việc khai báo setter và getter cho các thuộc tính private là không bắt buộc (trường hợp không muốn thuộc tính được thấy bởi bất kỳ lớp nào) hoặc chỉ khai báo getter cho thuộc tính private nào đó nếu muốn thuộc tính đó chỉ được xem, không được sửa chữa hoặc chỉ xây dựng setter cho thuộc tính nếu muốn thuộc tính có khả năng chỉnh sửa từ bên ngoài mà không được xem. Tóm lại getter và setter là một cách đóng gói dữ liệu của lớp, chúng ta có thể chỉ định được thuộc tính nào đó hoàn toàn ẩn, chỉ đọc, chỉ ghi hoặc có thể đọc và ghi, đây là một cách giúp code được tường minh hơn.
 - Tính toán entropy (tính toán được sự hỗn loạn), password càng hỗn loạn thì mật khẩu càng tốt.
 - Các phần mềm lớn sẽ cập nhật document, sau đó mới cập nhật chương trình.

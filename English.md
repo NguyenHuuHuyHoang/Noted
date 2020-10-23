@@ -118,3 +118,5 @@ She is a doctor
 - independent: doc lap
 - I am all ears: toi lang nghe cham chu
 -  tongue: cai luoi
+- What are the drawbacks ? : Những khó khăn là gì.
+- 

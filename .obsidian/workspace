@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "JAVA OOP.md",
+            "file": "English.md",
             "mode": "source"
           }
         }
@@ -64,7 +64,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "JAVA OOP.md"
+                "file": "English.md"
               }
             }
           }
@@ -76,15 +76,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "English.md",
     "JAVA OOP.md",
     "JS Note.md",
+    "CSS Note.md",
+    "Khóa FE Free note.md",
     "Terminal.md",
     "Untitled.md",
     "Animation library.md",
     "CSS Tips.md",
-    "CSS Note.md",
-    "JS Tips, Trick.md",
-    "Tips trick.md",
-    "Khóa FE Free note.md"
+    "JS Tips, Trick.md"
   ]
 }

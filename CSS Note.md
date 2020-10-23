@@ -308,3 +308,6 @@ https://css-tricks.com/simulating-mouse-movement/
 ==Animation==
 - cú pháp @keyframes. trong đây chúng ta sẽ khai báo 1 chu kỳ chuyển động thông qua các mốc như 0%,25%,50%,75%,100%. ở mức 0% nếu không có thay đổi gì thì để rỗng.
 - Cách sử dụng thì cần khai báo ở phần css của các tag cần sử dụng thông qua từ khóa animation.
+==Responsive==
+- min-width: là mobile first, đây là cách tối ưu code nhất, bs đang sử dụng. code mobile, khi nào lên table có thêm không gian thì bổ sung thêm các component.
+- max-width: là desktop first.

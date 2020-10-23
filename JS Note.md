@@ -78,19 +78,19 @@
 		- Hằng số đặt theo UPPER_CASE
 		- Tên biến, tên lớp thường là danh từ, cụm danh từ hoặc tính từ: UserModel, userName, downloadCounter, isDownloaded.
 		- Tên hàm thường bắt đầu bằng động từ: getUserName, setUserModel, increaseDownloadCouter.
-		- Tên thìp hải có nghĩa, KHÔNG ĐƯỢC đặt tên theo kiểu viết tắt: dlCounter, uName, idl, a, a1, doFA.
+		- Tên thì phải có nghĩa, KHÔNG ĐƯỢC đặt tên theo kiểu viết tắt: dlCounter, uName, idl, a, a1, doFA.
 		- Tránh đặt những tên quá chung chung, tối nghĩa: top, best, doIncrease, getAll
 		==Quy tắc về số lượng==
 		- Hàm không nên quá 30 dòng.
 		- Lớp không nên vượt quá 500 dòng.
 		- Một hàm không được vượt quá 5 tham số (tốt nhất nên giữ <= 3)
-		- Một hàm chỉ làm duy nhất 1 việc, trong trường hợp chính đáng làm hai việc cũng được cho phép, tuy nheien tên hàm phải nói rõ điều này: increaseDownloadCounterAndSaveToDatabase.
+		- Một hàm chỉ làm duy nhất 1 việc, trong trường hợp chính đáng làm hai việc cũng được cho phép, tuy nhiên tên hàm phải nói rõ điều này: increaseDownloadCounterAndSaveToDatabase.
 		- Khi khai báo biến, một dòng chỉ chứa một biến.
 		- Một dòng không nên dài quá 80 kí tự.
 		- Các câu lệnh lồng nhau tối đa 4 cấp.
 		==Quy tắc xuống hàng==
 		- Nếu có dấu phẩy thì xuống hàng sau dấu phẩy.
-		- Xuống hàn trước toán tử +,-,..
+		- Xuống hàng trước toán tử +,-,..
 		- Nếu có nhiều cấp lồng nhau thì xuống hàng theo từng cấp.
 		- Dòng xuống hàng mới thì nên bắt đầu ở cùng cột với đoạn lệnh cùng cấp ở trên.
 		==Comment==
