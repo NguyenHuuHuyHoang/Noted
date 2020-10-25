@@ -21,3 +21,18 @@
 - Dùng các phương thức getter và setter để tránh việc truy xuất trực tiếp vào các thuộc tính của object. Giúp tăng tính bảo mật và sự ổn định cho chương trình. Việc khai báo setter và getter cho các thuộc tính private là không bắt buộc (trường hợp không muốn thuộc tính được thấy bởi bất kỳ lớp nào) hoặc chỉ khai báo getter cho thuộc tính private nào đó nếu muốn thuộc tính đó chỉ được xem, không được sửa chữa hoặc chỉ xây dựng setter cho thuộc tính nếu muốn thuộc tính có khả năng chỉnh sửa từ bên ngoài mà không được xem. Tóm lại getter và setter là một cách đóng gói dữ liệu của lớp, chúng ta có thể chỉ định được thuộc tính nào đó hoàn toàn ẩn, chỉ đọc, chỉ ghi hoặc có thể đọc và ghi, đây là một cách giúp code được tường minh hơn.
 - Tính toán entropy (tính toán được sự hỗn loạn), password càng hỗn loạn thì mật khẩu càng tốt.
 - Các phần mềm lớn sẽ cập nhật document, sau đó mới cập nhật chương trình.
+==Tính kế thừa==
+- Thể hiện trên lớp đối tượng là mũi tên rỗng không fill.
+- Tất cả các lớp con được xây dựng dựa trên nền của lớp cha
+- Tính kế thừa giúp đơn giản hóa thiết kế và cài đặt ứng dụng, giúp dễ bảo trì, phát triển và phân tích bài toán.
+- Cây kế thừa: từ một nhánh ban đầu sẽ tách ra nhiều nhánh nhỏ.
+- Trong clas có kế thừa nếu set protected thì những thằng con kế thừa tính chất hoặc thuộc tính đó, còn private thì không.
+- Test-coverage: Tỷ lệ % code được chạy / code viết ra, tối ưu là 100%.
+- Trong quá trình làm thì làm tới đâu nên test tới đó (cuốn chiếu) đảm bảo code chạy đúng, tránh trường hợp code 100% rồi mới test thì nếu lỗi sẽ khó debug
+- Khi tạo class mà không khai báo contructor thì JAVA sẽ tự tạo 1 contructor không tham số, nếu class có các thuộc tính kiểu string hoặc kiểu tham chiếu thì giá trị mặc định là null, các kiểu khác sẽ là 0. Trường hợp có 1 contructor bất kỳ nào trong class thì JAVA sẽ hủy cơ chế này => khi tạo 1 contructor truyền tham số thì phải tạo 1 contructor rỗng để khởi tạo giá trị ban đầu.
+- Trong class con muốn gọi chỉ định phương thức của lớp cha thì sử dụng từ khóa super, nếu không thì nó mặc định sẽ gọi contructor không tham số.
+- Nguyên tắc code OOP thì sẽ code từ lớp nào mà không xài lớp khác.
+- Trong lập trình càng cao thì càng hướng tới decouple, nghĩa là tách các class ra tránh việc ảnh hưởng tới nhau. VD tránh việc trong lớp NhânViên lại có Object trưởng phòng, mà thay vào đó sẽ lưu string maNV của trưởng phòng quản lý.
+- Có thể khai báo class nhân sự thông qua contructor của class con kế thừa (do class con kế thừa các thuộc tính và phương thức của class nhân sự + các thuộc tính và phương thức của lớp con => vùng nhớ lớn). Có thể ép kiểu lớp nhân sự về class con kế thừa để sử dụng các thuộc tính và phương thức của lớp con. 
+- Để kiểm tra kiểu dữ liệu của một biến có thể sử dụng từ khóa instanceof(tên biến).
+- 
