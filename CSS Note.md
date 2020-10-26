@@ -311,3 +311,14 @@ https://css-tricks.com/simulating-mouse-movement/
 ==Responsive==
 - min-width: là mobile first, đây là cách tối ưu code nhất, bs đang sử dụng. code mobile, khi nào lên table có thêm không gian thì bổ sung thêm các component.
 - max-width: là desktop first.
+==Pseudo-class==
+	==Hover==
+	- Có thể sử dụng Hover với ~ để select nhiều yếu tố sau nó hoặc sử dụng kết hợp với after để tạo tooltip.
+	==Checked==
+	- Sử dụng để kiểm tra điều kiện đầu vào, có thể kết hợp + để kiểm tra nhiều check box liền kề nhau.
+	==Target==
+	- Sử dụng kèm với thẻ a, khi click vào thẻ a thì nó sẽ trigger đến class có id tương ứng kèm với #, nếu class đó có pseudo target thì nó sẽ kích hoạt css.
+	==link | visited | hover | active (link stage)==
+	- trường hợp sử dụng thì cần đặt đúng thứ tự link -> visited -> hover -> active.
+	==focus==
+	- kích hoạt css cho element sau khi nhấp hoặc sử dụng tab để focus vào element.

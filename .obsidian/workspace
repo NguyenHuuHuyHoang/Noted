@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "JAVA OOP.md",
+            "file": "CSS Tips.md",
             "mode": "source"
           }
         }
@@ -48,7 +48,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 243
+    "width": 243,
+    "collapsed": true
   },
   "right": {
     "id": "9ea3f91c759d5669",
@@ -64,7 +65,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "JAVA OOP.md"
+                "file": "CSS Tips.md"
               }
             }
           }
@@ -76,15 +77,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "CSS Tips.md",
+    "CSS Note.md",
     "JAVA OOP.md",
     "English.md",
     "JS Note.md",
-    "CSS Note.md",
     "Khóa FE Free note.md",
     "Terminal.md",
     "Untitled.md",
     "Animation library.md",
-    "CSS Tips.md",
     "JS Tips, Trick.md"
   ]
 }
