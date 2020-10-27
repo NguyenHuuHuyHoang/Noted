@@ -23,7 +23,6 @@
 		-webkit-line-clamp: 2;
 	}
 }
-
 - Thẻ a lấy màu theo trình duyệt mặc định không lấy theo thẻ body nên cần set riêng thẻ a.
 - Thẻ inline thì không thể set width, height. Chắc cú thì chuyển sang inline-block.
 - Border 1px solid sẽ lấy theo màu mặc định của chữ hiện tại, nếu truyền màu vô thì nó sẽ lấy theo màu truyền vào.

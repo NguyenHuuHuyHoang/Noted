@@ -1,3 +1,4 @@
+- SCSS bản chất là SASS, SASS 3.0 chuyển từ đuôi file sass thành scss. Các cách chuyển scss thành css: Glup (thư viện mã lệnh, có thể viết mã lệnh bằng JS), koala, live sass. Angular với React đã có sẵn không cần phải sử dụng các chương trình chuyển đổi mà có thể import thẳng file scss.
 ==1 - Nested==
 .parent {
 	 .chill {
@@ -15,6 +16,7 @@
 }
 - tùy vào vị trí đặt & ban đầu mà nó sẽ mang giá trị của thằng đó, nó sẽ copy cả dấu chấm và tên luôn.
 ==4 - Variable in SCSS==
+- Biến dùng để chứa các giá trị. vd chứa giá trị mã màu: $bg-color: red. Ưu điểm là chỗ nào cần thì thay vì phải gõ mã màu thì sử dụng tên biến, dễ sử dụng, dễ nhớ do chính mình đặt tên. Sử dụng biến cho những giá trị hay thay đổi như màu sắc, hoặc những giá trị lặp đi lặp lại (từ 2 lần trở lên).
 - $[tên biến] : giá trị;
 ==5 - Interpolation==
 - sử dụng biến như một thuộc tính trong SCSS
@@ -24,6 +26,7 @@
 - khai báo @mixin [tên mixin] ($w , $h, $bg, $br) {}
 - sử dụng @include [tên mixin] (các giá trị truyền vào)
 ==7 - @extend==
+- Dùng để code gọn hơn, tái sử dụng code.
 - @extend `<selector>`
 - Extend được trả về sau khi phần còn lại của stylesheet đã được xử lý, Đặc biệt nó xảy ra sau khi parent selector đã được xử lý, có nghĩa là nếu @extend .error, nó sẽ không tác dụng đến những selector bên trong .error `{ &__icons{}}`. nó cũng có nghĩa là parent selectors trong SassScript không thấy được kết quả của extend
 - Nguyên lý hoạt động @extend updates style rules that contain the extended selector so that they contain the extending selector as well

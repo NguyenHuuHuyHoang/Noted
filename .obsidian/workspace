@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "BE Note.md",
+            "file": "SCSS.md",
             "mode": "source"
           }
         }
@@ -64,7 +64,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BE Note.md"
+                "file": "SCSS.md"
               }
             }
           }
@@ -76,6 +76,8 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "SCSS.md",
+    "SCSS Note.md",
     "BE Note.md",
     "Untitled.md",
     "JS Note.md",
@@ -83,8 +85,6 @@
     "CSS Tips.md",
     "JAVA OOP.md",
     "English.md",
-    "Khóa FE Free note.md",
-    "Terminal.md",
-    "Animation library.md"
+    "Khóa FE Free note.md"
   ]
 }
