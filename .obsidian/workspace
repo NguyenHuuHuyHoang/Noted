@@ -10,7 +10,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "SCSS.md",
+            "file": "JS Note.md",
             "mode": "source"
           }
         }
@@ -48,7 +48,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 243
+    "width": 243,
+    "collapsed": true
   },
   "right": {
     "id": "9ea3f91c759d5669",
@@ -64,7 +65,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SCSS.md"
+                "file": "JS Note.md"
               }
             }
           }
@@ -76,15 +77,15 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "JS Note.md",
+    "JS Tips, Trick.md",
+    "CSS Tips.md",
     "SCSS.md",
     "SCSS Note.md",
     "BE Note.md",
     "Untitled.md",
-    "JS Note.md",
     "CSS Note.md",
-    "CSS Tips.md",
     "JAVA OOP.md",
-    "English.md",
-    "Khóa FE Free note.md"
+    "English.md"
   ]
 }

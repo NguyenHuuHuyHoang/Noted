@@ -12,6 +12,11 @@
 - chỉ những thuộc tính bằng số mới bị tác động bởi transition
 - Animation là chuyển động không cần tác động gì. Thường các keyframe sẽ được đặt ở cuối file css.
 - Thuộc tính transform có thể áp dụng nhiều loại trên cùng một dòng.
+- Phần chữ ở title có thể sẽ rất dài, để tránh nó bị dính sát rạt với icon, nên thêm mr1rem.
+- Nếu có 2 button nằm kế nhau, chắc chắn chúng ta muốn giữa các button có khoảng trắng, dùng css selector adjacent-sibling (+) để thêm ml1rem
+- Trong trường hợp mà tag name và category name quá dài, nên để nó rớt xuống dòng sẽ tốt hơn để nó dàn trải kèm ...
+- Nếu dùng thẻ img mà không load được hình thì set bgc cho nó.
+- Hình avatar nên đặt object-fit:cover để có một hình tròn trịa, không bị stretch hay compressed.
 ==Các cách cơ bản để sử dụng CSS nhằm SEO tốt hơn==
 	- Sắp xếp nội dung.
 		+ Công cụ tìm kiếm nó không scan toàn bộ trang nhìn thấy nhưng nó dựa trên code. Web sẽ không được đọc như cách mà chúng ta muốn, công cụ tìm kiếm sẽ đọc mọi thứ trên trang từ phía trên bên trái đến phía dưới bên phải. VD nếu ta có một thanh điều hướng trước phần nội dung thực sự thì công cụ tìm kiếm sẽ đọc những phần này trước. Nó sẽ làm giảm thứ hạng tìm kiếm của trang vì trùng nội dung trên cùng của trang.

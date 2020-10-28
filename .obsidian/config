@@ -16,5 +16,6 @@
   "autoPairMarkdown": true,
   "smartIndentList": true,
   "attachmentFolderPath": "Image saved",
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "enabledPlugins": []
 }

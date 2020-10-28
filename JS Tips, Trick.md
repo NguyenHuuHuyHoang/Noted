@@ -93,3 +93,93 @@ Kiểu object Set đã được giới thiệu trong ES6 và kết hợp với '
 //     "alpha": A,
 //     "beta": B
 // }'
+==Tránh lỗi khi dùng default function==
+- Các default array function của JS như map, forEach, filter,... sẽ bị lỗi nếu như array null hoặc undefined (VD: Nhận dữ liệu từ server), nó khá nguy hiểm nếu quên có thể gây ứng dụng đột tử. Nên kiểm tra trước khi gọi các function đó. 
+- Có thể lồng vào scope của if để tránh trường hợp như vậy.
+==Sử dụng toán tử Ternary Operator==
+- Toán tử ba ngôi tùy từng trường hợp có thể không được khuyến khích, nhưng nếu cần giải pháp để code ngắn hơn thì có thể nghĩ đến nó.
+==Dùng 3 dấu bằng thay cho 2 dấu bằng==
+- Code == sẽ cố ép giá trị khi thực hiện chuyển đổi tự động.
+- === sẽ không chuyển đổi mà cân bằng giá trị và kiểu của toán hạng, nhanh hơn nhiều so với ==
+==Tận dụng những hàm có sẵn==
+- Thay vì sử dụng forEach, Map, filter,.. kèm với jQuery. Tuy nhiên bản chất của JS đã có nhiều hàm để làm việc với Object, Array, String... Cho nên không cần phải sử dụng phần mềm thứ ba cho những vấn đề đó.
+==Hạn chế sử dụng try-catch-finally trong vòng lặp==
+- Lệnh try-catch-finally sẽ tạo biến mới trong phạm vi nhất định khi catch clause được áp dụng. Điều này sẽ gây caught exception object gán với một biến số.
+- nên đặt vòng lặp trong try
+==Các Array method cần biết==
++ push(), pop(), shift(), unshift():
+	- Đây điều là các method giúp thêm hoặc xóa phần tử của mảng, tác dụng như sau: push() Thêm phần từ vào cuối mảng - unshift() Thêm phần tử vào đầu mảng - pop() Xóa phần tử cuối cùng trong mảng - shift() Xóa phần tử đầu tiên trong mảng.
++ every()
+	- Method này sẽ có tham số là một hàm (tạm gọi là testMethod). Hàm testMethod sẽ có cấu trúc như sau function(el, index, arr) và luôn trả về giá trị true/false.
+	- el: giá trị của phần tử hiện tại - index: vị trí của phần tử hiện tại trong mảng - arr: mảng chứa phần tử hiện tại.
+	- Method every() sẽ kiểm tra xem toàn bộ phần tử trong mảng có thỏa mãn testMethod không.
+	- ![[Pasted image 20201028091504.png]] testMethod ở đây chính là hàm kiểm tra xem phần tử có phải là số chẵn hay không.
++ some()
+	- Tương tự, method này cũng nhận vào một tham số là testMethod. Method này sẽ trả về true nếu có ít nhất 1 phần tử trong mảng thỏa mãn testMethod, nếu không sẽ trả về false.
++ map()
+	- Method này sẽ nhận vào tham số là một testMethod, tuy nhiên method này không nhất tiết phải trả về giá trị true/false, method này sẽ trả về một mảng mới, với giá trị được trả về từ testMethod của từng phần tử.
+	- vd muốn bình phương tất cả phần tử trong mảng: arr.map(el => el*el).
++ find()(
+	- Method này nhận vào một tham số là 1 testMethod và trả về phần tử đầu tiên thỏa mãn testMethod, nếu không có phần tử nào thì trả về undefined.
++ reduce()
+	- Đây là method dùng để tính toán các phần tử của mảng (theo thứ tự từ trái sang phải).
+	- Method này sẽ nhận vào 2 tham số: 
+		- Tham số 1: function(total, el): Là một hàm tính toán, total chính là kết quả phép tính của phần tử trước, còn el chính là phần tử hiện tại.
+		- Tham số 2: initValue: Giá trị ban đầu của phép tính, được sử dụng làm total cho phép tính của phần tử đầu tiên.
+	- VD: arr.reduce((total, el) => total + el, 0) -> sẽ cộng tất cả các giá trị trong mảng.
++ splice()
+	- Method này sử dụng để xóa các phần tử trong mảng và sẽ trả về các phần tử đã xóa. Method này nhận vào hai tham số:
+		- index: vị trí của phần tử đầu tiên muốn xóa.
+		- deleteCount: số phần tử muốn xóa từ vị trí index.
+	- const remove = arr.splice(0,2) => ra mảng mới remove mang giá trị của mảng arr sau khi đã xóa 2 phần tử từ vị trí 0.
++ slice()
+	- Method này tương tự với hàm substring() chỉ khác là sử dụng với mảng. Method này nhận 2 tham số:
+		- Tham số 1: start vị trí phần tử đầu tiên.
+		- Tham số 2: end vị trí của phần tử cuối cùng được tính là (n-1), nếu không truyền vào thì mặc định là độ lớn của mảng.
+	- VD: const subArray = arr.slice(0,2) -> tạo ra mảng con subArray chứ phần tử 0 và 1 của mảng arr.
++ filter()
+	- Method này nhận vào tham số là một testMethod và sẽ trả về mảng chứa các giá trị thỏa mãn testMethod.
+	- VD: const filter = arr.filter(el => el % 2 == 0) -> tạo ra mảng mới filter chứa các số chẵn của mảng arr.
++ includes()
+	- Method này nhận vào 1 tham số là el và sẽ trả về true, nếu mảng có chứa phần tử el, ngược lại sẽ trả về false.
+	- VD: arr.includes(1): nếu arr chứ số 1 sẽ trả về true, còn không thì false.
++ forEach()
+	- là phương thức có sẵn của array được JS cung cấp, nó giúp lặp qua các item trên array.
++ sort()
+	- method này giúp sắp xếp số và ký tự. Cần lưu ý phương thức này làm mutate mảng gốc.
+	- phương thức này nhận một hàm như một số. Nó sắp xếp các phần tử của một mảng.
+	- ![[Pasted image 20201028103151.png]]
++ Array.from()
+	- Giúp tạo 1 array từ một kiểu dữ liệu khác.
+	- ![[Pasted image 20201028102138.png]]
++ Array.of()
+	- Truyền vào phần tử khi tạo array.
+	- VD. const nums = Array.of(1,2,3) => nums = [1, 2, 3].
++ flat()
+	- Thường được sử dụng để tạo ra một mảng mới chứa các phần tử trong mảng (mà chứa các mảng con.)
+	- ![[Pasted image 20201028102818.png]]
++ findIndex()
+	- phương thức này sẽ nhận một hàm làm tham số và sẽ áp dụng nó cho mảng. Nó trả về chỉ mục của một phần tử được tìm thấy và thỏa mãn hàm kiểm tra được truyền dưới dạng đối số hoặc trả về -1 nếu không thỏa mãn nó.
++ concat()
+	- phương thức này sẽ hợp nhất hai hoặc nhiều mảng / giá trị bằng cách ghép nó. Nó sẽ trả về một mảng mới.
++ fill()
+	- phương thức này điền vào tất cả các phần tử của một mảng nhất định có cùng giá trị, từ chỉ mục bắt đầu (mặc định 0) đến chỉ mục kết thúc (mặc định array.length).
+	- phương thức này làm thay đổi mảng gốc.
+	- vd arr.fill(0, 1, 3) => đặt giá trị cho ô 1,2 của mảng arr giá trị 0
++ reverse()
+	- Phương thức này sẽ đảo ngược một mảng. phương thức này sẽ làm thay đổi mảng gốc.
++ flatMap()
+	- phương thức này áp dụng một hàm cho từng phần tử của mảng và sau đó làm phẳng kết quả thành một mảng. nó là sự kết hợp giữa hai phương thức flat() và map()
+	- ![[Pasted image 20201028103738.png]]
++ entries()
+	- phương thức này sẽ trả về một mảng iterator object chứa các cặp giá trị key/value cho mỗi index trong mảng.
+	- ![[Pasted image 20201028105644.png]]
++ copyWithin()
+	- phương thức này sẽ sao chép các phần tử trong mảng với vị trí bắt đầu và kết thúc việc sao chép được xác định.
+	- Thực chất phương thức này không chỉ sao chép mà nó sẽ ghi đè các phần tử nó sao chép được lên các phần tử của mảng tính từ một vị trí xác định bởi người dùng.
+	- phương thức này nhận vào 3 tham số:
+		+ tham số đầu tiên là vị trí mà hàm sẽ bắt đầu ghi đè các phần tử sao chép được.
+		+ tham số thứ 2 là vị trí bắt đầu sao chép.
+		+ tham số thứ 3 là vị trí kết thúc sao chép. vị trí này được tính là n-1.
+	- vd arr= [0,1,2,3,4,5] => arr.copyWithin(2,0,2) => [0,1,0,1,4,5].
+	
