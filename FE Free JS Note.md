@@ -1,0 +1,6 @@
+1. Nếu cộng số lượng sản phẩm thì giá tiền sẽ thay đổi theo. Công việc chính của FE là lập trình các sự kiện.
+2. JS là ngôn ngữ mạnh nhất thế giới, cũng là chậm nhất thế giới. Do các ngôn ngữ khác có kiểu dữ liệu cho biến, biến không phải tạo ra để chơi, khi 1 kiểu dữ liệu được sinh ra, thì nó sẽ tạo 1 biến trên vùng nhớ, đảm bộ sự ràng buộc của kiểu dữ liệu, mỗi kiểu dữ liệu chỉ chứa được tối đa 1 giá trị do dựa vào vùng nhớ. Trong DB thì có thể giới hạn số lượng dữ liệu vd tạo trường chỉ chứa 10 số điện thoại số int, nếu nhập nhiều hơn sẽ lỗi. JS hoặc PHP thì sẽ không có kiểu dữ liệu của biến vì nó sẽ chậm. Khi khai báo 1 biến nó sẽ chứa toàn bộ kiểu dữ liệu.
+3. Cách nhúng JS, Nhúng ở cuối cùng HTML (sau đóng tag html). Biến ở đây dưới dạng JS thuần thì khai báo bằng từ khóa var. Khai báo biến là lưu lại kiểu dữ liệu, trường hợp khai báo a = 1 thì nó sẽ được lưu trong quere, Nó lưu trữ không quan tâm là var hay let hay const. BT thường ngôn ngữ sẽ dịch trực tiếp, nhưng JS thì dịch phải qua quere rồi mới dịch về mã máy bằng C++ rồi browser mới đọc.
+4. hậu tố + tổng, tiền tố + tăng. ++x = tăng, x++ = tổng.
+5. !(!), !().
+6. Khi xử lý JS thuần thì lúc nào cũng sử dụng for để duyệt phần tử. 
