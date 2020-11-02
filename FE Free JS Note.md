@@ -4,3 +4,30 @@
 4. hậu tố + tổng, tiền tố + tăng. ++x = tăng, x++ = tổng.
 5. !(!), !().
 6. Khi xử lý JS thuần thì lúc nào cũng sử dụng for để duyệt phần tử. 
+7. OOP Trong JS:
+	1. Đối tượng là gì ? đối tượng có 2 thứ là thuộc tính dùng để phân biệt giữa đối tượng này với đối tượng kia và phương thức là hành động của một đối tượng. Nguyên lý lập trình hướng đối tượng là đem những gì ở ngoài đời vào trong lập trình.
+	2. Có nhiều cách tạo ra đối tượng, tuy nhiên cách được sử dung nhiều trong plugin là:
+		1. this.car = function () {
+			- var id = 250; // biến là private, không lấy được phải lấy thông qua 1 phương thức trả về id (không có this).
+			- this.name = "Merc";
+			- this.edition = 2018; 
+			- this.run = function() { //Không nên khai báo phương thức kiểu này
+				- return this.edition;
+			- }
+			- //Cách khác
+			- this.run = run;
+			- function run() {
+				- return this.edition;
+			- }
+			- function getPrivate() {
+				- return id //Trả về giá trị biến private.
+			- }
+		2. }
+		3. var obj = new car();
+		4. console.log(obj.name);
+		5. Kết thừa thông qua phương thức call
+		6. this.bmw = function() {
+			1. var color
+			2. car.call(this) 
+		7. }
+
