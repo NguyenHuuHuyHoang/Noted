@@ -50,5 +50,29 @@
 	 - từ khóa let: let thì gần giống var, ngoại trừ nó có phạm vi block thay vì function, nó được biểu thị bằng cặp dấu ngoặc nhọn nơi mà chúng ta khai báo biến ở trong đó, nó cũng chỉ được sử dụng sau khi khai báo biến khác với var khi mà biến có thể sử dụng trong bất cứ đâu trong phạm vi mà nó được khai báo, vd nếu khai báo biến let ở dòng 10 thì chỉ có thể sử dụng nó từ dòng 10 trở đi, nó cũng là một loại biến có thể biến đổi (mutable), chúng ta có thể thay đổi giá trị, kiểu,.. trong khi nó bên trong phạm vi block của nó, nhưng một khi ở ngoài phạm vi block thì biến sẽ không còn tồn tại, chúng ta có thể tái sử dụng lại tên biến => block scoped, can be changed in scope, only available after declaration.
 	 - từ khóa const: const thì gần giống như let, nhưng khác let ở chỗ nó chỉ được gán trị 1 lần và không thể gán lại (Hằng số),  => block scoped, like let, Cannot be changed, Only available after declaration.
 	 - khi nào sử dụng các từ khóa:
-		 - sử dụng biến const thường xuyên nhất nếu có thể (const by default), điều này sẽ giúp bạn khi bạn quay lại và nhìn vô code của bản thân mình hoặc giúp đỡ, những người khác khi họ nhìn vào code của bạn để hiểu các biến, không thể gán giá trị lại. Nó chỉ có là giá trị mà được khởi tạo ngay từ đầu và sẽ không thay đổi (immutable). Điều này hữu ích để đảm bảo rằng bạn sẽ có ít cơ hội cho bugs, nó thường xảy ra bởi vì một biến được gán lại giá trị mà chúng ta không nhận ra, mặc dù vậy let vẫn rất hữu ích.
-		 - Chúng ta sẽ muốn sử dụng biến let bên trong một vòng lặp, bởi vì bên trong của một block scope, nơi bạn muốn tạo một biến mới mỗi lần lặp và gán 1 giá trị mới cho nó, nếu sử dụng const sẽ không thể gán lại giá trị và tái sử dụng tên biến. Không còn lý do cần thiết để sử dụng biến var nữa, bởi vì let và const đã cover tất cả các trường hợp sử dụng, và nó cũng loại bỏ một số vấn đề chúng ta có thể có với một biến var dựa vào sử khai báo biến.
+		 - sử dụng biến const thường xuyên nhất nếu có thể (const by default), điều này sẽ giúp bạn khi bạn quay lại và nhìn vô code của bản thân mình hoặc giúp đỡ, những người khác khi họ nhìn vào code của bạn sẽ biết rằng biến đó chỉ được gán giá trị một lần duy nhất, không thể gán giá trị lại. Nó chỉ có là giá trị mà được khởi tạo ngay từ đầu và sẽ không thay đổi (immutable). Điều này hữu ích để đảm bảo rằng bạn sẽ có ít cơ hội cho bugs, nó thường xảy ra bởi vì một biến được gán lại giá trị mà chúng ta không nhận ra, mặc dù vậy let vẫn rất hữu ích.
+		 - Chúng ta sẽ muốn sử dụng biến let bên trong một vòng lặp hoặc một block đặc biệt mà nó được sử dụng lại, bởi vì bên trong của một block scope, nơi bạn muốn tạo một biến mới mỗi lần lặp và gán 1 giá trị mới cho nó, nếu sử dụng const sẽ không thể gán lại giá trị và tái sử dụng tên biến. Không còn lý do cần thiết để sử dụng biến var nữa, bởi vì let và const đã cover tất cả các trường hợp sử dụng, và nó cũng loại bỏ một số vấn đề chúng ta có thể có với một biến var dựa vào sử khai báo biến.
+7. ==String Concatenation (Nối chuỗi)==
+	- Chuỗi là một loại dữ liệu mà nó đại diện có các yếu tố văn bản trên trang web. Điều này có thể là bất cứ thứ gì từ đầu ra console.log đến văn bản trên một trang web. Đôi khi chúng ta cần phải định dạng văn bản trước khi nó tới vị trí cuối cùng, đó là lúc cần sử dụng nối chuỗi.
+	- Kết hợp hai hoặc nhiều chuỗi: để dễ dàng hơn cho việc định dạng văn bản, có thể gắn một biến và một chuỗi, gắn nhiều chuỗi với nhau sẽ tạo thành một chuỗi mới.
+	- Sử dụng toán tử + để thực hiện nối chuỗi.
+	- Cẩn thận với số, nếu nối một số với 1 chuỗi có giá trị là số thì nó sẽ biến đổi thành chuỗi ở kết quả đầu ra. VD 1 + "1" = "11".
+8. ==Template Literals==
+	- Flexible Formarting: Cú pháp để tạo chuỗi dễ dàng để định dạng và đọc hơn, sử dụng placeholders ${} cho các biến hoặc các biểu thức (VD: ${1+1} hoặc ${!bool1}), không cần phải "\n" để xuống dòng.
+	- Uses backticks: Template literals chỉ yêu cầu sử dụng cặp ``
+	- Đặt ở đầu và cuối một chuỗi.
+9. ==Data types==
+	- JS là một ngôn ngữ có kiểu dữ liệu yếu, nó không nhiều kiểu dữ liệu như các ngôn ngữ khác như C# hoặc Java. 
+	- Simple type system: Number (float), String, Boolean, Date, Function, Array and Object.
+	- Special Types: NaN, null, undefined.
+	- Checking Type: typeof operator (Dùng cho dữ liệu kiểu nguyên thủy): Trả về một chuỗi của loại kiểu dữ liệu nguyên thủy, đôi khi nó trả về khác với kiểu dữ liệu vd typeof array => object. instanceof operator (Dùng cho dữ liệu tham chiếu): Trả về 1 boolean nếu giá trị khớp với loại constructor dùng để khởi tạo biến. vd (people instanceof Array) => kq là true or false;  Trong trường hợp x = 1 thì (x instanceof Number) => false, nhưng x = new Number(1) sẽ cho ra true;
+	- Kiểu dữ liệu trong JS có thể thay đổi theo giá trị của dữ liệu.
+	- Khi so sánh thì nên sử dụng === thay vì ==
+10. ==Math==
+	- Basic : + - * /
+	- Addtional Mathematical Operations: % => phần còn lại VD: 100 % 1500 = 100, ++num1 => tăng 1, --num1 => giảm 1;
+	==The Math Object==
+		+ Tập hợp các hằng số và hàm. Thực hiện tính toán lượng giác, logaric,..
+		+ VD: Math.PI, Math.sqrt(num1) (căn 2)
+11. ==Number and strings==
+	- 
