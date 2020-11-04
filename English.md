@@ -121,4 +121,4 @@ She is a doctor
 - What are the drawbacks ? : Những khó khăn là gì.
 - It just fells wrong : Dieu do co ve sai
 - this is of interest to many people : Dieu nay la su quan tam cua nhieu nguoi
-- 
+- she went on speaking: co ay tiep tuc noi
