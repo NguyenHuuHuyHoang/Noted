@@ -119,4 +119,6 @@ She is a doctor
 - I am all ears: toi lang nghe cham chu
 -  tongue: cai luoi
 - What are the drawbacks ? : Những khó khăn là gì.
+- It just fells wrong : Dieu do co ve sai
+- this is of interest to many people : Dieu nay la su quan tam cua nhieu nguoi
 - 
