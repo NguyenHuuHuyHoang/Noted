@@ -1,3 +1,5 @@
+- JS hay còn gọi là ECMA5. Framework đời đầu là jquery, nhược điểm nặng code, khi hệ thống sử dụng thì sẽ rất nặng, nên sản sinh ra nhiều framework tốt hơn, đa phần jquery hiện tại sử dụng để xử lý UI.
+- ES6 sản sinh ra framework ra reactJS, react navtive, nodejs, sản sinh ra ts, từ ts sản sinh ra framework là angular, vueJS hơi giống angular
 - HTML canvas drawImage(): Chuyển ảnh img thành canvas.
 - biến argument trong function tạo theo cách không phải arrow function, nó là một mảng chứa toàn bộ các biến truyền vào function, có thể truy xuất vào index và  length như một mảng bình thường tuy nhiên nó không thể sử dụng các method của array.
 - Infinity: là giá trị vô cực, thường được sử dụng làm flag đầu tiên để tìm giá trị lớn nhất hoặc giá trị nhỏ nhất trong mảng.
@@ -42,7 +44,7 @@
 - string: cho chuỗi
 - boolean: cho các giá trị logic: true/false
 - null: một loại có một giá trị duy nhất null, có ý nghĩa là trống rỗng, hoặc không tồn tại.
-- undefined: một loại có một giá trị duy nhất undefined, nghĩa là không được chỉ định.
+- undefined: một loại có một giá trị duy nhất undefined, nghĩa là không được chỉ định, chưa xác định được biến.
 - object và symbol - đối với các cấu trúc dữ liệu phức tạp, chúng ta chưa tìm hiểu chúng.
 - Các toán tử typeof trả về kiểu cho một giá trị với hai trường hợp ngoại lệ là null và function(){}
 ==Khai báo hàm==
