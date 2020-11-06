@@ -30,4 +30,8 @@
 			1. var color
 			2. car.call(this) 
 		7. }
-
+8. DOM
+	1. Mỗi thẻ điều là một đối tượng, DOM đơn giản là thay đổi nội dung website. Muốn thay đổi node con thì phải DOM từ node cha vào. (Theo cây DOM)
+	2. document.getElementById => đối tượng document có method getElementById.
+	3. DOM lấy thằng cha ra sau đó lấy thằng cha.children để lấy thằng con. 
+	4. sử dụng 

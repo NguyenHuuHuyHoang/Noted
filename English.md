@@ -122,3 +122,4 @@ She is a doctor
 - It just fells wrong : Dieu do co ve sai
 - this is of interest to many people : Dieu nay la su quan tam cua nhieu nguoi
 - she went on speaking: co ay tiep tuc noi
+- this issue has nothing to do with you: van de nay khong lien quan den ban

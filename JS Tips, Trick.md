@@ -182,4 +182,16 @@ Kiểu object Set đã được giới thiệu trong ES6 và kết hợp với '
 		+ tham số thứ 2 là vị trí bắt đầu sao chép.
 		+ tham số thứ 3 là vị trí kết thúc sao chép. vị trí này được tính là n-1.
 	- vd arr= [0,1,2,3,4,5] => arr.copyWithin(2,0,2) => [0,1,0,1,4,5].
-	
+==Intl.NumberFormat==
+- Sử dụng dùng để format các đơn vị tiền tệ dựa theo language của hệ điều hành
+==.blur()==
+- Dùng để click ra ngoài, bỏ focus hiện tại.
+==.focus()==
+- Dùng để focus vào HTML Object
+==.remove()==
+- Xóa object HTML khỏi cây DOM.
+==Tạo thanh navbar sticky khi scroll qua nó==
+1.	DOM tới thanh navbar
+2.	lấy giá trị top của thanh navbar thông qua .offsetTop
+3.	kiểm tra nếu window.pageYOffset >= giá trị top của navbar thì add class sticky cho nó, còn không thì remove thông qua classList.
+4.	Trigger function bằng onscoll gắn vào body.

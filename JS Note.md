@@ -6,6 +6,11 @@
 - phim.mota.length>100 ? phim.mota.substr(0,100) + '...': phim.mota - Nếu dài hơn 100 ký tự thì cắt chỉ chừa 100 ký tự và ...
 - Dùng object lưu trữ dữ liệu sẽ nhanh hơn rất nhiều so với dùng mảng lưu trữ object, nếu lưu trữ mảng sẽ dài -> code dài hơn lưu trữ object, object lấy ra xài luôn, còn mảng phải truy xuất.
 - Một số kỹ thuật đọc object sẽ nhanh hơn rất nhiều so với dùng mảng lưu trữ. VD for in duyệt object sẽ cho ra những cái key, ngoài ra còn có thể sử dụng hàm Object.entries () nó sẽ bóc tách đối tượng thành những mảng con, VD 1 object có 3 thuộc tính => 1 mảng lớn chứa 3 cái mảng con => sử dụng map để duyệt thành một array JSX. Chú ý nếu bóc tách thì sử dụng destructor array VD: Object.entries(burger).map(([propsBurger, value], index) => { console.log(propsBurger, value)})
+==Style HTML bằng JS==
+- Có 3 cách để style HTML thông qua DOM là:
+	+ Sử dụng style, phức tạp, tốn code khi code nhiều css, chỉ thêm code css, không xóa style cũ
+	+ Sử dụng cssText, xóa style cũ và thêm style mới, nhược điểm là không ghi đè được các thuộc tính inline style, khó theo dõi các thuộc tính css và maintain.
+	+ Thêm class vào thẻ html, thêm class mới và không xóa class cũ thông qua add. Ngoài ra có thể sử dụng classList.add (IE 9 hoặc các trình duyệt trước đó cần fallback)để thêm hàng loạt class-name vào object HTML, remove ngược lại. hoặc sử dụng toggle để thay đổi nhanh chóng class vd class ban đầu là originClass, HTML.classList.toggle("newClass") => khi kích hoạt thì sẽ thay origin bằng newClass (Sử dụng để làm menu dropdown). classList có thể truy xuất các thuộc tính như độ dài (.length), truy xuất trực tiếp class đầu tiên của classList ([0]), kiểm tra xem trong classList có chứa class không (.contain)
 ==Alert=
 - Dùng để hiển thị một thông báo và chờ người dùng nhấn nút OK. Cửa số nhỏ với thông điệp được gọi là modal window. Từ modal có nghĩa là khách truy cập không thể tương tác với phần còn lại của trang, nhấn các nút khác,... cho đến khi họ xử lý được cửa sổ.
 - VD: alert("Hello")
