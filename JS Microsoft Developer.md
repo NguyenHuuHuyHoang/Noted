@@ -106,4 +106,25 @@
 	- Trường hợp nếu chỉ thực hiện 1 dòng thì có thể viết thẳng mà không cần cặp móc nhọn: if (status === 200) console.log('OK!')
 	- Có thể sử dụng toán tử 3 ngôi để thay thế cho if - else.
 15. ==Switch statement and other Boolean syntax==
+	- Khi làm việc với các login nên làm theo kiểu các logic true hơn là logic false, nên sử dụng ! để xử lý các logic false, khi kết hợp với if.
+	- Other boolean notes: Chuyển đổi ngầm giá trị logic trong JS. Hiện nay nhiều ngôn ngữ lập trình sử dụng như python.
+		- Strings: Empty strings test as false
+		- Objects: Null or undefined objects test as false
+		- Numbers: 0 tests as false
+	- Trường hợp so sánh 2 chuỗi thì cần phải đưa cả 2 về lowercase hoặc uppercase thì kết quả mới đúng được, hoặc sử dụng phương thức localeCompare của string với các optional.
+	- Combining comparisons : And && (cả 2 vế điều phải true), Or || (một trong hai bên true)
+	- Shortcut operator && và ||: Sẽ dừng kiểm tra nếu kết quả đã biết VD biến đầu tiên false đối với && và biến đầu tiên true đối với ||.
+	- Sử dụng switch cho các so sánh bằng, có thể ghép các case với nhau thay cho || trong điều kiện. Giữa các case phải có break nếu không code sẽ chạy tiếp case sau mà không thoát khỏi switch. default là sẽ chạy nếu không có case nào khớp.
+16. ==Array==
+	- Một mảng là một danh sách, hoặc một bộ sưu tập các giá trị. Một trong những lợi ích của mảng là có thể lưu trữ các giá trị khác nhau của các kiểu dữ liệu khác nhau. Khi một giá trị được thêm vào mảng, nó sẽ được gán cho 1 số đặc biệt được gọi là index, nó là một số duy nhất, nó được dùng để tham chiếu và truy cập vào giá trị đó trên mảng bất cứ khi nào. Những mảng cũng kèm theo một thuộc tính đặc biệt để lấy độ dài của mảng bất cứ chỗ nào thông qua phương thức length của mảng, hoặc tạo một mảng có độ dài theo yêu cầu VD. let arr = Array(5) => mảng arr có độ dài là 5
+	- ==Data in Arrays==
+		- Chúng ta có thể thêm dữ liệu vào một mảng trong khi tạo nó hoặc sau khi đã tạo nó. Nếu thêm dữ liệu vào sau khi tạo mảng, cần chú ý tới index để tránh việc ghi đè dữ liệu.
+		- Muốn truy cập vào dữ liệu trong mảng, tham chiếu đến giá trị thông qua index của ô chứa nó.
+		- Length là tổng số không gian đã được khai báo cho giá trị trong mảng.
+		- Index là địa chỉ của các ô trong mảng, bắt đầu bằng số 0, Index luôn luôn nhỏ hơn length. vì index tính từ 0, length tính từ 1.
+	- ==Array method==
+		- Push và Pop: ảnh hưởng tới phần cuối của mảng. Push thêm vào một hoặc nhiều giá trị vào phần cuối của mảng và trả ra độ dài mới của mảng. Pop thì xóa giá trị ở cuối mảng và trả ra giá trị đó.
+		- Shift và Unshift: ảnh hưởng tới phần đầu của mảng. Shift là xóa giá trị ở đầu mảng và trả ra giá trị này. Unshift là thêm 1 hoặc nhiều giá trị vào đầu mảng và trả về độ dài mảng mới.
+		- Concat: Dùng để nối hai mảng lại với nhau.
+17. ==Loop==
 	- 
