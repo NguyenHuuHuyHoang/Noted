@@ -192,6 +192,6 @@ Kiểu object Set đã được giới thiệu trong ES6 và kết hợp với '
 - Xóa object HTML khỏi cây DOM.
 ==Tạo thanh navbar sticky khi scroll qua nó==
 1.	DOM tới thanh navbar
-2.	lấy giá trị top của thanh navbar thông qua .offsetTop
+2.	lấy giá trị top của thanh navbar thông qua .offsetTop.
 3.	kiểm tra nếu window.pageYOffset >= giá trị top của navbar thì add class sticky cho nó, còn không thì remove thông qua classList.
-4.	Trigger function bằng onscoll gắn vào body.
+4.	Trigger function bằng onscroll gắn vào body.

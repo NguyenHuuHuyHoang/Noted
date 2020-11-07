@@ -75,4 +75,35 @@
 		+ Tập hợp các hằng số và hàm. Thực hiện tính toán lượng giác, logaric,..
 		+ VD: Math.PI, Math.sqrt(num1) (căn 2)
 11. ==Number and strings==
+	- Converting between numbers and strings:
+		- parseInt() and parseFloat(): Chuyển đổi những chuỗi số thành số. Trường hợp chuỗi có những ký tự không phải là số có thể gây sai lệch kết quả (trừ hexadecimal number), nếu chứa chuỗi số thập phân thì phần thập phân sẽ bị bỏ qua. parseFloat() dành cho các số có dấu phẩy động, số có dấu thập phân.
+		- toString(): chuyển đổi số thành chuỗi các ký tự số.
+12. ==Handing errors with try/catch/finally==
+	- Trong quá trình phát triển phần mềm, điều quan trọng là cân nhắc hoặc có sự chuẩn bị cho những lúc một cái gì đó sai. Chúng ta có thể làm việc đó trong code của chúng ta. 
+	- Những hành vi ngoài ý muốn trong JS:
+		+ Exception (Ngoại lệ): là sự gián đoạn trong quá trình thực thi code. Điều này thông thường nguyên nhân bởi các lỗi, và lỗi khi có những thứ sai trong code của chúng ta.
+		+ Error (lỗi): Gián đoạn ngoài ý muốn trong quá trình thực thi code, thường hiển thị dưới dạng ngoại lệ, lỗi cú pháp là một lỗi xảy ra khi sử dụng sai cú pháp. VD nếu chúng ta viết sai cú pháp trong JS, đôi khi code không thực thi tất cả, chúng ta có thể nghĩ về một lỗi trong code, nó sẽ xảy ra khi nào và ở chỗ nào trong code => khi có lỗi xảy ra trong code, chúng ta sẽ biết nó nằm ở đâu và tại sao. Khi một ngoại lệ được quăng ra, nó mang theo một tin nhắn để bảo chúng ta cái gì đã sai trong code
+		+ Throwing an Exception (Ném ra một ngoại lệ): Gửi một thông báo rằng có gì đó đã sai trong quá trình thực thi mã. Điều này có thể thực hiện bới JS hoặc bằng tay bởi người lập trình với từ khóa lỗi, có thể quăng ra 1 chuỗi hoặc một giá trị boolean. VD: throw 'myException' hoặc throw true, ví dụ này cho thấy 2 ngoại lệ được quăng ra bằng tay, khi quăng ra một ngoại lệ, chúng ta có thể gửi kèm theo một số thông tin với nó, thông tin có thể là bất cứ thứ gì từ một kiểu dữ liệu nguyên thủy cho đến một đối tượng phức tạp, điều này tùy thuộc vào người lập trình. Trong ví dụ thì ngoại lệ được quăng ra với một chuỗi hoặc một logic. Những ngoại lệ không bắt được có thể rất nghiêm trọng, nguy hiểm, hoặc những lỗi dừng chương trình một cách khó đoán. Điều quan trọng là chúng ta phải bảo code biết phải làm gì tiếp theo khi những tình huống này nảy sinh, việc này được thực hiện thông qua try,catch và finally.
+	- Handing Errors in JavaScript:
+		+ Uncaught Exceptions: Những ngoại lệ được quăng ra khi code không lập trình để xử lý các lỗi trong quá trình thực hiện, người dùng có thể thấy các thông báo lỗi tối nghĩa không hữu ích hoặc không tồn tại. Bắt lỗi với try..catch...finally.
+		+ Try: Khối mã có thể trả ra một lỗi. Try sẽ giám sát những dòng code, do đó nó có thể quăng ra một ngoại lệ.
+		+ Catch: Khối mã sẽ chạy nếu một lỗi được quăng ra. Catch sẽ xử lý những gì xảy ra khi có một ngoại lệ được quăng ra.
+		+ Finally: Phần mã kèm theo tùy chọn sẽ chạy sau khối try hoặc sau khối catch. Finally sẽ điều khiển luồng chạy code một cách tùy ý, ngay cả khi không có một ngoại lệ nào được quăng ra.
+		+ VD try {criticalCode()} catch (ex){console.log("Got an error"); logError(ex) ;} => Got an error, throwing an exception.
+		+ Throwing in Try..Catch: try {throw "An exception that is thrown every time"} catch (ex){console.log("Got an error"); logError(ex);} => Got an error, An exception that is thrown every time
+		+ Try..Catch..Finally: try {criticalCode()} catch (ex){console.log("Got an error"); logError(ex);} finally {console.log("Code that always will run")}; => Got an error, throwing an exception, Code that always will run. VD: chúng ta đang muốn lấy dữ liệu nhưng không nhận được thì chúng ta có thể quăng ra một ngoại lệ để thông báo.
+		+ Cần chú ý khi sử dụng throw thì nó sẽ quăng ra một ngoại lệ và code sẽ dừng lại. Do đó code sẽ được hiển thị sau khi một ngoại lệ được quăng ra. Khi try bắt được 1 ngoại lệ thì code trong catch sẽ được chạy (catch nhận vào 1 tham số, đây là ngoại lệ mà try bắt được),
+13. ==Date==
+	- Time là một construct hoặc ít nhất, nó là một đối tượng trong JS.
+	- Làm việc với ngày và giờ trong JS thì xung quanh một đối tượng là Date. Đối tượng Date chứa cả ngày và giờ. Thời gian nội bộ được lưu trữ dưới dạng số ms kể từ ngày 1/1/1970
+	- Date có 3 loại constructor: Day(), Day(năm, tháng, ngày, giờ, phút, giây), Day(năm, tháng, ngày). Lưu ý, tháng được tính từ 0-11. giờ được tính 24H.
+	- Date có các phương thức: setFullYear, setMonth, setDate, setHours, setMinutes, setSeconds, getMonth, getTime(kết quả là ms từ ngày 1/1/1970), getDay(chủ nhật sẽ là 0).
+	- Khi in ra kết quả sẽ là giờ + thêm giờ UTC.
+14. ==Boolean logic and if statements==
+	- JS hỗ trợ những toán tử so sánh cơ bản: <, <=, >, >=
+	- JS tự động chuyển đổi kiểu dữ liệu trong nhiều trường hợp, điều này có thể dẫn tới bug trong code. == | != => kiểu tra value, === | !=== => kiểm tra kiểu dữ liệu và value. best practice là sử dụng === và !==
+	- if - else if - else => dùng để thực thi code theo điều kiện.
+	- Trường hợp nếu chỉ thực hiện 1 dòng thì có thể viết thẳng mà không cần cặp móc nhọn: if (status === 200) console.log('OK!')
+	- Có thể sử dụng toán tử 3 ngôi để thay thế cho if - else.
+15. ==Switch statement and other Boolean syntax==
 	- 

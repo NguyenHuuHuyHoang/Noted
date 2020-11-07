@@ -1,3 +1,18 @@
+==Màu sắc trong thiết kế==
+- 3 hệ màu:
+	- RGB: Là màu của ánh sáng. Có 3 màu chính đỏ, xanh, xanh dương. 2 cặp màu sẽ tạo ra màu phụ vd Đỏ - Xanh dương => tím.  Red + green => yellow,  blue + yellow => magenta. Trong màn hình, 1 pixel chứa 3 bóng đèn RGB. nếu cùng bật 3 đèn thì sẽ cho ra màu trắng, còn nếu tăng giảm độ sáng 3 đèn khác nhau sẽ tạo ra những màu khác nhau. 
+	- RYB: Thường họa sĩ sử dụng
+	- CMYK: Thường được sử dụng trong in ấn.
+- Color wheel (https://www.canva.com/colors/color-wheel/): bánh xe màu mà bất cứ người design nào cũng biết, có các kỹ thuật phối màu:
+	+ Complementary: kỹ thuật này sẽ cho ra cặp màu đối nhau, VD nếu chọn màu lạnh nó sẽ cho ra 1 màu nóng. (Màu vòng tròn lớn là màu mình chọn, màu vòng tròn nhỏ là màu đối). Dùng trong trường hợp muốn 1 cái gì đó mà mang tính kịch tính, mang tính nhấn mạnh thì sử dụng màu đối. VD sản phẩm màu nóng, nền màu lạnh thì khi nhìn vào người dùng sẽ nhìn sản phẩm đầu tiên sau đó nhìn tới thông tin. ![[Pasted image 20201107004654.png]]
+	+ Monochromatic: Màu đơn sắc, nghĩa là khi chọn ra được 1 màu, nó sẽ lấy màu này và làm nhạt bớt đi. Dùng trong trường hợp làm việc với một cái gì đó mà nó liên quan đến flow, muốn dẫn dắt người ta đi từ cái này qua cái kia, hoặc đang muốn nói về một cái dấu ấn thời gian, nó phai dần hoặc tối dần. VD 4 thẻ card đặt cạnh nhau, trải từ đậm -> nhạt theo từng card (Flow, người ta đọc sẽ đọc cái đậm trước -> đậm vừa -> nhạt), có thể sử dụgn làm text box hoặc timeline. ![[Pasted image 20201107004719.png]]
+	+ Analogous (nhiếp ảnh gọi là chromatic): Màu hàng xóm hay là màu kế bên. VD: có 1 ngôi nhà, có 2 hàng xóm kê bên thì gọi là hàng xóm. Khi chọn 1 màu thì nó sẽ cho ra 2 màu bên cạnh (trái, phải), 2 màu này vì nó rất gần nhau nên rất hài hòa. Sử dụng trong trường hợp muốn sử dụng nhiều màu nổi mà không muốn nó chổi nhau, không gây rối mắt cho người dùng. VD có 3 màu là vàng, cam và xanh lá. Đổ màu nền là gradient từ vàng đến xanh lá, nút màu cam khi hover vào. ![[Pasted image 20201107004629.png]]
+	+ Triadic: Cặp màu 3, nghĩa là khi chọn một màu thì nó tìm ra 2 màu tương tự nhau trên bánh xe màu, 3 màu này tạo thành 1 tam giác cân (khoảng cách của 3 màu trên bánh xe màu đều nhau). Sử dụng trong trường hợp muốn sử dụng 3 màu có độ tương phản cao.
+	+ Tetradic: Cặp màu 4, chia ra 4 màu điều nhau. 4 màu này tạo ra 1 hình vuông. Nếu muốn sắp xếp các cặp hình ảnh với độ tương phản cao thì cần chú ý cách sử dụng màu này.![[Pasted image 20201107004602.png]]
+- Cách chọn màu: Tùy từng ngành nghề mà chọn màu riêng (tâm lý học màu sắc):
+	- Kinh doanh điện tử, sức khỏe, bảo mật người dùng, dữ liệu người dùng, công nghệ => sử dụng màu xanh dương, về tâm lý học thì màu xanh dương mang lại cảm giác an toàn.
+	- Lá cây, môi trường, địa hình, thân thiện với sức khỏe => mang tính nhẹ nhàng, thoải mái.
+	- Nghe nhìn, dịch vụ ăn uống => tâm lý học là mang tính kích thích các giác quan, 
 ==Primary color==
 - một màu chính là màu sẽ được hiển thị thường xuyên trên màn hình và các component.
 ==Dark and light primary variants==
