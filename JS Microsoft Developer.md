@@ -127,4 +127,10 @@
 		- Shift và Unshift: ảnh hưởng tới phần đầu của mảng. Shift là xóa giá trị ở đầu mảng và trả ra giá trị này. Unshift là thêm 1 hoặc nhiều giá trị vào đầu mảng và trả về độ dài mảng mới.
 		- Concat: Dùng để nối hai mảng lại với nhau.
 17. ==Loop==
+	- Dùng để xử lý một số block code nhiều lần.
+	- Có 3 loại vòng lặp phổ biến trong JS là for , while và for...of
+	-  while: Gọi 1 function mà nó sẽ trả về giá trị false hoặc null khi hoàn tất
+	-  for: Lặp 1 số lần đã biết
+	-  for...of: thích hợp khi có một mảng hoặc một collection
+18. ==Function==
 	- 
