@@ -133,4 +133,15 @@
 	-  for: Lặp 1 số lần đã biết
 	-  for...of: thích hợp khi có một mảng hoặc một collection
 18. ==Function==
-	- 
+	- Hàm có lẽ làm một công cụ mạnh mẽ trong hộp công cụ của lập trình viên, nó cho phép lấy một đoạn code, đặt 1 cái tên cho nó để làm nó rõ ràng là nó dùng để làm gì, sau đó gọi nó thường xuyên.
+	- Hàm là một đoạn code cơ bản mà thực thi 1 công việc thường xuyên lặp đi lặp lại trong chương trình, bằng cách sử dụng một chuỗi các lệnh. Bằng cách trừu tượng hóa chúng thành một hàm có thể tái sử dụng.
+	- ==Tại sao function lại hữu ích==
+		- Dễ đọc và ngắn gọn: VD 1 công việc 10 dòng code và nó được sử dụng 5 lần trong chương trình => 5 dòng code, nếu trừu tượng hóa thành 1 function thì ta chỉ tốn 10 dòng code, nó làm giảm kích thước code, và làm cho chức năng rõ ràng.
+		- Khả năng bảo trì: Cần sửa 1 lỗi trong đoạn code thực thi hoặc thay đổi đoạn code thực thi, chỉ cần sửa 1 chỗ không cần phải sửa 5 chỗ khác nhau, ngoài ra còn giúp đỡ cho người khác đọc code dễ hiểu và bảo trì.
+	- ==Syntax==
+		- function nameFunction(Params) {}
+		- Khai báo, có cặp {} không có ;. Nó là một bản vẽ thiết kế các bước phải thực hiện để thực thi nhiệm vụ
+		- Gọi sử dụng: có () và có ;. vd printHello("World");
+	- ==Function Naming==
+		- Giống như đặt tên biến, sử dụng những ký tự alphabet, number, $ và _ . Các ký tự đặc biệt khác không được cho phép.
+		- Function có thuộc tính .name, nó sẽ trả về tên của function, nếu function là nặc danh thì sẽ trả về anonymous.
