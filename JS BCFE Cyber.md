@@ -40,5 +40,18 @@
 	- object.style.property = value. Không ghi đè thuộc tính style có sẵn của thẻ, phải thêm nhiều thuộc tính css => tốn nhiều dòng code nếu thêm nhiều css.
 	- object.style.cssText = string. Thêm được nhiều thuộc tính CSS trên cùng 1 dòng code, tuy nhiên khó theo dõi, maintain code.
 ==DOM thẻ HTML==
-- 
-- 
+- Tìm thẻ HTML bằng ID: document.getElementById("id");
+- Lấy các thuộc tính của thẻ: 
+	- .value: giá trị của thẻ input
+	- .classname: tên thuộc tính class của thẻ
+	- .style: thuộc tính style của thẻ
+	- .src: thuộc tính src của thẻ img
+- Thay đổi nội dung bên trong thẻ: .innerHTML
+==Thêm thuộc tính cho thẻ==
+-	gọi trực tiếp tên thuộc tính và gán giá trị: element.disabled = true;
+-	sử dụng setAttribute(): element.setAttribute("disabled", true);
+==Ngăn load lại web khi click button của form==
+- Sử dụng event.preventDefault();
+- đổi type của button từ submit sang button
+==Thêm thả con HTML vào thẻ cha==
+- element.innerHTML = '<span style="vertical-align: super;">Thẻ con</span>'; (Nếu trong thẻ có sử dụng dấu nháy kép thì sử dụng dấu nháy đơn ở ngoài cùng để bọc thẻ).
