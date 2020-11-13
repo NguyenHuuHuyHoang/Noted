@@ -1,4 +1,5 @@
 ==Note==
+	- Đối với dạng icon thì nên để 46px
 	- Những tag là duy nhất như body thì có thể sử dụng inline code để add bg-img. Tấm hình có nhiều kích thước, cần phải sử dụng các thuộc tính để điều chỉnh cho phù hợp. 
 	- Thường sử dụng là bg-size:  mặc định là auto, nếu truyền giá trị vào theo kiểu x y thì sẽ set width và height của bg-image
 	- Để ý thuộc tính nào cũng có 2 giá trị initial: giá trị mặc định ban đầu (điện thoại hoặc laptop thường sử dụng cái này), inherit: kế thừa.
