@@ -123,3 +123,13 @@ She is a doctor
 - this is of interest to many people : Dieu nay la su quan tam cua nhieu nguoi
 - she went on speaking: co ay tiep tuc noi
 - this issue has nothing to do with you: van de nay khong lien quan den ban
+- definitely
+approximately
+possibily
+among
+announce
+
+ignorance ngu học 
+all things being equal ... nếu không có gì đặc biệt xảy ra ... 
+an alibi bằng chứng ngoại phạm 
+ 
