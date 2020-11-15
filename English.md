@@ -123,6 +123,8 @@ She is a doctor
 - this is of interest to many people : Dieu nay la su quan tam cua nhieu nguoi
 - she went on speaking: co ay tiep tuc noi
 - this issue has nothing to do with you: van de nay khong lien quan den ban
+- How do we take it into account : chung ta can nhac no nhu the nao
+- Have you done anything this week ? : ban da lam gi tuan nay chua
 - definitely
 approximately
 possibily
