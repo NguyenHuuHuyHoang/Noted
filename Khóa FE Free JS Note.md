@@ -34,4 +34,5 @@
 	1. Mỗi thẻ điều là một đối tượng, DOM đơn giản là thay đổi nội dung website. Muốn thay đổi node con thì phải DOM từ node cha vào. (Theo cây DOM)
 	2. document.getElementById => đối tượng document có method getElementById.
 	3. DOM lấy thằng cha ra sau đó lấy thằng cha.children để lấy thằng con. children là thuộc tính, nó sẽ trả ra một collection các object con của thằng cha.
-9. 
+9. Khi sử dụng 1 framework hoặc library thì của người ta sao thì để y chang như vậy, không xài thì để đó.
+10. BS3: Khi nào sử dụng col thì cần phải bọc container hoặc container-fluid, laptop thì nên sử dụng md thôi, tránh trường hợp col nhiều quá, xs dành cho điện thoại, col quá nhiều sẽ ảnh hưởng 3 quy tắc responsive.
