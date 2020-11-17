@@ -125,6 +125,9 @@ She is a doctor
 - this issue has nothing to do with you: van de nay khong lien quan den ban
 - How do we take it into account : chung ta can nhac no nhu the nao
 - Have you done anything this week ? : ban da lam gi tuan nay chua
+- his look is on me: cai nhin cua anh ay la danh cho toi
+- you give too much importance to what he says: ban qua quan trong hoa nhung gi anh ta noi
+- with great power comes great responsibility quyen luc cang cao thi trach nhiem cang lon
 - definitely
 approximately
 possibily
