@@ -1,0 +1,4 @@
+- Có nhiều quy trình cho việc phân tích thiết kế như:
+	- Thác nước: khảo sát hiện trạng - xác định yêu cầu - phân tích - thiết kế - cài đặt - kiểm chứng - triển khai.
+	- Xoắn ốc : Tiếp xúc khách hàng - lập kế hoạch - phân tích rủi ro - phân tích, thiết kế - xây dựng và triển khai - đánh giá của khách hàng. ![[Pasted image 20201124160736.png]]
+- 
