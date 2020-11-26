@@ -116,7 +116,56 @@
 		+ Generalization: Được sử dụng để thể hiện quan hệ thừa kế giữa các Actor hoặc giữa các Use Case với nhau, (đường thẳng nét liền, đầu mũi tên là hình tam giác) VD: User sẽ generalization Guest (Kế thừa các Use case của guest ngoài các use case có sẵn của user).
 - ==Lưu ý==
 	1. Đặt tên.
-		- Trong mô hình hóa, chuyện đặt tên là rất quan trọng. Vì đã nói mô hình hóa
+		- Trong mô hình hóa, chuyện đặt tên là rất quan trọng. Vì đã nói mô hình hóa tức là chúng ta dùng hình ảnh để nói chuyện, thì khi đó hàm lượng chữ chiếm rất ít, do đó nên những gì ghi trên diagram phải rất súc tích, cô đọng và có giá trị ngay tức thì.
+		- Chỉ cần người đọc họ nhìn vô diagram mà thấy ngay 1 dòng chữ khó hiểu, thì không muống xem tiếp.
+		- 1 số quy tắc đặt tên:
+			- Actor thì phải đặt tên bằng danh từ, không dùng động từ, và cũng không mệnh đề quan hệ gì hết.
+			- Tên Use Case thì phải ghi rõ ràng, rành mạch, đẹp nhất là dưới dạng format Verb + Noun. VD: Đổi điểm thành viên, Chuyển tiền nội địa, Chuyển tiền quốc tế, Duyệt nhận xét bài viết.
+		- Chúng ta vẽ Use Case nhằm mục đích diễn tả yêu cầu cho stakeholders hiểu, do đó không được dùng những từ ngữ kỹ thuật, tránh đặt tên quá dài và không nên dùng kiểu bị động.
+	2. Vẽ Use Case mà thành phân rã chức năng.
+		- Đây là lỗi thường gặp, rất thường xuyên khi vẽ Use Case ![[Pasted image 20201126192627.png]], ở ví dụ này nếu nói Manage Gears, Manage Brakes hay Manage Air Conditioner thì quá tối nghĩa, chẳng ai hiểu mục đích sau cùng là làm gì.
+		- Dấu hiệu nhận biết rõ ràng nhất là khi Use Case Diagram có nhiều chữ manage, chữ manager rất rộng nghĩa. Yêu cầu quản lý A gồm 5 việc, thì không có nghĩa yêu cầu quản lý B cũng gồm 5 việc. Use Case là diagram thể hiện yêu cầu của End-Users, nhằm đạt được mục đích nào đó.
+		- Ngoài ra hình minh họa vẽ Use Case nhưng lại chưa mang lại được góc nhìn của End-Users, tức chưa cho thấy được End-Users muốn đạt được gì sau ngần ấy Use Case được liệt kê ra. Nguyên nhân có thể do người vẽ chưa nắm đủ thông tin về yêu cầu của End-Users, chưa hiểu rõ rốt cuộc người dùng muốn làm gì trên hệ thống hay hệ thống phải tương tác gì với hệ thống khác => Nhìn vô Use Case Diagram nhưng cảm thấy mông lung, do đó chỉ vẽ Use Case khi có đủ tất cả các thông tin:
+			+ End-Users muốn làm gì ? Nhằm mục đích gì ? ==> tương tác giữa end-users và hệ thống.
+			+ Hệ thống phải nhận / lấy data từ những nguồn nào ? => tương tác giữa hệ thống với những hệ thống bên ngoài khác.
+		- Ngoài ra, khi đã có đủ thông tin nhưng Use Case vẫn bị confuse. Lý do có thể do các Use Case vẽ bị lệch các cấp độ Requirement với nhau. VD: ![[Pasted image 20201126204253.png]]
+		- Tuy nhiên chữ Manage trong Use Case lại rất công dụng, đến mức không thể không dùng trong các document, nó sẽ giải quyết các vấn đề ở mục 4.
+	3. Rối nùi Use Case
+		- VD 1: ![[Pasted image 20201126204427.png]]
+		- Nguyên nhân là do ôm đồm quá nhiều, dẫn đến quá nhiều Use Case xuất hiện trong cùng một Diagram, đã vậy cũng không có Boundary of Systerm rõ ràng.
+		- Các điểm sai của Use Case ví dụ 1 ở các điểm sau:
+			+ Xác định sai Use Case (nên mới nhiều UC như vậy): những thứ như single, double, num of guest ... rõ ràng không phải là một Use Case, không phải là một sự tương tác.
+			+ Đặt tên Use Case sai: quá nhiều cụm danh từ cho Use Case.
+			+ Không có Boundary of System
+			+ Những Use Case có extend không ghi chú cụ thể điều kiện khi nào thì UC extend xảy ra.
+		- Note nhỏ: Use Case Diagram sạch đẹp chỉ nên có dưới 10 Use Case trong đó. Các Use Case còn lại thì dùng Boundary of System để phân chia theo phân hệ một cách hợp lý nhất có thể.
+		- VD 2: ![[Pasted image 20201126205140.png]]
+		- Các điểm sai của Use Case ví dụ 2 ở các điểm sau:
+			+ Một số Use Case đặt tên sai
+			+ Chưa tận dụng các Relationship để thể hiện, khiến cho các Use Case quá rời rạc nhau, và trông rất không hợp logic
+			+ Người vẽ không dùng Boundary of System để phân nhóm, giới hạn các Use Case.
+			+ Người vẽ quá chú trọng đến các chức năng cơ bản nhất là: CRUD - Create/Read/Update/Delete
+	4. Quá chi tiết các chức năng.
+		- Như ở ví dụ trên, mỗi thực thể là một lần CRUD, như vậy quá tốn effort, trong khi ở bất kỳ phân hệ nào, hay dữ liệu nào đều cần phải CRUD dữ liệu hết.
+		- Điều này tạo đi sự lặp đi lặp lại ở các Use Case Diagram, nhưng không thể hiện được gì nhiều cho người xem. Để giải quyết vấn đề này, có thể áp dụng một trong 2 cách sau:
+			1. Thêm một dòng note trước đoạn mô tả Use Case trong tài liệu: "Toàn bộ dữ liệu đều có chức năng Thêm/Đọc/Sửa/Xóa và chịu tác động bởi sự phân quyền từ phía Quản trị hệ thống" hoặc đại loại vậy. Để cho các stakeholders biết được rằng hệ thống có chức năng CRUD các dữ liệu này.
+				- Nên nhớ CRUD ở đây là đứng từ góc nhìn End-Users: hệ thống có cho phép End-Users CRUD dữ liệu hay không ?
+				- Ví dụ hệ thống CRM lấy dữ liệu khuyến mãi từ hệ thống ERP. Thì về bản chất CRM phải có khả năng Create dữ liệu khuyến mãi, thì mới lấy dữ liệu khuyến mãi từ ERP về được.
+				- Nhưng theo góc nhìn của End-Users, thì không một người dùng nào (kể cả System Admin), có thể tạo thủ công dữ liệu khuyến mãi trên CRM, mà End-Users chỉ Đọc/Sửa/Xóa dữ liệu được lấy về này thôi.
+				- Do đó ở đây cần phải mô tả rõ là có phải tất cả dữ liệu đều cho phép End-Users CRUD được hay không (không tính phân quyền).
+			2. Tạo hẳn một Use Case với tên là Manage "X", với X là một đối tượng bất kỳ. ![[Pasted image 20201126210912.png]]
+				- Nếu không đầy đủ tính năng CRUD thì có thể làm một cái note nhỏ bên trên, nói rõ Manage là có những tính năng gì, không có những tính năng gì.
+	5. Thẩm mỹ
+		- Nguyên nhân việc Use Case mất thẩm mỹ đến từ lý do:
+			+ Mắt thẩm mỹ kém
+			+ Ẩu, cẩu thả
+		- Một số điểm cần chú ý:
+			+ Kích cỡ các Use Case trong Diagram là phải như nhau, kể cả cha-con, lẫn các mỗi quan hệ Include. Tuy nhiên Use Case có Extend sẽ được vẽ to hơn một chút.
+			+ Nhớ phải đánh dấu Use Case ID trong hình vẽ.
+			+ Các mối quan hệ không được chồng chéo lẫn nhau. Có thể vẽ 1 Actor ở 2 vị trí khác nhau để tránh các đường nối bắt chéo lên nhau.
+			+ Khi vẽ Use Case Diagram, tập trung vào câu hỏi What để tìm ra Use Case, tránh câu hỏi How, vì khi đó rất dễ đi vào detail.
+			+ Nếu được hãy tô màu lên Use Case để nhìn Diagram được rõ ràng, sáng sủa và mạch lạc.
+			+ 
 
 - Các giai đoạn xây dựng một Use Case Diagram:
 	- Giai đoạn mô hình hóa:
