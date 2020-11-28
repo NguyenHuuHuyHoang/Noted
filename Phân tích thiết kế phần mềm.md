@@ -165,8 +165,6 @@
 			+ Các mối quan hệ không được chồng chéo lẫn nhau. Có thể vẽ 1 Actor ở 2 vị trí khác nhau để tránh các đường nối bắt chéo lên nhau.
 			+ Khi vẽ Use Case Diagram, tập trung vào câu hỏi What để tìm ra Use Case, tránh câu hỏi How, vì khi đó rất dễ đi vào detail.
 			+ Nếu được hãy tô màu lên Use Case để nhìn Diagram được rõ ràng, sáng sủa và mạch lạc.
-			+ 
-
 - Các giai đoạn xây dựng một Use Case Diagram:
 	- Giai đoạn mô hình hóa:
 		1. Thiết lập ngữ cảnh của hệ thống đích
@@ -183,8 +181,138 @@
 		2. Phê chuẩn (validation): đảm bảo rằng hệ thống sẽ được phát triển chính là thứ mà khách hàng hoặc người dùng cuối thực sự cần đến.
 		3. Một trong những kỹ thuật hữu dụng được dùng trong cả giai đoạn định nghĩa lẫn thử nghiệm Use Case gọi là walk-throughs with us-case storyboards (đi bộ dọc Use Case)
 	==Đặc tả Use-Case==
-	- Sau khi mô hình hóa yêu cầu hệ thống, chúng ta cần đặc tả lại hệ thống theo phong cách chuyên ngành. Với mỗi Use-Case sẽ có một đặc tả riêng. Template ![[Pasted image 20201126121055.png]]
-		+ Sự kiện kích hoạt là khi nào mà use case hoạt động.
-		+ Biến thể: VD trường hợp a, trường hợp b khi nào sẽ xảy ra (quay về nhánh chính)
-		+ Túm lại là đưa ra nhiều trường hợp chi tiết hơn về Use-Case, càng chi tiết càng khỏe.
-	- VD: Use-Case Đăng nhập ![[Pasted image 20201126121147.png]]
+	1. Đặc tả Use Case là gì ?
+		- Use Case Diagram khá là chung chung để các stakeholders có cái nhìn trực quan về những requirements được mô tả. Do đó, cần phải diễn đạt nó một cách chi tiết hơn nữa. Use Case Specification hay nói cách khác là đặc tả Use Case sẽ thực hiện việc này.
+		- Sau khi mô hình hóa yêu cầu hệ thống, chúng ta cần đặc tả lại hệ thống theo phong cách chuyên ngành. Với mỗi Use-Case sẽ có một đặc tả riêng. 
+	2. Các thành phần có trong Use Case Specification.
+		- Đặc tả Use Case tồn tại dưới dạng một cái bảng ghi chú. Nó mô tả tất tần tật các thông tin về Use Case, giúp người khác đọc vào là hiểu ngay Use Case Diagram nó vẽ vậy nghĩ là gì.
+		- Một Use Case Specification gồm có 3 thành phần chính: 
+			1. Summary:
+				+ Use Case Name: Tên Use Case
+				+ Use Case ID: Mã Use Case
+				+ Use Case Description: Tóm gọn nhanh sự tương tác được thể hiện trong Use Case là gì ? Chỉ cần mô tả ngắn gọn theo cú pháp của User Story: Là "Actor", muốn làm "Use Case Name", để đạt được mục đích - lý do gì đó. Đẹp là không quá 3 dòng cho phần tóm gọn Use Case này.
+				+ Actor: Những đối tượng thực hiện sự tương tác trong Use Case.
+				+ Priority: Mức độ ưu tiên của Use Case so với các Use Case còn lại trong dự án.
+				+ Trigger: Điều kiện kích hoạt Use Case xảy ra.
+				+ Pre-condition: Điều kiện cần để Use Case thực hiện thành công.
+			2. Flow:
+				+ Basic Flow: luồng tương tác CHÍNH giữa các Actor và System để Use Case thực hiện thành công.
+				+ Alternative Flow: luông tương tác THAY THẾ giữa các Actor và System để Use Case thực hiện thành công.
+				+ Exception Flow: luồng tương tác NGOẠI LỆ giữa các Actor và System mà Use Case thực hiện thất bại.
+			3. Additional Information:
+				+ Business Rule: các quy định về mặt Business mà hệ thống bắt buộc phải nghe theo, làm theo. Có thể hiểu là các quy định, hoặc các policy của khách hàng. Có sao ghi vậy, vì đây là giai đoạn tài liệu hóa yêu cầu thông qua Use Case nên cứ liệt kê hết có liên quan vào.
+				+ Non-Functional Requirement: Vì Use Case chỉ dùng để thể hiện Functional Requirement (hành vi - chức năng của giải pháp), nên chúng ta phải bổ sung các yêu cầu về Non-Functional (không liên quan trực tiếp tới hành vi - chức năng của giải pháp nhưng lại là điều kiện giúp hệ thống chạy tốt và đảm bảo được chất lượng như yêu cầu => CHẤT LƯỢNG sản phẩm) ở đây luôn.
+		- Template ![[Pasted image 20201126121055.png]]
+			+ Sự kiện kích hoạt là khi nào mà use case hoạt động.
+			+ Biến thể: VD trường hợp a, trường hợp b khi nào sẽ xảy ra (quay về nhánh chính)
+			+ Túm lại là đưa ra nhiều trường hợp chi tiết hơn về Use-Case, càng chi tiết càng khỏe.
+	3. Một số ví dụ đặc tả Use Case
+		- VD 1: Use-Case Đăng nhập ![[Pasted image 20201126121147.png]]
+		- VD 2: Use-Case Đăng nhập diễn đàn Medium. Use-Case: ![[Pasted image 20201126235507.png]]
+		- Đặc tả Use Case: 
+			+ ![[Pasted image 20201126235545.png]]
+			+ ![[Pasted image 20201126235556.png]]
+			+ ![[Pasted image 20201126235604.png]]
+		- Một đặc tả Use Case cho một Use Case, ví dụ 2 là một sơ đồ Use Case Diagram gồm 5 Use Case thì sẽ ứng với 5 đặc tả Use Case.
+	4. Một số nhầm lẫn hay gặp
+		- thường dễ nhầm lẫn ở hai chỗ:
+			1. Trigger và Pre-condition
+			2. Alternative Flow và Exception Flow
+		1. Trigger và pre-condition:
+			- Trigger nghĩa là một thứ gì đó kích hoạt cho Use Case chạy, khởi xướng cho Use Case chạy. Còn Pre-Condition nghĩa là một thứ gì đó, mà phải có nó thì Use Case mới chạy được.
+			- Use Case có thể có Pre-condition hoặc không, nhưng Trigger thì thường phải có. 
+			- VD: ![[Pasted image 20201127000122.png]], Ở đây Use Case chỉ xảy ra khi khách hàng thực hiện lệnh rút tiền. Cụ thể là nhấn nút rút tiền trên màn hình. Đó là trigger Use Case xảy ra. Còn Pre-condition là các điều kiện cần phải có để ông này rút tiền thành công. Vì ổng không thể nào rút tiền được nếu trong tài khoản không còn tiền hoặc ổng chưa đút thẻ vô máy.
+			- Hoặc Output (hoặc Post-condition) của Use Case này có thể là trigger của Use Case khác. Cũng ở ví dụ rút tiền tại máy ATM. post-condition có thể là khách hàng nhân được tiền mặt sau khi thực hiện rút tiền, số dư của khách hàng đã bị trừ đi khoản tiền đã rút. Nếu những post-condition này xảy ra thì Use Case: Rút tiền tại máy ATM đã được thực hiện xong và đồng thời nó cũng trigger cho Use Case tiếp theo là gửi tin nhắn SMS thông báo cho khách hàng.
+			- Có thể trigger sẽ là bước đầu tiền của Basic Flow hoặc không. Trigger trong Use Case có thể là bất cứ thứ gì, có thể là tác động từ phía người dùng, hoặc tác động từ chính hệ thống, miễn nó thể hiện rõ là điều kiện để Use Case chạy là được.
+		2. Alternative Flow và Exception Flow
+			- Flow là các luồng tương tác giữa các Actor và hệ thống với nhau. Basic Flow là luồng tương tác chính, là happy case đơn giản nhất có thể xảy ra. Tuy nhiên thực tế còn có những luồng khác thì chúng ta sẽ quy nó thành Alternative Flow hoặc Exception Flow cụ thể:
+				- Alternative Flow: những hướng khác dẫn tới kết quả cuối cùng
+				- Exception Flow: những trường hợp mà ngăn chặn không dẫn tới kết quả cuối cùng.
+			- ![[Pasted image 20201127001913.png]]
+			- VD trong Mô hình quả lý e-Learning có Use Case là Hủy kích hoạt tài khoản học viên. Use Case này sẽ có các Flow như sau:
+				+ Basic flow:
+					1. Admin mở tài khoản học viên cần hủy kích hoạt
+					2. Hệ thống hiển thị màn hình thông tin học viên
+					3. Admin chọn lệnh hủy kích hoạt
+					4. Hệ thống yêu cầu nhập mã OTP để xác nhận
+					5. Admin nhập đúng mã OTP để xác nhận lệnh hủy kích hoạt
+					6. Hệ thống kiểm tra mã OTP và tiến hành hủy kích hoạt
+					7. Hệ thống hiển thị thông báo đã hủy kích hoạt.
+				+ Alternative Flow:
+					1a. Admin chọn học viên cần hủy kích hoạt ở lưới học viên. Use Case tiếp tục bước 3.
+					4a. Admin chọn phương thức xác nhận khác: Xác nhận qua reCaptcha
+					4a1. Hệ thống hiển thị mã reCaptcha và yêu cầu nhập mã reCaptcha để xác nhận
+					5a. Admin nhập đúng mã reCaptcha để xác nhận lệnh hủy kích hoạt
+					6a. Hệ thống kiểm tra mã reCaptcha và tiến hành hủy kích hoạt. Use Case tiếp tục bước 7.
+				+ Exception flow:
+					5b. Admin nhập sai mã reCaptcha
+					5b1. Hệ thống báo lỗi và hủy bỏ lệnh hủy kích hoạt học viên. Use Case dừng lại.
+					5c. Admin nhập sai mã OTP
+					5c1. Hệ thống báo lỗi và hủy bỏ lệnh hủy kích hoạt học viên. Use Case dừng lại.
+		- Ghi chú: Đối với luồng chính (Basic Flow) đánh số thứ tự theo số nguyên. Còn đối với Alternative hay Exception Flow, nên thêm các ký tự chữ cái bên cạnh để làm dấu cho dễ phân biệt.
+	3. Mô tả Flow
+		- Để mô tả Flow một cách logic thì nên sử dụng hình vẽ. Thể hiện Basic Flow, Alternative Flow và Exception Flow kèm theo hình vẽ như sau:
+			+ Basic Flow:![[Pasted image 20201127003024.png]]
+			+ Alternative Flow:![[Pasted image 20201127003033.png]]
+			+ Exception Flow:![[Pasted image 20201127003040.png]]
+		- Đây là cách mô tả flow một cách rõ ràng và sáng sủa nhất có thể.
+		- Các step ở Basic Flow, Alternative Flow hay Exception Flow nó đều đối xứng với nhau, thể hiện rõ thằng nào là thay thế của thằng nào, và thằng nào là Exception của thằng nào.
+		- Riêng luồng tương tác nào Exception nên sử dụng nét đứt cho dễ phân biệt.
+		- Các step bắt đầu (có thể là Trigger hoặc không) và kết thúc nên tô màu đen, để các Stakeholder có thể nắm được độ phức tạp của Use Case một cách nhanh nhất.
+		- Còn đối với các Exception Flow - những flow làm fail Use Case, thì tô màu đỏ các step cuối cùng mà Use Case xảy ra không thành công.
+		- Tóm lại Đặc tả Use Case về bản chất mang ngôn ngữ tự nhiên của người dùng. Vấn đề chỉ nằm ở một số điểm hay nhầm lẫn và cách chúng ta tổ chức Use Case như thế nào cho logic và hiệu quả.
+5. Chốt lại: làm Use Case được lợi ích gì?
+	- Giúp thể hiện được Requirement theo góc nhìn của người dùng cuối (rất quan trọng vì nó giúp hiểu rõ bản chất vấn đề hơn).
+	- Những gì thể hiện trong Use Case rất tự nhiên, ai đọc vô cũng hiểu
+	- Use Case có thể chia nhỏ phạm vi theo nhiều phân hệ, hoặc cụm tính năng. Và nó cũng có thể nhìn dưới góc độ high-level. Do đó, dễ hơn cho mình rất nhiều để cover đủ các yêu cầu trong một dự án lớn.
+	- Use case là bước đệm tuyệt vời giữa việc mô tả tổng quát và mô tả chi tiết sự tương tác thông qua Sequence Diagram 
+	- Use Case được dùng để tạo các Epic và các User Stories trong dự án Scrum, làm mọi thứ được nhất quán và rất chặt chẽ
+	- Use Case còn được dùng để tạo các Test Case sau này.
+==Activity Diagram==
+-	Thiết kế luồng đi của hệ thống - luồng đi của dữ liệu thông qua Activity Diagram.
+-	Activity Diagram là một mô hình logic dùng để mô hình hóa các hoạt động trong một quy trình nghiệp vụ, tức là khi có đặc tả, đi tới được Use Case rồi, muốn mô hình hóa thành một quy trình nghiệp vụ để dev dễ code hơn. Hay có thể hiểu. Activity Diagram là sơ đồ luồng xử lý của hệ thống. Bao gồm luồng đi của dòng dữ liệu, dòng sự kiện
+-	Dùng để mô thả các hoạt động trong một chức năng của hệ thống. Hay có thể hiểu là mô tả luồng xử lý của một Use Case
+-	Mô tả hoạt động chính và mối quan hệ giữa các hoạt động này trong quy trình. Hay có thể hiểu là mô tả cả luồng xử lý chính của hệ thống bao gồm các luồng con, luồng xử lý của các Use Case gom lại mà thành.
+-	Tóm lại Activity Diagram vẽ ra các luồng đi của hệ thống: luồng logic, luồng sự kiện.
+-	==Các thành phần của Activity Diagram==
+	-	Start
+	-	Activity
+	-	Transition
+	-	Decision
+		-	Merge
+		-	Branch
+	-	Synchronization bar
+		-	Fork
+		-	Join
+	-	End
+	-	==Start==
+		-	Kí hiệu dấu chấm đen
+		-	Đặc trưng: khởi tạo một hoạt động. 
+		-	Một activity diagram có thể có nhiều trạng thái start. Hay có thể hiểu là điểm bắt đầu của một luồng xử lý. Một phần mềm có thể có nhiều luồng.
+	-	==Activity==
+		-	Kí hiệu hình vuông có tên của hoạt động trong.
+		-	Đặc trưng: Mô tả hành vi của đối tượng trong quy trình. Tên hoạt động phải ngắn gọn - đủ nghĩa.
+		-	Nên đặt tên là động từ, và mô tả đủ ý nghĩa tổng thể của hoạt động nhất có thể.
+		-	VD: Nhấn button Đăng nhập, Gửi dữ liệu xuống server, nhận mã xác nhận.
+	-	==Transition==
+		-	Kí hiệu mũi tên
+		-	Đặc trưng: Mô tả sự chuyển đổi trạng thái của các hoạt động
+		-	Từ hoạt động này đến hoạt động khác cần có transition biểu thị đường đi. Lưu ý Transition có mũi tên biểu thị chiều của luồng xử lý.
+	-	==Decision==
+		-	Kí hiệu hình thoi
+		-	Đặc trưng: Tập các điều kiện kích hoạt việc chuyển trạng thái
+		-	Branch:
+			+ Mô tả điền kiện rẽ nhánh
+			+ Chỉ một dòng điều khiển đi vào
+			+ Hai hoặc nhiều dòng điều khiển ra
+			+ Chỉ một dòng điều khiển ra dẫn đến kết quả
+			+ Mỗi dòng chứa một điều kiện (guard), guard phải liên quan đến điều kiện và loại trừ nhau.
+		-	Merge:
+			+ Có hai hoặc nhiều dòng điều khiển đi vào
+			+ Chỉ một dòng điều khiển đi ra.
+		-	Có thể hiểu đây là ký hiệu biểu thị nút điều kiện chuyển hướng. Tùy theo trường hợp đúng hay sai của kết quả biểu thức logic bên trong ký hiệu mà có hướng di chuyển theo tương ứng. Bên trong Decision là điều kiện.
+	-	==Synchronization bar==
+		-	Kí hiệu hình vuông có tên của hoạt động trong.
+		-	Đặc trưng: Mô tả hành vi của đối tượng trong quy trình. Tên hoạt động phải ngắn gọn - đủ nghĩa.
+		-	Nên đặt tên là động từ, và mô tả đủ ý nghĩa tổng thể của hoạt động nhất có thể.
+		-	VD: Nhấn button Đăng nhập, Gửi dữ liệu xuống server, nhận mã xác nhận.
