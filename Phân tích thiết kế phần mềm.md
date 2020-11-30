@@ -275,16 +275,6 @@
 -	Mô tả hoạt động chính và mối quan hệ giữa các hoạt động này trong quy trình. Hay có thể hiểu là mô tả cả luồng xử lý chính của hệ thống bao gồm các luồng con, luồng xử lý của các Use Case gom lại mà thành.
 -	Tóm lại Activity Diagram vẽ ra các luồng đi của hệ thống: luồng logic, luồng sự kiện.
 -	==Các thành phần của Activity Diagram==
-	-	Start
-	-	Activity
-	-	Transition
-	-	Decision
-		-	Merge
-		-	Branch
-	-	Synchronization bar
-		-	Fork
-		-	Join
-	-	End
 	-	==Start==
 		-	Kí hiệu dấu chấm đen
 		-	Đặc trưng: khởi tạo một hoạt động. 
@@ -312,7 +302,198 @@
 			+ Chỉ một dòng điều khiển đi ra.
 		-	Có thể hiểu đây là ký hiệu biểu thị nút điều kiện chuyển hướng. Tùy theo trường hợp đúng hay sai của kết quả biểu thức logic bên trong ký hiệu mà có hướng di chuyển theo tương ứng. Bên trong Decision là điều kiện.
 	-	==Synchronization bar==
-		-	Kí hiệu hình vuông có tên của hoạt động trong.
-		-	Đặc trưng: Mô tả hành vi của đối tượng trong quy trình. Tên hoạt động phải ngắn gọn - đủ nghĩa.
-		-	Nên đặt tên là động từ, và mô tả đủ ý nghĩa tổng thể của hoạt động nhất có thể.
-		-	VD: Nhấn button Đăng nhập, Gửi dữ liệu xuống server, nhận mã xác nhận.
+		-	Kí hiệu một đường gạch đậm.
+		-	Đặc trưng: Mô tả các dòng điều khiển thực hiện song song
+		-	Fork:
+			+ Mô tả dòng điều khiển được tách ra thực hiện song song
+			+ Chỉ một dòng điều khiển đi vào
+			+ Có hai hoặc nhiều dòng điều khiển ra
+			+ Dùng fork khi các hoạt động thực hiện không quan tâm thứ tự.
+		-	Join:
+			+ Kết hợp các dòng điều khiển song song (fork).
+			+ Có hai hoặc nhiều dòng điều khiển vào, không nhất thiết phải fork mà có thể các luồng nào đó gộp lại.
+			+ Chỉ một dòng điều khiển ra
+			+ Dòng điều khiển ra được tạo ra khi tất cả các dòng điều khiển đã vào.
+		-	fork và join không cần nhãn
+		-	Có thể hiểu đơn giản. Có các trường hợp cần hội tụ đủ nhiều luồng điều khiển một lúc để gộp thành một luồng xử lý thì cần dùng join.
+		-	Và đôi khi cần phải tách một luồng điều khiển ra hai hoặc nhiều luồng khác biệt nhau thì cần fork, và mỗi luồng fork hoàn toàn không lệ thuộc nhau.
+	-	==End==
+		-	Kí hiệu dấu chấm đen có vòng tròn bên ngoài
+		-	Đặc trưng: Mô tả trạng thái kết thu quy trình.
+		-	Một activity diagram có một hoặc nhiều trạng thái kết thúc.
+		-	Điểm kết thúc của luồng xử lý.
+-	==Cách ánh xạ từ sơ đồ Use Case qua Activity Diagram==
+	-	Tham khảo sơ đồ : ![[Pasted image 20201128214135.png]]
+	-	Cố gắng đưa ra tất cả các trường hợp có thể xảy ra. Phân tích kỹ code dễ hơn, khi code chỉ là hiện thực những cái đã có sẵn không cần phải phân tích thêm nữa.
+	-	Ví dụ tham khảo: ![[Pasted image 20201128214947.png]]
+==ER Diagram==
+-	Để có thể hình dung được cấu hình tổng thể cũng như chi tiết của dữ liệu mà hệ thống sẽ sử dụng.
+-	ER - Diagram hay Entity Relationship Diagram (ERD). Được giới thiệu bởi Chen, 1976. Phổ biến rộng rãi trong thiết kế quan niệm dữ liệu. ANSI công nhận mô hình chuẩn 1988.
+-	ERD giúp cho chúng ta có cái nhìn tổng quát về sơ đồ dữ liệu lưu trữ dùng trong toàn bộ hệ thống.
+-	Gồm : Mô hình nguyên thủy và mô hình mở rộng.
+-	==Các thành phần của một ER - Diagram==
+	-	==Thực thể==
+		-	Biểu diễn một lớp khái niệm trong thế giới thực, thường là danh từ hoặc cụm danh từ, nếu nhìn thấy được thì là trực quan. Những đối tượng sẽ được lưu trữ trong hệ thống cơ sở dữ liệu.
+		-	Trực quan:
+			+ Con người: nhân viên, sinh viên, khách hàng,...
+			+ Nơi chốn: phòng học, chi nhánh, văn phòng,..
+			+ Đối tượng: sách, máy móc, sản phẩm, xe,...
+			+ Sự kiện: đăng ký, bán hàng, đặt trước, yêu cầu,..
+		-	Không trực quan:
+			+ Tài khoản, thời gian, khóa học, khả năng, nguồn vốn,..
+		- Ký hiệu: Ô vuông và tên thực thể.
+	-	==Mối kết hợp==
+		-	Biểu diễn sự kết hợp hệ ngữ nghĩa giữa 2 hay nhiều thực thể. Thường là độgn từ hoặc cụm từ mô tả mối quan hệ. ![[Pasted image 20201128222052.png]]
+			+ Sự kiện nối kết
+			+ Mối quan hệ vật lý
+		-	Trực quan:
+			+ Con người: nhân viên, sinh viên, khách hàng,...
+			+ Nơi chốn: phòng học, chi nhánh, văn phòng,..
+			+ Đối tượng: sách, máy móc, sản phẩm, xe,...
+			+ Sự kiện: đăng ký, bán hàng, đặt trước, yêu cầu,..
+		-	Không trực quan:
+			+ Tài khoản, thời gian, khóa học, khả năng, nguồn vốn,..
+		- Ký hiệu: Hình thoi và tên mối kết hợp\
+	-	==Vai trò==
+		-	Biểu diễn ngữ nghĩa của một thực thể tham gia vào mối kết hợp, thường là động từ hoặc cụm động từ. ![[Pasted image 20201128222429.png]]. VD: nhân viên làm việc tại phòng ban, phòng ban gồm có nhân viên làm việc.
+		-	Trường hợp tên quan hệ đã đặt đúng, tốt thì không cần tới tên vai trò. Thông thường tên mối kết hợp sẽ lấy 1 trong các tên vai trò (bỏ qua không đặt tên vai trò).
+		-	Ký hiệu: tên vai trò trên đường nối giữa thực thể và mối kết hợp.
+	-	==Bảng số==
+		-	Ràng buộc về số lượng các thực thể tham gia vào mối kết hợp
+		-	Ký hiệu bởi một cặp (min, max)
+			-	Min: quy định giá trị tối thiểu các thực thể khi tham gia vào mối kết hợp. Giá trị đi từ 0, 1, 2,...đến k (k là hằng số)
+			-	Max: quy định giá trị tối đa các thực thể khi tham gia vào mối kết hợp. Giá trị đi từ 1, 2,... đến n.
+		-	Phân loại mối kết hợp dựa vào bảng số ![[Pasted image 20201128223429.png]]
+	-	==Thể hiện==
+		-	Thể hiện của thực thể
+			+ Sự xuất hiện cụ thể của các phần tử![[Pasted image 20201128223615.png]], Mỗi khách hàng a, b, c là một thể hiện của thực thể. KH A khác KH B.
+		-	Thể hiện của mối kết hợp
+			+ Tổ hợp không trùng lắp các thực thể tham gia vào mối kết hợp. ![[Pasted image 20201128223851.png]].
+		-	Tóm lại là chỉ có duy nhất một đối tượng thể hiện của thực thể.
+	-	==Thuộc tính==
+		-	Một thực thể có 1 hoặc nhiều thuộc tính. Thuộc tính phụ thuộc vào thực thể.
+		-	Biểu diễn đặc trưng của :
+			+ Thực thể
+			+ Mối kết hợp
+		-	Ký hiệu: một đường gạch và chấm tròn + tên thuộc tính.
+		-	Sử dụng bảng số cho những thuộc tính đa trị. ![[Pasted image 20201128224658.png]] - học vị, thường những thuộc tính có nhiều giá trị sẽ kết nối để tạo ra một thực thể mới.
+-	==ER - Diagram mở rộng==
+	+ Bổ sung vào mô hình thực thể kết hợp:
+		+ Thuộc tính kết hợp
+		+ Định danh
+		+ Tổng quát hóa
+		+ Tập con
+		+ Mối kết hợp mở rộng.
+	-	==Cấu trúc phân cấp==
+		-	Thiết lập cấu trúc cây phân cấp giữa các thực thể.
+		-	E là một tổng quát hóa của một nhóm thực thể E1, E2, E3 khi mỗi đối tượng của lớp E1, E2, E3 cũng là một đối tượng của lớp E.![[Pasted image 20201128225202.png]]
+		-	Ví dụ: ![[Pasted image 20201128225236.png]] ![[Pasted image 20201128225306.png]]
+		-	Tóm lại là gom nhóm các đối tượng có chung các thuộc tính.
+	-	==Tính kế thừa==
+		-	Thực thể chuyên biệt kế thừa thuộc tính và mối kết hợp của thực thể tổng quát.![[Pasted image 20201128225439.png]]
+		-	![[Pasted image 20201128225630.png]] 
+		-	Nguyên tắc: 
+			+ Xây dựng thực thể chuyên biệt khi xác định được đặc trưng riêng của nó
+			+ Xây dựng thực thể tổng quá khi xác định được các đặc trưng chung của thực thể. 
+			+ Mục đích tái sử dụng.
+	-	==Tính bao phủ==
+		-	Sự tương quan giữa thực thể tổng quát và thực thể chuyên biệt
+		-	Gồm ![[Pasted image 20201128230625.png]]:
+			+ Toàn phần (t-total: Tất cả các phần tử của các thực thể chuyên biệt phủ toàn bộ tập phần tử của thực thể tổng quát.
+			+ Bán phần (p-partial): Các phần tử của các thực thể chuyên biệt không phủ toàn bộ tập phần tử của thực thể tổng quát.
+			+ Riêng biệt (e-exclusive): Phần tử của thực thể chuyên biệt này không là phần tử của thực thể chuyên biệt khác.
+			+ Chồng chéo (o-overlaping): Phần tử của thực thể chuyên biệt này có thể là phần tử của thực thể chuyên biệt khác.
+		-	Ví dụ ![[Pasted image 20201128230814.png]]
+	-	==Tập con==
+		-	Là một trường hợp đặc biệt của tổng quát hóa, chỉ có một thực thể chuyên biệt. ![[Pasted image 20201128231026.png]]
+		-	Sự tương quan luôn là bán phần và riêng biệt.
+	-	==Thuộc tính kết hợp==
+		-	Là một nhóm các thuộc tính có liên hệ ![[Pasted image 20201128231228.png]]
+		-	Nếu tách các thuộc tính ra thì sau này filter dễ dàng hơn.
+	-	==Định danh==
+		-	Tập hợp các thuộc tính có tính chất đặc trưng duy nhất nhằm phân biệt tất cả các thể hiện của thực thể. Tóm lại là key dùng để phân biệt thực thể này với thực thể khác. VD mã số nhân viên.
+		-	Kí hiệu: ![[Pasted image 20201128231618.png]]
+		-	VD: ![[Pasted image 20201128231708.png]]
+	-	==Mối kết hợp mở rộng==
+		-	Là mối kết hợp được định nghĩa trên ít nhất 1 mối kết hợp khác, không có liên quan đến thực thể. ![[Pasted image 20201128232034.png]]
+		-	Thường những đối tượng này sẽ biến đổi thành thực thể riêng biệt.
+-	==Ví dụ minh họa==
+	-	Yêu cầu: ![[Pasted image 20201128232133.png]]
+	-	Mô hình: ![[Pasted image 20201128232155.png]]
+-	==Chiến lượng phân tích ER Diagram==
+	-	==Phương pháp phân tích dữ liệu==
+		-	==Luật căn bản==
+			-	Dùng để tinh chế lược đồ quan niệm. Tập hữu hạn các chuyển đổi cần áp dụng cho lược đồ ban đầu để tạo ra lược đồ cuối cùng.
+			-	![[Pasted image 20201129201618.png]]
+			-	Mục tiêu tạo ra lược đồ để tạo ra được cơ sở dữ liệu để lưu trên máy tính cho nên cần phải phân tích nó nhỏ ra. Giá trị lưu trữ càng nhỏ thì sau này làm sẽ dễ hơn. VD Nơi chốn và Nơi chốn bao gồm các thuộc tính số nhà, đường,... thì Nơi chốn càng rõ thì càng dễ dàng tìm kiếm => tăng tốc độ => trải nghiệm người dùng tốt hơn.
+			-	Lược đồ ở mức quan niệm được tạo ra sau 1 quá trình xử lý lặp đi lặp lại:
+				+ Bắt đầu bằng phiên bản chưa hoàn chỉnh
+				+ Thực hiện các chuyển đổi
+				+ Tạo ra phiên bản cuối cùng.
+			-	Tính chất của chuyển đổi:
+				+ Điều phải có một lược đồ khởi điểm, 1 lược đồ kết quả
+				+ Ánh xạ tên giữa 2 lược đồ
+				+ Các khái niệm trong lược đồ kết quả phải kế thừa tất cả các kết nối đã xác định trong lược đồ khởi điểm
+			-	Tóm lại: từ lược đồ đơn giản nhất ta có thể nghĩa ra. Phân tích, đưa thêm thông tin vào. Sau đó lược đồ bị biến đổi. Chúng ta lại tiếp tục chỉnh lược đồ để hoàn chỉnh hơn. Đến khi có được lược đồ cuối cùng thỏa mãn các tính chất của phân tích thiết kế. Trong đó có tính đúng đắn, đủ và mở rộng.
+			-	Được chia thành: Luật căn bản từ trên xuống và Luật căn bản từ dưới lên.
+		-	==Luật căn bản trên xuống==
+			-	Từ những thực thể phân tích chi tiết hơn.
+			-	![[Pasted image 20201129202526.png]] Luật căn bản - Lược đồ khởi điểm - Lược đồ kết quả
+			-	![[Pasted image 20201129202814.png]]
+			-	![[Pasted image 20201129202931.png]]
+			-	![[Pasted image 20201129202950.png]]
+			-	![[Pasted image 20201129203036.png]]
+		-	==Luật căn bản dưới lên==
+			-	Từ những cái nhỏ phân tích ra cái lớn.
+			-	![[Pasted image 20201129203117.png]]
+			-	![[Pasted image 20201129203213.png]]
+		-	==Chiến lược phân tích lược đồ==
+			-	![[Pasted image 20201129203417.png]]
+			-	Từ 1 cái ban đầu sau khi phân tích nhiều lần thì sẽ càng ngày to ra, càng ngày càng chi tiết hơn.
+			-	Gồm có các chiến lược: Trên xuống - Dưới lên - Phối hợp - Trong ra ngoài.
+			-	==Trên xuống==
+				-	VD Ứng dụng quản lý nhân chủng học
+				-	Tinh chế lần 1 ![[Pasted image 20201129203719.png]]
+				-	Tinh chế lần 2 ![[Pasted image 20201129203744.png]]
+				-	Tinh chế lần cuối ![[Pasted image 20201129203840.png]]
+				-	Chúng ta có thể nhận thấy từ thông tin nhân chủng học. Phân tích ra được có con người và vị trí. Từ đó lại tiếp tục phân tích nhỏ hơn đến khi có sơ đồ hoàn chỉnh. Từ thực thể phân tích ra các thực thể khác rồi cuối cùng xuất hiện thuộc tính.
+			-	==Dưới lên==
+				-	VD Ứng dụng quản lý nhân chủng học
+				-	Thu thập tất cả các đặc trưng của các thành phần trong hệ thống![[Pasted image 20201129204812.png]]
+				-	Từ các đặc trưng (thuộc tính) phân tích ra các thực thể. ![[Pasted image 20201129204935.png]]
+				-	Từ các thực thể nối lại nhau xem có liên hệ với nhau ra sao. Tổng quát hóa lên. ![[Pasted image 20201129205036.png]]
+				-	Tiếp tục xác định mối kết hợp, bảng số và định danh ![[Pasted image 20201129205122.png]]
+				-	Từ các thuộc tính sẽ gom ra thành thực thể rồi tinh chế cho đến hoàn chỉnh. Từ trên xuống và từ dưới có 2 hướng đi khác nhau nhưng đều cùng một kết quả nếu làm đúng.
+				-	Sơ đồ không có đúng hay sai, chỉ có phù hợp với yêu cầu hay không, đáp ứng được yêu cầu là được, còn thêm vô hoặc bỏ ra là tùy thuộc vào ý định của người vẽ. Thêm vào nhiều dữ liệu phình ra, những tìm kiếm sẽ nhanh hơn. Hoặc là ở một phần nào đó xác định không cần tìm kiếm nhanh thì bỏ bớt ra.
+			-	==Phối hợp==
+				-	![[Pasted image 20201129205511.png]]
+				-	![[Pasted image 20201129205535.png]]
+				-	Kết quả lược đồ cuối cùng ![[Pasted image 20201129205711.png]]
+				-	Từ lược đồ ban đầu, phân tích ra từng cụm sau đó tổng hợp lại. Giảm số lần tinh chế hơn. 
+			-	==Trong ra ngoài==
+				-	![[Pasted image 20201129205730.png]]
+				-	Giống như theo vết dầu loang, thường dùng khi đã quen với việc vẽ ERD. Nếu không phương pháp phối hợp là đủ xài rồi.
+				-	![[Pasted image 20201129205945.png]]
+				-	Ví dụ: quản lý yêu cầu sách của nhà khoa học ![[Pasted image 20201129210108.png]]
+				-	Kết quả Ví dụ: ![[Pasted image 20201129210156.png]]
+				-	Chúng ta có thể nhận thấy. Từ một thực thể chúng ta xác định thuộc tính. Sau đó xác định các thực thể và thuộc tính liên quan. Loang ra đến khi hoàn chỉnh.
+		-	==So sánh các chiến lược==
+			-	Trên xuống - Dưới lên![[Pasted image 20201129210409.png]]
+			-	Trong ra ngoài ![[Pasted image 20201129210534.png]]
+			-	Phối hợp ![[Pasted image 20201129210554.png]]
+	-	==Quy tắc mô hình hóa quan niệm dữ liệu==
+		-	Mọi thuộc tính chỉ mô tả đặc trưng cho đúng thực thể mang thuộc tính ấy, tức là những thuộc tính chỉ nằm trên đúng thực thể của nó thôi ![[Pasted image 20201129210705.png]]
+		-	Nếu có đặc trưng phụ thuộc vào nhiều thực thể thì đó là đặc trưng của mối kết hợp định nghĩa trên các thực thể đó. ![[Pasted image 20201129211100.png]]
+		-	Các thực thể cùng liên quan đến 1 mối kết hợp thì một tổ hợp thể hiện của các thực thể đó phải là thể hiện duy nhất của mối kết hợp. ![[Pasted image 20201129211206.png]]
+		-	Các nhánh nối với mối kết hợp phải là nhánh bắt buộc, nếu không phải ta nên tách thành nhiều mối kết hợp ![[Pasted image 20201129211313.png]]
+		-	Nếu có 1 đặc trưng phụ thuộc vào 1 thuộc tính của thực thể thì tồn tại thực thể ẩn -> cần được định nghĩa bổ sung. ![[Pasted image 20201129211528.png]]
+	-	==Tiêu chuẩn chọn lựa khái niệm==
+		-	Trong 1 số trường hợp, các khái niệm cần biểu diễn chỉ có 1 thể hiện, nếu không có nhu cầu mở rộng về sau thì không nên xem là thực thể. ![[Pasted image 20201129211712.png]]
+		-	Đối tượng quan tâm không có cấu trúc đặc trưng (chỉ có 1 thuộc tính) thì cẩn thận khi quyết định đó là 1 thực thể. ![[Pasted image 20201129211800.png]]
+		-	Thực thể: xác định 1 số đặc trưng cơ bản như thuộc tính, mối kết hợp, tổng quát hóa.
+		-	Thuộc tính: cấu trúc nguyên tố, đơn giản, không có các đặc trưng khác. ![[Pasted image 20201129211915.png]]
+		-	Tổng quát hóa: một số đặc trưng sẽ được liên kết ở cấp thấp hơn.
+		-	Thuộc tính: trường hợp ngược lại. ![[Pasted image 20201129212037.png]]
+		-	Thuộc tính kết hợp: một số đặc trưng sẽ được liên kết ở cấp thấp hơn
+		-	Thuộc tính đơn: trường hợp ngược lại ![[Pasted image 20201129212145.png]]
+		-	Thực thể: khái niệm quan tâm có 1 số đặc trưng (mối kết hợp, định danh,...) ![[Pasted image 20201129212236.png]] => ![[Pasted image 20201129212308.png]]

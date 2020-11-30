@@ -40,3 +40,6 @@
 - Học lập trình:
 	+ code.org
 	+ https://openclassrooms.com/en/
+- Luyện CSS:
+	+ https://flexboxfroggy.com/ - flexbox
+	+ https://flukeout.github.io - selector
