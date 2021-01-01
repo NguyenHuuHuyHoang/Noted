@@ -1,0 +1,12 @@
+- làm đặc tả hệ thống, vd hệ thống cần phải làm nhiệm vụ gì, phân quyền cho ai vào hệ thống làm việc gì, từ đó sẽ phân tích ra lược đồ use case, từ UC sau đó phân rã ra dữ liệu.
+- Cho ra đề cương PHP core, những nội dung trong đó sẽ có liên hệ ví dụ cụ thể nào (lấy màn hình thế giới di động) những nội dung đầu chưa đụng tới cookie hay fetch thì chỉ sử dụng dumb data để render ra dữ liệu - áp dụng các kiến thức, suy nghĩ trong 3 tiếng sẽ nói về những vấn đề nào. Đề cương có thể hướng theo NodeJS, đối tượng của đề cương là đã có kiến thức cơ bản về OOP rồi.
+- Từ PHP core hướng dẫn từ từ tới mô hình MVC, thì dẫn qua laravel. Làm cho học viên hiểu từ các xây dựng từ PHP Core sang laravel.
+- Slide không nên lý thuyết quá, không có example sẽ buồn ngủ, khoảng 8 slide thì cần phải có 1 ví dụ để dễ hình dung.
+- DTU, mô hình các lớp, phân tích các luồng dữ liệu giữa MVC, 
+- IOD
+- Phân tích cấu trúc dữ liệu 1-1, 1-n, n-n
+- .Net liscen cao.
+- Java, .Net, PHP trung và lớn. Kiến trúc tốt, mantain tốt. Node thì xử lý rất là nhanh, thường realtime, gọi service giữa các tầng với nhau thì sử dụng còn kiến trúc bên dưới thì ít sử dụng.
+- làm flash card để học tiếng anh, công nghệ thông tin. 
+- Quay video khoảng từ 10 phút, ngắn quá hoặc dài quá thì không phù hợp. 
+- 
