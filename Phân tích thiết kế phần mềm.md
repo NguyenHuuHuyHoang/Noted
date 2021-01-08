@@ -343,7 +343,7 @@
 			+ Tài khoản, thời gian, khóa học, khả năng, nguồn vốn,..
 		- Ký hiệu: Ô vuông và tên thực thể.
 	-	==Mối kết hợp==
-		-	Biểu diễn sự kết hợp hệ ngữ nghĩa giữa 2 hay nhiều thực thể. Thường là độgn từ hoặc cụm từ mô tả mối quan hệ. ![[Pasted image 20201128222052.png]]
+		-	Biểu diễn sự kết hợp hệ ngữ nghĩa giữa 2 hay nhiều thực thể. Thường là động từ hoặc cụm từ mô tả mối quan hệ. ![[Pasted image 20201128222052.png]]
 			+ Sự kiện nối kết
 			+ Mối quan hệ vật lý
 		-	Trực quan:
@@ -353,7 +353,7 @@
 			+ Sự kiện: đăng ký, bán hàng, đặt trước, yêu cầu,..
 		-	Không trực quan:
 			+ Tài khoản, thời gian, khóa học, khả năng, nguồn vốn,..
-		- Ký hiệu: Hình thoi và tên mối kết hợp\
+		- Ký hiệu: Hình thoi và tên mối kết hợp
 	-	==Vai trò==
 		-	Biểu diễn ngữ nghĩa của một thực thể tham gia vào mối kết hợp, thường là động từ hoặc cụm động từ. ![[Pasted image 20201128222429.png]]. VD: nhân viên làm việc tại phòng ban, phòng ban gồm có nhân viên làm việc.
 		-	Trường hợp tên quan hệ đã đặt đúng, tốt thì không cần tới tên vai trò. Thông thường tên mối kết hợp sẽ lấy 1 trong các tên vai trò (bỏ qua không đặt tên vai trò).

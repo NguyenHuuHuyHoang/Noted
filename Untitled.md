@@ -1,0 +1,102 @@
+==Freecodecamp.org==
+- Writting HTML
+- Variables
+- Data Types
+- Working With Strings
+- Working With Numbers
+- Getting User Input
+- URL Parameters
+- POST vs GET
+- Arrays
+- Using Checkboxes
+- Associative Arrays
+- Functions
+- Return Statements
+- If Statements
+- If Statements (con't)
+- Switch Statements
+- While Loops
+- For Loops
+- Comments
+- Including HTML
+- Include PHP
+- Classes & Objects
+- Constructors
+- Object Functions - PHP
+- Getters & Setters
+- Inheritance
+==The Net Ninja==
+- Variables & Constants
+- Strings
+- Numbers
+- Arrays
+- Multidimensional Arrays
+- Loops
+- Booleans & Comparisons
+- Conditional Statements
+- Continue & Break
+- Functions
+- Variable Scope
+- Include & Require
+- Project Header & Footer
+- Form in PHP
+- XSS Attacks
+- Form Validation
+- Filters & More Validation
+- Showing Errors
+- Checking for Errors & Redirecting
+- MySQL Introduction
+- Setting Up a MySQL DB
+- Connecting to a DB
+- Getting Data From a DB
+- Rendering Data to the Browser
+- The Explode Functin
+- Control Flow Alt Syntax
+- Saving Data to the DB
+- Getting a Single Record
+- Deleting a Record
+- Finishing Touches
+- Ternary Operators
+- Superglobals
+- Sessions
+- Null Coalescing
+- Cookies
+- File System
+- Classes & Objects
+
+==Programing Knowledge==
+- Introduction to PHP
+- XAMPP
+- PHP Variables and Echo Function
+- Concatenation Operator and Escape sequences
+- Arithmetric operation
+- If, else and nested if/else Statements
+- Comparison operators and Logical operators
+- Arrays in PHP
+- Associative Arrays in PHP
+- Multidimensional Arrays in PHP
+- While and Do While Loop in PHP
+- For Loop in PHP
+- PHP Foreach Loop
+- Switch Statement
+- Using $_Get Variables in PHP
+- Using $_POST Variables in PHP
+- Basic Function
+- Function with Arguments
+- Functions with a Return Value
+- Date and time Function
+- Global Variables and Functions
+- include() and require() functions
+- Include_once() and require_once functions
+- PHP Sessions and Setting PHP Sessions
+- How to unset or destroy PHP Sessions
+- PHP Cookies
+- Creating First MySQL Database With PHPMyAdmin
+- How to connect to MySQL database using PHP
+- Getting Data from MySQL Database using PHP
+- PHP Md5 Encryption
+
+
+- Tập trung làm đề cương, từ đề cương làm slide và thu âm
+- Chỉ thu âm một số phần còn lại thì đưa vào bt về nhà
+- 
