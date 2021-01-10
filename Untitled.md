@@ -99,4 +99,5 @@
 
 - Tập trung làm đề cương, từ đề cương làm slide và thu âm
 - Chỉ thu âm một số phần còn lại thì đưa vào bt về nhà
-- 
+
+- rã ra màn hình có những chức năng gì, duming data. màn hình có nhữngng chức năng gì, những dữ liệu gì
