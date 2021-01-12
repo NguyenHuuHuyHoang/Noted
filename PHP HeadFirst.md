@@ -18,4 +18,3 @@
 - Space hoặc ký tự đặc biệt không phải là _ hoặc $ không được tồn tại trong tên biến
 - sử dụng toàn bộ chữ thường cho tên biến
 - Sử dụng _ thay cho space giữa các chữ trong 1 chuỗi ký tự
-- 

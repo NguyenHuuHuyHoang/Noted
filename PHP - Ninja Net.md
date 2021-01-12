@@ -1,0 +1,29 @@
+- ==Constant==
+	- Khai báo bằng từ khóa define('Tên biến', giá trị). Tên biến cần được đặt trong cặp ' hoặc ".
+	- Gọi biến bằng tên, không có $ ở đầu.
+	- Tên biến là hằng số không gán lại giá trị được (Dù khởi tạo là NULL thì cũng không gán lại giá trị khác được)
+	- Tên biến hằng số đã khai báo rồi thì không khai báo lại được nữa.
+- ==Strings==
+	- Để nối chuỗi ta sử dụng . 
+	- để sử dụng "" trong một đoạn string ta sử dụng dấu \". VD: echo "My name is \"Hoang\" " => My name is "Hoang" hoặc sử dụng nháy đơn ở ngoài bên trong xài nháy kép.
+	- Strings là một mảng ký tự, ta có thể truy xuất từng ký tự bằng thêm index cho nó.
+	- strtoupper(chuỗi) -> biến thành chuỗi in hoa.
+	- str_replace(ký tự thay thế, ký tự muốn thay thế, chuỗi) - trả ra chuỗi mới, không làm thay thế chuỗi ban đầu.
+	- strlen(chuỗi) trả về số lượng ký tự trong chuỗi.
+- ==Numbers==
+	- số ** 2 = số ^2
+	- Thứ tự thực hiện tính toán theo  (B O D M A S) => trong ngoặc -> Order (mũ hoặc lấy căn) -> chia và nhân (từ trái sang phải) -> cộng và trừ (trừ trái sang phải.)
+	- Một số hàm number
+		- floor(number) - làm tròn thành số nguyên (xuống)
+		- ceil(number) - làm tròn thành số nguyên (lên)
+		- pi() - trả ra giá trị số pi.
+- ==Arrays==
+	- indexed arrays
+		- Khai báo: tên biến = [1,2,3] hoặc tên biến = array(1,2,3)
+		- Nếu tên arrary [] = giá trị, thì array sẽ add giá trị đó vào cuối cùng của mảng hàm tương đương là array_push(mảng, giá trị).
+		- array_merge(array1, array2)
+		- print_r(array)
+		- count(array)
+	- associative arrays (key & value parts)
+		- ten_array = array('key'=>value) hoac ['key'=> value]
+		
