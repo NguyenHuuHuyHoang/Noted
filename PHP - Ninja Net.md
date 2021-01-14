@@ -1,3 +1,6 @@
+- ==Note==
+	- Có thể truy xuất giá trị biến trong echo "$tên biến";
+	- Nếu truy xuất giá trị của phần tử array keythì sử dụng {$mảng['key']}
 - ==Constant==
 	- Khai báo bằng từ khóa define('Tên biến', giá trị). Tên biến cần được đặt trong cặp ' hoặc ".
 	- Gọi biến bằng tên, không có $ ở đầu.
@@ -26,4 +29,58 @@
 		- count(array)
 	- associative arrays (key & value parts)
 		- ten_array = array('key'=>value) hoac ['key'=> value]
-		
+	-==Multidimensional Arrays==
+		- Mảng nhiều chiều là một mảng có những phần tử là array.
+		- Mảng nhiều chiều cũng có thể chứa mảng keys.
+- ==Boolean==
+	- Khi echo true thì sẽ xuất hiện "1"
+	- Khi echo false thì sẽ không có gì xuất hiện
+- ==Functions==
+	- Là những khối code có thể được thực thi để làm một cái gì đó.
+	- đặt tên function theo camelCase, viết liền
+	- khai báo bằng từ khóa function tên(tham số) {}
+	- Tham số có thể thiết lập giá trị mặc định cho tham số nếu không có tham số truyền vào bằng (tham so = giá trị mặc định nếu không truyền tham số vào)
+- ==Tầm vực biến== (variable scope)
+	- ==local vars==
+		- Biến được khai báo trong function thì nó chỉ tồn tại trong function, tham số truyền vào function thì hiển nhiên
+		- Biến được khai báo ngoài function thì trong function không gọi được.
+	- ==global vars==
+		- Trường hợp biến được khai báo ở ngoài, sau đó vào function khai báo lại tên biến đó với từ khóa global thì function sẽ gọi được biến. Tuy nhiên nếu trong biến đó gán giá trị lại cho biến global thì biến được khai báo ở ngoài cũng bị thay đổi theo.
+		- Trường hợp tham số truyền vào biến có thêm dấu &tên biến (khai báo function) thì tương tự như việc khai báo global tên biến bên trong thân hàm, nếu thay đổi giá trị của tham số đó trong function sẽ gián tiếp ảnh hưởng đến giá trị của biến ở ngoài.
+- ==Include - Require==
+	- Include và Require sẽ chạy hết toàn bộ code của một file php sau đó mới chạy code php ở dưới.
+	- Có 2 cách để include và require là include('tên file') hoặc include 'tên file';
+	- Trường hợp include sai tên file php sẽ dẫn đến không tìm thấy file và báo lỗi nhưng code vẫn chạy còn require thì sẽ báo lỗi và ngừng ngay.
+	- Có thể include nhiều lần trong một chương trình, mỗi lần include thì code trong file đó sẽ chạy một lần. (Có thể sử dụng để tạo thành component thay đổi code 1 file sẽ thay đổi toàn bộ code);
+- ==Project Header & Footer==
+	- Có thể tạo 1 thư mục template và đặt các code vào 2 file là header.php và footer.php, ở file index.php sẽ include code của 2 khối vào thân chương trình.
+- ==Form in PHP==
+	- Cách thức hoạt động của form là khi người dùng nhấn nút submit thì browser sẽ thu thập dữ liệu trong form và gửi lên server, server sẽ xử lý dữ liệu.
+	- Cớ hai phương thức gửi dữ liệu lên server là GET và POST. GET gửi dữ liệu trong URL (hiện thông tin). POST gửi dữ liệu trong request header (hidden).
+	- Các thuộc tính quan trọng trong input là: name, thuộc tính name được sử dụng để xác định tên luồng dữ liệu gửi lên server, cũng như dùng để lấy dữ liệu từ các input.
+	- Trong form có thuộc tính action. Thuộc tính này dùng để chỉ định làm gì khi nhấn input hoặc button có type là submit. trong thuộc tính action có thể tham chiếu đến chính file php đó để lấy dữ liệu.
+	- Sử dụng $_GET[name] và $_POST[name] để lấy dữ liệu tương ứng với phương thức gửi lên từ form. Chú ý cần kiểm tra xem có submit (thông qua isset(name của nút submit form)) rồi mới lấy dữ liệu.
+	- 2 phương thức $_GET và $_POST chỉ hoạt động khi submit form. Bản chất 2 phương thức này là 2 mảng array keys.
+- ==XSS Attack==
+	- Nghĩ là khi người dùng nhập vào input là một đoạn script, nếu ta không kiểm tra mà xử lý thì có thể sẽ dẫn tới bị hack
+	- Để tránh trường hợp chạy code input nhập vào (có chứa code HTML) chúng ta sử dụng htmlspecialchars(dữ liệu truyền vào), khi đó dù code có chứa đoạn mã thì cũng không chạy mà được xem như là một text bình thường. VD: <script> window.location="web" </script>
+- ==Form Validation==
+	- empty(dữ liệu) - kiểm tra dữ liệu truyền vào là rỗng
+	- Để kiểm tra input nhập vào là email sử dụng filter_var(giá trị, FILTER_VALIDATE_EMAIL).
+	- Cách kiểm tra bằng RegEX: sử dụng hàm preg_match(chuỗi regex, dữ liệu cần kiểm tra)
+		- ==Show Error==
+			1. Tạo 1 mảng keys có các key là email, title,... với giá trị là ''
+			2. Khi có lỗi thì mình sẽ push giá trị lỗi vào key tương ứng
+			3. Ở form mình sẽ thêm tag báo lỗi và ở đây mình sẽ output ra giá trị lỗi
+			4. Cần chú ý khi submit thì form sẽ tự động clear vì vậy chúng ta sẽ gán giá trị nhận được khi submit cho form để nếu có lỗi sai thì người sử dụng có thể sửa mà không cần nhập lại, cần nhớ là khai báo giá trị biến ban đầu trước nếu không sẽ bị lỗi biến không xác định.
+		- ==Show Error & Redirecting==
+			- sử dụng array_filter(mảng chứa lỗi) để xác định có lỗi xảy ra khi nhập liệu vào form
+			- Sử dụng header('Location: tên file php') để chuyển hướng trang
+	- ==MySQL introduction==
+		- là một hệ quản trị cơ sở dữ liệu quan hệ
+		- chúng ta sử dụng SQL để giao tiếp với database từ PHP
+		- SQL = Structured Query Language
+		- Khóa ngoại là những id liên kết giữa bảng này với bảng khác
+		- MySQL Database có thể chứa nhiều bảng, mỗi bảng lưu trữ một mô hình cụ thể của dữ liệu, mỗi một dòng là một trình bày của một bản ghi đơn lẻ, mỗi cột trình bày một thuộc tính của bản lưu đó
+		- Chúng ta sử dụng SQL để giao tiếp với dữ liệu từ PHP Code
+		- 
