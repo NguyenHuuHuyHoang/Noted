@@ -83,4 +83,16 @@
 		- Khóa ngoại là những id liên kết giữa bảng này với bảng khác
 		- MySQL Database có thể chứa nhiều bảng, mỗi bảng lưu trữ một mô hình cụ thể của dữ liệu, mỗi một dòng là một trình bày của một bản ghi đơn lẻ, mỗi cột trình bày một thuộc tính của bản lưu đó
 		- Chúng ta sử dụng SQL để giao tiếp với dữ liệu từ PHP Code
-		- 
+		- ==Setting up a MySQL DB==
+			- nhấn vào admin tại dòng MySQL của XAMPP để mở giao diện phpMyadmin
+			- Chọn tab Databases -> nhập tên database -> chọn create
+			- Chọn tên DB cần thực hiện -> chuyển qua tab Structure -> tạo bảng -> nhập tên bảng, số cột -> create
+			- Ở giao diện Tablet -> Nhập tên các trường dữ liệu -> ở cộng Index, chọn primary cho khóa chính (id), click chọn A_I để tự động thêm
+			- string có thể sử dụng kiểu varchar max 255 ký tự
+			- trường liên quan tới thời gian - loại timestamp -> ở cột default có thể chọn current_time
+			- tại table structure xe thấy tổng hợp các tường dữ liệu của table
+			- tại table insert ta có thể insert bằng tay dữ liệu vào bảng, sau khi nhập dữ liệu vào các trường, ấn nút go thì sẽ được chuyển qua tab SQL
+			- Tab SQL -> là giao diện giao tiếp với DB thông qua SQL, tại đây ta sẽ thấy dòng lệnh SQL để chèn dữ liệu vào DB. Phần id nếu đã set tự động tăng thì ta có thể để trống dữ liệu truyền vào cũng được (NULL)
+			- nhấn vào Browser thì ta sẽ thấy các record của table.
+		- ==Connecting to a DB==
+			- 
