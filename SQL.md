@@ -1,0 +1,166 @@
+- MySQL là một hệ quản trị cơ sở dữ liệu mã nguồn mở
+- MySQL thường được kết hợp cùng ngôn ngữ lập trình PHP trong việc triển khai và xây dựng Website động
+- https://nguyenvanhieu.vn/bai-tap-sql-giai-bai-test-sql-co-ban-fpt-fsoft-2018/
+- https://nguyenvanhieu.vn/bai-tap-cau-lenh-select-trong-sql-p2/
+- https://sqlzoo.net/wiki/SQL_Tutorial
+- http://thuviendethi.com/bai-tap-access-3221/
+- ==SQL==
+	- SQL không phải là ngôn ngữ lập trình mà ngôn ngữ truy vấn dữ liệu
+	- là một loại ngôn ngữ máy tính phổ biến để tạo, sửa và lấy dữ liệu từ một hệ quản trị cơ sở dữ liệu quan hệ.
+	- Ngôn ngữ SQL gồm 2 thành phần chính:
+		- DDL (Data Definition Language) định nghĩa cấu trúc CSDL:
+			- Cấu trúc của CSDL: CREATE TABLE, CREATE VIEW, ALTER TABLE,...
+			- Điều khiển quyền truy cập trên dữ liệu: GRANT, REVOKE,..
+		- DML (Data Manipulation Language) truy xuất và cập nhật dữ liệu: INSERT, UPDATE, DELETE, SELECT.
+	- Cú pháp:
+		- Chữ hoa đại diện cho các từ khóa (CREATE, DROP)
+		- Chữ thường đại diện cho các từ của người dùng định nghĩa
+		- Dấu | chỉ sự lựa chọn
+		- Dấu { chỉ phần tử bắt buộc phải có
+		- Dấu ngoặc vuông ([]) chỉ pần tử tùy chọn (không bắt buộc)
+		- Dấu ... chỉ thành phần có thể lặp lại từ 0 đến nhiều lần.
+		- Để ghi chú trong SQL sử dụng hai dấu --
+	- Lưu ý:
+		- Hầu hết các thành phần trong câu lệnh SQL không phân biệt chữ hoa chữ thường, trừ các ký tự trong chuỗi dữ liệu.
+		- Nên viết các từ khóa của SQL bởi ký tự chữ hoa và các từ do người dùng định nghĩa (table, column,...) bởi ký tự chữ thường.
+		- Đưa ra ví dụ về cơ sở dữ liệu : ![[Pasted image 20210129192608.png]]
+		- Tìm hiểu, sử dụng SQL để xây dựng cơ sở dữ liệu.
+- ==SELECT==
+	- SELECT [ DISTINCT | ALLL] { * | <TÊN CỘT 1> [, <TÊN CỘT 2>[, ...]]}
+	- DISTINCT :  Hiển thị những dòng phân biệt
+	- ALL : Hiển thị tất cả các dòng (giá trị mặc định)
+	- * :  Thay thế tất cả các dòng trong bảng.
+	- Hiển thị toàn bộ nội dung của bảng: SELECT * FROM [tên bảng dữ liệu]; (kết thúc câu lệnh bằng ;)
+	- Hiển thị giá trị họ tên và giới tính từ bảng: SELECT name, sex FROM architect;
+	- Hiển thị những giá trị không trùng nhau: (VD trong cột có 2 row trùng giá trị thì chỉ hiển thị 1 thôi): SELECT DISTINCT birthday FROM architect; (Nếu ALL thì sẽ hiển thị ra tất cả)
+- ==Sắp xếp kết quả ORDER BY==
+	- ORDER BY Tên cột | STT cột [ ASC | DESC] [, Tên cột | STT Cột [ ASC | DESC], ...]
+	- ASC : Sắp xếp theo kết quả tăng dần (giá trị mặc định)
+	- DESC : Sắp xếp theo kết quả giảm dần.
+	- Hiển thị danh sách các kiến trúc sư (họ tên và năm sinh) giá trị năm sinh tăng dần SELECT name, birthday FROM architect ORDER BY birthday; có hay ASC đều được vì ASC là giá trị mặc định. Trường hợp sắp xếp giảm dần thì phải sử dụng DESC.
+	- Hiển thị danh sách các công trình có chi phí từ thấp đến cao. Nếu 2 công trình có chi phí bằng nhau thì sắp xếp tên thành phố theo bảng chữ cái: SELECT name, cost, city FROM building ORDER BY cost ASC, city DESC
+- ==WHERE==
+	- Column vs value: Column so sánh với một giá trị nào đó
+		- hiển thị tất cả thông tin của kiến trúc sư "le thanh tung" SELECT * FROM architect WHERE name = "le thanh tung"
+	- Column A vs Column B
+		- Hiển thị tên, năm sinh của các công nhân có chuyên môn là hàn hoặc điện SELECT name, birthday, skill FROM worker WHERE skill = "han" OR skill = "dien";		
+		- Hiển thị tên các công nhân có chuyên môn hàn hoặc điện và năm sinh lớn hơn 1948. SELECT name, birthday, skill FROM worker WHERE skill = "han" OR skill = "dien" AND (birthday > 1948);
+		- Hiển thị những công nhân bắt đầu vào nghề khi tuổi dưới 20 (year - birthday < 20). SELECT * FROM worker WHERE birthday + 20 > year;
+	- Column [NOT] IN danh sach gia tri (so sánh cột với tập hợp nhiều giá trị)
+		- Hiển thị những công nhân có năm sinh là 1945, 1940, 1948. SELECT * FROM worker WHERE birthday = 1945 OR birthday = 1940 OR birthday = 1948. Chúng ta có thể thay thế bằng một câu ngắn gọn hơn là SELECT * FROM worker WHERE birthday IN (1940,1945,1948) nếu thêm NOT vào trước IN thì sẽ lấy ra những giá trị không thuộc danh sách SELECT * FROM worker WHERE birthday NOT IN (1940,1945,1948).
+	- Column [NOT] BETWEEN start AND end
+		- Tìm kiếm những công trình có kinh phí đầu tư từ 200 - 500 triệu đồng. SELECT * FORM cost >= 200 AND cost <= 500. Ngoài ra còn cách khác là sử dụng BETWEEN: SELECT * FORM cost BETWEEN 200 AND 500
+	- Column [NOT] LIKE string
+		- Tìm kiếm những kiến trúc sư có họ là nguyen. SELECT * FROM architect WHERE name = "nguyen" (SAI vì nó sẽ không kiếm ra được), để tìm kiếm giá trị gần đúng chúng ta sử dụng SELECT * FROM architect WHERE name LIKE "nguyen%"; (ở đây % sẽ đại diện cho chuỗi ký tự).
+		- Tìm kiếm những kiến trúc sư có họ lót là anh. SELECT * FROM architect WHERE name LIKE "%anh%";
+		- Tìm kiếm những kiến trúc sư có tên bắt đầu là th và có 3 ký tự. SELECT * FROM architect WHERE name LIKE "%th_"; (_ đại diện cho 1 ký tự bất kỳ -> th và 1 ký tự bất kỳ = 3 ký tự)
+	- Column IS [NOT] NULL
+		- Tìm chủ thầu không có phone. SELECT * FROM contractor WHERE phone IS NULL.
+- ==Aggregate Functions==
+	- AVG Xác định giá trị trung bình
+		- Tìm trung bình số ngày tham gia công trình của công nhân. SELECT AVG(total) AS tong FORM work.
+		- Tìm tổng số chi phí phải trả cho việc thiết kế công trình của kiến trúc sư có Mã số 1. SELECT SUM(benefit) AS tong FROM design WHERE architect_id = 1;
+	- SUM Xác định giá trị tổng
+		- Tìm tổng số ngày tham gia công trình của  công nhân. SELECT SUM(total) AS tong FORM work.
+	- MIN Xác định giá trị nhỏ nhất
+		- Tìm ngày tham gia công trình ít nhất của công nhân. SELECT MIN(total) FROM work;
+	- MAX Xác định giá trị lớn nhất
+		- Tìm ngày tham gia công trình nhiều nhất của công nhân. SELECT MAX(total) FROM work;
+	- COUNT Xác định tổng số phần tử
+		- Thống kê tổng số kiến trúc sư. SELECT COUNT(id) AS FROM architect; (AS dùng để thay đổi tên cột COUNT thành tong khi hiện kết quả)
+		- Thống kê tổng số kiến trúc sư nam. SELECT COUNT(id) AS tong_nam FROM architect WHERE sex = 1;
+	- Hiển thị giá trị lớn nhất, giá trị nhỏ nhất, tổng số ngày làm việc của các công nhân trên cùng một dòng. SELECT MAX(total) AS gia_tri_lon_nhat, MIN(total) AS gia_trị_nho_nhat, SUM(total) AS tong_so_ngay FROM work
+	- Hiển thị thông tin kiến trúc sư, họ tên, tuổi. SELECT name, (2020 - birthday) AS tuoi FROM architect.
+	- Hiển thị thù lao của các kiến trúc sư. SELECT architect_id, builidng_id, (benefit * 1000)  AS thu_lao FROM design;
+- ==Truy vấn con (truy vấn lồng)==
+	- Nếu điều kiện chọn ở mệnh đề WHERE cần truy cập thông tin ở các bảng khác với bảng đang truy vấn để kiểm tra điều kiện ta sẽ sử dụng một câu SELECT khác lồng trong điều kiện ở mệnh đề WHERE.
+	- Dạng 1: tên_cột so_sanh select_con điều kiện đúng khi giá trị của cột só sánh đúng với giá trị trả về từ select con
+		- Hiển thị thông tin công trình có chi phí cao nhất. SELECT * FROM building WHERE cost = (SELECT MAX(cost) FROM building).
+	- Dạng 2: tên_cột so_sanh ALL select_con điều kiện đúng khi giá trị của cột so sánh đúng với tất cả các giá trị trả về từ select con
+		- Hiển thị thông tin công trình có chi phí lớn hơn tất cả các công trình được xây dựng ở cần thơ. SELECT * FROM building WHERE  cost > ALL (SELECT cost FROM building WHERE city = "can tho"); (Sử dụng ALL khi select con trả về 1 tập hợp các giá trị, còn nếu trả về 1 giá trị thì không cần)
+	- Dạng 3: tên_cột so_sanh ANY | SOME select_con điều kiện đúng khi giá trị của cột so sánh đúng với bất kỳ một giá trị nào trả về từ select con.
+		- Hiển thị thông tin công trình có chi phí lớn hơn một công trình trong các công trình được xây dựng ở cần thơ. SELECT * FROM building WHERE city <> 'can tho' AND cost > ANY (SELECT cost FROM building WHERE city = 'can_tho'); 
+	- Dạng 4: tên_cột [NOT] IN (select_con) điều kiện đúng khi giá trị của cột nằm trong tập hợp các giá trị trả về của select con
+		- Hiển thị thông tin các công trình chưa có kiến trúc sư thiết kế. SELECT * FROM building WHERE id NOT IN (SELECT building_id FROM design). Bỏ NOT sẽ thành công trình có kiến trúc sư thiết kế.
+	- Dạng 5: [NOT] EXISTS (select_con) điều kiện đúng khi kết quả trả về của select con khác rỗng.
+		- Hiển thị thông tin kiến trúc sư cùng năm sinh và cùng nơi tốt nghiệp. SELECT name, birthday, place FROM architect AS a WHERE EXISTS (SELECT * FROM architect AS b WHERE a.birthday = b.birthday AND a.place = b.place AND a.id <> b.id);
+	- Kết quả trả về:
+		- Dạng 1: Một cột và một dòng
+		- Dạng 2: Một cột và nhiều dòng
+		- Dạng 3: Một cột và nhiều dòng
+		- Dạng 4: Một cột và nhiều dòng
+		- Dạng 5: Nhiều cột và nhiều dòng.
+- ==GROUP BY - HAVING==
+	- GROUP BY là một cách để gom nhóm cho phép chúng ta thực hiện các chức năng trên một nhóm các dòng như là một dòng riêng biệt. 
+	- Sử dụng mệnh đề GROUP BY sau mệnh đề FROM hoặc WHERE
+	- GROUP BY Cột để phân nhóm, Cột để phân nhóm 
+		- Thù lao trung bình của từng kiến trúc sư. SELECT architect_id, AVG(benefit) FROM design GROUP BY architect_id;
+		- Hiển thị chi phí đầu tư cho các công trình ở mỗi thành phố. SELECT city, SUM(cost) FROM building GROUP BY city;
+	- HAVING - Sử dụng mệnh đề HAVING theo sau mệnh đề GROUP BY để lọc ra các nhóm theo điều kiện, sau khi đã phân nhóm
+	- HAVING điều kiện chọn trên nhóm.
+		- Tìm các công trình có chi phí trả cho kiến trúc sư lớn hơn 50. SELECT building_id, SUM(benefit) as totalFROM design GROUP BY building_id HAVING total > 50
+		- Tìm các thành phố có nhiều hơn một kiến trúc sư tốt nghiệp. SELECT place, COUNT(id) as total FROM architect GROUP BY place HAVING total > 1;
+	- ==Thứ tự thực hiện các mệnh đề==
+		- FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY, sẽ lấy các bảng -> chọn các dòng thỏa điều kiện -> tạo thành các nhóm dòng với cùng giá trị cột -> chọn các nhóm thỏa điều kiện nào đó -> select những cột muốn hiển thị ra bên ngoài và cuối cùng là sắp xếp.
+- ==MULTI TABLE==
+	- Nếu muốn xuất ra các cột từ nhiều bảng khác nhau thì chúng ta phải thực hiện phép kết nối JOIN
+	- Để thực hiện kết nối
+		- Liệt kê các bảng trong mệnh đề FROM cách nhau bằng dấu phẩy
+		- Mô tả các cột kết nối trong mệnh đề WHERE
+	- VD:
+		- 1. Hiển thị tên công trình, tên chủ nhân và tên chủ thầu của công trình đó. SELECT b.name AS cong_trinh, h.name AS chu_nhan, c.name AS chu_thau FROM building AS b, host AS h, contractor AS c WHERE b.host_id = h.id AND b.contractor_id = c.id;
+		- 2. Hiển thị tên công trình, tên kiến trúc sư và thù lao của kiến trúc sư ở mỗi công trình. SELECT b.name AS ten_cong_trinh, a.name AS ten_kien_truc_su, benefit AS thu_lao FROM design AS d, building AS b, architect AS a WHERE d.building_id = b.id AND d.architect_id = a.id.
+		- Trường hợp tên cột chỉ nằm ở một bảng duy nhất thì không cần ghi tiền tố tên bảng ở đầu cột cũng được.
+	- ==ADVANCED==
+		- 1. Hãy cho biết tên và địa chỉ công trình do chủ thầu công ty xây dựng số 6 thi công. SELECT b.name, b.address FROM building AS b, contractor AS c WHERE b.contractor_id = c.id AND c.name = 'cong ty xay dung so 6';
+		- 2. Tìm tên và địa chỉ liên lạc của các chủ thầu thi công công trình ở cần thơ do kiến trúc sư 'le kim dung' thiết kế. SELECT c.name, c.address FROM building AS b, contractor AS c, design AS d, architect AS a WHERE c.id = b.contractor_id AND b.city = 'can tho' AND b.id = d.building_id AND d.architect = a.id AND a.name = 'le kim dung';
+		- 3. Cho biết nơi tốt nghiệp của các kiến trúc sư đã thiết kế công trình khách sạn quốc tế cần thơ. SELECT a.place FROM design AS d, architect AS a, building AS a WHERE b.id = d.building_id AND d.architect_id = a.id AND b.name = 'khach san quoc te' AND b.city = 'can tho';
+		- 4. Cho biết họ tên, năm sinh, năm vào nghề của các công nhân có chuyên môn hàn hoặc điện đã tham gia các công trình mà chủ thầu lê văn sơn đã trúng thầu. SELECT w.name, w.birthday, w.year FROM worker AS w, building AS b, contractor AS c, work AS wo WHERE b.contractor_id = c.id AND b.id = wo.building_id AND wo.worker_id = w.id AND (w.skill = 'han' OR w.skill = 'dien') AND c.name = 'le van son';
+		- 5. Những công nhân nào bắt đầu tham gia công trình khách sạn quốc tế ở cần thơ trong giai đoạn từ ngày 15/12/1994 đến 31/12/1994, số ngày tương ứng là bao nhiêu. SELECT w.name, wo.total FROM buidling AS b, worker AS w, work AS wo WHERE b.id = wo.building_id AND wo.worker_id = w.id AND b.city = 'can tho' AND b.name = 'cong trinh quoc te' AND wo.date BETWEEN '1994/12/15' AND '1994/12/31';
+		- 6. Cho biết họ tên, năm sinh của các kiến trúc sư đã tốt nghiệp ở hồ chí minh, đã thiết kế ít nhất một công trình có kinh phí đầu tư trên 400 triệu đồng. SELECT DISTINCT a.name, a.birthday FROM architect AS a, building AS b, design as d WHERE b.id = d.building_id AND d.architect_id = a.id AND a.place = 'HCM' AND b.cost > 400;
+		- ==TRUY VẤN CON NHIỀU BẢNG==
+			- 1. Cho biết tên công trình có kinh phí cao nhất. SELECT name, cost FROM buidling WHERE cost = (SELECT MAX(cost) from buidling) 
+			- 2. Cho biết tên các kiến trúc sư vừa thiết kế các công trình phòng dịch vụ sở xây dựng thi công, vừa thiết kế các công trình do chủ thầu lê văn sơn thi công. SELECT DISTINCT a.name FROM building AS b, contractor AS c, design AS d, architect WHERE c.id = b.contractor_id AND c.name = 'phong dich vu so xay dung' AND b.id = d.building_id AND d.architect_id = a.id AND a.id IN (SELECT DISTINCT a.name FROM building AS b, contractor AS c, design AS d, architect WHERE c.id = b.contractor_id AND c.name = 'le van son' AND b.id = d.building_id AND d.architect_id = a.id);
+			- 3. Cho biết họ tên các công nhân tham gia công trình ở cần thơ nhưng không tham gia công trình ở Vĩnh Long. SELECT DISTINCT w.name FROM building AS b, work AS d, worker AS w WHERE b.id = d.building_id AND d.worker_id = w.id AND b.city = 'can tho' AND w.id NOT IN (SELECT w.id FROM building AS b, work AS d, worker AS w WHERE b.id = d.building_id AND d.worker_id = w.id AND b.city = 'vinh long')
+			- 4. Cho biết tên của các chủ thầu đã thi công các công trình có kinh phí lớn hơn tất cả các công trình do chủ thầu phòng Dịch vụ sở xây dựng thi công. SELECT c.name FROM building AS b, contractor AS c WHERE b.contractor_id = c.id AND b.cost > ALL (SELECT cost FROM building AS b, contractor AS c WHERE c.name = "phong duc vu so xay dung");
+			- 5. Cho biết họ tên các kiến trúc sư có thù lao thiết kế một công trình nào đó dưới giá trị trung bình thù lao thiết kế cho một công trình. SELECT DISTINCT a.name FROM architect AS a, design AS d WHERE d.architect_id = a.id AND benefit < (SELECT AVG(benefit) FROM design)
+			- 6. Tìm tên và địa chỉ những chủ thầu đã trúng thầu những công trình xây dựng có kinh phí thấp nhất SELECT DISTINCT c.name FROM contractor AS c, building AS b WHERE b.contractor_id = c.id AND benefit = (SELECT MIN(cost) FROM building)
+			- 7. Tìm họ tên và chuyên môn của các công nhân tham gia các công trình do kiến trúc sư 'Le Thanh Tung' thiet ke. SELECT DISTINCT w.name, w.skill FROM worker AS w, work AS co WHERE w.id = co.worker_id AND co.building_id IN (SELECT d.building_id FROM architect AS a, design AS d WHERE a.id = d.architect_id AND a.name = 'le thanh tung');
+			- 8. Tìm các cặp tên của chủ thầu trúng thầu các công trình tại cùng một thành phố. SELECT c1.name, c2.name, b1.city FROM building AS b1, building AS b2, contractor AS co1 contractor AS co2 WHERE b1.city = b2.city AND b1.contractor_id > b2.contractor_id AND co1.id = b1.contractor_id AND b2.contractor_id = co2.id
+- ==CREATE==
+	- CREATE DATABASE TênDB - Tạo DB bằng dòng lệnh
+	- Tên cột trong table phải là không dấu.
+	- CREATE TABLE GiaoVien ( MaGV NVARCHAR(10), Name NVARCHAR(100)) - trường cuối cùng không thêm dấu phẩy.
+	- Mặc định SQL sẽ tự động thực thi tất cả các dòng lệnh chứ không phải đợi dòng trên chạy xong chạy dòng dưới vì vậy ở cuối cùng mỗi dòng lệnh ta cần thêm ;
+- ==DROP==
+	- DROP DATABASE tên DB -> xóa Database
+- ==ALTER==
+	- dùng để sửa
+	- ALTER TABLE HocSinh ADD NgaySinh
+- ==Các kiểu dữ liệu hay sử dụng==
+	- int : kiểu số nguyên
+	- float: kiểu số thực
+	- char: kiểu ký tự. Bộ nhớ cấp phát cứng, không viết tiếng việt được: VD A, a, B, b, f - vd khai báo 10 thì mất 10 ô
+	- varchar: kiểu ký tự. Bộ nhớ cấp phát động, chỉ được lấy khi có dữ liệu nằm bên trong, nếu khai báo 10 nhưng xài 5 thì chỉ cấp 5. Không viết tiếng việt được
+	- nchar: kiểu ký tự có thể lưu tiếng việt - dung lượng lưu trữ chỉ 50% so với char vì phải lưu trữ dấu
+	- nvarchar: kiểu ký tự cấp phát động có thể lưu tiếng việt.  - dung lượng lưu trữ chỉ 50% so với nvarchar vì phải lưu trữ dấu, nếu khai báo có đặt số trong vd nvarchar(50) thì nghĩa là cấp phát động 50 ô nhớ.
+	- date: lưu trữ ngày, tháng, năm , giờ
+	- time: lưu trữ giờ, phút, giây
+	- bit: lưu trữ giá trị 0 và 1.
+	- text: lưu văn bản lớn
+	- ntext: lưu văn bản lớn có tiếng việt.
+- ==Thiết kế cơ sở dữ liệu quản lý công trình==
+	- ![[Pasted image 20210129103304.png]]
+	- Database relationship (ERD) là một sơ đồ dùng để miêu tả mối quan hệ của các dữ liệu với nhau. ![[Pasted image 20210129103422.png]]
+- ==Tạo Database trong PHP MyAdmin==
+	- tab Database -> create -> tên db -> quan trọng là chỉnh utf8_general_ci -> create
+	- Tạo ra các phần bảng hay là table
+	- Giá trị collation có thể chọn hoặc không cũng được.
+	- Có cho phép rỗng hay không (Null) -> khóa chính không được phép null
+	- Ở phần index chọn Primary đối với khóa chính, A_I là khi tạo mới 1 dòng thì nó sẽ tự động tăng
+	- name chọn kiểu dữ liệu varchar độ dài là 255, ở collation thì cọn utf8_general_ci để hiển thị tốt với ngôn ngữ tiếng việt.
+	- giới tính không lưu giá trị nam hoặc nữ, mà chọn tinyint độ dài hoặc giá trị chọn 0/1- khi đặt trường như vầy thì ở comment nên đặt chú thích VD 0-Nữ, 1-Nam để sau này các lập trình viên khác dựa vào phần ghi chú mà biết
+	- birthday ở đây lưu trữ giá trị năm sinh nên chọn kiểu int và độ dài là 4
+	- nơi tốt nghiệp có thể đặt là varchar, độ dài 255. Address varchar và độ dài là 255
+	- sao khi ok hết rồi thì chúng ta nhấn vào nút save
+	- Trường hợp đã tạo xong table rồi mà muốn thêm 1 cột thì ở dưới có dòng add ...colums
