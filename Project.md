@@ -9,4 +9,18 @@
 - Java, .Net, PHP trung và lớn. Kiến trúc tốt, mantain tốt. Node thì xử lý rất là nhanh, thường realtime, gọi service giữa các tầng với nhau thì sử dụng còn kiến trúc bên dưới thì ít sử dụng.
 - làm flash card để học tiếng anh, công nghệ thông tin. 
 - Quay video khoảng từ 10 phút, ngắn quá hoặc dài quá thì không phù hợp. 
-- 
+30/1/2021
+- Xây dựng template trang dựa trên thế giới di động, giảm bớt những nội dung không cần thiết.
+- Những nội dung khó khó CURD thì mới cần hướng dẫn chứ không hướng dẫn hết toàn bộ.
+- Cần phải làm xong trang web rồi mới quay video.
+- `Nội dung cần chốt với anh khải`
+	- Rút gọn lại các tính năng, tính toán coi cái nào cần thiết làm cái nào không
+	- Làm lại wireframe, làm lại ERD.
+	- Ở phần Quan hệ dựa vào các tính năng, xử lý.
+	- Phải đặt ra yêu cầu, xử lý tĩnh không cần tương tác với Server.
+	- Optional Visual Paradirm
+	- Authencation - Authorizition
+	- Routing
+	- Pagination
+	- Phân quyền user
+	- 

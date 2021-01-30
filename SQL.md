@@ -4,6 +4,7 @@
 - https://nguyenvanhieu.vn/bai-tap-cau-lenh-select-trong-sql-p2/
 - https://sqlzoo.net/wiki/SQL_Tutorial
 - http://thuviendethi.com/bai-tap-access-3221/
+- https://lottiefiles.com/
 - ==SQL==
 	- SQL không phải là ngôn ngữ lập trình mà ngôn ngữ truy vấn dữ liệu
 	- là một loại ngôn ngữ máy tính phổ biến để tạo, sửa và lấy dữ liệu từ một hệ quản trị cơ sở dữ liệu quan hệ.
@@ -127,6 +128,29 @@
 			- 6. Tìm tên và địa chỉ những chủ thầu đã trúng thầu những công trình xây dựng có kinh phí thấp nhất SELECT DISTINCT c.name FROM contractor AS c, building AS b WHERE b.contractor_id = c.id AND benefit = (SELECT MIN(cost) FROM building)
 			- 7. Tìm họ tên và chuyên môn của các công nhân tham gia các công trình do kiến trúc sư 'Le Thanh Tung' thiet ke. SELECT DISTINCT w.name, w.skill FROM worker AS w, work AS co WHERE w.id = co.worker_id AND co.building_id IN (SELECT d.building_id FROM architect AS a, design AS d WHERE a.id = d.architect_id AND a.name = 'le thanh tung');
 			- 8. Tìm các cặp tên của chủ thầu trúng thầu các công trình tại cùng một thành phố. SELECT c1.name, c2.name, b1.city FROM building AS b1, building AS b2, contractor AS co1 contractor AS co2 WHERE b1.city = b2.city AND b1.contractor_id > b2.contractor_id AND co1.id = b1.contractor_id AND b2.contractor_id = co2.id
+- ==JOIN==
+	- JOIN là phép kết nối dữ liệu từ nhiều bảng lại với nhau, nối 2 bảng, 3 bảng với nhau. Khi cần truy vấn các cột dữ liệu từ nhiều bảng khác nhau để trả về trong cùng một tập kết quả cần dùng JOIN. 2 bảng kết nối được với nhau khi có 1 trường chung giữa hai bảng này.
+		- ==INNER JOIN hoặc JOIN==
+			- Trả về tất cả các hàng khi có ít nhất một giá trị ở cả hai bảng.
+			- Có thể thay thế INNER JOIN bởi JOIN. Ý nghĩa và kết quả là như nhau.
+			- SELECT cột FROM table1 INNER JOIN table2 ON table1.colum_name = table2.column_name;
+			- INNER JOIN nhiều table
+			- SELECT column_list FROM table1 INNER JOIN table2 ON join_condition1 INNER JOIN table3 ON join_condition2
+			- ![[Pasted image 20210130102915.png]]
+			- ![[Pasted image 20210130103023.png]]
+		- ==LEFT OUTER JOIN hoặc LEFT JOIN==
+			- Trả lại tất cả các dòng từ bảng bên trái (table1), và các dòng đúng với điều kiện tử bảng bên phải (table2). Chấp nhận cả dữ liệu NULL ở bảng 2.
+			- LEFT OUTER JOIN hay còn gọi là LEFT JOIN
+			- Cú pháp SELECT cột FROM table1 LEFT JOIN table2 ON table1.column_name = table2.column_name;
+			- LEFT JOIN cũng có thể join nhiều table
+			- SELECT column_list FROM 
+		- ==RIGHT OUTER JOIN hoặc RIGHT JOIN==
+			- Trả lại tất cả các hàng từ bảng bên phải và các dòng thỏa mãn điều kiện từ bảng bên trái
+		- ==FULL OUTER JOIN Hoặc OUTER JOIN==
+			- Trả về tất cả các dòng đúng với 1 trong các bảng
+
+- ==CASE..WHEN==
+	- Dùng 
 - ==CREATE==
 	- CREATE DATABASE TênDB - Tạo DB bằng dòng lệnh
 	- Tên cột trong table phải là không dấu.
