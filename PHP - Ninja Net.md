@@ -95,4 +95,16 @@
 			- Tab SQL -> là giao diện giao tiếp với DB thông qua SQL, tại đây ta sẽ thấy dòng lệnh SQL để chèn dữ liệu vào DB. Phần id nếu đã set tự động tăng thì ta có thể để trống dữ liệu truyền vào cũng được (NULL)
 			- nhấn vào Browser thì ta sẽ thấy các record của table.
 		- ==Connecting to a DB==
+			- Từ giao diện PHP Myadminh vào User Account -> add new user account để tạo tài khoản đăng nhập 
+			- Host name đặt là localhost, ở phần global privileges chọn check all
+			- Ở file php, để connect tới DB chúng ta sử dụng MySQLi hoặc PDO.
+			- $conn = mysqli_connect('localshost','tên đăng nhập','mật khẩu', 'tên database'), có thể kiểm tra việc kết nối bằng đặt vào một if. nếu true thì connect thành công còn false thì không thành công. In lỗi việc connect bằng việc sử dụng hàm mysql_connect_error(); nó sẽ in ra lỗi kết nối nếu xảy ra
+		- ==Getting Data From a DB==
+			- Có ba bước để lấy dữ liệu thông qua query từ DB
+			- Viết code query để lấy dữ liệu $sql = 'SELECT * FROM tên-table' (lấy toàn bộ dữ liệu table hiện có) nếu không muốn chỉ lấy những cột của table thì SELECT tên cột 1, tên cột 2 FROM tên-table chứa
+			- Thực hiện query và lấy kết quả result = mysql_query($conn (connect), $sql (query))
+			- Fetch kết quả những cột trả về như một mảng pizzas = mysqli_fetch_all($result, MYSQLI_ASSOC)
+			- Để giải phóng bộ nhớ đang chứa kết quả trả về thì ta sử dụng mysqli_free_result($result) - best practice sử dụng sau khi đã fetch data sang mảng chứa
+			- đóng kết nối bằng mysqli_close($conn (connect)) nếu không còn sử dụng nữa.
+		- ==Render dữ liệu đến trình duyệt==
 			- 
