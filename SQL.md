@@ -43,6 +43,8 @@
 - ==WHERE==
 	- Column vs value: Column so sánh với một giá trị nào đó
 		- hiển thị tất cả thông tin của kiến trúc sư "le thanh tung" SELECT * FROM architect WHERE name = "le thanh tung"
+		- giá trị kiểm tra không phân biệt hoa thường. VD 'le thanh tung' và 'LE THANH TUNG' sẽ cho ra cùng một kết quả.
+		- Đối với ngày tháng thì ngày tháng đặt trong cặp móc đơn, xem như là chuỗi ký tự.
 	- Column A vs Column B
 		- Hiển thị tên, năm sinh của các công nhân có chuyên môn là hàn hoặc điện SELECT name, birthday, skill FROM worker WHERE skill = "han" OR skill = "dien";		
 		- Hiển thị tên các công nhân có chuyên môn hàn hoặc điện và năm sinh lớn hơn 1948. SELECT name, birthday, skill FROM worker WHERE skill = "han" OR skill = "dien" AND (birthday > 1948);
@@ -56,7 +58,25 @@
 		- Tìm kiếm những kiến trúc sư có họ lót là anh. SELECT * FROM architect WHERE name LIKE "%anh%";
 		- Tìm kiếm những kiến trúc sư có tên bắt đầu là th và có 3 ký tự. SELECT * FROM architect WHERE name LIKE "%th_"; (_ đại diện cho 1 ký tự bất kỳ -> th và 1 ký tự bất kỳ = 3 ký tự)
 	- Column IS [NOT] NULL
+		- Dùng để tìm những row mà có trường dữ liệu trống.
 		- Tìm chủ thầu không có phone. SELECT * FROM contractor WHERE phone IS NULL.
+- ==REGEXP==
+	- WHERE cột REGEXP chuỗi regexp
+	- VD: WHERE last_name LIKE 'field' <=> WHERE last_name REGEXP 'field'
+	- WHERE last_name REGEXP 'field$' => '%field'
+	- WHERE last_name REGEXP '^field' => 'field%'
+	- WHERE last_name REGEXP 'field | mac' => có field hoặc có từ mac
+	- WHERE last_name REGEXP '[gim]e' => bắt ge | ie | me
+	- WHERE last_name REGEXP '[a-c]e' => ae | be | ce
+	- ^ - begining 
+	- $ - end
+	- | logical or (chú ý trước và sau | không có space)
+	- [abcd]
+	- [a-d]
+- ==LIMIT==
+	- Giới hạn số lượng record trả về
+	- LIMIT 3 -> Trả về 3 giá trị
+	- LIMIT (3,2) -> Trả về hai giá trị tính từ giá trị thứ 3.
 - ==Aggregate Functions==
 	- AVG Xác định giá trị trung bình
 		- Tìm trung bình số ngày tham gia công trình của công nhân. SELECT AVG(total) AS tong FORM work.
@@ -134,10 +154,12 @@
 			- Trả về tất cả các hàng khi có ít nhất một giá trị ở cả hai bảng.
 			- Có thể thay thế INNER JOIN bởi JOIN. Ý nghĩa và kết quả là như nhau.
 			- SELECT cột FROM table1 INNER JOIN table2 ON table1.colum_name = table2.column_name;
+			- SELECT * FROM table JOIN table2 t2 ON table1.id = t2.name <=> SELECT * FROM table JOIN table2 AS t2 ON table1.id = t2.name 
 			- INNER JOIN nhiều table
 			- SELECT column_list FROM table1 INNER JOIN table2 ON join_condition1 INNER JOIN table3 ON join_condition2
 			- ![[Pasted image 20210130102915.png]]
 			- ![[Pasted image 20210130103023.png]]
+			- Không chấp nhập giá trị NULL ở bảng 2
 		- ==LEFT OUTER JOIN hoặc LEFT JOIN==
 			- Trả lại tất cả các dòng từ bảng bên trái (table1), và các dòng đúng với điều kiện tử bảng bên phải (table2). Chấp nhận cả dữ liệu NULL ở bảng 2.
 			- LEFT OUTER JOIN hay còn gọi là LEFT JOIN
@@ -145,10 +167,19 @@
 			- LEFT JOIN cũng có thể join nhiều table
 			- SELECT column_list FROM 
 		- ==RIGHT OUTER JOIN hoặc RIGHT JOIN==
-			- Trả lại tất cả các hàng từ bảng bên phải và các dòng thỏa mãn điều kiện từ bảng bên trái
+			- Trả lại tất cả các hàng từ bảng bên phải và các dòng thỏa mãn điều kiện từ bảng bên trái, Chấp nhận cả dữ liệu NULL ở bảng 2.
 		- ==FULL OUTER JOIN Hoặc OUTER JOIN==
 			- Trả về tất cả các dòng đúng với 1 trong các bảng
-
+		- ==OUTER JOIN between multiple tables==
+			- 
+		- ==Compound JOIN conditions==
+			- JOIN ON nhiều điều kiện với nhau, có thể sử dụng từ khóa AND giữa các điều kiện.
+		- ==Implicit JOIN Syntax==
+			- FROM nhiều bảng lại với nhau, ở WHERE thì sử dụng điều kiện = ở các bảng có quan hệ với nhau hay nói cách khác là đặt mệnh đề JOIN vào WHERE
+			- Điều này sẽ làm giảm hiệu suất, làm cho câu lệnh JOIN không tường minh.
+-==SELF JOINS==
+	- Gần giống như việc FROM cùng 1 bảng nhiều lần.
+	- SELECT * FROM employees AS e JOIN employees AS m ON e.reports_to = m.employee_id
 - ==CASE..WHEN==
 	- Dùng 
 - ==CREATE==
