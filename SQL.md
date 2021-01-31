@@ -78,6 +78,9 @@
 	- LIMIT 3 -> Trả về 3 giá trị
 	- LIMIT (3,2) -> Trả về hai giá trị tính từ giá trị thứ 3.
 - ==Aggregate Functions==
+	- SUBSTRING(chuỗi, vị trí bắt đầu, vị trí kết thúc) => SUBSTRING(Name, 1, 3) lấy 3 ký tự đầu tiên của chuỗi
+	- FIELD(trường chứa dữ liệu, key1, key2) => trả về index của key trong trường.
+	- UPPER(chuỗi) in hoa chuỗi
 	- AVG Xác định giá trị trung bình
 		- Tìm trung bình số ngày tham gia công trình của công nhân. SELECT AVG(total) AS tong FORM work.
 		- Tìm tổng số chi phí phải trả cho việc thiết kế công trình của kiến trúc sư có Mã số 1. SELECT SUM(benefit) AS tong FROM design WHERE architect_id = 1;
