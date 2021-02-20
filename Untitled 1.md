@@ -1,0 +1,1 @@
+Phân quyền dự vào token, giải mã token sẽ ra quyền và từ đó mà xem nó có quyền hay không
