@@ -174,15 +174,32 @@
 		- ==FULL OUTER JOIN Hoặc OUTER JOIN==
 			- Trả về tất cả các dòng đúng với 1 trong các bảng
 		- ==OUTER JOIN between multiple tables==
-			- 
+			- Sử dụng JOIN và LEFT JOIN lại với nhau. JOIN ở đầu tiên và LEFT JOIN ở các bảng sau.
+		- ==Self OUTER JOIN==
+			- Là tự LEFT JOIN chính bảng đó.
 		- ==Compound JOIN conditions==
 			- JOIN ON nhiều điều kiện với nhau, có thể sử dụng từ khóa AND giữa các điều kiện.
 		- ==Implicit JOIN Syntax==
 			- FROM nhiều bảng lại với nhau, ở WHERE thì sử dụng điều kiện = ở các bảng có quan hệ với nhau hay nói cách khác là đặt mệnh đề JOIN vào WHERE
 			- Điều này sẽ làm giảm hiệu suất, làm cho câu lệnh JOIN không tường minh.
--==SELF JOINS==
-	- Gần giống như việc FROM cùng 1 bảng nhiều lần.
-	- SELECT * FROM employees AS e JOIN employees AS m ON e.reports_to = m.employee_id
+		- ==SELF JOINS==
+			- Gần giống như việc FROM cùng 1 bảng nhiều lần.
+			- SELECT * FROM employees AS e JOIN employees AS m ON e.reports_to = m.employee_id
+		- ==NATURAL JOIN==
+			- Thay vì sử dụng JOIN ... ON thì NATURAL JOIN sẽ tự động match tất cả cột xuất hiện trên cả hai bảng, những cột cùng tên sẽ có liên quan với nhau, điều này dẫn tới yêu cầu một quy chẩun đặt tên cột rất nghiêm ngặt.
+		- ==CROSS JOIN==
+			- Tạo ra tất cả các cặp hàng có thể có từ hai bảng, chu dù khớp hay không. Không sử dụng bất kỳ điều kiện kết hợp nào vì CROSS JOIN sẽ luôn đúng cho bất kỳ điều kiện nào.
+			- CROSS JOIN khác NATURAL ở NATURAL 2 cột ở 2 bảng khác nhau phải cùng tên, còn CROSS thì không cần.
+			- CROSS JOIN còn tương đương với việc FROM 2 bảng với nhau thay vì FROM 1 bảng và CROSS JOIN bảng còn lại. (ngầm hiểu implicit)
+		- ==UNIONS==
+			- Dùng để kết nối kết quả trả về của 2 SELECT (trả ra cùng 1 bảng giá trị).
+			- Đặt giữa 2 đoạn SELECT và đoạn SELECT trước UNION không được có dấu ;. Nếu trong SELECT có ORDER BY thì phải đặt ORDER BY ở SELECT cuối cùng, sau khi đã ghép tất cả các bảng giá trị trả lại với nhau, các SELECT phải trả ra cùng số lượng cột. UNION chỉ quan tâm số lượng cột trả ra của mỗi SELECT không quan tâm dữ liệu trả ra là gì.
+			- Tên cột sẽ theo tên của SELECT đầu tiên
+- ==USING==
+	- Trong JOIN khi xử lý điều kiện ON mà 2 bảng có chung cột thì chúng ta sử dụng USING (cột chung) thay vì sử dụng ON. VD ON o.customer_id = c.customer_id => USING (customer_id)
+	- Điều này giúp cho ngắn hơn và dễ dàng đọc hơn
+	- Có thể sử dụng cho cả JOIN và OUTER JOIN
+	- có thể USING cho điều kiện nhiều cột bằng nhau VD ON oi.order_id = oin.order_id AND oi.product_id = oin.product_id => USING (order_id, product_id)
 - ==CASE..WHEN==
 	- Dùng 
 - ==CREATE==
@@ -222,3 +239,32 @@
 	- nơi tốt nghiệp có thể đặt là varchar, độ dài 255. Address varchar và độ dài là 255
 	- sao khi ok hết rồi thì chúng ta nhấn vào nút save
 	- Trường hợp đã tạo xong table rồi mà muốn thêm 1 cột thì ở dưới có dòng add ...colums
+- ==INSERT==
+	- ==Chèn 1 dòng==
+		- INSERT INTO tên-bảng VALUES (giá trị của các cột dữ liệu trong bảng)
+		- Trường hợp Cột có A_I thì để DEFAULT ở cột đó. Ở các cột được phép NULL, nếu không có dữ liệu truyền vào thì để NULL hoặc DEFAULT (trường hợp đặt DEFAULT là NULL)
+		- Trong trường hợp ở sau tên-bảng chúng ta khai báo tên các trường dữ liệu mà không khai báo các tên cột mà có thuộc tính là A_I, NULL (ở bên trong một cặp dấu (cột, cột, cột,...) ) thì chúng ta cũng có thể chỉ truyền vào các giá trị tương ứng cột (không cần ghi DEFAULT hoặc NULL cho các cột không có dữ liệu truyền vào)
+	- ==Chèn nhiều dòng==
+		- Giống như chèn 1 dòng, nhưng sau 1 cái (dữ liệu) ở VALUES thì thêm dấu phẩy và thêm 1 (dữ liệu)
+	- ==INSERT HIERARCHICAL ROWS==
+		- Thêm dữ liệu vào nhiều bảng
+		- INSERT INTO orders (customer_id, order_date, status) VALUES (1, '2019-01-02', 1)
+		- Hàm LAST_INSERT_ID() trả về giá trị hàng cuối cùng đã được chèn hoặc đã update trong một bảng. Thường được dùng để ghi giá trị vào bảng con
+	- ==CREATE A COPY OF A TABLE==
+		- CREATE TABLE orders_archived AS SELECT * FROM orders
+		- Lưu ý bảng được copy sẽ không có khóa chính và A_I
+		- Muốn xóa dữ liệu đang có của bảng thì phải TRUNCATE bảng
+		- Trường hợp muốn copy dữ liệu từ một bảng này qua một bản mới thì sử dụng INSERT INTO orders_archived SELECT * FROM orders WHERE order_date < '2019-01-01'
+
+- ==UPDATE==
+	- ==UPDATE a single row==
+		- UPDATE bang SET cot = gia tri, cot = gia tri WHERE dieu kien
+		- Có thể set giá trị là DEFAULT hoặc NULL
+	- ==USING SUBQUERIES IN UPDATES==
+		- Subqueries là điều kiện kiểm tra cột là một đoạn SELECT chứ không phải là một giá trị.
+		- Trường hợp SELECT trả về nhiều giá trị thì sử dụng từ khóa IN thay vì =
+- ==DELETE==
+	- DELETE FROM table WHERE điều kiện
+	- Có thể sử dụng SUBQUERIES trong điều kiện
+- ==RESTORING THE DATABASES==
+	- Phục hồi bằng file .sql
