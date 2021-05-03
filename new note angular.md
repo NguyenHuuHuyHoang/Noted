@@ -18,3 +18,4 @@
 	- Sử dụng (target event name) = "template statement" ![[Pasted image 20210502214659.png]]
 	- (size) = "increaseSize()"
 ==Two way event binding==
+	- Sử dụng [(ngModel)] = "Tên biến" 
