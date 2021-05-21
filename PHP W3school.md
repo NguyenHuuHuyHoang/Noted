@@ -175,5 +175,16 @@
 	- ?? -> $x = expr1 ?? expr2, x có giá trị là expr1 nếu expr1 tồn tại và không NULL, nếu không tồn tại hoặc nó NULL thì giá trị của x sẽ là expr2, Được giới thiệu từ PHP 7
 	==PHP if...else...elseif Statements==
 	- Các câu điều kiện thường được sử dụng để thực hiện các hành động khác nhau dựa trên điều kiện khác nhau
+	- khi chúng ta viết code chúng ta muốn thực hiện những hành động cho những điều kiện khác nhau là một việc thường xuyên. Chúng ta có thể sử dụng những câu điều kiện trong code để thực hiện việc này.
+		==The if statement==
+		- Thực hiện một số đoạn code nếu một điều kiện là true
+		==The if...else statement==
+		- Thực hiện một số đoạn code nếu một điều kiện là true, và code khác nếu điều kiện là false
+		==The if...elseif...else statement==
+		- Thực hiện những đoạn code khác nhau cho nhiều hơn hai điều kiện
+	==PHP The switch statement==
+	- Câu switch thường được sử dụng để thực hiện những hành động khác nhau dựa vào những điều kiện khác nhau
+	- Sử dụng switch để chọn một trong nhiều khối code để thực thi
+	- 
 	
 	
