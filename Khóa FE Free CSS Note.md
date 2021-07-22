@@ -1,4 +1,4 @@
-==Note==
+==Note== 
 	- Đối với dạng icon thì nên để 46px
 	- Những tag là duy nhất như body thì có thể sử dụng inline code để add bg-img. Tấm hình có nhiều kích thước, cần phải sử dụng các thuộc tính để điều chỉnh cho phù hợp. 
 	- Thường sử dụng là bg-size:  mặc định là auto, nếu truyền giá trị vào theo kiểu x y thì sẽ set width và height của bg-image
@@ -7,19 +7,12 @@
 	- text-align: center, sẽ canh giữa item với thằng cha của nó, chỉ áp dụng với d:block, không áp dụng với img (thẻ inline) do thẻ inline là xài bao nhiêu chiếm bao nhiêu nên nó không biết được vị trí của nó nằm ở đâu mà canh center. trường hợp này thì xài cho thằng div cha thì nó sẽ ra ngoài giữa.
 	- tái sử dụng code bằng cách sử dụng selector , selector { code css}
 	- thẻ img nên đặt ở trong 1 div, để dễ canh chỉnh do mặc định thẻ img là inline, thẻ inline sẽ không thể set width và height. thẻ img nên set width và height 100%, display: block. để hình phủ đều tất cả các cạnh của div bọc, nhìn đẹp hơn.
--  email: giangcd2017372@gmail.com
-- 0906701757
-- Sẽ có bài test để lọc ai đã biết cơ bản ai chưa để phân lớp, thời gian 1h30p bằng reactJS, ai qua thì chuyển qua nâng cao học BE luôn.
-- Giờ học 2-4-6 9g
-- Lớp nâng cao sẽ học BE luôn 1 tháng sau đó sẽ quay lại học các famework
-- 3 đến 4 tuần học html, css, code thuần, tự build famework
-- 2 tháng học js
 - Có 2 hướng là làm web theo SEO, hoặc product
 - Cần phân tích SEO cần dùng cái gì làm, product cần sử dụng cái gì để làm. VD SEO thì cần làm cho thằng google, mục tiêu là cho thằng google chấm điểm.
 - test speed website trang web vừa tạo sau khoảng 1 tuần deploy web từ thằng google. điểm yêu cầu từ 90 - 100 điểm.
 - SEO có nhiều mảng, tuy nhiên về lập trình thì cần: html, css, js , bstrap, jquery, về nguyên lý thì SEO là chơi theo luật chơi của google. google không thích mã nguồn JS chỉ đọc hoàn toàn HTML, cần lập trình thuần không dùng bất kỳ famerwork nào khác. Nhúng thẳng css vào file html luôn. Google có 2 craw là nhện đọc csdl và gấu trúc đọc code html
 - Tối ưu code vd như cho các icon vào 1 file sau đó dùng thuộc tính để zoom ra làm thành icon bình thường.
-- Product là những web app, SEO thường sử dụng cho mục đích thương mại điện tử, vào xong ra chứ không ở lâu như FB. Cùng lúc đó 1 lượng truy cập user lớn truy cập thì khi đó không thể nào làm thuần được vì không đấp ứng được yêu cầu của người dùng. đó các product không cần đánh vào SEO mà cần nâng cao trải nghiệm người dùng vd như reactjs, vuejs,.. Các famework sẽ gộp code vào 1 file trong khi thông thường truy cập trang nào thì chỉ load trang đó.
+- Product là những web app, SEO thường sử dụng cho mục đích thương mại điện tử, vào xong ra chứ không ở lâu như FB. Cùng lúc đó 1 lượng truy cập user lớn truy cập thì khi đó không thể nào làm thuần được vì không đấp ứng được yêu cầu của người dùng. đó các product không cần đánh vào SEO mà cần nâng cao trải nghiệm người dùng vd như reactjs, vuejs,.. Các framework sẽ gộp code vào 1 file trong khi thông thường truy cập trang nào thì chỉ load trang đó.
 - product thường làm sẽ có API, làm web xong thì nhúng qua APP luôn.
 ==Về phương diện BE==
 - backend, có rất nhiều ngôn ngữ, nhưng ở đây chuyên PHP và Laravel. PHP sinh ra để làm web, sử dụng nó vì nó có famerwork Laravel. JAVA thì chỉ có làm APP thôi, chưa có famework để làm web. Python thường sử dụng dữ liệu lớn, big DATA chứ ít ai dùng web vì nó có những thư viện.

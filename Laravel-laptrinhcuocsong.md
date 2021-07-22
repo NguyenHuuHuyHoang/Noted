@@ -10,7 +10,7 @@
 	- View: hiển thị
 	- Controller: Xử lý
 - artisan: công cụ của laravel được viết bằng PHP
-	+ php artisan  serve => start webserver, start app laravel lên
+	+ php artisan serve => start webserver, start app laravel lên
 - Blade template
 - Eloquent model
 - Route

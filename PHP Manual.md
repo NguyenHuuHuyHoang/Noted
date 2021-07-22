@@ -9,4 +9,5 @@
 	- Mọi thứ sau cặp thẻ mở và thẻ đóng của PHP sẽ được trình thông dịch bỏ qua, điều đó giúp cho file php có thể chứa nhiều nội dung khác nhau, điều này cho phép chúng ta có thể nhúng các đoạn code PHP vào các văn bản HTML VD như tạo các bản mẫu
 	- ![[Pasted image 20210513215936.png]] Khi trình thông dịch PHP đọc thấy thẻ đóng thì nó sẽ xuất tất cả những gì nó đọc được cho tới khi nó gặp tiếp thẻ mở.
 		==VD 1 **Advanced escaping using conditions**==
-		- ![[Pasted image 20210513220357.png]] - 
+		- ![[Pasted image 20210513220357.png]] - PHP sẽ bỏ qua những đoạn mà điều kiện không phù hợp, ngay cả khi chúng nằmg ngoài thẻ đóng và thẻ mở PHP, PHP bỏ qua chúng theo điều kiện vì trình thông dịch PHP nhảy qua các khối chứa điều kiện không phù hợp
+		- Trong trường hợp với những đoạn văn bản lớn, việc bỏ chế độ phân tích cú pháp PHP thường hiệu quả hơn việc gửi tất cả văn bản thông qua echo hoặc prints

@@ -10,6 +10,8 @@ Những thủ thuật để làm việc trên linux, ubuntu:
 + C-d đóng tab
 + pwd: print working directory cho biết thư mục hiện tại đang làm việc là thư mục nào, mỗi khi mở terminal thì sẽ tự động vào thư mục của user hiện tại
 + ls: list , ls -a hiện thị tất cả file ẩn. những file có dấu . ở đầu sẽ ẩn
++ ls -al tên_foler cho thấy quyền sở hữu
++ sudo chown -R tenUser tenThuMuc: cấp quyền cho user đối với thư mục
 + man sẽ ra thông số của các công cụ, để thoát ra thì ấn q
 + / là thư mục root vd cd /
 + /tmp là thư mục khi tắt máy tính thì sẽ xóa những file trong thư mục này đi

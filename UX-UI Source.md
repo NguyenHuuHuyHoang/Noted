@@ -1,0 +1,14 @@
+- https://www.freepik.com
+- https://storyset.com/
+- https://lottiefiles.com/
+- https://www.sketchappsources.com/all-free-sources.html
+- https://loading.io/
+- https://unsplash.com/ - Ảnh chụp
+- https://www.typography.com/
+- https://github.com/primefaces/primeng - Angular UI component Library
+- https://dribbble.com/tranmautritam
+- https://chrome.google.com/webstore/detail/muzli-2-stay-inspired/glcipcfhmopcgidicgdociohdoicpdfc?hl=vi
+- https://ui8.net/
+- https://www.flaticon.com/
+- https://www.uistore.design/
+- 

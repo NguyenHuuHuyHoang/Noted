@@ -35,5 +35,5 @@
 	 - 1 y tá chăm sóc nhiều bệnh nhân
 ==Note==
 - Xác định FK cho nhanh : Nếu 2 table quan hệ 1 - nhiều với nhau, thì chỉ cần lấy PK của table ở đâu quan hệ 1 bỏ vào FK của table ở đầu quan hệ nhiều
-- Bản chất quan hệ 1 - nhiều : nghĩa là 1 record A bao gồm rất nhiều record B, hoặc nhiều record B cùng liên kết đến 1 record A. Cung có thể hiểu rằng A có một cái lưới hoặc bảng chứa các dòng dữ liệu của B
+- Bản chất quan hệ 1 - nhiều : nghĩa là 1 record A bao gồm rất nhiều record B, hoặc nhiều record B cùng liên kết đến 1 record A. Cũng có thể hiểu rằng A có một cái lưới hoặc bảng chứa các dòng dữ liệu của B
 - Trong QH nhiều - nhiều, thực tế sẽ không quan hệ nhiều nhiều trực tiếp với nhua mà cần thông qua một entity trung gian, 2 Entity sẽ quan hệ 1 - nhiều với entity trung gian. Trong entity trung gian chứa khóa ngoại là 2 khóa của entity quan hệ nhiều nhiều.
